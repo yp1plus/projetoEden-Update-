@@ -16,6 +16,10 @@ public class WarriorController : PlayerController
     private int quantCoins = 0;
     public Text numCoins;
 
+    private int currentLevel = 0;
+
+    public int level { get {return currentLevel;} }
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -34,6 +38,7 @@ public class WarriorController : PlayerController
     void Start()
     {
         numCoins.text = quantCoins.ToString();
+        currentLevel = 0;
     }
 
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -76,6 +81,11 @@ public class WarriorController : PlayerController
     {
         Gizmos.color = Color.black;
         Gizmos.DrawWireCube(groundCheck.position, range);
+    }
+
+    public void GoToNextLevel()
+    {
+        currentLevel++;
     }
 
     public void AddCoin()

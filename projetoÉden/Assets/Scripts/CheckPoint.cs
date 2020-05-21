@@ -7,6 +7,7 @@ public class CheckPoint : MonoBehaviour
 {
     bool triggered;
 
+
     void Awake()
     {
         triggered = false;
@@ -21,6 +22,7 @@ public class CheckPoint : MonoBehaviour
         {
             CodingScreen.instance.OpenPanel(true);
             triggered = true;
+            controller.GoToNextLevel();
         }
     }
 

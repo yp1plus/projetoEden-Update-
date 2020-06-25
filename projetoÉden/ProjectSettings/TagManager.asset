@@ -19,9 +19,9 @@ TagManager:
   - Ground
   - Elements
   - Background
-  - 
-  - 
-  - 
+  - Player
+  - Projectile
+  - Confiner
   - 
   - 
   - 

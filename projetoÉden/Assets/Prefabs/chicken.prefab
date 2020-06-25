@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8486814301621905612}
   - component: {fileID: 1881302833}
   - component: {fileID: 4257185434491686481}
+  - component: {fileID: 6634593549344756124}
   m_Layer: 0
   m_Name: chicken
   m_TagString: Chicken
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7241154812778745495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.8, y: -4.788, z: 0}
-  m_LocalScale: {x: 6.7900324, y: 6.7900324, z: 6.7900324}
+  m_LocalScale: {x: 6.790033, y: 6.7900324, z: 6.790033}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -152,3 +154,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.3727045}
   m_EdgeRadius: 0
+--- !u!50 &6634593549344756124
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7241154812778745495}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

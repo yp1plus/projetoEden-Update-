@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls the collision with the blue ball, opening a new mission and updating the level.
+/// </summary>
 public class CheckPoint : MonoBehaviour
 {
     bool triggered;
 
-
     void Awake()
     {
         triggered = false;
-        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -20,15 +21,10 @@ public class CheckPoint : MonoBehaviour
 
         if (controller != null && !triggered)
         {
-            CodingScreen.instance.OpenPanel(true);
             triggered = true;
             controller.GoToNextLevel();
+            CodingScreen.instance.OpenPanel(true);
+            Destroy(gameObject); 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

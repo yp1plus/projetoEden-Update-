@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the collision with a coin, updating the number of coins and playing a sound.
+/// </summary>
 public class CoinCollectible : MonoBehaviour
 {
     public AudioClip collectedClip;
@@ -12,8 +15,9 @@ public class CoinCollectible : MonoBehaviour
 
         if (controller != null)
         {
+                if (gameObject.activeSelf)
+                    controller.AddCoin();
                 Destroy(gameObject);
-                controller.AddCoin();
                 controller.PlaySound(collectedClip);
         }
     }

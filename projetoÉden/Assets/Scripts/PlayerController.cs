@@ -2,47 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the movement and the health of a generic player.
+/// </summary>
+///<remarks>
+/// <para> This class can control movement to the left and to the right, and also jump, with arrows of keyboard. </para>
+/// <para> This class also can control health of player, both adding and decreasing, invoking a flash animation when life is lost. </para>
+///</remarks>
 public class PlayerController : MonoBehaviour
 {
     /* Atributes */
     public float speed = 3.0f;
     public float jumpForce = 7;
-    // [Range(0, 1)]
-    private float jumpHeight = .4f;
+    float jumpHeight = .4f;
     public int maxHealth = 100;
-    public int health { get {return currentHealth;} }
-    private int currentHealth;
 
-    private float fallMultiplier = 2.5f;
-    private float lowJumpMultiplier = 2f;
+    /// <value> Gets the value of current health of player. </value>
+    public int health { get {return currentHealth;} }
+    protected int currentHealth;
+
+    float fallMultiplier = 2.5f;
+    float lowJumpMultiplier = 2f;
 
     /* For Jump */
-    private bool isGrounded;
+    bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Vector3 range;
 
-     /* Movement */
-    private float moveInput;
+    /* Movement */
+    /// <value> Gets the value of horizontal move input. </value>
     public float move {get { return moveInput;} }
-    private bool facingRight = true;
+    float moveInput;
+   
+    /// <value> Gets the value of a bool which controls if player are facing right. </value>
     public bool facing {get {return facingRight;} }
+    bool facingRight = true;
 
      /* Control Invincibility Time */
+    /// <value> Gets the value of a bool which controls if player are invincible. </value>
+    public bool invincible {get {return isInvincible;}}
     bool isInvincible = false;
+
     float invincibleTimer = 5.0f;
 
-    protected SpriteRenderer mainRenderer;
-
     /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
+    /// Controls the movement of player from horizontal and up input arrows.
     /// </summary>
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
-
+    /// <remarks> This method can be override in subclasses. </remarks>
+    /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
     public virtual void Movement(Rigidbody2D rigidbody2D)
     {
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -63,6 +71,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Controls hardier the function of jump, allowing a jump more subtle.
+    /// </summary>
+    /// <remarks> This method is not finished yet. </remarks>
+    /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
     public void BetterJumping(Rigidbody2D rigidbody2D)
     {
         if (rigidbody2D.velocity.y < 0)
@@ -79,9 +92,20 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        if (gameObject.GetComponent<Renderer>().enabled) //avoids to destroy the player when him are flashing 
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+            Debug.Log("Morreu");
+            Debug.Log(currentHealth);
+        }
     }
 
+    /// <summary>
+    /// Checks if the player is on the ground when up arrow is pressed.
+    /// </summary>
+    /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
+    /// <param name = "animator"> The component Animator of a player to ativate animation of jump. </param>
     public void CheckCollisionForJump(Rigidbody2D rigidbody2D, Animator animator)
     {
         Collider2D bottomHit = Physics2D.OverlapBox(groundCheck.position, range, 0, groundLayer);
@@ -100,17 +124,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if any animation is playing.
+    /// </summary>
+    /// <param name = "animator"> The component Animator of a player. </param>
+    /// <returns> The answer if any animation is playing. </returns>
     private bool AnimatorIsPlaying(Animator animator)
     {
         return animator.GetCurrentAnimatorStateInfo(0).length >
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 
+    /// <summary>
+    /// Checks if a specific animation is playing.
+    /// </summary>
+    /// <param name = "name"> A string, the name of animation. </param>
+    /// <param name = "animator"> The component Animator of a player. </param>
+    /// <returns> The answer if a specific animation is playing. </returns>
     public bool AnimatorIsPlaying(string name, Animator animator)
     {
         return AnimatorIsPlaying(animator) && animator.GetCurrentAnimatorStateInfo(0).IsName(name);
     }
 
+    /// <summary>
+    /// Executes the flip of player when called.
+    /// </summary>
     public void Flip()
     {
         facingRight = !facingRight;
@@ -120,34 +158,63 @@ public class PlayerController : MonoBehaviour
         transform.localScale = transformScale;
     }
 
+    /// <summary>
+    /// Changes the health of player, respecting the maximum health.
+    /// </summary>
+    /// <remarks> 
+    /// <para> Positive amounts increases health and negative amounts decreases it. </para>
+    /// <para> If amount it is less than zero, the player flash. If health of player expires, the player is destroyed. </para>
+    /// <para> This method can be override in subclasses. </para>
+    /// </remarks>
+    /// <param name = "amount"> A integer number, the amount of health to add or remove. </para>
     public virtual void ChangeHealth(int amount)
     {
+        Debug.Log(isInvincible); 
         if (amount < 0) //want to take life
         {
             if (isInvincible)
                 return;
-            
-            StartCoroutine(AnimateDamage());
-            isInvincible = true;    
-            Invoke("ResetInvincibility", invincibleTimer);
+
+            isInvincible = true;
+
+            FlashPlayer();
         }
         
         //The first value it is between the second and third
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth); 
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+
+        DestroyPlayerDead();
     }
 
-    /* Flash the Player */
+    void FlashPlayer()
+    {
+        StartCoroutine(AnimateDamage());
+    }
+
+    void DestroyPlayerDead()
+    {
+        if (health == 0)
+        {
+            //To Implement Fade Out later
+            Destroy(gameObject);
+        }
+
+    }
+
+    /* Flash the Player for a while */
     IEnumerator AnimateDamage()
     {
-        for (int i = 0; i < invincibleTimer; i++)
+        for (int i = 0; i < invincibleTimer; i++) 
         {
             Debug.Log("Animate Damage");
-            mainRenderer.enabled = true;
+            gameObject.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(0.1f);
-            mainRenderer.enabled = false;
+            gameObject.GetComponent<Renderer>().enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
-        mainRenderer.enabled = true;
+        gameObject.GetComponent<Renderer>().enabled = true;
+        
+        ResetInvincibility();
     }
 
     void ResetInvincibility()

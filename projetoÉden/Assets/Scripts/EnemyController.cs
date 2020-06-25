@@ -2,39 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <inheritdoc/>
+/// <summary>
+/// Controls the collision with the warrior, causing damage on enemy or warrior, and alternatives movements
+/// </summary>
 public class EnemyController : PlayerController
 {
-    public int damage;
-    public int hit;
+    public int damage; //to attack warrior
+    public int hit; //to attack enemy
+
     /* Time of Movement */
     public float changeTime;
-    private float timer;
+    float timer;
 
     int direction = 1;
 
-    void Start()
-    {
-        mainRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    protected void OnCollisionEnter2D(Collision2D other)
+    /// <summary>
+    /// Sent when an incoming collider makes contact with this object's collider (2D physics only).
+    /// </summary>
+    /// <remarks> If the warrior is attacking, causes damage on enemy, else causes damage on warrior.</remarks>
+    /// <param name="other">The Collision2D data associated with this collision.</param>
+    void OnCollisionEnter2D(Collision2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         
         if (player != null)
         {
-            Debug.Log("I'm Here");
-            if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
+            if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) 
+            && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
             {
                 player.ChangeHealth(-damage);
             }
             else
             {
-                ChangeHealth(-hit);   //Change this after
+                ChangeHealth(-hit); //Change this after
             } 
         } 
     }
 
+    /// <summary>
+    /// Controls the movement of enemie, which moves all the time, flipping when collides with block.
+    /// </summary>
+    /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
     public override void Movement(Rigidbody2D rigidbody2D)
     {
         rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
@@ -46,15 +55,12 @@ public class EnemyController : PlayerController
         }
     }
 
-    public override void ChangeHealth(int amount)
+    /// <summary>
+    /// Controls the movement of enemie, which moves always to the left.
+    /// </summary>
+    /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
+    public void MovementWithoutCollision(Rigidbody2D rigidbody2D)
     {
-        base.ChangeHealth(amount);
-
-        if (health == 0)
-        {
-            //To Implement Fade Out later
-            Destroy(gameObject);
-        }
-
+        rigidbody2D.velocity = new Vector2(-direction * speed, rigidbody2D.velocity.y);
     }
 }

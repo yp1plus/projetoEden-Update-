@@ -33,7 +33,7 @@ public class WarriorController : PlayerController
     /// </summary>
     void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -42,8 +42,9 @@ public class WarriorController : PlayerController
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         currentHealth = maxHealth;
         numCoins.text = quantCoins.ToString();
         currentLevel = 1;
@@ -55,9 +56,7 @@ public class WarriorController : PlayerController
     void FixedUpdate()
     {
         Movement(rigidbody2D);
-        animator.SetFloat("Speed", Mathf.Abs(move)); 
         CheckCollisionForJump(rigidbody2D, animator);
-        BetterJumping(rigidbody2D);
     }
 
     /// <summary>
@@ -65,6 +64,8 @@ public class WarriorController : PlayerController
     /// </summary>
     void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(move)); 
+
         numCoins.text = quantCoins.ToString();
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -72,7 +73,7 @@ public class WarriorController : PlayerController
             Launch();
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             animator.SetTrigger("Attack");
         }
@@ -123,6 +124,18 @@ public class WarriorController : PlayerController
         ChickenShoot projectile = projectileObject.GetComponent<ChickenShoot>();
 
         projectile.Launch(new Vector2(transform.localScale.x, 0), 300);
+    }
+
+    /// <summary>
+    /// Changes the rigidbody body type to static when the coding screen it's actived. 
+    /// </summary>
+    /// <param name = "state"> A bool, whether to deactivate or activate. </param>
+    public void DeactivateMovement(bool state)
+    {
+        if (state) 
+            rigidbody2D.bodyType = RigidbodyType2D.Static;
+        else
+            rigidbody.bodyType = RigidbodyType2D.Dynamic;
     }
 
     /// <summary>

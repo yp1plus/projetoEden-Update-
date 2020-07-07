@@ -49,6 +49,18 @@ public class Mission1 : Mission
     }
 
     /// </inheritdoc>
+    public override bool NameIsCorrect(int index) 
+    {
+        return index == 3 || index == 4; //quant_galinhas or quantGalinhas
+    }
+
+    /// </inheritdoc>
+    public override bool TypeIsCorrect(int index) 
+    {
+        return index == (int) Types.INT;
+    }
+
+    /// </inheritdoc>
     public override void ExecuteCode()
     {
         if (value <= 30)
@@ -58,7 +70,7 @@ public class Mission1 : Mission
     }
 
     /// </inheritdoc>
-    public override bool AnswerCorrect(string answer)
+    public override bool AnswerIsCorrect(string answer)
     {
         bool canConvert = int.TryParse(answer, out value);
         if (canConvert)

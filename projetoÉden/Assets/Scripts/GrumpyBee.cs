@@ -19,8 +19,9 @@ public class GrumpyBee : EnemyController
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start()
+    public override void Start()
     {
+        base.Start();
         currentHealth = maxHealth;
         damage = 100;
         hit = 0; //only suffers damage when collide with a chicken

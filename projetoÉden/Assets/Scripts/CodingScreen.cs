@@ -24,7 +24,6 @@ public class CodingScreen : MonoBehaviour
     Mission[] missions = new Mission[10];
     MissionData missionData = new MissionData(); 
     enum InputTypes {type, name, value}; 
-    enum Types : ushort {STRING = 1, INT, FLOAT, BOOL, CHAR};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -41,8 +40,8 @@ public class CodingScreen : MonoBehaviour
     void Start()
     {
         missionData = MissionState.LoadFromJson();
-        missions[0] = new Mission1();
-        //missions[1] = new Mission2();
+        missions[0] = gameObject.AddComponent<Mission1>();
+        missions[1] = gameObject.AddComponent<Mission2>();
     }
 
     /// <summary>
@@ -56,22 +55,11 @@ public class CodingScreen : MonoBehaviour
         }
 
         title.text = missionData.title[WarriorController.level - 1];
-        //description.text = missionData.description[WarriorController.level - 1];
+        description.text = missionData.description[WarriorController.level - 1];
         inputName.ClearOptions();
         List<string> optionsName = missionData.inputName[WarriorController.level - 1].optionsName;
         optionsName.Insert(0, "nomeDaVariável");
         inputName.AddOptions(optionsName);
-    }
-
-    void CompareType(int index, int type){
-        if (index == type) 
-        {
-            IsCorrect((int) InputTypes.type);
-        }
-        else
-        {
-            IsWrong((int) InputTypes.type);
-        }
     }
 
     /// <summary>
@@ -80,12 +68,10 @@ public class CodingScreen : MonoBehaviour
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckType(int index)
     {
-        switch(WarriorController.level){
-            case 1:
-                CompareType(index, (int) Types.INT);
-                break;
-                    
-        }
+        if (missions[WarriorController.level - 1].TypeIsCorrect(index))
+            IsCorrect((int) InputTypes.type);
+        else
+            IsWrong((int) InputTypes.type);
     }
 
     /// <summary>
@@ -95,18 +81,10 @@ public class CodingScreen : MonoBehaviour
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckName(int index)
     {
-        switch(WarriorController.level){
-            case 1:
-                if (index == 3 || index == 4) 
-                {
-                    IsCorrect((int) InputTypes.name);
-                }
-                else
-                {
-                    IsWrong((int) InputTypes.name);
-                }
-                break;
-        }
+        if (missions[WarriorController.level - 1].NameIsCorrect(index))
+            IsCorrect((int) InputTypes.name);
+        else
+            IsWrong((int) InputTypes.name);
     }
 
     /// <summary>
@@ -130,13 +108,10 @@ public class CodingScreen : MonoBehaviour
 
             value = answer.Substring(0, position);
 
-            switch(WarriorController.level){
-                case 1:
-                    if (missions[0].AnswerCorrect(value)) IsCorrect((int) InputTypes.value);
-                    else IsWrong((int) InputTypes.value);
-
-                    break;
-            }
+            if (missions[WarriorController.level - 1].AnswerIsCorrect(answer))
+                IsCorrect((int) InputTypes.value);
+            else
+                IsWrong((int) InputTypes.value);
         }
     }
 
@@ -153,27 +128,18 @@ public class CodingScreen : MonoBehaviour
 
         OpenPanel(false);
 
-        switch(WarriorController.level)
-        {
-            case 1:
-                missions[0].ExecuteCode();
-                break;
-        }
+        missions[WarriorController.level - 1].ExecuteCode();
     }
 
-    /// <summary>
-    /// Actives the feedback correct and disables the feedback incorrect if necessary.
-    /// </summary>
-    private void IsCorrect(int inputType)
+    // Actives the feedback correct and disables the feedback incorrect if necessary.
+    void IsCorrect(int inputType)
     {
         feedbackCorrect[inputType].gameObject.SetActive(true);
         feedbackIncorrect[inputType].gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// Actives the feedback incorrect and disables the feedback correct if necessary.
-    /// </summary>
-    private void IsWrong(int inputType)
+    // Actives the feedback incorrect and disables the feedback correct if necessary.
+    void IsWrong(int inputType)
     {
         feedbackIncorrect[inputType].gameObject.SetActive(true);
         feedbackCorrect[inputType].gameObject.SetActive(false);

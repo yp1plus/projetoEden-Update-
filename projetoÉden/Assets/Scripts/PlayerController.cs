@@ -14,14 +14,13 @@ public class PlayerController : MonoBehaviour
     /* Atributes */
     public float speed = 3.0f;
     public float jumpForce = 7;
-    float jumpHeight = .4f;
     public int maxHealth = 100;
 
     /// <value> Gets the value of current health of player. </value>
     public int health { get {return currentHealth;} }
     protected int currentHealth;
 
-    float fallMultiplier = 2.5f;
+    float fallMultiplier = 6f;
     float lowJumpMultiplier = 2f;
 
     /* For Jump */
@@ -42,9 +41,17 @@ public class PlayerController : MonoBehaviour
      /* Control Invincibility Time */
     /// <value> Gets the value of a bool which controls if player are invincible. </value>
     public bool invincible {get {return isInvincible;}}
-    bool isInvincible = false;
+    bool isInvincible;
 
     float invincibleTimer = 5.0f;
+
+    Fade fade;
+
+    public virtual void Start()
+    {
+        fade = gameObject.AddComponent<Fade>();
+        isInvincible = false;
+    }
 
     /// <summary>
     /// Controls the movement of player from horizontal and up input arrows.
@@ -61,14 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            if (rigidbody2D.velocity.y > 0)
-            {
-                rigidbody2D.velocity  = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y * jumpHeight);
-            }
-        }
     }
 
     /// <summary>
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
         if (rigidbody2D.velocity.y < 0)
         {
             rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        } else if (rigidbody2D.velocity.y > 0 && Input.GetKeyUp(KeyCode.UpArrow))
+        } else if (rigidbody2D.velocity.y > 0 && Input.GetAxisRaw("Vertical") == 0)
         {
            rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
@@ -96,8 +95,6 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = 0;
             Destroy(gameObject);
-            Debug.Log("Morreu");
-            Debug.Log(currentHealth);
         }
     }
 
@@ -110,12 +107,14 @@ public class PlayerController : MonoBehaviour
     {
         Collider2D bottomHit = Physics2D.OverlapBox(groundCheck.position, range, 0, groundLayer);
 
+        BetterJumping(rigidbody2D);
+
         if (bottomHit != null)
         {
-            if (bottomHit.gameObject.tag == "Ground" && Input.GetKeyDown(KeyCode.UpArrow))
+            if (bottomHit.gameObject.tag == "Ground" && Input.GetAxisRaw("Vertical") == 1)
             {
-                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
-                animator.SetBool("isJumping", true);
+                rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                animator.SetBool("isJumping", true);    
             }
             else if (!AnimatorIsPlaying("Jump", animator))
             {
@@ -169,7 +168,6 @@ public class PlayerController : MonoBehaviour
     /// <param name = "amount"> A integer number, the amount of health to add or remove. </para>
     public virtual void ChangeHealth(int amount)
     {
-        Debug.Log(isInvincible); 
         if (amount < 0) //want to take life
         {
             if (isInvincible)
@@ -195,8 +193,7 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            //To Implement Fade Out later
-            Destroy(gameObject);
+            fade.StartFade(1); //fade out
         }
 
     }

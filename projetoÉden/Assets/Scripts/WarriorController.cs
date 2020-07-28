@@ -47,7 +47,7 @@ public class WarriorController : PlayerController
         base.Start();
         currentHealth = maxHealth;
         numCoins.text = quantCoins.ToString();
-        currentLevel = 1;
+        currentLevel = 3;
     }
 
     /// <summary>
@@ -123,7 +123,10 @@ public class WarriorController : PlayerController
 
         ChickenShoot projectile = projectileObject.GetComponent<ChickenShoot>();
 
-        projectile.Launch(new Vector2(transform.localScale.x, 0), 300);
+        if (transform.localScale.x > 0)
+            projectile.Launch(new Vector2(1, 0), 300);
+        else //never it's zero
+            projectile.Launch(new Vector2(-1, 0), 300);
     }
 
     /// <summary>
@@ -132,10 +135,19 @@ public class WarriorController : PlayerController
     /// <param name = "state"> A bool, whether to deactivate or activate. </param>
     public void DeactivateMovement(bool state)
     {
-        if (state) 
+        if (state)
             rigidbody2D.bodyType = RigidbodyType2D.Static;
         else
-            rigidbody.bodyType = RigidbodyType2D.Dynamic;
+            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    /// <summary>
+    /// Changes the warrior height and width in the same proportion.
+    /// </summary>
+    /// <param name = "scale"> A float, the scale value to change health. </param>
+    public void ChangeHeight(float scale)
+    {
+        transform.localScale = new Vector3(scale, scale, 0);
     }
 
     /// <summary>

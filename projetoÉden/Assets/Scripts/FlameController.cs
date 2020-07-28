@@ -18,11 +18,20 @@ public class FlameController : MonoBehaviour
     public void PutOut() 
     {
         fade.StartFade(1); //fade out
-        Destroy(gameObject);
     }
 
     public void Ignite()
     {
         //implement later
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        WarriorController controller = other.GetComponent<WarriorController>();
+
+        if (controller != null)
+        {
+            controller.ChangeHealth(-100);
+        }
     }
 }

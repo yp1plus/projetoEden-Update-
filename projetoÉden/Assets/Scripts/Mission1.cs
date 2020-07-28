@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// In this mission, chickens can be destroyed or created.
 /// </summary>
-public class Mission1 : Mission
+public class Mission1 : MissionVariable
 {
     int value = 0;
 
@@ -55,9 +55,9 @@ public class Mission1 : Mission
     }
 
     /// </inheritdoc>
-    public override bool TypeIsCorrect(int index) 
+    public override bool TypeIsCorrect(int index, bool isConstant) 
     {
-        return index == (int) Types.INT;
+        return index == (int) Types.INT && ConstIdentifierIsCorrect(isConstant);
     }
 
     /// </inheritdoc>

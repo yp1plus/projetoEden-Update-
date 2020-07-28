@@ -19,9 +19,11 @@ public class CodingScreen : MonoBehaviour
     public TMP_Text title;
     public TMP_Text description;
     public TMP_Dropdown inputName;
+    public TMP_InputField constIdentifier;
     public Image[] feedbackCorrect = new Image[3];
     public Image[] feedbackIncorrect = new Image[3];
     Mission[] missions = new Mission[10];
+    Mission5 mission5;
     MissionData missionData = new MissionData(); 
     enum InputTypes {type, name, value}; 
 
@@ -42,6 +44,9 @@ public class CodingScreen : MonoBehaviour
         missionData = MissionState.LoadFromJson();
         missions[0] = gameObject.AddComponent<Mission1>();
         missions[1] = gameObject.AddComponent<Mission2>();
+        missions[2] = gameObject.AddComponent<Mission3>();
+        missions[3] = gameObject.AddComponent<Mission4>();
+        missions[4] = gameObject.AddComponent<Mission5>(); 
     }
 
     /// <summary>
@@ -63,12 +68,33 @@ public class CodingScreen : MonoBehaviour
     }
 
     /// <summary>
+    /// Checks if the toggle it's checked, activating the option const.
+    /// </summary>
+    /// <param name = "isOn"> A bool, if toggle it's checked, obtained dynamycally. </param>
+    public void CheckConstIdentifier(bool isOn)
+    {
+        //Implements later verification wheter type it's correct
+        if (isOn)
+        {
+            constIdentifier.text = "const";
+        }
+        else
+        {   
+            constIdentifier.text = "";
+        }
+            
+    }
+
+    /// <summary>
     /// Checks if input it's equal as the type expected.
     /// </summary>
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckType(int index)
     {
-        if (missions[WarriorController.level - 1].TypeIsCorrect(index))
+        MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+        string _const = constIdentifier.text;
+
+        if (mission.TypeIsCorrect(index, _const == "const"))
             IsCorrect((int) InputTypes.type);
         else
             IsWrong((int) InputTypes.type);
@@ -81,10 +107,27 @@ public class CodingScreen : MonoBehaviour
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckName(int index)
     {
-        if (missions[WarriorController.level - 1].NameIsCorrect(index))
+        MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+
+        if (mission.NameIsCorrect(index))
             IsCorrect((int) InputTypes.name);
         else
             IsWrong((int) InputTypes.name);
+    }
+
+    /// <summary>
+    /// Checks if input it's correct based on the individual methods of each mission.
+    /// </summary>
+    /// <remarks> Gets the answer when the button it's clicked. </remarks>
+    /// <remarks> Treats the expression, verifying sintaxe and removing semicolon. </remarks>
+    public void CheckValue()
+    {
+        Mission5 mission = (Mission5) missions[WarriorController.level - 1];
+
+        if (mission != null && mission.AnswerIsCorrect())
+            IsCorrect((int) InputTypes.value);
+        else
+            IsWrong((int) InputTypes.value);
     }
 
     /// <summary>
@@ -98,17 +141,17 @@ public class CodingScreen : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
         {
             string value;
-            int position = answer.IndexOf(";"); //selects before the ';'
+            MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+            
+            value = Mission.RemoveSemicolon(answer);
 
-            if (position < 0) 
+            if (value == null) 
             {
                 IsWrong((int) InputTypes.value);
                 return;
             }
 
-            value = answer.Substring(0, position);
-
-            if (missions[WarriorController.level - 1].AnswerIsCorrect(answer))
+            if (mission.AnswerIsCorrect(value))
                 IsCorrect((int) InputTypes.value);
             else
                 IsWrong((int) InputTypes.value);
@@ -120,10 +163,19 @@ public class CodingScreen : MonoBehaviour
     /// </summary>
     public void Exit()
     {
-        for (int i = 0; i < 3; i++)
+        Debug.Log(WarriorController.level);
+        if (WarriorController.level == 5)
         {
-            if (!feedbackCorrect[i].IsActive())
+            if(!feedbackCorrect[2].IsActive()) //just the third feedback needs to appear
                 return;
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (!feedbackCorrect[i].IsActive())
+                    return;
+            }
         }
 
         OpenPanel(false);

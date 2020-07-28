@@ -2,26 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mission2 : Mission
+public class Mission2 : MissionVariable
 {
-    FlameController flame;
     int indexName = 0; //which name was chosed
-
-    void Start()
-    {
-        flame = gameObject.AddComponent<FlameController>();
-    }
 
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        flame.PutOut();
+        GameObject flame = GameObject.FindGameObjectWithTag("Fire");
+        flame.GetComponent<FlameController>().PutOut();
     }
 
     /// </inheritdoc>
-    public override bool TypeIsCorrect(int index)
+    public override bool TypeIsCorrect(int index, bool isConstant)
     {
-        return  index == (int) Types.BOOL;
+        return  index == (int) Types.BOOL && ConstIdentifierIsCorrect(isConstant);
     }
 
     /// </inheritdoc>

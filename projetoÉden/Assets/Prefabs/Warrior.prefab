@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5838485059074037618}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: CheckGround
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3898237660830411847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65, y: -3.26, z: 0}
+  m_LocalPosition: {x: -0.65, y: -3.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8995495766465094085}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4658735403240252578}
   - component: {fileID: 1417442085}
   - component: {fileID: 2132743921304769263}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Warrior
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: a8574349ce669dd4cbb2d946d8241450, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -170,13 +170,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 10
+  jumpForce: 7
   maxHealth: 100
   groundCheck: {fileID: 5838485059074037618}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  range: {x: -3, y: 1, z: 0}
+  range: {x: -3, y: 0.3, z: 0}
   numCoins: {fileID: 0}
   chickenShoot: {fileID: 0}
 --- !u!82 &1417442085

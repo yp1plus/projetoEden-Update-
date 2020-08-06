@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChickenEnemy : EnemyController
 {
-
     private Renderer mainRenderer;
     // Start is called before the first frame update
     void Start()

@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 56db390004e5c334891f39f82e59f855
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8196008304599119120
+    second: oie_transparent (2)_0
+  - first:
+      213: -8988851225638859367
+    second: oie_transparent (2)_1
+  - first:
+      213: 5755448263252899586
+    second: oie_transparent (2)_2
+  - first:
+      213: 6174085179262429561
+    second: oie_transparent (2)_3
+  - first:
+      213: -5629315579135781667
+    second: oie_transparent (2)_4
+  - first:
+      213: 639772817004580871
+    second: oie_transparent (2)_5
+  - first:
+      213: 6358128163004713411
+    second: oie_transparent (2)_6
+  - first:
+      213: -227824353759635094
+    second: oie_transparent (2)_7
+  - first:
+      213: 1065297983244655618
+    second: oie_transparent (2)_8
+  - first:
+      213: -5627377984247223272
+    second: oie_transparent (2)_9
+  - first:
+      213: -8927919199416209625
+    second: oie_transparent (2)_10
+  - first:
+      213: -6166593617102398364
+    second: oie_transparent (2)_11
+  - first:
+      213: 3288374817920905276
+    second: oie_transparent (2)_12
+  - first:
+      213: -6237454520142519789
+    second: oie_transparent (2)_13
+  - first:
+      213: 3716975144023906929
+    second: oie_transparent (2)_14
+  - first:
+      213: -3816869198507570058
+    second: oie_transparent (2)_15
+  - first:
+      213: -8608561165051071606
+    second: oie_transparent (2)_16
+  - first:
+      213: -5747751669062867444
+    second: oie_transparent (2)_17
+  - first:
+      213: 8970602598412228476
+    second: oie_transparent (2)_18
+  - first:
+      213: 6443400486966165060
+    second: oie_transparent (2)_19
+  - first:
+      213: 7347861848166225250
+    second: oie_transparent (2)_20
+  - first:
+      213: 8538641284064293233
+    second: oie_transparent (2)_21
+  - first:
+      213: 1248327226117752738
+    second: oie_transparent (2)_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: oie_transparent (2)_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 92
+        width: 35
+        height: 31
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.49999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01538c3f0221eb170800000000000000
+      internalID: 8196008304599119120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 92
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d06fc6f6f214380800000000000000
+      internalID: -8988851225638859367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 92.25
+        width: 39
+        height: 30.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207f356a3b57fdf40800000000000000
+      internalID: 5755448263252899586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 92.25
+        width: 39
+        height: 30.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979e0f242c1cea550800000000000000
+      internalID: 6174085179262429561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 92.25
+        width: 39
+        height: 30.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd41a016e47a0e1b0800000000000000
+      internalID: -5629315579135781667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 92.25
+        width: 39
+        height: 30.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7005286ccfde0e800800000000000000
+      internalID: 639772817004580871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 61
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c98d40a0eb9c3850800000000000000
+      internalID: 6358128163004713411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oie_transparent (2)_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 61
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6959f215fa96dcf0800000000000000
+      internalID: -227824353759635094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

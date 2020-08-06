@@ -15,7 +15,9 @@ public class EnemyController : PlayerController
     public float changeTime;
     float timer;
 
-    int direction = 1;
+    bool isInCorner = false;
+
+    int direction = -1;
 
     /// <summary>
     /// Sent when an incoming collider makes contact with this object's collider (2D physics only).
@@ -38,6 +40,10 @@ public class EnemyController : PlayerController
                 ChangeHealth(-hit); //Change this after
             } 
         } 
+        else if (other.gameObject.tag == "Corner") 
+        {
+            isInCorner = true;
+        }
     }
 
     /// <summary>
@@ -48,10 +54,11 @@ public class EnemyController : PlayerController
     {
         rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
 
-        if (timer < 0) //if collide with block
+        if (isInCorner) //if collide with block
         {
             direction = -direction;
             Flip();
+            isInCorner = false;
         }
     }
 

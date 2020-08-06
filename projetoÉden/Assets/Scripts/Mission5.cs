@@ -6,31 +6,44 @@ using TMPro;
 public class Mission5 : Mission
 {
     GameObject[] inputCameras; 
+    CameraController[] cameras = new CameraController[3]; 
     int quant_phases = 1;
     int i = 0;
 
+    void Start()
+    {
+        GameObject[] cameraObject = GameObject.FindGameObjectsWithTag("Camera");
+        for (int i = 0; i < 3; i++)
+        {
+            cameras[i] = cameraObject[i].GetComponent<CameraController>();
+        }
+        
+    }
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        switch(quant_phases)
+        for (int j = 0; j < 3; j++)
         {
-            case 1:
-                if (!IsSolution())
-                    Debug.Log("Erro! A câmera A99 te viu!");
-                break;
-            case 2:
-                if (!IsSolution())
-                    Debug.Log("Erro! Alguma câmera te viu!");
-                break;
+            TMP_InputField inputCamera = inputCameras[i].GetComponent<TMP_InputField>();
+
+            cameras[i].SetName(GetIdentifier(inputCamera.text));
         }
+    }
+
+    string GetIdentifier(string answer)
+    {
+        answer = Mission.RemoveSemicolon(answer);
+        answer = answer.Trim(); //removes whitespaces
+        answer = answer.Trim('\"'); //removes the double quotes
+
+        return answer;
     }
     
     /* Verifies if the answer it's compilable and if it's one of options */
     bool IsValid(string answer)
     {
-        answer = Mission.RemoveSemicolon(answer);
-        answer = answer.Trim(); //removes whitespaces
-        return answer == @"""A99""" || answer == @"""A98""" || answer == @"""A97""";
+        answer = GetIdentifier(answer);
+        return answer == "A99" || answer == "A98" || answer == "A97";
     }
 
     /// </inheritdoc>

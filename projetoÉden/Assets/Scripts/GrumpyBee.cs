@@ -15,10 +15,7 @@ public class GrumpyBee : EnemyController
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
     
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
+    ///</inheritdoc>
     public override void Start()
     {
         base.Start();
@@ -32,7 +29,7 @@ public class GrumpyBee : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (GameObject.FindWithTag("Chicken") == null)
+        if (WarriorController.level == 2 && GameObject.FindWithTag("Chicken") == null)
         {
             MovementWithoutCollision(rigidbody2D);
         }     

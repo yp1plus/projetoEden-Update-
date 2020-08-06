@@ -9,6 +9,8 @@ TagManager:
   - Chicken
   - Fire
   - InputCamera
+  - Corner
+  - Camera
   layers:
   - Default
   - TransparentFX

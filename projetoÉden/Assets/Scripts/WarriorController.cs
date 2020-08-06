@@ -28,6 +28,8 @@ public class WarriorController : PlayerController
     public static int level { get {return currentLevel;} }
     static int currentLevel; //to be accessed by the class coding screen
 
+    public static WarriorController instance { get; private set; }
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -36,6 +38,7 @@ public class WarriorController : PlayerController
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        instance = this;
     }
 
     /// <summary>
@@ -47,7 +50,7 @@ public class WarriorController : PlayerController
         base.Start();
         currentHealth = maxHealth;
         numCoins.text = quantCoins.ToString();
-        currentLevel = 3;
+        currentLevel = 4;
     }
 
     /// <summary>
@@ -148,6 +151,18 @@ public class WarriorController : PlayerController
     public void ChangeHeight(float scale)
     {
         transform.localScale = new Vector3(scale, scale, 0);
+    }
+
+    /// <summary>
+    /// Gets the current player position.
+    /// </summary>
+    /// <returns> A Vector3, the transform position. </returns>
+    public Vector3 GetPosition()
+    {
+        if (gameObject != null)
+            return transform.position;
+        else
+            return new Vector3(0, 0, 0);
     }
 
     /// <summary>

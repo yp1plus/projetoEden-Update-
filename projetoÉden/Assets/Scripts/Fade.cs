@@ -14,19 +14,25 @@ public class Fade : MonoBehaviour
     /// <summary>
     /// Executes the fade in or out of player when called.
     /// </summary>
-    /// </param name = "type"> A int, the type (0 -> FadeIn and 1 -> FadeOut) of fade. </param>
-     /// </param name = "component"> The Renderer Object to fade. </param>
+    /// <param name = "type"> A int, the type (0 -> FadeIn and 1 -> FadeOut) of fade. </param>
+    /// <param name = "component"> The Renderer Object to fade. </param>
     public void StartFade(int type)
     {
         if (type == 0)
-            StartCoroutine(FadeIn());
+        {
+            if (renderer.material.color.a <= 0.05f)
+                StartCoroutine(FadeIn());
+        }
         else if (type == 1)
-            StartCoroutine(FadeOut());
+        {
+            if (renderer.material.color.a > 0.05f)
+                StartCoroutine(FadeOut());
+        }
     }
 
     IEnumerator FadeIn()
     {
-        for (float f = 0.05f; f <=1; f += 0.05f){
+        for (float f = 0; f <=1; f += 0.05f){
             Color color = renderer.material.color;
             color.a = f; //Alpha component of the color (0 is transparent, 1 is opaque)
             renderer.material.color = color;
@@ -43,6 +49,6 @@ public class Fade : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        Destroy(gameObject);
+        transform.position = new Vector3(transform.position.x, -27, transform.position.z);
     } 
 }

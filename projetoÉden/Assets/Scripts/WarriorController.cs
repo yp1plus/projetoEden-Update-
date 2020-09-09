@@ -28,7 +28,15 @@ public class WarriorController : PlayerController
     public static int level { get {return currentLevel;} }
     static int currentLevel; //to be accessed by the class coding screen
 
+    static bool canDeactivateStone;
+
+    public static bool StoneDeactivated { get => canDeactivateStone; set => canDeactivateStone = value;} 
+
     public static WarriorController instance { get; private set; }
+
+    public GameObject flame;
+
+    bool isSubPhase = false;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -50,7 +58,9 @@ public class WarriorController : PlayerController
         base.Start();
         currentHealth = maxHealth;
         numCoins.text = quantCoins.ToString();
-        currentLevel = 4;
+        currentLevel = 0;
+        canDeactivateStone = false;
+        isSubPhase = true;
     }
 
     /// <summary>
@@ -58,8 +68,11 @@ public class WarriorController : PlayerController
     /// </summary>
     void FixedUpdate()
     {
-        Movement(rigidbody2D);
-        CheckCollisionForJump(rigidbody2D, animator);
+        if (rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
+        {
+            Movement(rigidbody2D);
+            CheckCollisionForJump(rigidbody2D, animator);
+        }
     }
 
     /// <summary>
@@ -79,6 +92,12 @@ public class WarriorController : PlayerController
         if (Input.GetKeyDown(KeyCode.X))
         {
             animator.SetTrigger("Attack");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (flame.GetComponent<Renderer>().material.color.a <= 0.05f)
+                flame.GetComponent<FlameController>().Ignite();
         }
     }
 
@@ -105,7 +124,14 @@ public class WarriorController : PlayerController
     /// </summary>
     public void GoToNextLevel()
     {
-        currentLevel++;
+        if (currentLevel != 5 || isSubPhase) //The level 5 cointains one subphase
+        {
+            currentLevel++;
+        }
+        else
+        {
+            isSubPhase = true;
+        }  
     }
 
     /// <summary>
@@ -163,6 +189,15 @@ public class WarriorController : PlayerController
             return transform.position;
         else
             return new Vector3(0, 0, 0);
+    }
+
+    /// <summary>
+    /// Sets the current player position.
+    /// </summary>
+    /// <param name = "position"> A Vector3, the new position. </param>
+    public void SetPosition(float position)
+    {
+        transform.position = new Vector3(position, transform.position.y, transform.position.z);
     }
 
     /// <summary>

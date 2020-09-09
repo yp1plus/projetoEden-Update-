@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3850800126331867135}
   - component: {fileID: 7653121500677845260}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

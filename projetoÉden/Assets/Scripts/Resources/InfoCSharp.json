@@ -1,0 +1,16 @@
+{
+    "input":[
+        {"options":[]},
+        {"options":[]},
+        {"options":[]},
+        {"options":[]},
+        {"options":[]},
+        {"options":[]},
+        {"options":["(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 10)"]},
+        {"options":["(Correr())","(Ficar() || Correr())","(!Ficar() && !Correr())","((Ficar() && Correr()) || Ficar())","((Ficar() || Correr()) || Ficar())"]},
+        {"options":["for(int i = 0; i < 6; i++)","while(HouverRocha())","for(int i = 5; i <= 0; i--)", "while(HouverVacuo())", "for(int i = 10; i >= 0; i++)"]},
+        {"options":["(int i = 0; i < 14; i++)","(int i = 0; i < 13; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 14; i++)", "(int i = 13; i >= 10; i--)"]}
+    ],
+    "resultsStructures1":["OBichoPega();", "CriarBloco();"],
+    "resultsStructures2":["OBichoCome();", null, "DestruirBloco(i, j);"]
+}

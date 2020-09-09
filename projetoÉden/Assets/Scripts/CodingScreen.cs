@@ -15,17 +15,15 @@ public class CodingScreen : MonoBehaviour
 {
     /// <value> Gets the value of static instance of the class </value>
     public static CodingScreen instance { get; private set; }
+    public Screen screen;
+    public WarriorController warrior;
     public GameObject panel;
-    public TMP_Text title;
-    public TMP_Text description;
-    public TMP_Dropdown inputName;
     public TMP_InputField constIdentifier;
-    public Image[] feedbackCorrect = new Image[3];
-    public Image[] feedbackIncorrect = new Image[3];
+    public Image[] feedbackCorrect = new Image[5];
+    public Image[] feedbackIncorrect = new Image[5];
+    int currentIndex = 0;
     Mission[] missions = new Mission[10];
-    Mission5 mission5;
-    MissionData missionData = new MissionData(); 
-    enum InputTypes {type, name, value}; 
+    public enum InputTypes {type, name, value, for1, for2}; 
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -41,12 +39,18 @@ public class CodingScreen : MonoBehaviour
     /// </summary>
     void Start()
     {
-        missionData = MissionState.LoadFromJson();
-        missions[0] = gameObject.AddComponent<Mission1>();
-        missions[1] = gameObject.AddComponent<Mission2>();
-        missions[2] = gameObject.AddComponent<Mission3>();
-        missions[3] = gameObject.AddComponent<Mission4>();
-        missions[4] = gameObject.AddComponent<Mission5>(); 
+        missions[0] = gameObject.AddComponent<Mission0>();
+        missions[1] = gameObject.AddComponent<Mission1>();
+        missions[2] = gameObject.AddComponent<Mission2>();
+        missions[3] = gameObject.AddComponent<Mission3>();
+        missions[4] = gameObject.AddComponent<Mission4>();
+        missions[5] = gameObject.AddComponent<Mission5>(); 
+        missions[6] = gameObject.AddComponent<Mission6>();
+        missions[7] = gameObject.AddComponent<Mission7>();
+        missions[8] = gameObject.AddComponent<Mission8>();
+        missions[9] = gameObject.AddComponent<Mission9>();
+        screen = gameObject.GetComponent<Screen>();
+        OpenPanel(true);
     }
 
     /// <summary>
@@ -59,12 +63,13 @@ public class CodingScreen : MonoBehaviour
            panel.gameObject.SetActive(state);
         }
 
-        title.text = missionData.title[WarriorController.level - 1];
-        description.text = missionData.description[WarriorController.level - 1];
-        inputName.ClearOptions();
-        List<string> optionsName = missionData.inputName[WarriorController.level - 1].optionsName;
-        optionsName.Insert(0, "nomeDaVariável");
-        inputName.AddOptions(optionsName);
+        if (state)
+        {
+            screen.LoadData(WarriorController.level);
+            screen.UpdateScreen(WarriorController.level);
+        }
+
+        warrior.DeactivateMovement(state);
     }
 
     /// <summary>
@@ -82,7 +87,8 @@ public class CodingScreen : MonoBehaviour
         {   
             constIdentifier.text = "";
         }
-            
+
+        CheckType(currentIndex);
     }
 
     /// <summary>
@@ -91,8 +97,10 @@ public class CodingScreen : MonoBehaviour
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckType(int index)
     {
-        MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+        MissionVariable mission = (MissionVariable) missions[WarriorController.level];
         string _const = constIdentifier.text;
+
+        currentIndex = index;
 
         if (mission.TypeIsCorrect(index, _const == "const"))
             IsCorrect((int) InputTypes.type);
@@ -107,7 +115,7 @@ public class CodingScreen : MonoBehaviour
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckName(int index)
     {
-        MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+        MissionVariable mission = (MissionVariable) missions[WarriorController.level];
 
         if (mission.NameIsCorrect(index))
             IsCorrect((int) InputTypes.name);
@@ -122,12 +130,50 @@ public class CodingScreen : MonoBehaviour
     /// <remarks> Treats the expression, verifying sintaxe and removing semicolon. </remarks>
     public void CheckValue()
     {
-        Mission5 mission = (Mission5) missions[WarriorController.level - 1];
+        Mission5 mission = (Mission5) missions[WarriorController.level];
 
         if (mission != null && mission.AnswerIsCorrect())
             IsCorrect((int) InputTypes.value);
         else
             IsWrong((int) InputTypes.value);
+    }
+
+    /// <summary>
+    /// Checks if statement it's correct based on the individual methods of each mission.
+    /// </summary>
+    /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
+    public void CheckStatement(int index)
+    {
+        MissionStructure mission =  (MissionStructure) missions[WarriorController.level];
+
+        if (mission != null && mission.StatementIsCorrect(index))
+        {
+            if (WarriorController.level < 9)
+                IsCorrect((int) InputTypes.value);
+            else
+                IsCorrect((int) InputTypes.for1);
+        }    
+        else
+        {
+            if (WarriorController.level < 9)
+                IsWrong((int) InputTypes.value);
+            else
+                IsWrong((int) InputTypes.for1);
+        }
+    }
+
+    /// <summary>
+    /// Checks if a second statement it's correct especifically in mission 9.
+    /// </summary>
+    /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
+    public void CheckStatement2(int index)
+    {
+        Mission9 mission =  (Mission9) missions[WarriorController.level];
+
+        if (mission != null && mission.Statement2IsCorrect(index))
+            IsCorrect((int) InputTypes.for2);
+        else
+            IsWrong((int) InputTypes.for2);
     }
 
     /// <summary>
@@ -141,7 +187,7 @@ public class CodingScreen : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
         {
             string value;
-            MissionVariable mission = (MissionVariable) missions[WarriorController.level - 1];
+            MissionVariable mission = (MissionVariable) missions[WarriorController.level];
             
             value = Mission.RemoveSemicolon(answer);
 
@@ -163,13 +209,7 @@ public class CodingScreen : MonoBehaviour
     /// </summary>
     public void Exit()
     {
-        Debug.Log(WarriorController.level);
-        if (WarriorController.level == 5)
-        {
-            if(!feedbackCorrect[2].IsActive()) //just the third feedback needs to appear
-                return;
-        }
-        else
+        if (WarriorController.level < 5)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -177,10 +217,20 @@ public class CodingScreen : MonoBehaviour
                     return;
             }
         }
+        else if (WarriorController.level < 9)
+        {
+            if(!feedbackCorrect[(int) InputTypes.value].IsActive()) //just the third feedback needs to appear
+                return;
+        }
+        else if (WarriorController.level == 9)
+        {
+            if(!feedbackCorrect[(int) InputTypes.for1].IsActive() || !feedbackCorrect[(int) InputTypes.for2].IsActive())
+                return;
+        }
 
         OpenPanel(false);
 
-        missions[WarriorController.level - 1].ExecuteCode();
+        missions[WarriorController.level].ExecuteCode();
     }
 
     // Actives the feedback correct and disables the feedback incorrect if necessary.

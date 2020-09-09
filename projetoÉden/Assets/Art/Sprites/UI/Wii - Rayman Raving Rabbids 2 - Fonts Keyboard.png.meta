@@ -1,0 +1,1219 @@
+fileFormatVersion: 2
+guid: 4c6c2597a60aa4e48a0f22d618cebeed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5485404409266507181
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_0
+  - first:
+      213: 6743833285246929909
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_1
+  - first:
+      213: 5842949390829960403
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_2
+  - first:
+      213: -1639726937136101795
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_3
+  - first:
+      213: 4947038765600728438
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_4
+  - first:
+      213: -6613207542271950242
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_5
+  - first:
+      213: 2813413301315499721
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_6
+  - first:
+      213: -4953713196139620515
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_7
+  - first:
+      213: -5344042780577010669
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_8
+  - first:
+      213: -6199911043762962277
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_9
+  - first:
+      213: -7728872370228632987
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_10
+  - first:
+      213: -9047627999993711624
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_11
+  - first:
+      213: 2469489351842131736
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_12
+  - first:
+      213: -5384636925892869041
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_13
+  - first:
+      213: -1679780293442297504
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_14
+  - first:
+      213: 3471340236347437262
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_15
+  - first:
+      213: -9006076971112442510
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_16
+  - first:
+      213: 900140730619024845
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_17
+  - first:
+      213: 1845068850206932145
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_18
+  - first:
+      213: -885182498649399273
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_19
+  - first:
+      213: 4064869035794520611
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_20
+  - first:
+      213: 6218890648239903953
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_21
+  - first:
+      213: 7401287933059769984
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_22
+  - first:
+      213: 6682314277271257703
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_23
+  - first:
+      213: -970486516781519230
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_24
+  - first:
+      213: 7977051453985424229
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_25
+  - first:
+      213: -8668079666974106207
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_26
+  - first:
+      213: -6414234240360013053
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_27
+  - first:
+      213: -6710271175941044237
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_28
+  - first:
+      213: 5570744185304934644
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_29
+  - first:
+      213: -7824599975123593871
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_30
+  - first:
+      213: 3778922804336300627
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_31
+  - first:
+      213: 5717997912546455770
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_32
+  - first:
+      213: -4779234595059281813
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_33
+  - first:
+      213: -1937429777874860049
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_34
+  - first:
+      213: 5022284756644896882
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_35
+  - first:
+      213: -4842717558821971484
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_36
+  - first:
+      213: -2345897663445943165
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_37
+  - first:
+      213: 220846172309326222
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_38
+  - first:
+      213: 136612460880906930
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_39
+  - first:
+      213: -5248930495097542774
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_40
+  - first:
+      213: -4351501825246806605
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_41
+  - first:
+      213: 2799967201707495455
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_42
+  - first:
+      213: -4327443244676207092
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_43
+  - first:
+      213: 6436911923010324211
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_44
+  - first:
+      213: 1706393853438007989
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_45
+  - first:
+      213: -8622838940784405348
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_46
+  - first:
+      213: -2390780250201135135
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_47
+  - first:
+      213: 2925736724987455029
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_48
+  - first:
+      213: 9130731552061006218
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_49
+  - first:
+      213: -5175078843991504643
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_50
+  - first:
+      213: -4553787454624031420
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_51
+  - first:
+      213: 2478777188611336168
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_52
+  - first:
+      213: 170747618028375396
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_0
+  - first:
+      213: -8614210428027581520
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_1
+  - first:
+      213: 2975265251794752282
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_2
+  - first:
+      213: -7549641960227273779
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_3
+  - first:
+      213: 1767766341510517599
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_4
+  - first:
+      213: 354077994926012221
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_5
+  - first:
+      213: -8455031042750824089
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_6
+  - first:
+      213: -8722522144382998651
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_7
+  - first:
+      213: -6833552885809887926
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_8
+  - first:
+      213: 520749405874098007
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_9
+  - first:
+      213: -43249280192688122
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_11
+  - first:
+      213: 3172890271410894123
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_12
+  - first:
+      213: 2904868904524653372
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_13
+  - first:
+      213: -734033212334452472
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_14
+  - first:
+      213: 2794580484390093645
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_15
+  - first:
+      213: 8366695457825616370
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_16
+  - first:
+      213: 5634532464367630016
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_17
+  - first:
+      213: 8747972257238829407
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_18
+  - first:
+      213: 7570761314646070429
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_19
+  - first:
+      213: 4070359306043750789
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_20
+  - first:
+      213: -4997255627236903127
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_22
+  - first:
+      213: 5964409707551638547
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_23
+  - first:
+      213: 8780281886251400716
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_24
+  - first:
+      213: 4963952424732808487
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_25
+  - first:
+      213: 6763995921251830179
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_26
+  - first:
+      213: 8476436293638171747
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_27
+  - first:
+      213: -2314174169035212378
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_28
+  - first:
+      213: 1673450454274924013
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_29
+  - first:
+      213: 2293014882683101386
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_30
+  - first:
+      213: 298241997882837706
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_31
+  - first:
+      213: -8364908166494947353
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_33
+  - first:
+      213: -4022008014788156375
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_34
+  - first:
+      213: -7925941901116265590
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_35
+  - first:
+      213: 3690947263301416141
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_36
+  - first:
+      213: -8852914725276131821
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_37
+  - first:
+      213: 862109492270747116
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_38
+  - first:
+      213: -8845091775249391612
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_39
+  - first:
+      213: 8058492946431108346
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_40
+  - first:
+      213: -4844692674575587967
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_41
+  - first:
+      213: -2849002231757698138
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_42
+  - first:
+      213: -3891690756743287232
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_43
+  - first:
+      213: 88981764327568529
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_44
+  - first:
+      213: -3031616983351097646
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_45
+  - first:
+      213: 2098589411974390276
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_46
+  - first:
+      213: 570688521674850868
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_47
+  - first:
+      213: -4898152183482315445
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_48
+  - first:
+      213: 7396385588769573988
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_49
+  - first:
+      213: 3939348390985938062
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_50
+  - first:
+      213: 2981468243647532466
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_51
+  - first:
+      213: -6013404555256622448
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_52
+  - first:
+      213: -5632674167949359095
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_53
+  - first:
+      213: -6199734198432874510
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_54
+  - first:
+      213: 8498893774686335060
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_55
+  - first:
+      213: 1688745761901500535
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_56
+  - first:
+      213: 4542168938681735510
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_57
+  - first:
+      213: -5865507294349657398
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_58
+  - first:
+      213: 1760540534530713384
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_59
+  - first:
+      213: 7896962788961312126
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_60
+  - first:
+      213: -4027976046348909997
+    second: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_61
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 211
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d43decd0e9e5200800000000000000
+      internalID: 170747618028375396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 211
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb43f8714d247880800000000000000
+      internalID: -8614210428027581520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 211
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a131acd9bf34a4920800000000000000
+      internalID: 2975265251794752282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 211
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3054b03a84a3790800000000000000
+      internalID: -7549641960227273779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 211
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5350af1f1e588810800000000000000
+      internalID: 1767766341510517599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 212
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37f8567f00f9e400800000000000000
+      internalID: 354077994926012221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 209
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761cfe33012b9aa80800000000000000
+      internalID: -8455031042750824089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 210
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587a296d25063f680800000000000000
+      internalID: -8722522144382998651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_8
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 210
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45c4772bd75a21a0800000000000000
+      internalID: -6833552885809887926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_9
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 211
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f0f1a53d21a3700800000000000000
+      internalID: 520749405874098007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 162
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562e03257878db490800000000000000
+      internalID: -7728872370228632987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 162
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600d2514209566ff0800000000000000
+      internalID: -43249280192688122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 162
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b253db224ee580c20800000000000000
+      internalID: 3172890271410894123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 163
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c332545c0ea205820800000000000000
+      internalID: 2904868904524653372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_14
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 163
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8015775bea030d5f0800000000000000
+      internalID: -734033212334452472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_15
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 162
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d438f4ce42858c620800000000000000
+      internalID: 2794580484390093645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_16
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 163
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1f193b0397c1470800000000000000
+      internalID: 8366695457825616370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 161
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6f90e5c61e13e40800000000000000
+      internalID: 5634532464367630016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_18
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 163
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5941b15b6a076970800000000000000
+      internalID: 8747972257238829407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_19
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 162
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d949fb6dd4fb01960800000000000000
+      internalID: 7570761314646070429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 116
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58971f02932dc7830800000000000000
+      internalID: 4070359306043750789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_21
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 115
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d496517810fd4650800000000000000
+      internalID: 6218890648239903953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_22
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 115
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927f8becb7e26aab0800000000000000
+      internalID: -4997255627236903127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 115
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314c1893707d5c250800000000000000
+      internalID: 5964409707551638547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_24
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 116
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ebfc90bd3d9d970800000000000000
+      internalID: 8780281886251400716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_25
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 116
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725532e1e6083e440800000000000000
+      internalID: 4963952424732808487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_26
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 116
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a90864047a8edd50800000000000000
+      internalID: 6763995921251830179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_27
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 115
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c288326e952a570800000000000000
+      internalID: 8476436293638171747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_28
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 114
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a97542bad662efd0800000000000000
+      internalID: -2314174169035212378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 115
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedd544625a493710800000000000000
+      internalID: 1673450454274924013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 66
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0a20b03ec62df10800000000000000
+      internalID: 2293014882683101386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_31
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 67
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acac8e45481932400800000000000000
+      internalID: 298241997882837706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_32
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 67
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0b1c36ec86a5f40800000000000000
+      internalID: 5717997912546455770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_33
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 67
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7fd4d7750e9eb80800000000000000
+      internalID: -8364908166494947353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_34
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 67
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92427c22505fe28c0800000000000000
+      internalID: -4022008014788156375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_35
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 66
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ba49995d5610290800000000000000
+      internalID: -7925941901116265590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Rayman Raving Rabbids 2 - Fonts Keyboard_36
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 65
+        width: 95
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4f7c10bf0e83330800000000000000
+      internalID: 3690947263301416141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

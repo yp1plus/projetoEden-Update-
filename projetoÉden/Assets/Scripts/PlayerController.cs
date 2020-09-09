@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     public virtual void Movement(Rigidbody2D rigidbody2D)
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-
+        
         rigidbody2D.velocity = new Vector2(moveInput * speed, rigidbody2D.velocity.y);
 
         if (moveInput > 0 && !facingRight || moveInput < 0 && facingRight)
@@ -111,14 +111,14 @@ public class PlayerController : MonoBehaviour
 
         if (bottomHit != null)
         {
-            if (bottomHit.gameObject.tag == "Ground" && Input.GetAxisRaw("Vertical") == 1)
+            if ((bottomHit.gameObject.tag == "Ground" || bottomHit.gameObject.tag == "Block") && Input.GetAxisRaw("Vertical") == 1)
             {
                 rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 animator.SetBool("isJumping", true);    
             }
             else if (!AnimatorIsPlaying("Jump", animator))
             {
-                animator.SetBool("isJumping", false);
+                animator.SetBool("isJumping", false);   
             }
         }
     }
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <param name = "animator"> The component Animator of a player. </param>
     /// <returns> The answer if any animation is playing. </returns>
-    private bool AnimatorIsPlaying(Animator animator)
+    public static bool AnimatorIsPlaying(Animator animator)
     {
         return animator.GetCurrentAnimatorStateInfo(0).length >
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime;

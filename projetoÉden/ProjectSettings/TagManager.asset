@@ -11,6 +11,14 @@ TagManager:
   - InputCamera
   - Corner
   - Camera
+  - GroundDynamic
+  - Condition
+  - Bug
+  - Block
+  - Grid
+  - Wall
+  - Particle
+  - Name
   layers:
   - Default
   - TransparentFX

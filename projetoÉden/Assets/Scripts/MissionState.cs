@@ -7,9 +7,9 @@ using UnityEngine;
 /// </summary>
 public class MissionState : MonoBehaviour
 {
-    [SerializeField] MissionData missionData = new MissionData();
+    [SerializeField] static MissionData missionData = new MissionData();
 
-    static string path = @"C:\Users\Yure Pablo\Documents\Graduação BCC USP\IC\projetoEden-Update-\projetoÉden\Assets\Scripts\Resources";
+    const string path = @"C:\Users\Yure Pablo\Documents\Graduação BCC USP\IC\projetoEden-Update-\projetoÉden\Assets\Scripts\Resources";
     static string data;
 
     void Start()
@@ -31,7 +31,20 @@ public class MissionState : MonoBehaviour
     public static MissionData LoadFromJson()
     {
         data = System.IO.File.ReadAllText(path + "/MissionData.json");
-        return JsonUtility.FromJson<MissionData>(data);
+        missionData = JsonUtility.FromJson<MissionData>(data);
+
+        return missionData;
+    }
+
+    /// <summary>
+    /// Overload data from a JSON according specificies of each programming language.
+    /// </summary>
+    /// <param "mission"> An Object MissionData with the original data </param>
+    /// <param "fileName"> A JSON with the new data </param>
+    public static void OverloadFromJson(MissionData mission, string fileName)
+    {
+        data = System.IO.File.ReadAllText(path + "/" + fileName);
+        JsonUtility.FromJsonOverwrite(data, mission);
     }
 }
 
@@ -40,11 +53,18 @@ public class MissionData
 {
     public List<string> title = new List<string>();
     public List<string> description = new List<string>();
-    public List<OptionData> inputName = new List<OptionData>();
+    /* Dropdown modificable of each mission */
+    public List<OptionData> input = new List<OptionData>();
+    /* Refers to level 9 */
+    public List<string> options_for2 = new List<string>();
+    /* Dropdown relative to data type input */
+    public List<OptionData> inputTypes = new List<OptionData>();
+    public List<string> resultsStructures1 = new List<string>();
+    public List<string> resultsStructures2 = new List<string>();
 }
 
 [System.Serializable]
 public class OptionData
 {
-    public List<string> optionsName = new List<string>();
+    public List<string> options = new List<string>();
 }

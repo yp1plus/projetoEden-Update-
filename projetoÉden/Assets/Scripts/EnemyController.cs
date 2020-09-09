@@ -66,8 +66,9 @@ public class EnemyController : PlayerController
     /// Controls the movement of enemie, which moves always to the left.
     /// </summary>
     /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
-    public void MovementWithoutCollision(Rigidbody2D rigidbody2D)
+    /// <param name = "direction"> A integer, the movement direction. </param>
+    public void MovementWithoutCollision(Rigidbody2D rigidbody2D, int direction)
     {
-        rigidbody2D.velocity = new Vector2(-direction * speed, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
     }
 }

@@ -1,1 +1,33 @@
-{"title":["I: Destruir Inimigos","II: Apagar Chama","III: Diminuir Altura","IV: Upar Espada","V: Enganar Câmeras"],"description":["Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Lembre-se, com grandes poderes vêm grandes responsabilidades.","Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la, controlando uma variável. Vá em frente!","Mesmo abaixado, essa barreira praticamente transpartente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, instanciando uma variável chamada alturaJogador em centímetros. Sabe-se que sua altura total é de 119,5 cm, a altura dos seus membros superiores é 77,4 cm e a barreira tem 442,6 cm de altura. ","É hora do easter egg! Descubra o código secreto e o torne secreto para upar sua espada em 50% para sempre. baseado num ditado muito conhecido na cidade: \"Aquele que deixa tudo para trás, ouve o clamor de seu povo e reage, é grande.\" ","Engane as câmeras!"],"inputName":[{"optionsName":["2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},{"optionsName":["chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},{"optionsName":["altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},{"optionsName":["CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]},{"optionsName":["CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]}]}
+{
+    "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Diminuir Altura","IV: Upar Espada","V: Enganar Câmeras", "VI: Parar Blocos", "VII: Correr do Bicho", "VIII: Construir Caminho", "IX: Quebrar a 4ª Parede"],
+    "description":["É hora de criar seu nome!",
+        "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Lembre-se, com grandes poderes vêm grandes responsabilidades.",
+        "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la, controlando uma variável. Vá em frente!",
+        "Mesmo abaixado, essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, instanciando uma variável chamada alturaJogador em centímetros. Sabe-se que sua altura total é de 119,5 cm, a altura dos seus membros superiores é 77,4 cm e a barreira tem 442,6 cm de altura. ",
+        "É hora do easter egg! Descubra o código secreto e o torne secreto para upar sua espada em 50% para sempre. baseado num ditado muito conhecido na cidade: \"Aquele que deixa tudo para trás, ouve o clamor de seu povo e reage, é grande.\" ",
+        "Engane as câmeras!",
+        "Pare os blocos!",
+        "Corra do bicho!",
+        "Construa o caminho!",
+        "Quebre a parede!"
+    ],
+    "input":[{"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
+    {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
+    {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
+    {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]},
+    {"options":[null,null,null,null,null]},
+    {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 10)"]},
+    {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},
+    {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(houverRocha())","for(int i = 5; i <= 0; i--)", "while(houverVacuo())", "for(int i = 10; i >= 0; i++)"]},
+    {"options":["Iteração","(int i = 0; i < 14; i++)","(int i = 0; i < 13; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 14; i++)", "(int i = 13; i >= 10; i--)"]}
+    ],
+    "options_for2":["Iteração","(int j = 0; j < 14; j++)", "(int j = 12; j >= 9; j--)", "(int j = 0; j < 13; j++)", "(float j = 0; j < 13; j++)", "(int j = 12; j <= 0; j++)"],
+    "inputTypes":[{"options":["tipoDaVariável", "char[16]", "int", "float", "bool", "char"]},
+    {"options":["tipoDaVariável", "string", "int", "float", "bool", "char"]},
+    {"options":[]},
+    {"options":["tipoDaVariável", "String", "int", "float", "boolean", "char"]}
+    ],
+    "resultsStructures1":["oBichoPega();", "criarBloco();"],
+    "resultsStructures2":["oBichoCome();", null, "destruirBloco(i, j);"]
+}

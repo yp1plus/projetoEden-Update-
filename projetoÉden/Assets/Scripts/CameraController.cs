@@ -28,22 +28,23 @@ public class CameraController : MonoBehaviour
     {
         if (isActivated && SawSomeone())
         {
-            if (originalName == GetName())
-                animator.SetTrigger("Detected");
-            else
-            {
-                GameObject obj = GameObject.Find(originalName);
-                if (obj != null)
-                {
-                    CameraController camera = obj.GetComponent<CameraController>();
-                    camera.ForceDetection();
-                }
-            }
+            GameObject[] obj = GameObject.FindGameObjectsWithTag("Camera");
 
-            isActivated = false;
+            for(int i = 0; i < 3; i++) //O(3)
+            {
+                 CameraController camera = obj[i].GetComponent<CameraController>();
+
+                if (camera.GetName() == originalName)
+                {
+                    camera.AnimateDetection();
+                }
+            } 
+            
+            isActivated = false;  //only executes once  
         }
     }
 
+    //Considers a field of vision of two horizontal positions 
     bool SawSomeone()
     {
         double horizontalPosition = WarriorController.instance.GetPosition().x;
@@ -52,18 +53,28 @@ public class CameraController : MonoBehaviour
         return horizontalPosition <= transform.position.x + 2 && horizontalPosition >= transform.position.x - 2;
     }
 
+    /// <summary>
+    /// Gets the camera current name.
+    /// </summary>
+    /// <returns> A string, the camera name. </returns>
     public string GetName() 
     { 
         return inputCamera.text; 
     }
 
+    /// <summary>
+    /// Sets the camera name.
+    /// </summary>
+    /// <param name = "name"> The new name. </param>
     public void SetName(string name)
     {
         inputCamera.text = name;
-        gameObject.name = name;
     }
 
-    public void ForceDetection()
+    /// <summary>
+    /// Sets camera animation to enemy detected.
+    /// </summary>
+    public void AnimateDetection()
     {
         animator.SetTrigger("Detected");
     }

@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class Mission : MonoBehaviour
 {
-    protected enum Types : ushort {STRING = 1, INT, FLOAT, BOOL, CHAR};
+    public enum Types : ushort {STRING = 1, INT, FLOAT, BOOL, CHAR};
 
     /// <summary>
     /// Executes the modifications expected after the write of code.
@@ -21,10 +21,12 @@ public abstract class Mission : MonoBehaviour
     /// <returns> A string without semicolon or null if can't remove. </returns>
     public static string RemoveSemicolon(string value)
     {
-        int position = value.IndexOf(";");
-
-        if (position < 0)
+        value = value.Trim(); //removes whitespaces
+        
+        if (!value.EndsWith(";"))
             return null;
+        
+        int position = value.IndexOf(";");
         
         return value.Substring(0, position);
     }

@@ -22,7 +22,11 @@ public class FlameController : MonoBehaviour
 
     public void Ignite()
     {
-        //implement later
+        Vector3 playerPosition = WarriorController.instance.GetPosition();
+        transform.position = new Vector3(playerPosition.x + 8, playerPosition.y, playerPosition.z); 
+
+        fade.StartFade(0); //fade in
+        Invoke("PutOut", 2);
     }
 
     void OnTriggerStay2D(Collider2D other)

@@ -31,7 +31,7 @@ public class GrumpyBee : EnemyController
     {
         if (WarriorController.level == 2 && GameObject.FindWithTag("Chicken") == null)
         {
-            MovementWithoutCollision(rigidbody2D);
+            MovementWithoutCollision(rigidbody2D, -1);
         }     
     }
 }

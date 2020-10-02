@@ -1,0 +1,17 @@
+{
+    "input":[
+        {"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
+        {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
+        {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
+        {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
+        {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]},
+        {"options":[null,null,null,null,null]},
+        {"options":["Condição", "(chamaAcesa == True):","(quantGalinhas >= 5 or codigo == '/'):","(quantGalinhas < 0 and codigo == '!'):","(alturaJogador == 0.00):","(quantGalinhas > 10):"]},
+        {"options":["(correr()):","(ficar() or Correr()):","(not ficar() and not Correr()):","((ficar() and correr()) or ficar()):","((ficar() or correr()) or ficar()):"]},
+        {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i  in range (10, 1, -1)"]},
+        {"options":["Iteração", "i in range (14):","i in range (13):","i in range (4)", "i in range (15):", "i in range (13, -1, 9):"]}
+    ],
+    "options_for2":["Iteração", "j in range (14):", "j in range (12, -1, 8):", "j in range (13):", "j in range (15):", "j in range (12, 1, 8):"],
+    "resultsStructures1":["o_bicho_pega()", "criar_bloco()"],
+    "resultsStructures2":["o_bicho_come()", null, "destruir_bloco(i, j)"]
+}

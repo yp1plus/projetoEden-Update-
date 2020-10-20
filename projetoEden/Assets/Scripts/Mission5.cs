@@ -9,18 +9,20 @@ public class Mission5 : Mission
     CameraController[] cameras = new CameraController[3]; 
     int i = 0;
 
-    void Start()
-    {
-        GameObject[] cameraObject = GameObject.FindGameObjectsWithTag("Camera");
-        for (i = 0; i < 3; i++)
-        {
-            cameras[i] = cameraObject[i].GetComponent<CameraController>();
-        }
-        
-    }
     /// </inheritdoc>
     public override void ExecuteCode()
     {
+        if (cameras[0] == null)
+        {   
+            GameObject[] cameraObject = GameObject.FindGameObjectsWithTag("Camera");
+
+            for (i = 0; i < 3; i++)
+            {
+                if (cameraObject != null)
+                    cameras[i] = cameraObject[i].GetComponent<CameraController>();
+            }
+        }
+        
         for (i = 0; i < 3; i++)
         {
             TMP_InputField inputCamera = inputCameras[i].GetComponent<TMP_InputField>();

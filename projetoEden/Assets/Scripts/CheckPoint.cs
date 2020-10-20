@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class CheckPoint : MonoBehaviour
 {
     Animator animator;
+    bool activated = false;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -22,11 +23,13 @@ public class CheckPoint : MonoBehaviour
     {
         WarriorController controller = other.GetComponent<WarriorController>();
 
-        if (controller != null)
+        if (controller != null && !activated)
         {
             MainMenu.lastCheckPointPosition = transform.position;
+            MainMenu.lastLevel = WarriorController.level;
             if (animator != null)
                 animator.SetTrigger("Activated");
+            activated = true;
         }
     }
 }

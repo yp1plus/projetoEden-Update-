@@ -9,7 +9,7 @@ public class CoinCollectible : MonoBehaviour
 {
     public AudioClip collectedClip;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         WarriorController controller = other.GetComponent<WarriorController>();
 

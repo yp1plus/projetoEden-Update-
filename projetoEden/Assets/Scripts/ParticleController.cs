@@ -52,4 +52,9 @@ public class ParticleController : MonoBehaviour
     {
         transform.localPosition = position;
     }
+
+    public void Disable()
+    {
+         renderer.enabled = false;
+    }
 }

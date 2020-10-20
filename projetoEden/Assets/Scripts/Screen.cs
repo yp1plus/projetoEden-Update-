@@ -167,7 +167,7 @@ public class Screen : MonoBehaviour
 
     void UpdateForPython()
     {
-        MissionState.OverloadFromJson(missionData, "InfoPython.json");
+        MissionState.OverloadFromJson(missionData, "InfoPython");
 
         /* Python doesn't require data type */
         components.variablesPhase.constIdentifier.SetActive(false);
@@ -182,7 +182,7 @@ public class Screen : MonoBehaviour
 
     void UpdateForCSharp()
     {
-        MissionState.OverloadFromJson(missionData, "InfoCSharp.json");
+        MissionState.OverloadFromJson(missionData, "InfoCSharp");
     }
 
     void UpdateForJava()
@@ -190,10 +190,10 @@ public class Screen : MonoBehaviour
         components.variablesPhase.constIdentifier.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "final";
     }
 
-    public void ShowGameOver()
+    public void ShowGameOver(bool state)
     {
-        if (panelGameOver != null)
-            panelGameOver.SetActive(true);
+        if (panelGameOver != null && panelGameOver.activeSelf != state)
+            panelGameOver.SetActive(state);
     }
 }
 

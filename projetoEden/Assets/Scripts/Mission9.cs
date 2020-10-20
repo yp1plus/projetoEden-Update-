@@ -105,8 +105,12 @@ public class Mission9 : MissionStructure
             //Removes a tiles row
             for (int j = width < 0 ? (widthWall-1) * sizeTile : 0; width > 0 ? (j < width * sizeTile) : (j >= (widthWall - 4) * sizeTile); j += constSumJ)
             {
-                particle.Move(new Vector3(j + ParticleController.firstPositionX, ParticleController.firstPositionY - i, 0));
-                particle.AnimateParticle();
+                if (particle != null)
+                {
+                    particle.Move(new Vector3(j + ParticleController.firstPositionX, ParticleController.firstPositionY - i, 0));
+                    particle.AnimateParticle();
+                }
+                
                 yield return new WaitForSeconds(0.5f);
                 
                 //Removes a tile 3x3 from wall 
@@ -114,10 +118,16 @@ public class Mission9 : MissionStructure
                 {
                     for (int l = 0; l < sizeTile; l++)
                     {
-                        tilemap.SetTile(new Vector3Int(l + j + firstPositionX, firstPositionY - k - i, 0), null);
+                        if (tilemap != null)
+                            tilemap.SetTile(new Vector3Int(l + j + firstPositionX, firstPositionY - k - i, 0), null);
+                        else
+                            yield break;
                     }
                 }
             }   
         }
+
+        if (particle != null)
+            particle.Disable();
     }
 }

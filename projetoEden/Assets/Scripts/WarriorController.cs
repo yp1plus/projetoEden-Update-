@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class WarriorController : PlayerController
     /// <value> Gets the current value of coins </value>
     public int coins { get { return quantCoins; } } //exemplo de get reduzido
     int quantCoins = 100;
-    public Text numCoins;
+    public TMP_Text numCoins;
 
     public GameObject chickenShoot;
 
@@ -38,7 +39,9 @@ public class WarriorController : PlayerController
 
     public GameObject flame;
 
-    public static bool isSubPhase {get; private set;} = false;
+    public static bool isSubPhase = false;
+    int quantChickens = 0;
+    public TMP_Text txtNumChickens;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -59,13 +62,36 @@ public class WarriorController : PlayerController
     {
         base.Start();
         numCoins.text = quantCoins.ToString();
+        txtNumChickens.text = quantChickens.ToString();
+        currentLevel = 0;
+        canDeactivateStone = false;
+    }
+
+    public void LoadFlame(GameObject flame)
+    {
+        this.flame = flame;
+    }
+
+    public void ResetWarriorAttributes()
+    {
         currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
-        isSubPhase = MainMenu.isSubPhase;
-        if (currentLevel != 0 && !MainMenu.debug)
-        {
-            transform.position = MainMenu.lastCheckPointPosition;
-        }
+        transform.position = MainMenu.lastCheckPointPosition;
+        currentHealth = 100;
+        transform.localScale = new Vector3(1,1,0);
+        
+        ResetInvincibility();
+        UIHealthBar.instance.ResetBar();
+        if (!facingRight)
+            Flip();
+        StartCoroutine(DelayReset());
+    }
+
+    IEnumerator DelayReset()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(0.2f);
+        isInvincible = false;
     }
 
     /// <summary>
@@ -88,21 +114,35 @@ public class WarriorController : PlayerController
         animator.SetFloat("Speed", Mathf.Abs(move)); 
 
         numCoins.text = quantCoins.ToString();
+        txtNumChickens.text = quantChickens.ToString();
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (!CodingScreen.instance.panel.activeSelf)
         {
-            Launch();
-        }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Launch();
+            }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            animator.SetTrigger("Attack");
-        }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                animator.SetTrigger("Attack");
+            }
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (flame.GetComponent<Renderer>().material.color.a <= 0.05f)
-                flame.GetComponent<FlameController>().Ignite();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (flame != null && flame.GetComponent<Renderer>().material.color.a <= 0.05f)
+                    flame.GetComponent<FlameController>().Ignite();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                ChangeHeight(transform.localScale.x + 0.2f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                ChangeHeight(transform.localScale.x - 0.2f);
+            }
         }
     }
 
@@ -117,7 +157,12 @@ public class WarriorController : PlayerController
         UIHealthBar.instance.SetValue(health);
         
         if (health == 0)
-             CodingScreen.instance.ShowGameOver();
+             CodingScreen.instance.ShowGameOver(true);
+    }
+
+    public void SubtractChicken()
+    {
+        quantChickens--;
     }
 
     /// <summary>
@@ -141,6 +186,7 @@ public class WarriorController : PlayerController
         else
         {
             isSubPhase = true;
+            Debug.Log(isSubPhase);
         }  
     }
 
@@ -149,7 +195,7 @@ public class WarriorController : PlayerController
     /// </summary>
     public void AddCoin()
     {
-        quantCoins+=1;
+        quantCoins++;
     }
     
     /// <summary>
@@ -169,6 +215,17 @@ public class WarriorController : PlayerController
     }
 
     /// <summary>
+    /// OnBecameInvisible is called when the renderer is no longer visible by any camera.
+    /// </summary>
+    void OnBecameInvisible()
+    {
+        if (gameObject != null && gameObject.GetComponent<Renderer>().enabled) //avoids to destroy the player when him are flashing 
+        {
+            ChangeHealth(-100);
+        }
+    }
+
+    /// <summary>
     /// Launches a flying chicken from hands of warrior. 
     /// </summary>
     void Launch()
@@ -179,9 +236,11 @@ public class WarriorController : PlayerController
         ChickenShoot projectile = projectileObject.GetComponent<ChickenShoot>();
 
         if (transform.localScale.x > 0)
-            projectile.Launch(new Vector2(1, 0), 300);
+            projectile.Launch(new Vector2(1, 0), 400);
         else //never it's zero
-            projectile.Launch(new Vector2(-1, 0), 300);
+            projectile.Launch(new Vector2(-1, 0), 400);
+        
+        quantChickens++;
     }
 
     /// <summary>
@@ -202,7 +261,16 @@ public class WarriorController : PlayerController
     /// <param name = "scale"> A float, the scale value to change health. </param>
     public void ChangeHeight(float scale)
     {
+        if (scale < transform.localScale.x)
+            range = new Vector3(range.x + 0.2f, range.y - 0.1f, 0);
+        else 
+            range = new Vector3(range.x - 0.2f, range.y + 0.1f, 0);
+        
+        if (scale == 1)
+            range = new Vector3(-3, 0.3f, 0);
+
         transform.localScale = new Vector3(scale, scale, 0);
+        transform.GetComponentInChildren<NameController>().ChangePositionReference(transform.localScale);
     }
 
     /// <summary>

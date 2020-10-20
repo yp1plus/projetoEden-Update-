@@ -7,16 +7,26 @@ public class FlameController : MonoBehaviour
     Fade fade;
     bool debug = true; 
 
+    public static bool canBeBurnt;
+
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         fade = gameObject.AddComponent<Fade>();
     }
 
+    void Start()
+    {
+        canBeBurnt = true;
+    }
+
     void Update() //change later
     {
         if (WarriorController.level > 2 && debug)
         {
+            GameObject flame = GameObject.FindGameObjectWithTag("Fire");
+            WarriorController.instance.LoadFlame(flame);
+            canBeBurnt = false;
             PutOut(); 
             debug = false;
         }
@@ -46,18 +56,13 @@ public class FlameController : MonoBehaviour
         Invoke("PutOut", 2);
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController controller = other.GetComponent<WarriorController>();
-        EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
 
-        if (controller != null && WarriorController.level <=2)
+        if (controller != null && canBeBurnt)
         {
             controller.ChangeHealth(-100);
-        } 
-        else if (enemy != null) 
-        {
-            enemy.ChangeHealth(-100);
         } 
     }
 }

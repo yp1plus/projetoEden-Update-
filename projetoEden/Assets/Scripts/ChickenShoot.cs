@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -18,15 +19,10 @@ public class ChickenShoot : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    void Update()
+    void OnBecameInvisible()
     {
-        if (transform.position.magnitude > 1000.0f) //destroy the object when it is away
-        {
-            Destroy(gameObject);
-        }
+        WarriorController.instance.SubtractChicken();
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -56,9 +52,9 @@ public class ChickenShoot : MonoBehaviour
         if (e != null)
         {
             e.ChangeHealth(-50);
-            e.DestroyPlayerDead();
         }
 
+        WarriorController.instance.SubtractChicken();
         Destroy(gameObject);
     }
 }

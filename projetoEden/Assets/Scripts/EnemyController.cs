@@ -54,9 +54,7 @@ public class EnemyController : PlayerController
         }
         else if (controller != null)
         {
-
             ChangeHealth(-100);
-            DestroyPlayerDead();
         }
     }
 
@@ -71,7 +69,6 @@ public class EnemyController : PlayerController
         else
         {
             ChangeHealth(-hit);
-            DestroyPlayerDead();
         } 
     }
 
@@ -90,6 +87,12 @@ public class EnemyController : PlayerController
         }
     }
 
+    public override void ChangeHealth(int amount)
+    {
+        base.ChangeHealth(amount);
+        DestroyPlayerDead();
+    }
+
 
     /// <summary>
     /// Controls the movement of enemie, which moves all the time, flipping when collides with block.
@@ -97,7 +100,8 @@ public class EnemyController : PlayerController
     /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
     public override void Movement(Rigidbody2D rigidbody2D)
     {
-        rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
+        if (rigidbody2D.bodyType != RigidbodyType2D.Static)
+            rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
 
         if (isInCorner) //if collide with block
         {
@@ -114,6 +118,7 @@ public class EnemyController : PlayerController
     /// <param name = "direction"> A integer, the movement direction. </param>
     public void MovementWithoutCollision(Rigidbody2D rigidbody2D, int direction)
     {
-        rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
+        if (rigidbody2D.bodyType != RigidbodyType2D.Static)
+            rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
     }
 }

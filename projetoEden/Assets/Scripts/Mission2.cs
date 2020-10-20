@@ -11,6 +11,8 @@ public class Mission2 : MissionVariable
     {
         GameObject flame = GameObject.FindGameObjectWithTag("Fire");
         flame.GetComponent<FlameController>().PutOut();
+        WarriorController.instance.LoadFlame(flame);
+        FlameController.canBeBurnt = false;
     }
 
     /// </inheritdoc>

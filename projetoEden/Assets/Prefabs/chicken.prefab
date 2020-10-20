@@ -11,16 +11,16 @@ GameObject:
   - component: {fileID: 6133101908205337307}
   - component: {fileID: 7553138871240238451}
   - component: {fileID: 8486814301621905612}
-  - component: {fileID: 1881302833}
   - component: {fileID: 4257185434491686481}
   - component: {fileID: 6634593549344756124}
-  m_Layer: 0
+  - component: {fileID: 2040395761}
+  m_Layer: 12
   m_Name: chicken
-  m_TagString: Chicken
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6133101908205337307
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7241154812778745495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.8, y: -4.788, z: 0}
-  m_LocalScale: {x: 6.790033, y: 6.7900324, z: 6.790033}
+  m_LocalScale: {x: -6.790033, y: 6.7900324, z: 6.790033}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 647196829
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -4315229974853958090, guid: e4eaa63de2d9e3c4a8e30e115135017a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,29 +106,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1881302833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7241154812778745495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616cb6549e9d77340baf7fb750805c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  jumpForce: 0
-  maxHealth: 100
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  range: {x: 0, y: 0, z: 0}
-  damage: 10
-  hit: 50
-  changeTime: 0
 --- !u!61 &4257185434491686481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,16 +140,28 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7241154812778745495}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &2040395761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7241154812778745495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a49f76a29a12314c80058029fc7bc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

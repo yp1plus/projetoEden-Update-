@@ -16,7 +16,12 @@ public class NameController : MonoBehaviour
         warriorController = warrior.GetComponent<WarriorController>();
         positionReferenceWarrior = warriorController.GetPosition();
         transformPosition = transform.position;
-        positionReferenceName= transform.position;
+        positionReferenceName = transform.position;
+    }
+
+    public void ChangePositionReference(Vector3 newPosition)
+    {
+        positionReferenceWarrior = newPosition;
     }
 
     // Update is called once per frame
@@ -24,9 +29,9 @@ public class NameController : MonoBehaviour
     {
         if (warriorController == null) return;
 
-        transformPosition.x = (warriorController.GetPosition().x - positionReferenceWarrior.x) + positionReferenceName.x;
-        transformPosition.y = (warriorController.GetPosition().y - positionReferenceWarrior.y) + positionReferenceName.y;
+        //transformPosition.x = (warriorController.GetPosition().x - positionReferenceWarrior.x) + positionReferenceName.x;
+        //transformPosition.y = (warriorController.GetPosition().y - positionReferenceWarrior.y) + positionReferenceName.y;
 
-        transform.position = transformPosition; 
+        //transform.position = transformPosition; 
     }
 }

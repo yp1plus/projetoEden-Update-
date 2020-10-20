@@ -9,7 +9,8 @@ public class MissionState : MonoBehaviour
 {
     [SerializeField] static MissionData missionData = new MissionData();
 
-    const string path = @"C:\Users\Yure Pablo\Documents\projetoEden-Update-\projetoEden\Assets\Scripts\Resources";
+    const string path = @"C:\Users\Yure Pablo\Documents\projetoEden-Update-\projetoEden\Assets\Resources";
+    static TextAsset jsonTextFile;
     static string data;
 
     void Start()
@@ -30,7 +31,8 @@ public class MissionState : MonoBehaviour
     /// <returns> An Object MissionData with the data </returns>
     public static MissionData LoadFromJson()
     {
-        data = System.IO.File.ReadAllText(path + "/MissionData.json");
+        jsonTextFile = Resources.Load<TextAsset>("MissionData");
+        data = jsonTextFile.ToString();
         missionData = JsonUtility.FromJson<MissionData>(data);
 
         return missionData;
@@ -43,7 +45,8 @@ public class MissionState : MonoBehaviour
     /// <param "fileName"> A JSON with the new data </param>
     public static void OverloadFromJson(MissionData mission, string fileName)
     {
-        data = System.IO.File.ReadAllText(path + "/" + fileName);
+        jsonTextFile = Resources.Load<TextAsset>(fileName);
+        data = jsonTextFile.ToString();
         JsonUtility.FromJsonOverwrite(data, mission);
     }
 }

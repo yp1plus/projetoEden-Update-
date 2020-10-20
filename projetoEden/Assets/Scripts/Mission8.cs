@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mission8 : MissionStructure
 {
@@ -41,16 +42,25 @@ public class Mission8 : MissionStructure
     IEnumerator InstatiateBlocks(int quant)
     {
         GameObject block = GameObject.FindGameObjectWithTag("Block");
-        GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(9));
+        //GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
 
         float x = 0;
 
         for (int i = 0; i < quant; i++)
         {
             x += tileHorizontalSize;
-            Instantiate(block, new Vector3(x, 0, 0), Quaternion.identity, gridParent.transform);
-
+            //Instantiate(block, new Vector3(x, 0, 0), Quaternion.identity, gridParent.transform);
+            if (block != null)
+            {
+                Instantiate(block, new Vector3(x, 0, 0), Quaternion.identity);
+            } else {
+               yield break; //see later
+            }
+        
             yield return new WaitForSeconds(0.5f);
         }
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
     }
 }

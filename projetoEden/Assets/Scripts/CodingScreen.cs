@@ -251,6 +251,8 @@ public class CodingScreen : Screen
         OpenPanel(false);
 
         missions[WarriorController.level].ExecuteCode();
+
+        MainMenu.StartScene(WarriorController.level);
     }
 
     void StartTutorial()

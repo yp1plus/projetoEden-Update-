@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BlueBall
     - BugController
     - CameraController
     - CheckPoint
@@ -12,13 +13,14 @@ ScriptsOnlyBuild:
     - EnemyController
     - FlameController
     - GrumpyBee
+    - InitialTutorial
     - Languages
     - MainMenu
     - MissionState
     - NameController
     - ParticleController
-    - Screen
     - StoneController
+    - TipsController
     - UIHealthBar
     - WarriorController
     Cinemachine.dll:
@@ -34,6 +36,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -125,81 +128,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 11842}
-    - Class: 114
-      Script: {instanceID: 11910}
-    - Class: 114
-      Script: {instanceID: 11970}
-    - Class: 114
       Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12018}
+      Script: {instanceID: 11974}
     - Class: 114
-      Script: {instanceID: 12044}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12022}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12534}
+      Script: {instanceID: 12416}
     - Class: 114
-      Script: {instanceID: 12548}
+      Script: {instanceID: 12540}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12742}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12780}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12818}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12990}
     - Class: 114
-      Script: {instanceID: 12886}
+      Script: {instanceID: 13112}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13122}
+      Script: {instanceID: 13284}
     - Class: 114
-      Script: {instanceID: 13124}
-    - Class: 114
-      Script: {instanceID: 13178}
-    - Class: 114
-      Script: {instanceID: 13274}
-    - Class: 114
-      Script: {instanceID: 13326}
-    - Class: 114
-      Script: {instanceID: 13432}
-    - Class: 114
-      Script: {instanceID: 13452}
+      Script: {instanceID: 13442}
     - Class: 114
       Script: {instanceID: 13462}
     - Class: 114
-      Script: {instanceID: 13512}
+      Script: {instanceID: 13472}
     - Class: 114
-      Script: {instanceID: 13722}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 13756}
+      Script: {instanceID: 13732}
     - Class: 114
-      Script: {instanceID: 13802}
+      Script: {instanceID: 13766}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 13812}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 14214}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14244}
+      Script: {instanceID: 14166}
     - Class: 114
-      Script: {instanceID: 14266}
+      Script: {instanceID: 14224}
     - Class: 114
-      Script: {instanceID: 14284}
+      Script: {instanceID: 14254}
+    - Class: 114
+      Script: {instanceID: 14276}
+    - Class: 114
+      Script: {instanceID: 14294}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,6 +209,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
@@ -225,6 +218,379 @@ ScriptsOnlyBuild:
     - Class: 483693784
       Script: {instanceID: 0}
     - Class: 850595691
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission1.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12462}
+    - Class: 114
+      Script: {instanceID: 13188}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12462}
+    - Class: 114
+      Script: {instanceID: 13336}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission3.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12554}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission4.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission5.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11842}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 13442}
+    - Class: 114
+      Script: {instanceID: 14126}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission6.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 13134}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission7.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11910}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission8.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 66
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 624}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/Mission9.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 624}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12840}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
       Script: {instanceID: 0}
     - Class: 1839735485
       Script: {instanceID: 0}
@@ -250,31 +616,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11754}
     - Class: 114
-      Script: {instanceID: 12018}
+      Script: {instanceID: 12022}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12534}
+      Script: {instanceID: 12540}
     - Class: 114
-      Script: {instanceID: 12574}
+      Script: {instanceID: 12580}
     - Class: 114
-      Script: {instanceID: 13122}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13442}
     - Class: 114
-      Script: {instanceID: 13450}
+      Script: {instanceID: 13460}
     - Class: 114
-      Script: {instanceID: 13722}
+      Script: {instanceID: 13732}
     - Class: 114
-      Script: {instanceID: 13802}
+      Script: {instanceID: 13812}
     - Class: 114
-      Script: {instanceID: 14004}
+      Script: {instanceID: 14014}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 14134}
     - Class: 114
-      Script: {instanceID: 14156}
+      Script: {instanceID: 14166}
     - Class: 114
-      Script: {instanceID: 14244}
+      Script: {instanceID: 14254}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -374,6 +740,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TextGenerator
+  - hash:
+      serializedVersion: 2
       Hash: 699619b86d9359741a4f58540298c80b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -396,6 +768,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: cadf974ff90e56bfdd8405838fbc9558
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TipsController
   - hash:
       serializedVersion: 2
       Hash: c80bc562de10fdbf8b2e9bcb89d80421
@@ -512,6 +890,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BlueBall
+  - hash:
+      serializedVersion: 2
       Hash: ae20da6493a48ec6a8af7899dcb31507
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -614,7 +998,7 @@ ScriptsOnlyBuild:
     className: CinemachinePOV
   - hash:
       serializedVersion: 2
-      Hash: 64beeeac38e7b70ba51db556d249006c
+      Hash: 92d479490df7dc9bfb482b228da48a9f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Screen
@@ -698,7 +1082,13 @@ ScriptsOnlyBuild:
     className: CinemachineComposer
   - hash:
       serializedVersion: 2
-      Hash: fd41013fc665872375ffe148420559ff
+      Hash: 54d9c24a8c4a82bc368f0793c31f3c19
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Slug
+  - hash:
+      serializedVersion: 2
+      Hash: bf222b8cd25606f5bf003aa3424343f3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CodingScreen
@@ -744,6 +1134,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 132ea03d8c16eaa6383e83b9e9fcfeeb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InitialTutorial
   - hash:
       serializedVersion: 2
       Hash: f087c23fbfa15475a0d110af46fb0496
@@ -1168,4 +1564,13 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/StartGame.unity
   - Assets/Scenes/MainScene.unity
-  playerPath: C:/Users/Yure Pablo/Documents/Builds/vvvv
+  - Assets/Scenes/Mission1.unity
+  - Assets/Scenes/Mission2.unity
+  - Assets/Scenes/Mission3.unity
+  - Assets/Scenes/Mission4.unity
+  - Assets/Scenes/Mission5.unity
+  - Assets/Scenes/Mission6.unity
+  - Assets/Scenes/Mission7.unity
+  - Assets/Scenes/Mission8.unity
+  - Assets/Scenes/Mission9.unity
+  playerPath: C:/Users/Yure Pablo/Documents/Builds/WEBGL END

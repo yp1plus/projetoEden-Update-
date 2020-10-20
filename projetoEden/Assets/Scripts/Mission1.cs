@@ -35,14 +35,14 @@ public class Mission1 : MissionVariable
     }
 
     /// <summary>
-    /// Destroys n chickens, between the 30 existing.
+    /// Destroys n chickens, between the that existing.
     /// </summary>
     /// <param name = "n"> A value int, number of chickens. </param>
     void DestroyChickens(int n)
     {
         GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken");
 
-        for(int i = 29; i >= n; i--)
+        for(int i = chickens.Length - 1; i >= n; i--)
         {
             GameObject.Destroy(chickens[i]);
         }

@@ -23,6 +23,7 @@ public class GrumpyBee : EnemyController
         currentHealth = maxHealth;
         damage = 100;
         hit = 0; //only suffers damage when collide with a chicken
+        invincibleTimer = 1.0f;
     }
 
     /// <summary>
@@ -37,5 +38,8 @@ public class GrumpyBee : EnemyController
 
         if (movementActivated)
             MovementWithoutCollision(rigidbody2D, -1);
+        
+        if (currentHealth == 0)
+            rigidbody2D.bodyType = RigidbodyType2D.Static;
     }
 }

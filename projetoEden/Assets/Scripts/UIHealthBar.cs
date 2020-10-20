@@ -58,4 +58,12 @@ public class UIHealthBar : MonoBehaviour
             mask[3].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * (float) value/25);
         }
     }
+
+    public void ResetBar()
+    {
+        mask[0].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+        mask[1].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+        mask[2].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+        mask[3].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+    }
 }

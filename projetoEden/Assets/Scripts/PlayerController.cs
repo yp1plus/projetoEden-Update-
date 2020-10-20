@@ -36,17 +36,19 @@ public class PlayerController : MonoBehaviour
    
     /// <value> Gets the value of a bool which controls if player are facing right. </value>
     public bool facing {get {return facingRight;} }
-    bool facingRight = true;
+    protected bool facingRight = true;
 
      /* Control Invincibility Time */
     /// <value> Gets the value of a bool which controls if player are invincible. </value>
     public bool invincible {get {return isInvincible;}}
-    bool isInvincible;
+    protected bool isInvincible;
 
-    float invincibleTimer = 5.0f;
+    protected float invincibleTimer = 5.0f;
 
-    Fade fade;
+    protected Fade fade;
     public static bool isGround {get; private set;} = false;
+
+    bool isDead = false;
 
     public virtual void Start()
     {
@@ -89,18 +91,6 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// OnBecameInvisible is called when the renderer is no longer visible by any camera.
-    /// </summary>
-    void OnBecameInvisible()
-    {
-        if (gameObject != null && gameObject.GetComponent<Renderer>().enabled) //avoids to destroy the player when him are flashing 
-        {
-            //currentHealth = 0;
-            ChangeHealth(-100);
-        }
-    }
-
-    /// <summary>
     /// Checks if the player is on the ground when up arrow is pressed.
     /// </summary>
     /// <param name = "rigidbody2D"> The component Rigidbody2D of player. </param>
@@ -116,7 +106,7 @@ public class PlayerController : MonoBehaviour
             if (bottomHit.CompareTag("Ground"))
                 isGround = true;
             
-            if ((bottomHit.gameObject.tag == "Ground" || bottomHit.gameObject.tag == "Block") && Input.GetAxisRaw("Vertical") == 1)
+            if ((bottomHit.CompareTag("Ground") || bottomHit.CompareTag("Block")) && Input.GetAxisRaw("Vertical") == 1)
             {
                 rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 animator.SetBool("isJumping", true);    
@@ -160,6 +150,15 @@ public class PlayerController : MonoBehaviour
         Vector3 transformScale = transform.localScale;
         transformScale.x *= -1;
         transform.localScale = transformScale;
+        
+        if (transform.childCount != 0) //warrior's name
+        {
+            Debug.Log("Child Flipped");
+            Vector3 childScale = transform.GetChild(0).transform.localScale;
+            if (childScale.x < 0)
+                childScale.x  *= -1;
+            transform.GetChild(0).transform.localScale = childScale;
+        }
     }
 
     /// <summary>
@@ -198,8 +197,9 @@ public class PlayerController : MonoBehaviour
 
     public void DestroyPlayerDead()
     {
-        if (health == 0)
+        if (health == 0 && gameObject != null && gameObject.activeSelf && !isDead)
         {
+            isDead = true;
             StartCoroutine(EnumeratorPlayerDead());
         }
     }
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
         ResetInvincibility();
     }
 
-    void ResetInvincibility()
+    protected void ResetInvincibility()
     {
         isInvincible = false;
     }

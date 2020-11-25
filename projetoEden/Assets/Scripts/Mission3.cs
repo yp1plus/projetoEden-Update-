@@ -29,15 +29,31 @@ public class Mission3 : MissionVariable
     public override bool AnswerIsCorrect(string answer)
     {
         /* 119,5 - 77,4 */
-        int position = answer.IndexOf("-");
+        int position = 0;
         bool canConvert;
+
+        if (answer != null)
+            position = answer.IndexOf(".");
+            
+        if (position < 0 || answer == null) //didn't put the dot
+        {
+            SetIndexTip(11);
+            return false;
+        }
+
+        position = answer.IndexOf("-");
 
         if (position < 0) //putted the value directly
         {
             canConvert = float.TryParse(answer, System.Globalization.NumberStyles.Float, 
                     System.Globalization.NumberFormatInfo.InvariantInfo, out height); //allows dots and whitespaces
             
-            if (!canConvert) return false;
+            if (!canConvert)
+            {
+                SetIndexTip(13);
+                return false;
+            }
+                
         }
         else
         {
@@ -49,16 +65,28 @@ public class Mission3 : MissionVariable
             canConvert = float.TryParse(firstValue, System.Globalization.NumberStyles.Float, 
                     System.Globalization.NumberFormatInfo.InvariantInfo, out first_value);
 
-            if (!canConvert) return false;
+            if (!canConvert)
+            {
+                SetIndexTip(13);
+                return false;
+            }
 
             canConvert = float.TryParse(secondValue, System.Globalization.NumberStyles.Float, 
                     System.Globalization.NumberFormatInfo.InvariantInfo, out second_value);
 
-            if (!canConvert) return false;
+            if (!canConvert)
+            {
+                SetIndexTip(13);
+                return false;
+            }
 
             height = first_value - second_value;
         }
 
-        return height == 42.1f;
+        if (height == 42.1f)
+            return true;
+        
+        SetIndexTip(12);
+        return false;
     }
 }

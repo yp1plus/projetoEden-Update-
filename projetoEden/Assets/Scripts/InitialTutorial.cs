@@ -74,7 +74,7 @@ public class InitialTutorial : TipsController
         int currentIndex = background.transform.GetSiblingIndex();
 
         textGenerator.ShowText("Parabéns! Por último, hora de escrever o seu apelido");
-        textGenerator.ShowText("Lembre-se que ele só pode ter 16 caracteres", 4);
+        textGenerator.ShowText("Lembre-se que ele só pode ter 7 caracteres", 4);
         textGenerator.ShowText("Para avaliar seu comando, aperte ENTER após escrever", 8);
         textGenerator.ShowText("Se precisar de ajuda, recorra às dicas", 12);
 

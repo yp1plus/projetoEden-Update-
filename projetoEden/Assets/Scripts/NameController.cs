@@ -19,15 +19,17 @@ public class NameController : MonoBehaviour
         positionReferenceName = transform.position;
     }
 
-    public void ChangePositionReference(Vector3 newPosition)
+    public void Flip()
     {
-        positionReferenceWarrior = newPosition;
+        Vector3 childScale = transform.localScale;
+        childScale.x  *= -1;
+        transform.localScale = childScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (warriorController == null) return;
+       
 
         //transformPosition.x = (warriorController.GetPosition().x - positionReferenceWarrior.x) + positionReferenceName.x;
         //transformPosition.y = (warriorController.GetPosition().y - positionReferenceWarrior.y) + positionReferenceName.y;

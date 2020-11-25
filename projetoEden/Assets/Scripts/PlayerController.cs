@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -34,9 +35,7 @@ public class PlayerController : MonoBehaviour
     public float move {get { return moveInput;} }
     float moveInput;
    
-    /// <value> Gets the value of a bool which controls if player are facing right. </value>
-    public bool facing {get {return facingRight;} }
-    protected bool facingRight = true;
+    public bool facingRight = true;
 
      /* Control Invincibility Time */
     /// <value> Gets the value of a bool which controls if player are invincible. </value>
@@ -153,11 +152,11 @@ public class PlayerController : MonoBehaviour
         
         if (transform.childCount != 0) //warrior's name
         {
-            Debug.Log("Child Flipped");
-            Vector3 childScale = transform.GetChild(0).transform.localScale;
-            if (childScale.x < 0)
-                childScale.x  *= -1;
-            transform.GetChild(0).transform.localScale = childScale;
+            Transform warriorName = transform.GetChild(0);
+
+            Vector3 childScale = warriorName.localScale;
+            childScale.x  *= -1;
+            warriorName.localScale = childScale;
         }
     }
 

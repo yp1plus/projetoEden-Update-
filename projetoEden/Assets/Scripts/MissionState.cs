@@ -8,7 +8,7 @@ using UnityEngine;
 public class MissionState : MonoBehaviour
 {
     [SerializeField] static MissionData missionData = new MissionData();
-
+    [SerializeField] static UIInfo infoUI = new UIInfo();
     const string path = @"C:\Users\Yure Pablo\Documents\projetoEden-Update-\projetoEden\Assets\Resources";
     static TextAsset jsonTextFile;
     static string data;
@@ -38,6 +38,15 @@ public class MissionState : MonoBehaviour
         return missionData;
     }
 
+    public static UIInfo LoadUIFromJson()
+    {
+        jsonTextFile = Resources.Load<TextAsset>("UIInfo");
+        data = jsonTextFile.ToString();
+        infoUI = JsonUtility.FromJson<UIInfo>(data);
+        
+        return infoUI;
+    }
+
     /// <summary>
     /// Overload data from a JSON according specificies of each programming language.
     /// </summary>
@@ -49,6 +58,15 @@ public class MissionState : MonoBehaviour
         data = jsonTextFile.ToString();
         JsonUtility.FromJsonOverwrite(data, mission);
     }
+}
+
+
+[System.Serializable]
+public class UIInfo
+{
+    public List<string> title = new List<string>();
+    public List<string> description = new List<string>();
+
 }
 
 [System.Serializable]
@@ -65,11 +83,14 @@ public class MissionData
     public List<string> resultsStructures1 = new List<string>();
     public List<string> resultsStructures2 = new List<string>();
     public List<Tip> tips = new List<Tip>();
+    public List<string> genericTips = new List<string>();
 }
 [System.Serializable]
 public class Tip
 {
-    public List<string> tips = new List<string>(); //maximum 3
+    public List<string> tipsForTypes = new List<string>();
+    public List<string> tipsForNames = new List<string>();
+    public List<string> tipsForValue = new List<string>();
 }
 
 [System.Serializable]

@@ -10,10 +10,11 @@ public class TipsController : MonoBehaviour
     public GameObject boxTip;
     
     public TMP_Text dialogBox;
+    public TMP_Text txtValueTip;
     protected Fade fade;
     protected TextGenerator textGenerator;
-    int[] valueTips = {1, 3, 5};
-    bool[] purchased = {false, false, false};
+    int valueTip = 1;
+    string currentTip = null;
     bool executing = false;
 
     void Awake()
@@ -22,6 +23,8 @@ public class TipsController : MonoBehaviour
         textGenerator = gameObject.AddComponent<TextGenerator>();
         instance = this;
         textGenerator.SetTextBox(dialogBox);
+        if (txtValueTip != null)
+            txtValueTip.text = valueTip.ToString();
     }
 
     ///<summary> Shows a error message when the player clicks on the button exit with wrong fields yet </summary>
@@ -32,38 +35,87 @@ public class TipsController : MonoBehaviour
     }
 
     ///<summary> Shows a tip when press the button </summary>
-    ///<param name = "i"> A int, the 0 <= index <= 2 </param>
-    public void ShowTip(int i)
+    public void ShowTip()
     {
-        if (i >= 3 || textGenerator.executing)
+        if ((executing || textGenerator.executing) && boxTip.activeSelf)
             return;
             
         if (!boxTip.activeSelf)
         {
+            executing = false;
+            textGenerator.executing = false;
             boxTip.SetActive(true);
             fade.FadeIn();
-        }    
-        
-        if (WarriorController.level != 0 && !purchased[i] && !WarriorController.instance.RemoveCoins(valueTips[i]))
+        }
+
+        int indexTip = CodingScreen.instance.GetIndexTip();
+
+        if (indexTip == -1)
+        {
+            StartCoroutine(ShowMessage("Você não fez nenhuma tentativa ainda."));
+            return;
+        }
+
+        string tip = null;
+
+        if (indexTip >= 0 && indexTip <= 5) //type
+        {
+            if (Screen.tip.tipsForTypes.Count != 0)
+                tip = Screen.tip.tipsForTypes[indexTip];
+        }
+        else if (indexTip <= 10) //name
+        {
+            if (Screen.tip.tipsForNames.Count != 0)
+                tip = Screen.tip.tipsForNames[indexTip - 6];
+        }
+        else //value
+        {
+            if (indexTip == 22) //generic tip
+            {
+                tip = Screen.genericTips[0];
+            }
+            else if (Screen.tip.tipsForValue.Count > (indexTip - 11))
+                    tip = Screen.tip.tipsForValue[indexTip - 11];
+        }
+
+        if (tip != null && tip != "")
+        {
+            CodingScreen.instance.RemoveTip();
+            currentTip = tip;
+        }
+        else
+        {
+            if (tip != null)
+                CodingScreen.instance.RemoveTip();
+            
+            StartCoroutine(ShowMessage("Você não fez nenhuma tentativa ainda."));
+            return;
+        }
+
+        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
         {
             StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
             return;
         }
-          
-        textGenerator.ShowText(CodingScreen.tips[i]);
-        purchased[i] = true;
+        
+        textGenerator.ShowText(currentTip);
+        valueTip += 2;
+        if (txtValueTip != null)
+            txtValueTip.text = valueTip.ToString();
     }
 
     ///<summary> Reset the vector purchased of tips to false </summary>
-    public void ResetTips()
+    public void ResetTip()
     {
-        for (int i = 0;  i < 3; i++)
-            purchased[i] = false;
+        valueTip = 1;
+        SkipBoxTip();
+        if (txtValueTip != null)
+            txtValueTip.text = valueTip.ToString();
     }
 
     IEnumerator ShowMessage(string message)
     {
-        while (executing)
+        while ((executing || textGenerator.executing))
             yield return null;
         
         executing = true;
@@ -77,7 +129,7 @@ public class TipsController : MonoBehaviour
     }
 
     ///<summary> Hides the box tip </summary>
-    public void SkipBoxTip()
+    private void SkipBoxTip()
     {
         boxTip.SetActive(false);
     }

@@ -23,7 +23,7 @@ public class BlueBall : MonoBehaviour
         {
             triggered = true;
             controller.GoToNextLevel();
-            CodingScreen.instance.OpenPanel(true);
+            CodingScreen.instance.OpenCode(true);
             Destroy(gameObject); 
         }
     }

@@ -10,21 +10,16 @@ public class EnemyController : PlayerController
 {
     public int damage; //to attack warrior
     public int hit; //to attack enemy
-
-    /* Time of Movement */
-    public float changeTime;
-    float timer;
-
     bool isInCorner = false;
 
-    int direction = -1;
+    protected int direction = -1;
 
     /// <summary>
     /// Sent when an incoming collider makes contact with this object's collider (2D physics only).
     /// </summary>
     /// <remarks> If the warrior is attacking, causes damage on enemy, else causes damage on warrior.</remarks>
     /// <param name="other">The Collision2D data associated with this collision.</param>
-    void OnCollisionEnter2D(Collision2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         
@@ -43,7 +38,7 @@ public class EnemyController : PlayerController
     /// object (2D physics only).
     /// </summary>
     /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         FlameController controller = other.GetComponent<FlameController>();
@@ -58,7 +53,17 @@ public class EnemyController : PlayerController
         }
     }
 
-    void Attack(WarriorController player)
+    void OnTriggerStay2D(Collider2D other)
+    {
+        WarriorController player = other.gameObject.GetComponent<WarriorController>();
+        
+        if (player != null)
+        {
+            Attack(player);
+        }
+    }
+
+    protected virtual void Attack(WarriorController player)
     {
         if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) 
             && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))

@@ -15,31 +15,190 @@
     {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
     {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
     {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
-    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","SENHA"]},
     {"options":[null,null,null,null,null]},
-    {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 10)"]},
+    {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
     {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},
     {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(houverRocha())","for(int i = 5; i <= 0; i--)", "while(houverVacuo())", "for(int i = 10; i >= 0; i++)"]},
     {"options":["Iteração","(int i = 0; i < 14; i++)","(int i = 0; i < 13; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 14; i++)", "(int i = 13; i >= 10; i--)"]}
     ],
     "options_for2":["Iteração","(int j = 0; j < 13; j++)", "(int j = 11; j >= 8; j--)", "(int j = 0; j < 12; j++)", "(float j = 0; j < 12; j++)", "(int j = 11; j <= 0; j++)"],
-    "inputTypes":[{"options":["tipoDaVariável", "char[16]", "int", "float", "bool", "char"]},
-    {"options":["tipoDaVariável", "string", "int", "float", "bool", "char"]},
+    "inputTypes":[{"options":["tipoDaVariável", "char[8]", "int", "float", "char"]},
+    {"options":["tipoDaVariável", "string", "int", "float", "char", "bool"]},
     {"options":[null, null, null, null, null, null]},
-    {"options":["tipoDaVariável", "String", "int", "float", "boolean", "char"]}
+    {"options":["tipoDaVariável", "String", "int", "float", "char", "boolean"]}
     ],
     "resultsStructures1":["oBichoPega();", "criarBloco();", null],
     "resultsStructures2":["oBichoCome();", null, "destruirBloco(i, j);"],
+    "genericTips":["Nessa linguagem, o valor precisa terminar com ponto e vírgula (;)"],
     "tips":[
-        {"tips": ["Será que você não esqueceu as aspas no valor?", "Não se esqueça do ponto e vírgula", "Exemplo: \"Maria\";"]},
-        {"tips": ["Nomes de variável não podem começar com número", "Não existe quantidade decimal, o valor é um número inteiro", "Você quer diminuir ao máximo possível a quantidade ou não?"]},
-        {"tips": ["Nomes de variável não devem possuir verbos", "A depender do nome, o valor pode mudar", "Defina um valor bool true ou false"]},
-        {"tips": ["Nomes de variável geralmente começam com letra minúscula", "A sua altura é ponto flutuante", "Subtraia a sua altura da intersecção"]},
-        {"tips": ["O valor do código fica entre aspas simples", "Cada frase representa uma parte do nome do caractere", "O símbolo é composto de uma reta e de um ponto"]},
-        {"tips": ["Você pode pôr o mesmo nome em mais de uma câmera", "Para uma câmera não te ver troque por outra mais distante", "A99 e A98 não pode te ver, então só resta A97"]},
-        {"tips": ["Analise a possibilidade de cada um acontecer", "Tome cuidado com valores impossíveis", "Escolha a chama"]},
-        {"tips": ["Você sempre corre ou fica, decida qual", "Analise uma expressão que retorna falso nos dois casos", "Você deve escolher correr como verdade"]},
-        {"tips": ["Tome cuidado com loops infinitos", "Você sabe quantas rochas precisa?", "Enquanto houver vácuo é a expresão mais condinzente"]},
-        {"tips": ["Como o índice começa do 0, nunca deve alcançar o valor máximo", "Remover alguns ladrilhos de baixo é suficiente", "i < 14 e j < 13"]}
+        {   "tipsForTypes": null,
+            "tipsForNames": null,
+            "tipsForValue": 
+                ["Todo valor textual precisa estar entre aspas duplas",
+                "Você estourou o limite máximo de 7 caracteres",
+                "Exemplo: \"Maria\";"]
+        },
+        {
+            "tipsForTypes": 
+                ["Galinhas ainda podem aparecer no jogo, então não é uma constante",
+                "Quantidade é um valor numérico, logo não deve ser do tipo texto",
+                null, 
+                "Não existe 1 uma galinha e meia, então não deve ser do tipo decimal",
+                "Quantidade é um valor numérico, não deve ser representado como caractere",
+                null],
+            "tipsForNames":
+                    ["Nomes de variável não podem começar com número",
+                    "Este nome é correto, mas é incompleto. O quê das galinhas está sendo armazenado?",
+                    null,
+                    null, 
+                    "Nomes de variável não permitem caracteres especiais além do underline"
+                    ],
+             "tipsForValue":
+                    ["Seu valor só deve conter números",
+                     "Não faz sentido haver quantidade negativa de galinhas",
+                     "Você estorou a capacidade de armazenamento de um inteiro, cerca de 2³¹"
+                    ]
+        },
+        {
+            "tipsForTypes": 
+                ["O valor da chama ainda pode ser modificado, não é constante",
+                "O estado da chama não é definido por um texto",
+                null,
+                "Só existem 2 estados possíveis, você não precisa do tipo decimal", 
+                "Não existe 1 uma galinha e meia, então não deve ser do tipo decimal",
+                "É um conjunto de caracteres ou um número",
+                null],
+            "tipsForNames":
+                [null,
+                "Não é recomendado que nomes de variável tenham verbos, isso é utilizado em funções",
+                null,
+                "Não é recomendado que nomes de variável tenham verbos, isso é utilizado em funções", 
+                "Nomes de variável não permitem caracteres especiais além do underline"
+                ],
+             "tipsForValue":
+                ["Seu valor só deve conter um digíto numérico",
+                 "A linguagem C interpreta 0 como falso e 1 como verdadeiro",
+                 "Em Python, True é verdadeiro e False é falso",
+                 "Nessa linguagem, true é verdadeiro e false é falso",
+                 "O valor depende do nome da variável"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                ["Você não vai ficar pequeno para sempre, então não é constante",
+                 "Altura é um valor numérico",
+                 "Geralmente existe altura quebrada, como 1.75 m.",
+                 null,
+                 "Altura é um valor apenas numérico.", 
+                 "Altura é um valor apenas numérico."
+                ],
+            "tipsForNames":
+                ["Está correto, mas é incompleto. Altura do quê?",
+                "Não é um bom padrão para variáveis começar com letra maiúscula",
+                "Está correto, mas muito abreviado, não é claro",
+                "Não é um bom padrão para variáveis começar com letra maiúscula", 
+                null
+                ],
+             "tipsForValue":
+                ["Valores decimais são representados com ponto, não vírgula",
+                 "Você deve fazer uma subtração",
+                 "O valor é do tipo (XX.X) ou do tipo (XXX.X - XX.X)"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                ["É dito que o código não vai mudar",
+                 "O código só possui um caractere, então o tipo textual não se aplica",
+                 "O caractere pode não ser numérico",
+                 "É um caractere, não necessita de precisão decimal",
+                 null,
+                 "O valor deve representar apenas um caractere"
+                ],
+            "tipsForNames":
+                [null,
+                "Não é recomendado nomear constantes como variáveis para evitar confusão",
+                "Não é recomendado nomear constantes como variáveis para evitar confusão",
+                "Nomes de constante não permitem caracteres especiais além do underline", 
+                "O nome \"SENHA\" não representa bem o dado que quer guardar"
+                ],
+             "tipsForValue":
+                ["O valor deve estar entre aspas simples, por ser caractere",
+                 "Não deve haver mais de um caractere",
+                 "Cada frase representa uma parte do nome do caractere",
+                 "O símbolo é composto de uma reta e de um ponto"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
+                ["Os valores não podem ser diferentes de A99, A98 e A97",
+                 "Não se deve retirar as aspas duplas, pois o valor é textual",
+                 "Você pode pôr o mesmo nome em mais de uma câmera",
+                 "Para uma câmera não te ver troque por outra mais distante",
+                 "A99 e A98 não podem te ver, então só resta A97"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
+                ["Enquanto a chama estiver acesa, você poderá se salvar",
+                 "Você consegue criar pelo menos 5 galinhas em tempo hábil?",
+                 "A quantidade de galinhas pode ser negativa?",
+                 "Se a sua altura for 0, você deixará de existir",
+                 "Até que você crie 30 galinhas, já caiu"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
+                ["Se uma das ações for verdade, a outra será automaticamente falsa",
+                 "Se uma das ações não acontece, a outra consequentemente acontece",
+                 "Uma expressão do tipo E sempre retornará falso",
+                 "Tome cuidado com expressões do tipo OU, porque basta que uma seja verdadeira",
+                 "Verifique as condições considerando ficar, depois correr",
+                 "Escolha as expressões de modo que todas retornem falso"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
+                ["Você sabe se criar 6 blocos é suficiente?",
+                 "Tome cuidado com loops infinitos. Sempre haverá rocha.",
+                 "Sempre cheque a condição de parada do loop",
+                 "Preencher com rochas até encontrar algo parece uma boa ideia",
+                 "Cuidado com loops infinitos. O indíce i pode sempre ser maior que 0"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
+                ["O indíce i corresponde à altura",
+                 "Não faz diferença sobrar alguns ladrilhos embaixo",
+                 "Eliminar apenas 4 linhas de ladrilhos de cima resolve o problema?",
+                 "Perceba que o indíce começa em 0, logo o loop pode ultrapassar o vetor.",
+                 "Quebrar as 4 últimas linhas de ladrilhos pode ser suficiente",
+                 null,
+                 "Remover apenas 4 ladrilhos por linha é suficiente?",
+                 "O índice j corresponde à largura",
+                 "Indíces de vetor são sempre números inteiros",
+                 "Cuidado com loops que nunca chegam a acontecer"
+                ]
+        }
     ]
 }

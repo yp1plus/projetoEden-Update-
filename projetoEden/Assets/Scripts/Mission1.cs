@@ -18,6 +18,8 @@ public class Mission1 : MissionVariable
         GameObject chicken = GameObject.FindGameObjectWithTag("Chicken");
         float x = 11.9F, y = -8F; //arbitrary values based on the scene
 
+        MainMenu.SelectActiveScene(2);
+
         for (int i = 0; i < n; i++)
         {
              if (i > 500) //avoids overflow
@@ -32,6 +34,8 @@ public class Mission1 : MissionVariable
                  y = -8F;
              }
         }
+
+        MainMenu.SelectActiveScene(1);
     }
 
     /// <summary>
@@ -75,9 +79,29 @@ public class Mission1 : MissionVariable
         bool canConvert = int.TryParse(answer, out value);
         if (canConvert)
         {
-            if (value >= 0) return true;
+            if (value >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                SetIndexTip(12); //negative quantity
+            }
         }
-        
-        return false;
+        else
+        {
+            double v;
+            canConvert = double.TryParse(answer, out v); 
+            if (canConvert) //int overflow
+            {
+                SetIndexTip(13);
+            }
+            else 
+            {
+                SetIndexTip(11); //answer it's different from numbers
+            }   
+        }
+
+         return false;
     }
 }

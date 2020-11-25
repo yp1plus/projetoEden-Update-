@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
                 if (camera.GetName() == originalName)
                 {
                     camera.AnimateDetection();
+                    StartCoroutine(ShowGameOver());
                 }
             } 
             
@@ -79,5 +80,11 @@ public class CameraController : MonoBehaviour
     public void AnimateDetection()
     {
         animator.SetTrigger("Detected");
+    }
+
+    IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(1);
+        CodingScreen.instance.ShowGameOver(true);
     }
 }

@@ -26,7 +26,14 @@ public class Mission6 : MissionStructure
     public override bool StatementIsCorrect(int index)
     {
         currentIndex = index;
-        return index >= 1;
+
+        if (index >= 1)
+        {
+            SetIndexTip(index + 10);
+            return true;
+        }
+        
+        return false;
     }
 
     public override void ExecuteCode()

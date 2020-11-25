@@ -39,9 +39,15 @@ public class WarriorController : PlayerController
 
     public GameObject flame;
 
+    float height = 119.5f;
+
     public static bool isSubPhase = false;
     int quantChickens = 0;
     public TMP_Text txtNumChickens;
+    public TMP_Text txtFlameIsBurning;
+    public TMP_Text txtWarriorHeight;
+    GameObject[] barrier;
+    public bool barrierActivated = false;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -62,9 +68,10 @@ public class WarriorController : PlayerController
     {
         base.Start();
         numCoins.text = quantCoins.ToString();
-        txtNumChickens.text = quantChickens.ToString();
-        currentLevel = 0;
+        currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
+        barrier = GameObject.FindGameObjectsWithTag("Barrer");
+        barrier[0].SetActive(false); barrier[1].SetActive(false);
     }
 
     public void LoadFlame(GameObject flame)
@@ -78,13 +85,15 @@ public class WarriorController : PlayerController
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
         currentHealth = 100;
-        transform.localScale = new Vector3(1,1,0);
+        height = 119.5f;
         
         ResetInvincibility();
         UIHealthBar.instance.ResetBar();
         if (!facingRight)
             Flip();
         StartCoroutine(DelayReset());
+        barrier[0].SetActive(false); barrier[1].SetActive(false);
+        barrierActivated = false;
     }
 
     IEnumerator DelayReset()
@@ -115,10 +124,13 @@ public class WarriorController : PlayerController
 
         numCoins.text = quantCoins.ToString();
         txtNumChickens.text = quantChickens.ToString();
+        if (flame != null)
+            txtFlameIsBurning.text = flame.GetComponent<FlameController>().isBurning.ToString().ToLower();
+        txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
 
         if (!CodingScreen.instance.panel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C) && UIController.instance.powers[0].activeSelf)
             {
                 Launch();
             }
@@ -128,21 +140,42 @@ public class WarriorController : PlayerController
                 animator.SetTrigger("Attack");
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && UIController.instance.powers[1].activeSelf)
             {
                 if (flame != null && flame.GetComponent<Renderer>().material.color.a <= 0.05f)
                     flame.GetComponent<FlameController>().Ignite();
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && UIController.instance.powers[2].activeSelf)
             {
-                ChangeHeight(transform.localScale.x + 0.2f);
+                ChangeHeight(transform.localScale.x*1.2f);
             }
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) && UIController.instance.powers[2].activeSelf)
             {
-                ChangeHeight(transform.localScale.x - 0.2f);
+                ChangeHeight(transform.localScale.x/1.2f);
             }
+        }
+
+        if (barrierActivated && transform.position.y >= -14.98f && transform.position.y <= -12.1f)
+        {
+            for (int i = 0; i < barrier.Length; i++)
+            {
+                barrier[i].SetActive(true);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Sent when another object enters a trigger collider attached to this
+    /// object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Trigger4"))
+        {
+            barrierActivated = true;
         }
     }
 
@@ -162,6 +195,9 @@ public class WarriorController : PlayerController
 
     public void SubtractChicken()
     {
+        if (quantChickens == 0)
+            return;
+        
         quantChickens--;
     }
 
@@ -261,16 +297,35 @@ public class WarriorController : PlayerController
     /// <param name = "scale"> A float, the scale value to change health. </param>
     public void ChangeHeight(float scale)
     {
-        if (scale < transform.localScale.x)
-            range = new Vector3(range.x + 0.2f, range.y - 0.1f, 0);
-        else 
-            range = new Vector3(range.x - 0.2f, range.y + 0.1f, 0);
+        if (Mathf.Abs(transform.localScale.x) < Mathf.Abs(scale))
+        {
+            range = new Vector3(range.x * 1.2f, range.y * 1.2f, 0);
+            speed = Mathf.Clamp(speed - 0.2f, 2, 5); 
+            jumpForce = Mathf.Clamp(jumpForce - 0.5f, 0, 7);
+        }
+        else
+        {
+            range = new Vector3(range.x / 1.2f, range.y / 1.2f, 0);
+            speed += 0.2f; jumpForce += 0.5f;
+        } 
+            
         
         if (scale == 1)
+        {
             range = new Vector3(-3, 0.3f, 0);
+            jumpForce = 7;
+            speed = 3;
+        }
+           
 
-        transform.localScale = new Vector3(scale, scale, 0);
-        transform.GetComponentInChildren<NameController>().ChangePositionReference(transform.localScale);
+        transform.localScale = new Vector3(scale, scale < 0 ? -scale: scale, 0);
+
+        height = (scale == 1) ? 119.5f : Mathf.Abs(scale) * 100;
+
+        if (transform.position.x < -37f || transform.position.y > 16.6) //change later
+        {
+            ChangeHealth(-100);
+        }
     }
 
     /// <summary>

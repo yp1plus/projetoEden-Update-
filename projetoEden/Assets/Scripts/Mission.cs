@@ -7,12 +7,37 @@ using UnityEngine;
 /// </summary>
 public abstract class Mission : MonoBehaviour
 {
-    public enum Types : ushort {STRING = 1, INT, FLOAT, BOOL, CHAR};
+    public enum Types : ushort {STRING = 1, INT, FLOAT, CHAR, BOOL};
+    protected Stack<int> tips =  new Stack<int>();
+    protected HashSet<int> indexTipsAdded = new HashSet<int>();
 
     /// <summary>
     /// Executes the modifications expected after the write of code.
     /// </summary>
     public abstract void ExecuteCode();
+
+    public void SetIndexTip(int i)
+    {
+        if (!indexTipsAdded.Contains(i))
+        {
+            tips.Push(i);
+            indexTipsAdded.Add(i);
+        }
+    }
+
+    public int GetIndexTip()
+    {
+        if (tips.Count != 0)
+            return tips.Peek();
+        else
+            return -1;
+    }
+
+    public void RemoveTip()
+    {
+        if (tips.Count != 0)
+            tips.Pop();
+    }
 
     /// <summary>
     /// Removes string semicolon.
@@ -24,7 +49,9 @@ public abstract class Mission : MonoBehaviour
         value = value.Trim(); //removes whitespaces
         
         if (!value.EndsWith(";"))
+        {
             return null;
+        }
         
         int position = value.IndexOf(";");
         

@@ -6,7 +6,7 @@ using UnityEngine;
 public class TextGenerator : MonoBehaviour
 {
     TMP_Text textBox;
-    public bool executing {get; private set;} = false;
+    public bool executing = false;
 
     ///<summary> Changes the text box </summary>
     ///<param name = "textBox"> A TMP_Text, the new text box </param>

@@ -18,6 +18,9 @@ TagManager:
   - Wall
   - Particle
   - Name
+  - BlueEnemy
+  - Barrer
+  - Trigger4
   layers:
   - Default
   - TransparentFX

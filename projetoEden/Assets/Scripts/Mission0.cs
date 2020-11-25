@@ -7,7 +7,7 @@ public class Mission0 : MissionVariable
 {
     string playerName;
 
-    protected override bool ConstIdentifierIsCorrect(bool isOn)
+    public override bool ConstIdentifierIsCorrect(bool isOn)
     {
         return isOn;
     }
@@ -25,11 +25,23 @@ public class Mission0 : MissionVariable
     {
         answer = answer.Trim(); //removes whitespaces on the right and on the left
         if (!answer.EndsWith("\"") || !answer.StartsWith("\""))
-                return false;
+        {
+            SetIndexTip(13);
+            
+            SetIndexTip(11);
+           
+            return false;
+        }
+
         answer = answer.Trim('\"'); //removes the single quotes
 
-        if (answer.Length > 30)
+        if (answer.Length > 7)
+        {
+            SetIndexTip(12);
+            
             return false;
+        }
+            
 
         playerName = answer;
 

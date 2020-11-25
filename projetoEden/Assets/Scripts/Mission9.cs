@@ -32,6 +32,11 @@ public class Mission9 : MissionStructure
     {
         currentIndexI = index;
 
+        if (index >= 1)
+        {
+            SetIndexTip(index + 10);
+        }
+
         if (index != 0 && index != 4)
             return true;
         
@@ -41,6 +46,16 @@ public class Mission9 : MissionStructure
     public bool Statement2IsCorrect(int index)
     {
         currentIndexJ = index;
+
+        if (index == 1)
+        {
+            SetIndexTip(14);
+        }
+
+        if (index > 1)
+        {
+            SetIndexTip(index + 15);
+        }
 
         if (index == 2 || index == 3)
             return true;

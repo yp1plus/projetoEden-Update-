@@ -12,9 +12,9 @@ public abstract class MissionVariable : Mission
     /// </summary>T
     /// <param name = "isOn"> A bool, if toggle it's checked. </param>
     /// <returns> A bool, the result. </returns>
-    protected virtual bool ConstIdentifierIsCorrect(bool isOn) 
+    public virtual bool ConstIdentifierIsCorrect(bool isOn) 
     {
-        return !isOn; //It's not constant
+        return !isOn; //it's not constant
     }
 
     /// <summary>

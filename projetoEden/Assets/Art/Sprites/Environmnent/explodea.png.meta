@@ -1,9 +1,69 @@
 fileFormatVersion: 2
 guid: a5862d389855b124cbd560ec78f1fd3f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 368718300414390586
+    second: explodea_0
+  - first:
+      213: 1902074843037615616
+    second: explodea_1
+  - first:
+      213: 2808451701908518031
+    second: explodea_2
+  - first:
+      213: -6153814451207106992
+    second: explodea_3
+  - first:
+      213: -2162587486381950477
+    second: explodea_4
+  - first:
+      213: -7334364526809781879
+    second: explodea_5
+  - first:
+      213: -2910655934047803945
+    second: explodea_6
+  - first:
+      213: 3116896882153400170
+    second: explodea_7
+  - first:
+      213: -3288085799867818923
+    second: explodea_8
+  - first:
+      213: 1396914348518824090
+    second: explodea_9
+  - first:
+      213: 2856958783840679678
+    second: explodea_10
+  - first:
+      213: 7679191489987148400
+    second: explodea_11
+  - first:
+      213: -4195425936111068517
+    second: explodea_12
+  - first:
+      213: -8416472408618826759
+    second: explodea_13
+  - first:
+      213: 6142491663375452821
+    second: explodea_14
+  - first:
+      213: 6966984603938255462
+    second: explodea_15
+  - first:
+      213: -1016925149178422653
+    second: explodea_16
+  - first:
+      213: 4965051206097767312
+    second: explodea_17
+  - first:
+      213: -9084283649098563604
+    second: explodea_18
+  - first:
+      213: -9123910499106932525
+    second: explodea_19
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -23,6 +83,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -40,7 +101,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -57,6 +118,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -70,9 +133,453 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: explodea_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31b2663753fd1500800000000000000
+      internalID: 368718300414390586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006c67bfdf6856a10800000000000000
+      internalID: 1902074843037615616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_2
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84391d61ff99f620800000000000000
+      internalID: 2808451701908518031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_3
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e82266c52499aa0800000000000000
+      internalID: -6153814451207106992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_4
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9bf769322fcf1e0800000000000000
+      internalID: -2162587486381950477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_5
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989e64e625a173a90800000000000000
+      internalID: -7334364526809781879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_6
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5a2bb69d54b97d0800000000000000
+      internalID: -2910655934047803945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_7
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67a6464331714b20800000000000000
+      internalID: 3116896882153400170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_8
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c5fd3d26f5e52d0800000000000000
+      internalID: -3288085799867818923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_9
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a985c15e236d26310800000000000000
+      internalID: 1396914348518824090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_10
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef671c880e4f5a720800000000000000
+      internalID: 2856958783840679678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_11
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07af2ea59f7f19a60800000000000000
+      internalID: 7679191489987148400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_12
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a93a4e65ad6c5c0800000000000000
+      internalID: -4195425936111068517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_13
+      rect:
+        serializedVersion: 2
+        x: 2678
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3066ecfeea23b80800000000000000
+      internalID: -8416472408618826759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_14
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59aca4f9f938e3550800000000000000
+      internalID: 6142491663375452821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_15
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662fa59a593bfa060800000000000000
+      internalID: 6966984603938255462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_16
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a1f08f6f723e1f0800000000000000
+      internalID: -1016925149178422653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_17
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b051714c767e440800000000000000
+      internalID: 4965051206097767312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_18
+      rect:
+        serializedVersion: 2
+        x: 3708
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef3798d6242ee180800000000000000
+      internalID: -9084283649098563604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explodea_19
+      rect:
+        serializedVersion: 2
+        x: 3914
+        y: 0
+        width: 206.15
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8364addbb516180800000000000000
+      internalID: -9123910499106932525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

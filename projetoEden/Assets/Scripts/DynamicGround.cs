@@ -10,7 +10,7 @@ public class DynamicGround : MonoBehaviour
 
     public float speed = 3.0f;
 
-    int direction = -1;
+    public int direction = -1;
 
     bool changedDirection = false;
 

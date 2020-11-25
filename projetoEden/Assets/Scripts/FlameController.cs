@@ -8,6 +8,7 @@ public class FlameController : MonoBehaviour
     bool debug = true; 
 
     public static bool canBeBurnt;
+    public bool isBurning {get; private set;} = true; 
 
     // Awake is called when the script instance is being loaded.
     void Awake()
@@ -24,6 +25,7 @@ public class FlameController : MonoBehaviour
     {
         if (WarriorController.level > 2 && debug)
         {
+            Debug.Log("Flame");
             GameObject flame = GameObject.FindGameObjectWithTag("Fire");
             WarriorController.instance.LoadFlame(flame);
             canBeBurnt = false;
@@ -38,6 +40,7 @@ public class FlameController : MonoBehaviour
     public void PutOut() 
     {
         fade.FadeOut();
+        isBurning = false;
         StartCoroutine(HideFlame());
     }
 
@@ -50,9 +53,13 @@ public class FlameController : MonoBehaviour
     public void Ignite()
     {
         Vector3 playerPosition = WarriorController.instance.GetPosition();
-        transform.position = new Vector3(playerPosition.x + 8, playerPosition.y, playerPosition.z); 
+        if (WarriorController.instance.transform.localScale.x < 0)
+            transform.position = new Vector3(playerPosition.x - 8, playerPosition.y, playerPosition.z);
+        else
+            transform.position = new Vector3(playerPosition.x + 8, playerPosition.y, playerPosition.z);
 
         fade.FadeIn();
+        isBurning = true;
         Invoke("PutOut", 2);
     }
 

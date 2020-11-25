@@ -16,6 +16,7 @@ public class CodingScreen : Screen
     /// <value> Gets the value of static instance of the class </value>
     public static CodingScreen instance { get; private set; }
     public GameObject panel;
+    public GameObject codingScreen;
     public TMP_InputField constIdentifier;
     public Image[] feedbackCorrect = new Image[5];
     public Image[] feedbackIncorrect = new Image[5];
@@ -48,13 +49,8 @@ public class CodingScreen : Screen
         missions[7] = gameObject.AddComponent<Mission7>();
         missions[8] = gameObject.AddComponent<Mission8>();
         missions[9] = gameObject.AddComponent<Mission9>();
-        StartTutorial();
     }
 
-    /// <summary>
-    /// Enables the Canvas of the panel which contains the coding screen.
-    /// </summary>
-    /// <param name = "state"> A bool, if must open or close the panel. </param>
     public void OpenPanel(bool state)
     {
         if (panel == null)
@@ -64,16 +60,46 @@ public class CodingScreen : Screen
         {
             panel.gameObject.SetActive(state);
             fade.FadeIn();
+        } 
+        else
+        {
+            if (UIController.instance.InfoIsActive())
+                StartCoroutine(ClosePanel());
+            else
+                StartCoroutine(ForcedClosePanel());
+        }
+
+        WarriorController.instance.DeactivateMovement(state);
+    }
+
+    /// <summary>
+    /// Enables the Canvas of the panel which contains the coding screen.
+    /// </summary>
+    /// <param name = "state"> A bool, if must open or close the panel. </param>
+    public void OpenCode(bool state)
+    {
+        OpenPanel(state);
+        
+        if (state)
+        {
             LoadData(WarriorController.level);
             UpdateScreen(WarriorController.level);
             Reset();
         } 
-        else
-        {
-            StartCoroutine(ClosePanel());
-        }
+        
+        codingScreen.SetActive(state);
+    }
 
-        WarriorController.instance.DeactivateMovement(state);
+    IEnumerator ForcedClosePanel()
+    {
+        yield return new WaitForSeconds(0.3f);
+        
+        if (!UIController.instance.InfoIsActive() && !codingScreen.activeSelf)
+        {
+            fade.FadeOut();
+            yield return new WaitForSeconds(0.3f);
+            panel.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator ClosePanel()
@@ -117,6 +143,15 @@ public class CodingScreen : Screen
             IsCorrect((int) InputTypes.type);
         else
             IsWrong((int) InputTypes.type);
+
+        if (mission.ConstIdentifierIsCorrect(_const == "const"))
+        {
+            mission.SetIndexTip(index);
+        }
+        else
+        {
+            mission.SetIndexTip(0);
+        }
     }
 
     /// <summary>
@@ -132,6 +167,8 @@ public class CodingScreen : Screen
             IsCorrect((int) InputTypes.name);
         else
             IsWrong((int) InputTypes.name);
+        
+        mission.SetIndexTip(index + 5); //name comes after all types in list
     }
 
     /// <summary>
@@ -197,22 +234,35 @@ public class CodingScreen : Screen
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            string value;
+            string value = null;
             MissionVariable mission = (MissionVariable) missions[WarriorController.level];
+            bool couldRemove = true;
             
-            value = Mission.RemoveSemicolon(answer);
+            if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
+                value = Mission.RemoveSemicolon(answer);
 
             if (value == null) 
             {
-                IsWrong((int) InputTypes.value);
-                return;
+                mission.SetIndexTip(22); //a huge index to the end of list
+                couldRemove = false;
+                value = answer;
             }
 
-            if (mission.AnswerIsCorrect(value))
+            if (mission.AnswerIsCorrect(value) && couldRemove)
                 IsCorrect((int) InputTypes.value);
             else
                 IsWrong((int) InputTypes.value);
         }
+    }
+
+    public int GetIndexTip()
+    {
+        return missions[WarriorController.level].GetIndexTip();
+    }
+
+    public void RemoveTip()
+    {
+        missions[WarriorController.level].RemoveTip();
     }
 
     /// <summary>
@@ -248,27 +298,30 @@ public class CodingScreen : Screen
             }       
         }
 
-        OpenPanel(false);
+        OpenCode(false);
+
+        if (WarriorController.level != 1)
+            UIController.instance.ShowNewInfo();
 
         missions[WarriorController.level].ExecuteCode();
 
         MainMenu.StartScene(WarriorController.level);
     }
 
-    void StartTutorial()
+    public void StartTutorial()
     {
+        OpenCode(true);
+        
         if (MainMenu.tutorialExecuted)
             return;
-    
-        OpenPanel(true);
+
         GetComponent<InitialTutorial>().StartTutorial();
         MainMenu.tutorialExecuted = true;
     }
 
     void Reset()
     {
-        TipsController.instance.ResetTips();
-        TipsController.instance.SkipBoxTip();
+        TipsController.instance.ResetTip();
         
         for (int i = 0; i < (int) InputTypes.for2; i++)
         {

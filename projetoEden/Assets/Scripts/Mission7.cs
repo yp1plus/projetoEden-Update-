@@ -13,6 +13,12 @@ public class Mission7 : MissionStructure
         conditions[1].GetComponent<TMP_Dropdown>().value = index;
 
         currentIndex = index;
+        
+        SetIndexTip(16);
+        SetIndexTip(15);
+
+        if (index >= 1)
+            SetIndexTip(index + 10);
 
         return true;
     }

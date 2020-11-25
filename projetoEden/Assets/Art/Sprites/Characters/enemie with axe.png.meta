@@ -1,0 +1,649 @@
+fileFormatVersion: 2
+guid: 6a92e6f0308821441a5001a46f7b5932
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -504144250386090313
+    second: enemie with axe_0
+  - first:
+      213: 4277380008462283010
+    second: enemie with axe_1
+  - first:
+      213: 8277828390344347260
+    second: enemie with axe_2
+  - first:
+      213: 6439137398954217699
+    second: enemie with axe_3
+  - first:
+      213: 3127494414369955459
+    second: enemie with axe_4
+  - first:
+      213: 1273756127395103672
+    second: enemie with axe_5
+  - first:
+      213: 286188980187063781
+    second: enemie with axe_6
+  - first:
+      213: -3800662511380730240
+    second: enemie with axe_7
+  - first:
+      213: 5024936189804107469
+    second: enemie with axe_8
+  - first:
+      213: 2562710378734126669
+    second: enemie with axe_9
+  - first:
+      213: 3562915478350519123
+    second: enemie with axe_10
+  - first:
+      213: -6618234469652673640
+    second: enemie with axe_11
+  - first:
+      213: -1428977804863992291
+    second: enemie with axe_12
+  - first:
+      213: -8039038882156012616
+    second: enemie with axe_13
+  - first:
+      213: -2490244296013863938
+    second: enemie with axe_14
+  - first:
+      213: 7017361513451452107
+    second: enemie with axe_15
+  - first:
+      213: 3432068409572374470
+    second: enemie with axe_16
+  - first:
+      213: -6850270760765162037
+    second: enemie with axe_17
+  - first:
+      213: 975202714378862231
+    second: enemie with axe_18
+  - first:
+      213: -5990860541316643748
+    second: enemie with axe_19
+  - first:
+      213: -62506861083078176
+    second: enemie with axe_20
+  - first:
+      213: 3492596388412121804
+    second: enemie with axe_21
+  - first:
+      213: -5085444534203894126
+    second: enemie with axe_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemie with axe_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 459
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b67e20b97be009f0800000000000000
+      internalID: -504144250386090313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 459
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20170c5847e4c5b30800000000000000
+      internalID: 4277380008462283010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 459
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e4e1e2011c0e270800000000000000
+      internalID: 8277828390344347260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 459
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0599c29596c5950800000000000000
+      internalID: 6439137398954217699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 375
+        width: 78
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e1a858997176b20800000000000000
+      internalID: 3127494414369955459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 375
+        width: 77
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3ccdff27a4da110800000000000000
+      internalID: 1273756127395103672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_6
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 375
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e56ea67c5fb8f300800000000000000
+      internalID: 286188980187063781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_7
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 375
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ee10a2595514bc0800000000000000
+      internalID: -3800662511380730240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 276
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6574467d82cb540800000000000000
+      internalID: 5024936189804107469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_9
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 276
+        width: 54
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4687aaf283909320800000000000000
+      internalID: 2562710378734126669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 275
+        width: 66
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bd2db10c4027130800000000000000
+      internalID: 3562915478350519123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_12
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 275
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e0a2de1404b2ce0800000000000000
+      internalID: -1428977804863992291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 266
+        width: 80
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb9985bab89f6090800000000000000
+      internalID: -8039038882156012616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 190
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3a624b100e07dd0800000000000000
+      internalID: -2490244296013863938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 87
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc675cded1da26160800000000000000
+      internalID: 7017361513451452107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 78
+        width: 75
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7b66dd80821af20800000000000000
+      internalID: 3432068409572374470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdf8519903fee0a0800000000000000
+      internalID: -6850270760765162037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e7c8ea3bd988d00800000000000000
+      internalID: 975202714378862231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54caef14103cdca0800000000000000
+      internalID: -5990860541316643748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e15e1d475ee12ff0800000000000000
+      internalID: -62506861083078176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_21
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2ed1329e1387030800000000000000
+      internalID: 3492596388412121804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemie with axe_22
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 2
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29633d5d32fdc69b0800000000000000
+      internalID: -5085444534203894126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

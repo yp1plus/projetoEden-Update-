@@ -10,6 +10,7 @@ using UnityEngine;
 public class ChickenShoot : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
+    Renderer renderer;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -17,12 +18,19 @@ public class ChickenShoot : MonoBehaviour
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     void OnBecameInvisible()
     {
-        WarriorController.instance.SubtractChicken();
-        Destroy(gameObject);
+        if (rigidbody2D.position.y < -20)
+            return;
+        
+        if (gameObject == null || gameObject.activeSelf)
+        {
+            WarriorController.instance.SubtractChicken();
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -54,7 +62,13 @@ public class ChickenShoot : MonoBehaviour
             e.ChangeHealth(-50);
         }
 
-        WarriorController.instance.SubtractChicken();
         Destroy(gameObject);
+        WarriorController.instance.SubtractChicken();
+    }
+
+    public void DestroyGameObject()
+    {
+        Destroy(gameObject);
+        WarriorController.instance.SubtractChicken();
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Mission8 : MissionStructure
 {
@@ -10,21 +9,16 @@ public class Mission8 : MissionStructure
 
     int currentIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override bool StatementIsCorrect(int index)
     {
         currentIndex = index;
-        return index != 0;
+        if (index >= 1)
+        {
+            SetIndexTip(index + 10);
+            return true;
+        }
+            
+        return false;
     }
     public override void ExecuteCode()
     {
@@ -42,7 +36,7 @@ public class Mission8 : MissionStructure
     IEnumerator InstatiateBlocks(int quant)
     {
         GameObject block = GameObject.FindGameObjectWithTag("Block");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(9));
+        MainMenu.SelectActiveScene(9);
         //GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
 
         float x = 0;
@@ -61,6 +55,6 @@ public class Mission8 : MissionStructure
             yield return new WaitForSeconds(0.5f);
         }
 
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+        MainMenu.SelectActiveScene(1);
     }
 }

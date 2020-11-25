@@ -12,7 +12,9 @@ public class Screen : MonoBehaviour
     MissionData missionData; 
     public static string typeFromMission0 {get; private set;}
 
-    public static List<string> tips {get; private set;}
+    public static Tip tip {get; private set;}
+
+    public static List<string> genericTips {get; private set;}
 
     public GameObject panelGameOver;
 
@@ -70,6 +72,7 @@ public class Screen : MonoBehaviour
         }
 
         typeFromMission0 = missionData.inputTypes[Languages.indexLanguage].options[(int) Mission.Types.STRING];
+        genericTips = missionData.genericTips;
 
         fade = gameObject.AddComponent<Fade>();
     }
@@ -79,7 +82,7 @@ public class Screen : MonoBehaviour
         components.title.text = missionData.title[level];
         components.description.text = missionData.description[level];
         List<string> options = missionData.input[level].options;
-        tips = missionData.tips[level].tips;
+        tip = missionData.tips[level];
 
         if (level <= 4)
         {
@@ -88,7 +91,7 @@ public class Screen : MonoBehaviour
 
             UpdateDropDown(components.variablesPhase.inputName, options);
 
-            if (level == 0) //inputType order don't change
+            if (level == 1) //inputType order don't change
             {
                 options = missionData.inputTypes[Languages.indexLanguage].options;
                 UpdateDropDown(components.variablesPhase.inputType, options);

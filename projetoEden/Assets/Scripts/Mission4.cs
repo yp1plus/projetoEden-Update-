@@ -7,20 +7,19 @@ public class Mission4 : MissionVariable
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        GameObject warrior = GameObject.FindGameObjectWithTag("Player");
-        //warrior.GetComponent<WarriorController>().ChangeHeight(height/100f);
+        
     }
 
     /// </inheritdoc>
-    protected override bool ConstIdentifierIsCorrect(bool isOn)
+    public override bool ConstIdentifierIsCorrect(bool isOn)
     {
-        return isOn; //It's constant
+        return isOn;
     }
 
     /// </inheritdoc>
     public override bool TypeIsCorrect(int index, bool isConstant)
     {
-        return  index == (int) Types.CHAR && ConstIdentifierIsCorrect(isConstant);
+        return index == (int) Types.CHAR && ConstIdentifierIsCorrect(isConstant);
     }
 
     /// </inheritdoc>
@@ -34,7 +33,24 @@ public class Mission4 : MissionVariable
     {
         /* '!' */
         answer = answer.Trim(); //removes whitespaces on the right and on the left
+        if (!answer.StartsWith("'") || !answer.EndsWith("'"))
+        {
+            SetIndexTip(11);
+            return false;
+        }
         answer = answer.Trim('\''); //removes the single quotes
-        return answer == "!";
+
+        if (answer.Length != 1)
+        {
+            SetIndexTip(12);
+            return false;
+        }
+        
+        if (answer == "!")
+            return true;
+
+        SetIndexTip(14);
+        SetIndexTip(13);
+        return false;
     }
 }

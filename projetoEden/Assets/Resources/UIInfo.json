@@ -1,0 +1,11 @@
+{
+    "title":["Partiu Batalhar", "Atire Galinhas", "Hora de Incendiar", "Cresça ou Diminua", "Hora de Atacar"],
+    "description":
+            [
+            "Colete bolas de magia para ativar a tela de codificação. \nAperte X para atacar com a espada. \nAperte ESC para acessar a tela de instruções.",
+            "Você ganhou o poder de atirar galinhas em seus inimigos. \nPara ativar, aperte a tecla C.",
+            "Você ganhou o poder de ativar a chama em obstáculos e inimigos. \nPara ativar, aperte a tecla E.",
+            "Você ganhou o poder de mudar sua altura. Agora você pode esmagar inimigos e passar por barreiras. Aperte Q para crescer ou Z para diminuir.",
+            "Você ganhou 50% a mais de força na sua espada permanentemente. \nAperte X para atacar."
+            ]
+}

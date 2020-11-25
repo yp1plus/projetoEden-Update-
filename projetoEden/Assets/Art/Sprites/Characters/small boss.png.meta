@@ -1,0 +1,1414 @@
+fileFormatVersion: 2
+guid: 6bd12f565e74cab4f8694560ab144ca6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7828796504075265482
+    second: small boss_0
+  - first:
+      213: 2019317640811696399
+    second: small boss_1
+  - first:
+      213: 3359400496375260282
+    second: small boss_2
+  - first:
+      213: 1966545085552128123
+    second: small boss_3
+  - first:
+      213: -6057911470077587799
+    second: small boss_4
+  - first:
+      213: -4135558505874943393
+    second: small boss_5
+  - first:
+      213: -5026357439928667428
+    second: small boss_6
+  - first:
+      213: -854469303836565618
+    second: small boss_7
+  - first:
+      213: -3129776018846825654
+    second: small boss_8
+  - first:
+      213: -4472014959396594195
+    second: small boss_9
+  - first:
+      213: -1218165384155514299
+    second: small boss_10
+  - first:
+      213: 4506163582947899102
+    second: small boss_11
+  - first:
+      213: 7273119696646750769
+    second: small boss_12
+  - first:
+      213: 1445653978591088050
+    second: small boss_13
+  - first:
+      213: -8341296019623833733
+    second: small boss_14
+  - first:
+      213: -4600478517028866039
+    second: small boss_15
+  - first:
+      213: 9151410121345997562
+    second: small boss_16
+  - first:
+      213: 3114980148036358922
+    second: small boss_17
+  - first:
+      213: -7486239938242662762
+    second: small boss_18
+  - first:
+      213: 9160369610521931863
+    second: small boss_19
+  - first:
+      213: -1193085290023557179
+    second: small boss_20
+  - first:
+      213: -5249650265510709408
+    second: small boss_21
+  - first:
+      213: -2010017536696552155
+    second: small boss_22
+  - first:
+      213: 9153975813044717014
+    second: small boss_23
+  - first:
+      213: 2087864270345547049
+    second: small boss_24
+  - first:
+      213: 5761733972109213447
+    second: small boss_25
+  - first:
+      213: 903387122243841890
+    second: small boss_26
+  - first:
+      213: -4454423979048732306
+    second: small boss_27
+  - first:
+      213: -9146561927421421037
+    second: small boss_28
+  - first:
+      213: 7823431062826356360
+    second: small boss_29
+  - first:
+      213: -69466684615014969
+    second: small boss_30
+  - first:
+      213: -8938072074115100847
+    second: small boss_31
+  - first:
+      213: 7695873848333574898
+    second: small boss_32
+  - first:
+      213: -2676499966173056196
+    second: small boss_33
+  - first:
+      213: -9127000849362985481
+    second: small boss_34
+  - first:
+      213: 53031135652281123
+    second: small boss_35
+  - first:
+      213: -2863879916239722757
+    second: small boss_36
+  - first:
+      213: 6523824922567286413
+    second: small boss_37
+  - first:
+      213: -2029779988950752857
+    second: small boss_38
+  - first:
+      213: -8924482210253401358
+    second: small boss_39
+  - first:
+      213: -8407649840244123575
+    second: small boss_40
+  - first:
+      213: -6512875028052720036
+    second: small boss_41
+  - first:
+      213: -8604288328280736257
+    second: small boss_42
+  - first:
+      213: -3155809539759026191
+    second: small boss_43
+  - first:
+      213: 1186144182777238387
+    second: small boss_44
+  - first:
+      213: 1360378303505334498
+    second: small boss_45
+  - first:
+      213: 1945913889373880993
+    second: small boss_46
+  - first:
+      213: -2233904894088427032
+    second: small boss_47
+  - first:
+      213: -3177343629421672603
+    second: small boss_48
+  - first:
+      213: -810458491829916247
+    second: small boss_49
+  - first:
+      213: 5076459429264919700
+    second: small boss_50
+  - first:
+      213: 1360517271392176288
+    second: small boss_51
+  - first:
+      213: 1676921940909073641
+    second: small boss_52
+  - first:
+      213: 9033063057062973836
+    second: small boss_53
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: small boss_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 606
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5e93411f875ac60800000000000000
+      internalID: 7828796504075265482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 606
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01d24d02be060c10800000000000000
+      internalID: 2019317640811696399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 606
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74e7bcd3fcfe9e20800000000000000
+      internalID: 3359400496375260282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_3
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 679
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70ff1b06529a4b10800000000000000
+      internalID: 1966545085552128123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_4
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 682
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aec2493d99fdeba0800000000000000
+      internalID: -6057911470077587799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_5
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 682
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f529a75337b8b96c0800000000000000
+      internalID: -4135558505874943393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_6
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 682
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2f8e60a8ace3ab0800000000000000
+      internalID: -5026357439928667428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_7
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 679
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f985102b05424f0800000000000000
+      internalID: -854469303836565618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_8
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 682
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43491a0b4dc094d0800000000000000
+      internalID: -3129776018846825654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_9
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 682
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deddee2961630f1c0800000000000000
+      internalID: -4472014959396594195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_10
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 682
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54abbb78905381fe0800000000000000
+      internalID: -1218165384155514299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_11
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 682
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6396d67eb198e30800000000000000
+      internalID: 4506163582947899102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_12
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 679
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132c68754df4fe460800000000000000
+      internalID: 7273119696646750769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_13
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 682
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd4d0652aeff0410800000000000000
+      internalID: 1445653978591088050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_14
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 667
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f01f7d673cd3c80800000000000000
+      internalID: -8341296019623833733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_15
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 667
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908bda3c921d720c0800000000000000
+      internalID: -4600478517028866039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_16
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 667
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa1eb4e407500f70800000000000000
+      internalID: 9151410121345997562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_17
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 667
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03d916d0f1aa3b20800000000000000
+      internalID: 3114980148036358922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_18
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 667
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e24b1a0788b1890800000000000000
+      internalID: -7486239938242662762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_19
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 667
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750717680ab202f70800000000000000
+      internalID: 9160369610521931863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_20
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 667
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7e66dff3f417fe0800000000000000
+      internalID: -1193085290023557179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_21
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 667
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067f239b5ee7527b0800000000000000
+      internalID: -5249650265510709408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_22
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 667
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52575ec23bbfa14e0800000000000000
+      internalID: -2010017536696552155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_23
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 667
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d54c0b8084790f70800000000000000
+      internalID: 9153975813044717014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 514
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d2d2ded7599fc10800000000000000
+      internalID: 2087864270345547049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_25
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 514
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fbed9458ac5ff40800000000000000
+      internalID: 5761733972109213447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_26
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 514
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fa1042dc9798c00800000000000000
+      internalID: 903387122243841890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_27
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 514
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6971d9ddf4be22c0800000000000000
+      internalID: -4454423979048732306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_28
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 514
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a1fe73362e01180800000000000000
+      internalID: -9146561927421421037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_29
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 514
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e8580f919629c60800000000000000
+      internalID: 7823431062826356360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_30
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 430
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c54ccb1b64390ff0800000000000000
+      internalID: -69466684615014969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_31
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 430
+        width: 87
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15fc785fdc695f380800000000000000
+      internalID: -8938072074115100847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_32
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 430
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f224269d7c3dca60800000000000000
+      internalID: 7695873848333574898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_33
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 430
+        width: 108
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33f8e226792bdad0800000000000000
+      internalID: -2676499966173056196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_34
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 430
+        width: 109
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdd70d9511665180800000000000000
+      internalID: -9127000849362985481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_35
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 306
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bf69279876cb000800000000000000
+      internalID: 53031135652281123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_36
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 306
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6e721c3647148d0800000000000000
+      internalID: -2863879916239722757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_37
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 306
+        width: 103
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e967ec338498a50800000000000000
+      internalID: 6523824922567286413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_38
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 306
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1e462bad5c4d3e0800000000000000
+      internalID: -2029779988950752857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_39
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 306
+        width: 100
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f29d85b6bed52480800000000000000
+      internalID: -8924482210253401358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_40
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 306
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94811641407025b80800000000000000
+      internalID: -8407649840244123575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_41
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 306
+        width: 103
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56c76e2bae9d95a0800000000000000
+      internalID: -6512875028052720036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_42
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 306
+        width: 100
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd79c75a5d679880800000000000000
+      internalID: -8604288328280736257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_43
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 306
+        width: 100
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffcfdb91ff4434d0800000000000000
+      internalID: -3155809539759026191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_44
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 306
+        width: 101
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37355da89d7067010800000000000000
+      internalID: 1186144182777238387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_45
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 306
+        width: 124
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e085940cd801e210800000000000000
+      internalID: 1360378303505334498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_46
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 214
+        width: 95
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a201ab5f56410b10800000000000000
+      internalID: 1945913889373880993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 170
+        width: 79
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e94ad5a5539ff0e0800000000000000
+      internalID: -2233904894088427032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 94
+        width: 87
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56788f6adcec7e3d0800000000000000
+      internalID: -3177343629421672603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad6741bb4ca0c4f0800000000000000
+      internalID: -810458491829916247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_50
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c840664f4337640800000000000000
+      internalID: 5076459429264919700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_51
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a84d10004781e210800000000000000
+      internalID: 1360517271392176288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_52
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 2
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4a1fbde9f954710800000000000000
+      internalID: 1676921940909073641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small boss_53
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 2
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8151fdbdf2eb5d70800000000000000
+      internalID: 9033063057062973836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

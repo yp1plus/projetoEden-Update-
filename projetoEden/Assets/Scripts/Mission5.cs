@@ -33,15 +33,24 @@ public class Mission5 : Mission
 
     string GetIdentifier(string answer)
     {
-        answer = Mission.RemoveSemicolon(answer);
+        if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
+            answer = Mission.RemoveSemicolon(answer);
+        
         if (answer != null)
         {
             answer = answer.Trim(); //removes whitespaces
 
             if (!answer.EndsWith("\"") || !answer.StartsWith("\""))
+            {
+                SetIndexTip(12);
                 return null;
+            }
             
             answer = answer.Trim('\"'); //removes the double quotes
+        }
+        else
+        {
+            SetIndexTip(22); //generic tip
         }
 
         return answer;
@@ -55,7 +64,11 @@ public class Mission5 : Mission
         if (answer == null)
             return false;
         
-        return answer == "A99" || answer == "A98" || answer == "A97";
+        if (answer == "A99" || answer == "A98" || answer == "A97")
+            return true;
+        
+        SetIndexTip(11);
+        return false;
     }
 
     /// </inheritdoc>
@@ -72,6 +85,10 @@ public class Mission5 : Mission
                 if (!IsValid(inputCamera.text))
                     return false;
         }
+
+        SetIndexTip(15);
+        SetIndexTip(14);
+        SetIndexTip(13);
 
         return true;
     }

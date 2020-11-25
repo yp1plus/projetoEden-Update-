@@ -33,10 +33,11 @@ public class GrumpyBee : EnemyController
     {
         if (!movementActivated && WarriorController.level == 1 && GameObject.FindWithTag("Chicken") == null)
         {
+            UIController.instance.ShowNewInfo();
             movementActivated = true;
         }
 
-        if (movementActivated)
+        if (movementActivated && !UIController.instance.InfoIsActive())
             MovementWithoutCollision(rigidbody2D, -1);
         
         if (currentHealth == 0)

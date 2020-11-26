@@ -60,11 +60,7 @@ public class SmallBoss : EnemyController
     /// </summary>
     void OnDestroy()
     {
-        GameObject[] barrer = GameObject.FindGameObjectsWithTag("Barrer");
-        for (int i = 0; i < barrer.Length; i++)
-        {
-            barrer[i].SetActive(false);
-        }
+        BarrierController.instance.ResetAttributes();
     }
 
     void AnimateAttack()

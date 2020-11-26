@@ -8,10 +8,15 @@
         {"options":[null,null,null,null,null]},
         {"options":["Condição", "(chamaAcesa == True):","(quantGalinhas >= 5 or codigo == '/'):","(quantGalinhas < 0 and codigo == '!'):","(alturaJogador == 0.00):","(quantGalinhas > 10):"]},
         {"options":["(correr()):","(ficar() or Correr()):","(not ficar() and not Correr()):","((ficar() and correr()) or ficar()):","((ficar() or correr()) or ficar()):"]},
-        {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i  in range (10, 1, -1)"]},
-        {"options":["Iteração", "i in range (14):","i in range (13):","i in range (4)", "i in range (15):", "i in range (13, -1, 9):"]}
+        {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i  in range (10, -1, 1)"]},
+        {"options":["Iteração", "i in range (14):","i in range (13):","i in range (4)", "i in range (15):", "i in range (13, 9, -1):"]}
     ],
-    "options_for2":["Iteração", "j in range (14):", "j in range (12, -1, 8):", "j in range (13):", "j in range (15):", "j in range (12, 1, 8):"],
+    "options_for2":["Iteração", "j in range (13):", "j in range (11, 7, -1):", "j in range (12):", "j in range (15):", "j in range (12, 8, 1):"],
     "resultsStructures1":["o_bicho_pega()", "criar_bloco()"],
-    "resultsStructures2":["o_bicho_come()", null, "destruir_bloco(i, j)"]
+    "resultsStructures2":["o_bicho_come()", null, "destruir_bloco(i, j)"],
+    "descriptionInfo":[
+        "Números inteiros: escreva números até cerca de 2^31\nCaractere: escreva entre aspas simples\nNúmero decimal: escreva até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nPalavras: escreva entre aspas duplas\nBooleano: escreva True pra verdadeiro ou False pra falso\n",
+        "==: representa igualdade, se algo é igual a outro\nand: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\nor: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\nnot: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
+        "while(condição): enquanto a condição for verdadeira, repete a ação\nfor i in range(valor): repete um número de vezes estabelecido por valor\nfor i in range(x, y, z): repete de x até y + 1 somando z em x"
+    ]
 }

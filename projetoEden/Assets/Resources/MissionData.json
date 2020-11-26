@@ -200,5 +200,11 @@
                  "Cuidado com loops que nunca chegam a acontecer"
                 ]
         }
+    ],
+    "titleInfo":["Variáveis", "Condicionais", "Repetição"],
+    "descriptionInfo":[
+        "Tipo int: representa números inteiros até cerca de 2^31\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\nTipo float: representa números decimais até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nTipo char[]: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\n",
+        "==: representa igualdade, se algo é igual a outro\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n!:nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
+        "while(condição): enquanto a condição for verdadeira, repete a ação\nfor(int i = valor_inicial; condição; incremento (++) ou decremento(--)): repete um número de vezes estabelecido determinado pela condição"
     ]
 }

@@ -12,5 +12,10 @@
         {"options":["Iteração", "(int i = 0; i < 14; i++)","(int i = 0; i < 13; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 14; i++)", "(int i = 13; i >= 10; i--)"]}
     ],
     "resultsStructures1":["OBichoPega();", "CriarBloco();"],
-    "resultsStructures2":["OBichoCome();", null, "DestruirBloco(i, j);"]
+    "resultsStructures2":["OBichoCome();", null, "DestruirBloco(i, j);"],
+    "descriptionInfo":[
+        "Tipo int: representa números inteiros até cerca de 2^31\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\nTipo float: representa números decimais até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nTipo string: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\nTipo bool: representa os valores true (verdadeiro) ou false (falso)",
+        "==: representa igualdade, se algo é igual a outro\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n!: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
+        "while(condição): enquanto a condição for verdadeira, repete a ação\nfor(int i = valor_inicial; condição; incremento (++) ou decremento(--)): repete um número de vezes estabelecido determinado pela condição"
+    ]
 }

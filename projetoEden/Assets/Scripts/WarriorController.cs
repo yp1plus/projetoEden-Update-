@@ -46,8 +46,7 @@ public class WarriorController : PlayerController
     public TMP_Text txtNumChickens;
     public TMP_Text txtFlameIsBurning;
     public TMP_Text txtWarriorHeight;
-    GameObject[] barrier;
-    public bool barrierActivated = false;
+    public static GameObject[] barrier;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -70,8 +69,7 @@ public class WarriorController : PlayerController
         numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
-        barrier = GameObject.FindGameObjectsWithTag("Barrer");
-        barrier[0].SetActive(false); barrier[1].SetActive(false);
+        audioSource.Play();
     }
 
     public void LoadFlame(GameObject flame)
@@ -85,15 +83,12 @@ public class WarriorController : PlayerController
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
         currentHealth = 100;
-        height = 119.5f;
-        
+        ChangeHeight(facingRight ? 1: -1);
         ResetInvincibility();
-        UIHealthBar.instance.ResetBar();
         if (!facingRight)
             Flip();
+        UIHealthBar.instance.ResetBar();
         StartCoroutine(DelayReset());
-        barrier[0].SetActive(false); barrier[1].SetActive(false);
-        barrierActivated = false;
     }
 
     IEnumerator DelayReset()
@@ -156,27 +151,6 @@ public class WarriorController : PlayerController
                 ChangeHeight(transform.localScale.x/1.2f);
             }
         }
-
-        if (barrierActivated && transform.position.y >= -14.98f && transform.position.y <= -12.1f)
-        {
-            for (int i = 0; i < barrier.Length; i++)
-            {
-                barrier[i].SetActive(true);
-            }
-        }
-    }
-
-    /// <summary>
-    /// Sent when another object enters a trigger collider attached to this
-    /// object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Trigger4"))
-        {
-            barrierActivated = true;
-        }
     }
 
     /// <inheritdoc/>
@@ -222,7 +196,6 @@ public class WarriorController : PlayerController
         else
         {
             isSubPhase = true;
-            Debug.Log(isSubPhase);
         }  
     }
 
@@ -318,9 +291,9 @@ public class WarriorController : PlayerController
         }
            
 
-        transform.localScale = new Vector3(scale, scale < 0 ? -scale: scale, 0);
+        transform.localScale = new Vector3(scale, Mathf.Abs(scale), 0);
 
-        height = (scale == 1) ? 119.5f : Mathf.Abs(scale) * 100;
+        height = (Mathf.Abs(scale) == 1) ? 119.5f : Mathf.Abs(scale) * 100;
 
         if (transform.position.x < -37f || transform.position.y > 16.6) //change later
         {

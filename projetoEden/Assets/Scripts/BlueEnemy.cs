@@ -21,7 +21,7 @@ public class BlueEnemy : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (WarriorController.instance.barrierActivated && UIController.instance.powers[3].activeSelf)
+        if (BarrierController.instance.barrierActivated)
         {
             targetPosition = (WarriorController.instance.GetPosition() - transform.position).normalized;
 

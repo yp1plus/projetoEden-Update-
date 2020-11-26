@@ -9,9 +9,8 @@ public class Screen : MonoBehaviour
     public GameObject variablesPhaseParent;
     public GameObject camerasPhaseParent;
     public GameObject structuresPhaseParent;
-    MissionData missionData; 
+    public static MissionData missionData {get; private set;}
     public static string typeFromMission0 {get; private set;}
-
     public static Tip tip {get; private set;}
 
     public static List<string> genericTips {get; private set;}
@@ -53,6 +52,7 @@ public class Screen : MonoBehaviour
     public Components components = new Components();
 
     protected Fade fade;
+    public AudioClip gameOverClip;
 
     public virtual void Awake()
     {
@@ -73,7 +73,7 @@ public class Screen : MonoBehaviour
 
         typeFromMission0 = missionData.inputTypes[Languages.indexLanguage].options[(int) Mission.Types.STRING];
         genericTips = missionData.genericTips;
-
+        
         fade = gameObject.AddComponent<Fade>();
     }
 
@@ -190,13 +190,19 @@ public class Screen : MonoBehaviour
 
     void UpdateForJava()
     {
+        MissionState.OverloadFromJson(missionData, "InfoJava");
         components.variablesPhase.constIdentifier.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "final";
     }
 
     public void ShowGameOver(bool state)
     {
         if (panelGameOver != null && panelGameOver.activeSelf != state)
+        {
             panelGameOver.SetActive(state);
+            if (state)
+                WarriorController.instance.PlaySound(gameOverClip);
+        }
+            
     }
 }
 

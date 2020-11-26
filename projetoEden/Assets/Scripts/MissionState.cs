@@ -84,7 +84,10 @@ public class MissionData
     public List<string> resultsStructures2 = new List<string>();
     public List<Tip> tips = new List<Tip>();
     public List<string> genericTips = new List<string>();
+    public List<string> titleInfo = new List<string>();
+    public List<string> descriptionInfo = new List<string>();
 }
+
 [System.Serializable]
 public class Tip
 {

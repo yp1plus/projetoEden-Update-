@@ -7,7 +7,7 @@ public class Mission4 : MissionVariable
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        
+      
     }
 
     /// </inheritdoc>

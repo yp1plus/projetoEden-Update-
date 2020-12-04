@@ -34,6 +34,15 @@ public class DragonHealthBar : MonoBehaviour
 
     public void ResetBar()
     {
-        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+        gameObject.SetActive(true);
+        
+        if (mask != null)
+            if (mask.rectTransform != null)
+                mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize);
+    }
+
+    public void Destroy()
+    {
+        gameObject.SetActive(false);
     }
 }

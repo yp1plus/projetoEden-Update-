@@ -1,5 +1,5 @@
 {
-    "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Diminuir Altura","IV: Upar Espada","V: Enganar Câmeras", "VI: Parar Blocos", "VII: Correr do Bicho", "VIII: Construir Caminho", "IX: Quebrar a 4ª Parede"],
+    "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Upar Espada","IV: Diminuir Altura","V: Enganar Câmeras", "VI: Parar Blocos", "VII: Correr do Bicho", "VIII: Construir Caminho", "IX: Quebrar a 4ª Parede"],
     "description":["Nesse mundo programável você terá o poder de controlar situações por meio de códigos. Comece criando um apelido que o acompanhará durante todo o jogo. Afinal, não poderia começar a sua jornada sem um nome à altura!",
         "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Lembre-se, com grandes poderes vêm grandes responsabilidades.",
         "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la. Vá em frente!",
@@ -14,8 +14,8 @@
     "input":[{"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
     {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
     {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","#      ###","SENHA"]},
     {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
-    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","SENHA"]},
     {"options":[null,null,null,null,null]},
     {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
     {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},

@@ -71,7 +71,8 @@ public class WarriorController : PlayerController
     public override void Start()
     {
         base.Start();
-        numCoins.text = quantCoins.ToString();
+        if (numCoins != null)
+            numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
     }
@@ -92,6 +93,7 @@ public class WarriorController : PlayerController
         if (!facingRight)
             Flip();
         UIHealthBar.instance.ResetBar();
+        DragonHealthBar.instance.ResetBar();
         StartCoroutine(DelayReset());
     }
 
@@ -121,23 +123,26 @@ public class WarriorController : PlayerController
     {
         animator.SetFloat("Speed", Mathf.Abs(move)); 
 
-        numCoins.text = quantCoins.ToString();
-        txtNumChickens.text = quantChickens.ToString();
+        if (numCoins != null)
+            numCoins.text = quantCoins.ToString();
+        if (txtNumChickens != null)
+            txtNumChickens.text = quantChickens.ToString();
         if (flame != null)
             txtFlameIsBurning.text = flame.GetComponent<FlameController>().isBurning.ToString().ToLower();
-        txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
+        if (txtWarriorHeight != null)
+            txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
 
-        if (!CodingScreen.instance.panel.activeSelf)
+        if ((CodingScreen.instance == null || !CodingScreen.instance.panel.activeSelf) && Input.GetKeyDown(KeyCode.X))
+        {
+            animator.SetTrigger("Attack");
+            audioController.PlaySound(attackSongs[(int) random.Next(0, 3)]) ;
+        }
+
+        if (CodingScreen.instance != null && !CodingScreen.instance.panel.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.C) && UIController.instance.powers[0].activeSelf)
             {
                 Launch();
-            }
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                animator.SetTrigger("Attack");
-                audioController.PlaySound(attackSongs[(int) random.Next(0, 3)]) ;
             }
 
             if (Input.GetKeyDown(KeyCode.E) && UIController.instance.powers[1].activeSelf)
@@ -172,10 +177,12 @@ public class WarriorController : PlayerController
 
         //DestroyPlayerDead();
 
-        UIHealthBar.instance.SetValue(health);
+        if (UIHealthBar.instance != null)
+            UIHealthBar.instance.SetValue(health);
         
         if (health == 0)
-             CodingScreen.instance.ShowGameOver(true);
+            if (CodingScreen.instance != null)
+                CodingScreen.instance.ShowGameOver(true);
     }
 
     public void SubtractChicken()
@@ -284,9 +291,13 @@ public class WarriorController : PlayerController
     /// <param name = "scale"> A float, the scale value to change health. </param>
     public void ChangeHeight(float scale)
     {
-        float changeFactor = DEFAULT_HEIGHT/9;
-
-        if (Mathf.Abs(transform.localScale.x) < Mathf.Abs(scale))
+        if (Mathf.Abs(scale) == 1)
+        {
+            range = new Vector3(-3, 0.3f, 0);
+            jumpForce = 7;
+            speed = 10; 
+        } 
+        else if (Mathf.Abs(transform.localScale.x) < Mathf.Abs(scale))
         {
             range = new Vector3(range.x * 1.2f, range.y * 1.2f, 0);
             speed = Mathf.Clamp(speed - 1f, 2, 20);
@@ -304,15 +315,6 @@ public class WarriorController : PlayerController
             else
                 jumpForce += 2f;
         } 
-            
-        
-        if (scale == 1)
-        {
-            range = new Vector3(-3, 0.3f, 0);
-            jumpForce = 7;
-            speed = 10;
-        }
-           
 
         transform.localScale = new Vector3(scale, Mathf.Abs(scale), 0);
 

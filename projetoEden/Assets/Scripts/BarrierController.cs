@@ -30,7 +30,8 @@ public class BarrierController : MonoBehaviour
             barrierActivated = true;
             for (int i = 0; i < barrier.Length; i++)
             {
-                barrier[i].SetActive(true);
+                if (barrier!= null && barrier[i] != null)
+                    barrier[i].SetActive(true);
             }
         }
     }
@@ -41,7 +42,8 @@ public class BarrierController : MonoBehaviour
         phaseIsFinished = true;
         for (int i = 0; i < barrier.Length; i++)
         {
-            barrier[i].SetActive(false);
+            if (barrier!= null && barrier[i] != null)
+                barrier[i].SetActive(false);
         }
     }
 }

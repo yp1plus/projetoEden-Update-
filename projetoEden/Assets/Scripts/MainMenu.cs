@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-    public static int lastLevel = 9;
+    public static int lastLevel = 0;
     public static bool tutorialExecuted = false;
     public static bool isSubPhase = false;
     public static bool debug = false;
@@ -68,6 +68,11 @@ public class MainMenu : MonoBehaviour
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    public static void GoToFinal()
+    {
+        SceneManager.LoadScene(12);
     }
 
     public static void SelectActiveScene(int i)

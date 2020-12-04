@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2000008, y: 4.6}
-  m_SizeDelta: {x: 7.7233505, y: 1.6019988}
+  m_AnchoredPosition: {x: -0.381, y: 4.6}
+  m_SizeDelta: {x: 4.561305, y: 1.6019988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2104411232
 MeshRenderer:
@@ -99,7 +99,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jogador
+  m_text: 'Jogador
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -142,7 +144,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -354,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289178161058158418413531ca069c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   jumpForce: 7
   maxHealth: 100
   groundCheck: {fileID: 5838485059074037618}
@@ -362,9 +364,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   range: {x: -3, y: 0.3, z: 0}
+  facingRight: 1
   numCoins: {fileID: 0}
   chickenShoot: {fileID: 0}
   flame: {fileID: 0}
+  txtNumChickens: {fileID: 0}
+  txtFlameIsBurning: {fileID: 0}
+  txtWarriorHeight: {fileID: 0}
+  attackSongs:
+  - {fileID: 8300000, guid: f1d653b02b315e54fbee1ade444b1487, type: 3}
+  - {fileID: 8300000, guid: 2be4a8d402a6f5e4b9d5462667796689, type: 3}
+  - {fileID: 8300000, guid: 024c6c5e61b398148910c0f631137af1, type: 3}
+  - {fileID: 8300000, guid: 47d4c6b83a950c14d8051d12fc64458b, type: 3}
+  attacked: {fileID: 8300000, guid: dba40e33e85039249ac787dd31f19e66, type: 3}
+  darkAmbient: {fileID: 8300000, guid: e9600ee905cead042a3c16b4117f025f, type: 3}
 --- !u!82 &1417442085
 AudioSource:
   m_ObjectHideFlags: 0
@@ -375,7 +388,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0a4379269493b8640addf81b870e8d07, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

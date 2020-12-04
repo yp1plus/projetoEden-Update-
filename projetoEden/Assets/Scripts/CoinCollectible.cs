@@ -8,13 +8,15 @@ using UnityEngine;
 public class CoinCollectible : MonoBehaviour
 {
     public AudioClip collectedClip;
+    bool flag = false;
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController controller = other.GetComponent<WarriorController>();
 
-        if (controller != null && !controller.audioController.audioIsPlaying)
+        if (controller != null && !flag)
         {
+            flag = true;
             controller.AddCoin();
             Destroy(gameObject);
             controller.audioController.PlaySound(collectedClip);

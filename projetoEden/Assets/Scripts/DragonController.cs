@@ -13,6 +13,7 @@ public class DragonController : EnemyController
     bool isBurning = false;
     public AudioClip audioScream;
     bool actived = false;
+    public GameObject portal;
 
     void Awake()
     {
@@ -28,14 +29,15 @@ public class DragonController : EnemyController
         {
             actived = true;
 
-            StartCoroutine(CheckFlame());
-        
+            if (AnimatorIsPlaying("Dragon_Attack", animator) && !isBurning)
+                StartCoroutine(CheckFlame());
+
             time += Time.deltaTime;
             if (time > timeMaxAttack)
             {
                 AnimateAttack();
                 time = 0;
-                timeMaxAttack = Random.Range(1f, 7f);
+                timeMaxAttack = Random.Range(2f, 7f);
             }
         }
     }
@@ -43,8 +45,14 @@ public class DragonController : EnemyController
     IEnumerator CheckFlame()
     {
         yield return new WaitForSeconds(0.3f);
-        //if (!WarriorController.instance.flame.GetComponent<FlameController>().isBurning && AnimatorIsPlaying("Dragon_Attack", animator))
-            //WarriorController.instance.ChangeHealth(-100);
+        if (AnimatorIsPlaying("Dragon_Attack", animator) && !isBurning)
+            WarriorController.instance.ChangeHealth(-100);
+    }
+
+    IEnumerator ResetIsBurning()
+    {
+        yield return new WaitForSeconds(2f);
+        isBurning = false;
     }
 
     void AnimateAttack()
@@ -56,11 +64,42 @@ public class DragonController : EnemyController
         }
     }
 
+    void OnDestroy()
+    {
+        if (portal != null)
+            portal.SetActive(true);
+    }
+
     public override void ChangeHealth(int amount)
     {
-        base.ChangeHealth(amount);
+        if (health == 0)
+            return;
+
+        if (amount < 0) //want to take life
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+
+            StartCoroutine(WaitResetInvincibility());
+        }
+        
+        //The first value it is between the second and third
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         DragonHealthBar.instance.SetValue(health);
+        
+        if (health == 0)
+            DragonHealthBar.instance.Destroy();
+        
+        DestroyPlayerDead();
+    }
+
+    IEnumerator WaitResetInvincibility()
+    {
+        yield return new WaitForSeconds(1);
+        ResetInvincibility();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -75,7 +114,8 @@ public class DragonController : EnemyController
         }
         else if (controller != null)
         {
-
+            isBurning = true;
+            StartCoroutine(ResetIsBurning());
         } else if (e != null)
         {
             e.DestroyGameObject();
@@ -83,7 +123,7 @@ public class DragonController : EnemyController
             if (!AnimatorIsPlaying("Dragon_Attack", animator))
             {
                 animator.SetTrigger("Attacked");
-                ChangeHealth(-2);
+                ChangeHealth(-100);
             }
         }
     }
@@ -100,15 +140,15 @@ public class DragonController : EnemyController
         }
         else
         {
-            if (AnimatorIsPlaying("Dragon_Attack", animator))
-            {
-                if (!invincible)
-                    player.ChangeHealth(-damage/2);
-            }
-            else
+            if (!AnimatorIsPlaying("Dragon_Attack", animator))
             {
                 animator.SetTrigger("Attacked");
-                ChangeHealth(-hit);
+                if (WarriorController.instance.GetScale().x >= 2)
+                    ChangeHealth(-(int)(hit*1.5f));
+                else if (WarriorController.instance.GetScale().x >= 4)
+                    ChangeHealth(-hit*2);
+                else
+                    ChangeHealth(-hit);
             }
         } 
     }

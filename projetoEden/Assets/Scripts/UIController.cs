@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
 
     public Info info = new Info();
     UIInfo txtInfoUI;
-    int index = 7;
+    int index = 1;
 
     void Awake()
     {

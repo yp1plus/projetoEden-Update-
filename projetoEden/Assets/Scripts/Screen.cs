@@ -202,7 +202,6 @@ public class Screen : MonoBehaviour
             if (state)
                 WarriorController.instance.audioController.PlaySound(gameOverClip);
         }
-            
     }
 }
 

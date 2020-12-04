@@ -25,11 +25,11 @@ public class CheckPoint : MonoBehaviour
 
         if (controller != null && !activated)
         {
+            activated = true;
             MainMenu.lastCheckPointPosition = transform.position;
             MainMenu.lastLevel = WarriorController.level;
             if (animator != null)
                 animator.SetTrigger("Activated");
-            activated = true;
         }
     }
 }

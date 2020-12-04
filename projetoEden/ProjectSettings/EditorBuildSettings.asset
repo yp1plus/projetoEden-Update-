@@ -22,10 +22,10 @@ EditorBuildSettings:
     guid: 6e311c576c0f70245a50fc237594ea01
   - enabled: 1
     path: Assets/Scenes/Mission3.unity
-    guid: 5385d8b0cf842e24c8cbd292f69fe582
+    guid: d77545a295eff6a4daab725dc45e0ca5
   - enabled: 1
     path: Assets/Scenes/Mission4.unity
-    guid: d77545a295eff6a4daab725dc45e0ca5
+    guid: 5385d8b0cf842e24c8cbd292f69fe582
   - enabled: 1
     path: Assets/Scenes/Mission5.unity
     guid: 50faa2b8ab4a50141a6b48fb4320df37
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mission9.unity
     guid: 3cb5f19da405a3b4bbefd3b1a3ba4385
+  - enabled: 1
+    path: Assets/Scenes/Mission10.unity
+    guid: a07d7590fff984242bb60262926dbaf9
   m_configObjects: {}

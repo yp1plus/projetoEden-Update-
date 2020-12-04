@@ -41,7 +41,7 @@ public class EnemyController : PlayerController
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
-        FlameController controller = other.GetComponent<FlameController>();
+        FlameController controller = other.gameObject.GetComponent<FlameController>();
         
         if (player != null)
         {
@@ -69,7 +69,10 @@ public class EnemyController : PlayerController
             && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
         {
             if (!invincible)
+            {
                 player.ChangeHealth(-damage);
+            }
+                
         }
         else
         {

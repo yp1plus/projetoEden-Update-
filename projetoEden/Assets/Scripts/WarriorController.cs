@@ -15,9 +15,7 @@ public class WarriorController : PlayerController
     /// <value> Gets the component animator of warrior </value>
     public Animator playerAnimator {get {return animator; }}
     Animator animator;
-    AudioSource audioSource;
-    
-    public bool audioIsPlaying {get {return audioSource.isPlaying;}} 
+    public AudioController audioController {get; private set;}
 
     /* Control Coins */
     /// <value> Gets the current value of coins </value>
@@ -39,14 +37,21 @@ public class WarriorController : PlayerController
 
     public GameObject flame;
 
-    float height = 119.5f;
+    
+    const float DEFAULT_HEIGHT = 119.5f;
+    float height = DEFAULT_HEIGHT;
+
+    const float POSITION_NEXT_TO_DRAGON = 827.3f;
 
     public static bool isSubPhase = false;
     int quantChickens = 0;
     public TMP_Text txtNumChickens;
     public TMP_Text txtFlameIsBurning;
     public TMP_Text txtWarriorHeight;
-    public static GameObject[] barrier;
+    public AudioClip[] attackSongs = new AudioClip[4];
+    public AudioClip attacked;
+    public AudioClip darkAmbient;
+    System.Random random = new System.Random();
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -55,7 +60,7 @@ public class WarriorController : PlayerController
     {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        audioController = gameObject.AddComponent<AudioController>();
         instance = this;
     }
 
@@ -69,7 +74,6 @@ public class WarriorController : PlayerController
         numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
-        audioSource.Play();
     }
 
     public void LoadFlame(GameObject flame)
@@ -133,6 +137,7 @@ public class WarriorController : PlayerController
             if (Input.GetKeyDown(KeyCode.X))
             {
                 animator.SetTrigger("Attack");
+                audioController.PlaySound(attackSongs[(int) random.Next(0, 3)]) ;
             }
 
             if (Input.GetKeyDown(KeyCode.E) && UIController.instance.powers[1].activeSelf)
@@ -150,6 +155,9 @@ public class WarriorController : PlayerController
             {
                 ChangeHeight(transform.localScale.x/1.2f);
             }
+
+            if (transform.position.x >= 809f && currentLevel < 10)
+                GoToNextLevel();
         }
     }
 
@@ -157,6 +165,9 @@ public class WarriorController : PlayerController
     /// <remarks> Sets UI Health Bar at every change. </remarks>
     public override void ChangeHealth(int amount)
     {
+        if (amount < 0 && !isInvincible)
+            audioController.PlaySound(attacked);
+            
         base.ChangeHealth(amount);
 
         //DestroyPlayerDead();
@@ -197,6 +208,9 @@ public class WarriorController : PlayerController
         {
             isSubPhase = true;
         }  
+
+        if (currentLevel == 10)
+            audioController.PlayMusic(darkAmbient);
     }
 
     /// <summary>
@@ -270,16 +284,25 @@ public class WarriorController : PlayerController
     /// <param name = "scale"> A float, the scale value to change health. </param>
     public void ChangeHeight(float scale)
     {
+        float changeFactor = DEFAULT_HEIGHT/9;
+
         if (Mathf.Abs(transform.localScale.x) < Mathf.Abs(scale))
         {
             range = new Vector3(range.x * 1.2f, range.y * 1.2f, 0);
-            speed = Mathf.Clamp(speed - 0.2f, 2, 5); 
-            jumpForce = Mathf.Clamp(jumpForce - 0.5f, 0, 7);
+            speed = Mathf.Clamp(speed - 1f, 2, 20);
+            if (jumpForce >= 0 && jumpForce <= 7)
+                jumpForce = Mathf.Clamp(jumpForce - 1f, 0, 14);
+            else
+                jumpForce = Mathf.Clamp(jumpForce - 2f, 0, 14);
         }
         else
         {
             range = new Vector3(range.x / 1.2f, range.y / 1.2f, 0);
-            speed += 0.2f; jumpForce += 0.5f;
+            speed += 1f; 
+            if (jumpForce >= 0 && jumpForce < 7)
+                jumpForce += 1f;
+            else
+                jumpForce += 2f;
         } 
             
         
@@ -287,13 +310,13 @@ public class WarriorController : PlayerController
         {
             range = new Vector3(-3, 0.3f, 0);
             jumpForce = 7;
-            speed = 3;
+            speed = 10;
         }
            
 
         transform.localScale = new Vector3(scale, Mathf.Abs(scale), 0);
 
-        height = (Mathf.Abs(scale) == 1) ? 119.5f : Mathf.Abs(scale) * 100;
+        height = (Mathf.Abs(scale) == 1) ? DEFAULT_HEIGHT : Mathf.Abs(scale) * 100;
 
         if (transform.position.x < -37f || transform.position.y > 16.6) //change later
         {
@@ -301,16 +324,12 @@ public class WarriorController : PlayerController
         }
     }
 
-    /// <summary>
-    /// Gets the current player position.
-    /// </summary>
-    /// <returns> A Vector3, the transform position. </returns>
-    public Vector3 GetPosition()
+    public bool IsFinalBattle()
     {
-        if (gameObject != null)
-            return transform.position;
-        else
-            return new Vector3(0, 0, 0);
+        if (transform.position.x >= POSITION_NEXT_TO_DRAGON)
+            return true;
+        
+        return false;
     }
 
     /// <summary>
@@ -320,14 +339,5 @@ public class WarriorController : PlayerController
     public void SetPosition(float position)
     {
         transform.position = new Vector3(position, transform.position.y, transform.position.z);
-    }
-
-    /// <summary>
-    /// Plays a specific sound, normally when occurs collision.
-    /// </summary>
-    /// <param name = "clip"> The AudioClip to be executed. </param>
-    public void PlaySound(AudioClip clip)
-    {
-        audioSource.PlayOneShot(clip);
     }
 }

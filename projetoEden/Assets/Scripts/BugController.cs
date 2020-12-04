@@ -6,6 +6,7 @@ public class BugController : EnemyController
 {
     private Rigidbody2D rigidbody2D;
     bool isVisible;
+    bool playerHit = false;
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -19,7 +20,7 @@ public class BugController : EnemyController
     public override void Start()
     {
         base.Start();
-        speed = 6;
+        speed = 13;
         currentHealth = maxHealth;
         damage = 100;
         hit = 0; //doesn't suffer hit
@@ -34,12 +35,18 @@ public class BugController : EnemyController
         if (isVisible)
         {
             MovementWithoutCollision(rigidbody2D, 1);
-        }     
+        }
+
+        if(!playerHit)
+            speed = WarriorController.instance.speed + 3;
+        else
+            DecreaseSpeed();
     }
 
     public void DecreaseSpeed()
     {
-        speed = 3;
+        playerHit = true;
+        speed = WarriorController.instance.speed - 3;
     }
 
     void OnBecameInvisible()

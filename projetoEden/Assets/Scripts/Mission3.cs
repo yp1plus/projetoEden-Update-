@@ -4,89 +4,53 @@ using UnityEngine;
 
 public class Mission3 : MissionVariable
 {
-    float height = 0;
-
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        GameObject warrior = GameObject.FindGameObjectWithTag("Player");
-        warrior.GetComponent<WarriorController>().ChangeHeight(height/100f);
+      
+    }
+
+    /// </inheritdoc>
+    public override bool ConstIdentifierIsCorrect(bool isOn)
+    {
+        return isOn;
     }
 
     /// </inheritdoc>
     public override bool TypeIsCorrect(int index, bool isConstant)
     {
-        return  index == (int) Types.FLOAT && ConstIdentifierIsCorrect(isConstant);
+        return index == (int) Types.CHAR && ConstIdentifierIsCorrect(isConstant);
     }
 
     /// </inheritdoc>
     public override bool NameIsCorrect(int index)
     {
-        return  index == 5; //altura_jogador
+        return  index == 1; //CODIGO_SECRETO
     }
 
     /// </inheritdoc>
     public override bool AnswerIsCorrect(string answer)
     {
-        /* 119,5 - 77,4 */
-        int position = 0;
-        bool canConvert;
-
-        if (answer != null)
-            position = answer.IndexOf(".");
-            
-        if (position < 0 || answer == null) //didn't put the dot
+        /* '!' */
+        answer = answer.Trim(); //removes whitespaces on the right and on the left
+        if (!answer.StartsWith("'") || !answer.EndsWith("'"))
         {
             SetIndexTip(11);
             return false;
         }
+        answer = answer.Trim('\''); //removes the single quotes
 
-        position = answer.IndexOf("-");
-
-        if (position < 0) //putted the value directly
+        if (answer.Length != 1)
         {
-            canConvert = float.TryParse(answer, System.Globalization.NumberStyles.Float, 
-                    System.Globalization.NumberFormatInfo.InvariantInfo, out height); //allows dots and whitespaces
-            
-            if (!canConvert)
-            {
-                SetIndexTip(13);
-                return false;
-            }
-                
+            SetIndexTip(12);
+            return false;
         }
-        else
-        {
-            string firstValue = answer.Substring(0, position);
-            string secondValue = answer.Substring(position + 1);
-            float first_value;
-            float second_value;
-
-            canConvert = float.TryParse(firstValue, System.Globalization.NumberStyles.Float, 
-                    System.Globalization.NumberFormatInfo.InvariantInfo, out first_value);
-
-            if (!canConvert)
-            {
-                SetIndexTip(13);
-                return false;
-            }
-
-            canConvert = float.TryParse(secondValue, System.Globalization.NumberStyles.Float, 
-                    System.Globalization.NumberFormatInfo.InvariantInfo, out second_value);
-
-            if (!canConvert)
-            {
-                SetIndexTip(13);
-                return false;
-            }
-
-            height = first_value - second_value;
-        }
-
-        if (height == 42.1f)
-            return true;
         
-        SetIndexTip(12);
+        if (answer == "!")
+            return true;
+
+        SetIndexTip(14);
+        SetIndexTip(13);
         return false;
     }
 }

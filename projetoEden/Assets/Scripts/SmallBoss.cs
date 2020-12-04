@@ -76,7 +76,7 @@ public class SmallBoss : EnemyController
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
-        FlameController controller = other.GetComponent<FlameController>();
+        FlameController controller = other.gameObject.GetComponent<FlameController>();
         ChickenShoot e = other.gameObject.GetComponent<ChickenShoot>();
         
         if (player != null)
@@ -92,7 +92,6 @@ public class SmallBoss : EnemyController
 
             if (!AnimatorIsPlaying("SmallBoss_Attack1", animator) && !AnimatorIsPlaying("SmallBoss_Attack2", animator))
             {
-                //doesn't work
                 ChangeHealth(-5);
             }
         }

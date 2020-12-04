@@ -11,14 +11,14 @@ public class Mission9 : MissionStructure
     int currentIndexI = 0;
 
     int currentIndexJ = 0;
-    const int heightWall = 14;
+    const int heightWall = 7;
 
-    const int widthWall = 13;
+    const int widthWall = 12;
     const int sizeTile = 3;
 
-    const int firstPositionX = 702; 
+    const int firstPositionX = 754; 
 
-    const int firstPositionY = 19;
+    const int firstPositionY = -1;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -126,7 +126,7 @@ public class Mission9 : MissionStructure
                     particle.AnimateParticle();
                 }
                 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.3f);
                 
                 //Removes a tile 3x3 from wall 
                 for (int k = 0; k < sizeTile; k++)

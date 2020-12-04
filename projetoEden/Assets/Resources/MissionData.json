@@ -3,13 +3,13 @@
     "description":["Nesse mundo programável você terá o poder de controlar situações por meio de códigos. Comece criando um apelido que o acompanhará durante todo o jogo. Afinal, não poderia começar a sua jornada sem um nome à altura!",
         "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Lembre-se, com grandes poderes vêm grandes responsabilidades.",
         "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la. Vá em frente!",
-        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 77,4 cm.",
         "É hora do easter egg! Descubra o código secreto de um caractere para upar sua espada em 50% para sempre. Para tanto, o código nunca mais deve mudar. Ele é baseado num ditado conhecido: \"Aquele que deixa tudo para trás, ouve o clamor de seu povo e reage, é grande.\" ",
+        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 77,4 cm.",
         "Essas câmeras chatas podem colocar tudo a perder se te descobrirem. Você deve enganá-las trocando seus valores de forma que não enxerguem você. Tome cuidado!",
         "Você já deve ter percebido que os blocos caem assim que você pisa. Mas existem plataformas móveis que você precisa esperar. Escolha a melhor condição que permita que você espere pela plataforma sem o bloco cair. Não existe resposta errada, mas ela pode ser inútil.",
         "Se ficar o bicho pega, se correr o bicho come! Vem vindo um bicho atrás de você e você precisa se preparar. Crie uma condição para se livrar do bicho. Se fizer errado, ele vai te pegar!",
         "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar.",
-        "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 14 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho."
+        "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 7 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho."
     ],
     "input":[{"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
     {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
@@ -20,7 +20,7 @@
     {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
     {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},
     {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(houverRocha())","for(int i = 5; i <= 0; i--)", "while(houverVacuo())", "for(int i = 10; i >= 0; i++)"]},
-    {"options":["Iteração","(int i = 0; i < 14; i++)","(int i = 0; i < 13; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 14; i++)", "(int i = 13; i >= 10; i--)"]}
+    {"options":["Iteração","(int i = 0; i < 7; i++)","(int i = 0; i < 6; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 7; i++)", "(int i = 6; i >= 3; i--)"]}
     ],
     "options_for2":["Iteração","(int j = 0; j < 13; j++)", "(int j = 11; j >= 8; j--)", "(int j = 0; j < 12; j++)", "(float j = 0; j < 12; j++)", "(int j = 11; j <= 0; j++)"],
     "inputTypes":[{"options":["tipoDaVariável", "char[8]", "int", "float", "char"]},

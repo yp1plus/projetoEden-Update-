@@ -13,11 +13,11 @@ public class CoinCollectible : MonoBehaviour
     {
         WarriorController controller = other.GetComponent<WarriorController>();
 
-        if (controller != null && !controller.audioIsPlaying)
+        if (controller != null && !controller.audioController.audioIsPlaying)
         {
             controller.AddCoin();
             Destroy(gameObject);
-            controller.PlaySound(collectedClip);
+            controller.audioController.PlaySound(collectedClip);
         }
     }
 }

@@ -200,7 +200,7 @@ public class Screen : MonoBehaviour
         {
             panelGameOver.SetActive(state);
             if (state)
-                WarriorController.instance.PlaySound(gameOverClip);
+                WarriorController.instance.audioController.PlaySound(gameOverClip);
         }
             
     }

@@ -52,12 +52,21 @@ public class FlameController : MonoBehaviour
 
     public void Ignite()
     {
-        Vector3 playerPosition = WarriorController.instance.GetPosition();
-        if (WarriorController.instance.transform.localScale.x < 0)
-            transform.position = new Vector3(playerPosition.x - 8, playerPosition.y, playerPosition.z);
+        if (WarriorController.instance.IsFinalBattle())
+        {
+            Debug.Log("Is Final Battle");
+            transform.position = DragonController.instance.GetPosition();
+        }
         else
-            transform.position = new Vector3(playerPosition.x + 8, playerPosition.y, playerPosition.z);
+        {
+            Vector3 playerPosition = WarriorController.instance.GetPosition();
 
+            if (WarriorController.instance.GetScale().x < 0)
+                transform.position = new Vector3(playerPosition.x - 8, playerPosition.y, playerPosition.z);
+            else
+                transform.position = new Vector3(playerPosition.x + 8, playerPosition.y, playerPosition.z);
+        }
+        
         fade.FadeIn();
         isBurning = true;
         Invoke("PutOut", 2);

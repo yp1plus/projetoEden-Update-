@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public int health { get {return currentHealth;} }
     protected int currentHealth;
 
-    float fallMultiplier = 6f;
+    float fallMultiplier = 15f;
     float lowJumpMultiplier = 2f;
 
     /* For Jump */
@@ -54,6 +54,26 @@ public class PlayerController : MonoBehaviour
         fade = gameObject.AddComponent<Fade>();
         currentHealth = maxHealth;
         isInvincible = false;
+    }
+
+    /// <summary>
+    /// Gets the current player position.
+    /// </summary>
+    /// <returns> A Vector3, the transform position. </returns>
+    public Vector3 GetPosition()
+    {
+        if (gameObject != null)
+            return transform.position;
+        else
+            return new Vector3(0, 0, 0);
+    }
+
+    public Vector3 GetScale()
+    {
+        if (gameObject != null)
+            return transform.localScale;
+        
+        return new Vector3(0,0,0);
     }
 
     /// <summary>
@@ -105,7 +125,7 @@ public class PlayerController : MonoBehaviour
             if (bottomHit.CompareTag("Ground"))
                 isGround = true;
             
-            if ((bottomHit.CompareTag("Ground") || bottomHit.CompareTag("Block")) && Input.GetAxisRaw("Vertical") == 1)
+            if ((bottomHit.CompareTag("Ground") || bottomHit.CompareTag("Block")) && Input.GetAxisRaw("Vertical") == 1 && jumpForce != 0)
             {
                 rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 animator.SetBool("isJumping", true);    

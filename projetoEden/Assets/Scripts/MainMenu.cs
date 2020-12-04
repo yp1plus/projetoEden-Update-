@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-    public static int lastLevel = 3;
+    public static int lastLevel = 9;
     public static bool tutorialExecuted = false;
     public static bool isSubPhase = false;
     public static bool debug = false;
@@ -28,7 +28,6 @@ public class MainMenu : MonoBehaviour
     {
         if (lastLevel != WarriorController.level)
         {
-            //if (WarriorController.level == 4) lastLevel = 4;
             lastLevel = Mathf.Clamp(WarriorController.level - 1, 0, 12);
             if (WarriorController.level == 5)
             {
@@ -36,7 +35,7 @@ public class MainMenu : MonoBehaviour
                 WarriorController.isSubPhase = isSubPhase;
             }
         }   
-
+        
         SceneManager.UnloadSceneAsync(lastLevel + 2);
         SceneManager.LoadScene(lastLevel + 2, LoadSceneMode.Additive);
         MainMenu.debug = false;

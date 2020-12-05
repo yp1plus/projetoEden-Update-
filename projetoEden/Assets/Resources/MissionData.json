@@ -14,7 +14,7 @@
     "input":[{"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
     {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
     {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
-    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","#      ###","SENHA"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","SENHA"]},
     {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
     {"options":[null,null,null,null,null]},
     {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},

@@ -1,9 +1,39 @@
 fileFormatVersion: 2
 guid: 24c055541d634834188ded449e626e1a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7028455180751484591
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_0
+  - first:
+      213: -6544534745234697759
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_1
+  - first:
+      213: -4155894452759546509
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_2
+  - first:
+      213: -7759875609319973123
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_3
+  - first:
+      213: 2584467901332372652
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_4
+  - first:
+      213: -4325814380343183171
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_5
+  - first:
+      213: -8837691564865490419
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_6
+  - first:
+      213: -4657597393947112329
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_7
+  - first:
+      213: -9114909396314374734
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_8
+  - first:
+      213: 4914050097927188649
+    second: Wii - Monkey King The Legend Begins - Cloud aaaaaa_9
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -23,6 +53,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -40,7 +71,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -57,6 +88,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -70,9 +103,243 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa63270afb61a8160800000000000000
+      internalID: 7028455180751484591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 46
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1951ad2542d25a0800000000000000
+      internalID: -6544534745234697759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 46
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375304b930c4356c0800000000000000
+      internalID: -4155894452759546509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 46
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfed3453f326f4490800000000000000
+      internalID: -7759875609319973123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_4
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 46
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacb058fcdfddd320800000000000000
+      internalID: 2584467901332372652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db83e5f7dbe97f3c0800000000000000
+      internalID: -4325814380343183171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02f9b988563a5580800000000000000
+      internalID: -8837691564865490419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c4ff2e8d3ec5fb0800000000000000
+      internalID: -4657597393947112329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdbfc86236518180800000000000000
+      internalID: -9114909396314374734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Monkey King The Legend Begins - Cloud aaaaaa_9
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 49.4
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a07c6f3786323440800000000000000
+      internalID: 4914050097927188649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

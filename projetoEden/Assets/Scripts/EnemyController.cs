@@ -10,6 +10,8 @@ public class EnemyController : PlayerController
 {
     public int damage; //to attack warrior
     public int hit; //to attack enemy
+    public int hitFlame;
+    public int hitChicken;
     bool isInCorner = false;
 
     protected int direction = -1;
@@ -49,7 +51,7 @@ public class EnemyController : PlayerController
         }
         else if (controller != null)
         {
-            ChangeHealth(-100);
+            ChangeHealth(-hitFlame);
         }
     }
 
@@ -65,8 +67,8 @@ public class EnemyController : PlayerController
 
     protected virtual void Attack(WarriorController player)
     {
-        if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) 
-            && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
+        if (!PlayerController.AnimatorIsPlaying("Attack", player.playerAnimator) 
+            && !PlayerController.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
         {
             if (!invincible)
             {

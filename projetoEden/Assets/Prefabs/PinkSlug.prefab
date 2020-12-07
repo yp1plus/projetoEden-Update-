@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1164677303}
   m_Layer: 0
   m_Name: PinkSlug
-  m_TagString: Untagged
+  m_TagString: Slug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   range: {x: 0, y: 0, z: 0}
+  facingRight: 1
   damage: 100
   hit: 0
-  changeTime: 0
+  hitFlame: 100
+  hitChicken: 0
 --- !u!50 &1943495740
 Rigidbody2D:
   serializedVersion: 4

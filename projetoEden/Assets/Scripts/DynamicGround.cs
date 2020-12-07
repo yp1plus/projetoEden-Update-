@@ -13,6 +13,8 @@ public class DynamicGround : MonoBehaviour
     public int direction = -1;
 
     bool changedDirection = false;
+    Vector3 offset;
+    float offsetGround;
 
     // Start is called before the first frame update
     void Start()
@@ -43,11 +45,40 @@ public class DynamicGround : MonoBehaviour
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
 
+        if (player != null)
+        {
+            offset = player.GetPosition();
+            offsetGround = transform.position.x;
+        }
+    }
+
+    /// <summary>
+    /// Sent when an incoming collider makes contact with this object's
+    /// collider (2D physics only).
+    /// </summary>
+    /// <param name="other">The Collision2D data associated with this collision.</param>
+    void OnCollisionStay2D(Collision2D other)
+    {
+        WarriorController player = other.gameObject.GetComponent<WarriorController>();
+
         /*if (player != null)
         {
-            if (transform.position.x >= -maxRange && transform.position.x <= 0)
-                player.SetPosition(player.GetPosition().x + Mathf.Abs(Mathf.Abs(transform.position.x) - 10));
-
+            if (player.move == 0)
+            {
+                if (direction > 0)
+                {
+                    player.SetPosition(offset.x + Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(offsetGround)));
+                }
+                else
+                {
+                    player.SetPosition(offset.x - Mathf.Abs(Mathf.Abs(Mathf.Abs(transform.position.x) - 10) - Mathf.Abs(offsetGround)));
+                }
+            }
+            else
+            {
+                offset = player.GetPosition();
+                offsetGround = transform.position.x;
+            }
         }*/
     }
 

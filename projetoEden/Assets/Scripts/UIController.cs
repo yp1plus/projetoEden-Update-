@@ -41,7 +41,7 @@ public class UIController : MonoBehaviour
 
     public void ResetPower()
     {
-        if (WarriorController.level >= 0 && WarriorController.level <= 3)
+        if (WarriorController.level >= 0 && WarriorController.level < 2 || WarriorController.level == 3)
         {
             powers[WarriorController.level].SetActive(false);
             index = WarriorController.level + 1;

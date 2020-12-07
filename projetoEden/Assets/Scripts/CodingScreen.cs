@@ -144,11 +144,9 @@ public class CodingScreen : Screen
         else
             IsWrong((int) InputTypes.type);
 
-        if (mission.ConstIdentifierIsCorrect(_const == "const"))
-        {
-            mission.SetIndexTip(index);
-        }
-        else
+        mission.SetIndexTip(index);
+
+        if(!mission.ConstIdentifierIsCorrect(_const == "const"))
         {
             mission.SetIndexTip(0);
         }

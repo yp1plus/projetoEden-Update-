@@ -53,7 +53,7 @@ public abstract class Mission : MonoBehaviour
             return null;
         }
         
-        int position = value.IndexOf(";");
+        int position = value.LastIndexOf(";");
         
         return value.Substring(0, position);
     }

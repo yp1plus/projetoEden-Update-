@@ -32,7 +32,7 @@ public class BugController : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (isVisible)
+        if (isVisible && transform.position.x >= 632)
         {
             MovementWithoutCollision(rigidbody2D, 1);
         }

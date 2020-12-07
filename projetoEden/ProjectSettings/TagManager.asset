@@ -21,6 +21,8 @@ TagManager:
   - BlueEnemy
   - Barrer
   - Trigger4
+  - Flower
+  - Slug
   layers:
   - Default
   - TransparentFX

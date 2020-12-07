@@ -59,7 +59,7 @@ public class ChickenShoot : MonoBehaviour
 
         if (e != null)
         {
-            e.ChangeHealth(-50);
+            e.ChangeHealth(-e.hitChicken);
         }
 
         Destroy(gameObject);

@@ -85,14 +85,14 @@ public class SmallBoss : EnemyController
         }
         else if (controller != null)
         {
-            ChangeHealth(-10);
+            ChangeHealth(-hitFlame);
         } else if (e != null)
         {
             e.DestroyGameObject();
 
             if (!AnimatorIsPlaying("SmallBoss_Attack1", animator) && !AnimatorIsPlaying("SmallBoss_Attack2", animator))
             {
-                ChangeHealth(-5);
+                ChangeHealth(-hitChicken);
             }
         }
         
@@ -102,8 +102,8 @@ public class SmallBoss : EnemyController
 
     protected override void Attack(WarriorController player)
     {
-        if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) 
-            && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
+        if (!PlayerController.AnimatorIsPlaying("Attack", player.playerAnimator) 
+            && !PlayerController.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
         {
             if (!invincible)
             {

@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
     /// <param name = "name"> A string, the name of animation. </param>
     /// <param name = "animator"> The component Animator of a player. </param>
     /// <returns> The answer if a specific animation is playing. </returns>
-    public bool AnimatorIsPlaying(string name, Animator animator)
+    public static bool AnimatorIsPlaying(string name, Animator animator)
     {
         return AnimatorIsPlaying(animator) && animator.GetCurrentAnimatorStateInfo(0).IsName(name);
     }

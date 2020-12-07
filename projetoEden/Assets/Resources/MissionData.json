@@ -4,7 +4,7 @@
         "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Lembre-se, com grandes poderes vêm grandes responsabilidades.",
         "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la. Vá em frente!",
         "É hora do easter egg! Descubra o código secreto de um caractere para upar sua espada em 50% para sempre. Para tanto, o código nunca mais deve mudar. Ele é baseado num ditado conhecido: \"Aquele que deixa tudo para trás, ouve o clamor de seu povo e reage, é grande.\" ",
-        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 77,4 cm.",
+        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 79,3 cm.",
         "Essas câmeras chatas podem colocar tudo a perder se te descobrirem. Você deve enganá-las trocando seus valores de forma que não enxerguem você. Tome cuidado!",
         "Você já deve ter percebido que os blocos caem assim que você pisa. Mas existem plataformas móveis que você precisa esperar. Escolha a melhor condição que permita que você espere pela plataforma sem o bloco cair. Não existe resposta errada, mas ela pode ser inútil.",
         "Se ficar o bicho pega, se correr o bicho come! Vem vindo um bicho atrás de você e você precisa se preparar. Crie uma condição para se livrar do bicho. Se fizer errado, ele vai te pegar!",
@@ -86,28 +86,6 @@
         },
         {
             "tipsForTypes": 
-                ["Você não vai ficar pequeno para sempre, então não é constante",
-                 "Altura é um valor numérico",
-                 "Geralmente existe altura quebrada, como 1.75 m.",
-                 null,
-                 "Altura é um valor apenas numérico.", 
-                 "Altura é um valor apenas numérico."
-                ],
-            "tipsForNames":
-                ["Está correto, mas é incompleto. Altura do quê?",
-                "Não é um bom padrão para variáveis começar com letra maiúscula",
-                "Está correto, mas muito abreviado, não é claro",
-                "Não é um bom padrão para variáveis começar com letra maiúscula", 
-                null
-                ],
-             "tipsForValue":
-                ["Valores decimais são representados com ponto, não vírgula",
-                 "Você deve fazer uma subtração",
-                 "O valor é do tipo (XX.X) ou do tipo (XXX.X - XX.X)"
-                ]
-        },
-        {
-            "tipsForTypes": 
                 ["É dito que o código não vai mudar",
                  "O código só possui um caractere, então o tipo textual não se aplica",
                  "O caractere pode não ser numérico",
@@ -127,6 +105,28 @@
                  "Não deve haver mais de um caractere",
                  "Cada frase representa uma parte do nome do caractere",
                  "O símbolo é composto de uma reta e de um ponto"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                ["Você não vai ficar pequeno para sempre, então não é constante",
+                 "Altura é um valor numérico",
+                 "Geralmente existe altura quebrada, como 1.75 m.",
+                 null,
+                 "Altura é um valor apenas numérico.", 
+                 "Altura é um valor apenas numérico."
+                ],
+            "tipsForNames":
+                ["Está correto, mas é incompleto. Altura do quê?",
+                "Não é um bom padrão para variáveis começar com letra maiúscula",
+                "Está correto, mas muito abreviado, não é claro",
+                "Não é um bom padrão para variáveis começar com letra maiúscula", 
+                null
+                ],
+             "tipsForValue":
+                ["Valores decimais são representados com ponto, não vírgula",
+                 "Você deve fazer uma subtração",
+                 "O valor é do tipo (XX.X) ou do tipo (XXX.X - XX.X)"
                 ]
         },
         {

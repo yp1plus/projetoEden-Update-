@@ -130,8 +130,8 @@ public class DragonController : EnemyController
 
     protected override void Attack(WarriorController player)
     {
-        if (!player.AnimatorIsPlaying("Attack", player.playerAnimator) 
-            && !player.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
+        if (!PlayerController.AnimatorIsPlaying("Attack", player.playerAnimator) 
+            && !PlayerController.AnimatorIsPlaying("Jump Attack", player.playerAnimator))
         {
             if (!invincible)
             {

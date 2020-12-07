@@ -25,7 +25,6 @@ public class FlameController : MonoBehaviour
     {
         if (WarriorController.level > 2 && debug)
         {
-            Debug.Log("Flame");
             GameObject flame = GameObject.FindGameObjectWithTag("Fire");
             WarriorController.instance.LoadFlame(flame);
             canBeBurnt = false;
@@ -54,7 +53,6 @@ public class FlameController : MonoBehaviour
     {
         if (WarriorController.instance.IsFinalBattle())
         {
-            Debug.Log("Is Final Battle");
             transform.position = DragonController.instance.GetPosition();
         }
         else

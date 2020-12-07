@@ -1,5 +1,29 @@
 sceneSetups:
-- path: Assets/Scenes/EndMission.unity
+- path: Assets/Scenes/MainScene.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/Mission1.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Mission2.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Mission3.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Mission4.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Mission6.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Mission7.unity
+  isLoaded: 1
+  isActive: 0
   isSubScene: 0

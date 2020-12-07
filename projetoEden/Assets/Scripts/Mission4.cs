@@ -10,7 +10,9 @@ public class Mission4 : MissionVariable
     public override void ExecuteCode()
     {
         GameObject warrior = GameObject.FindGameObjectWithTag("Player");
-        warrior.GetComponent<WarriorController>().ChangeHeight(height/100f);
+        warrior.GetComponent<WarriorController>().ChangeHeight(1/(Mathf.Pow(1.2f, 5)));
+        warrior.GetComponent<WarriorController>().speed = 15;
+        warrior.GetComponent<WarriorController>().jumpForce = 17;
     }
 
     /// </inheritdoc>
@@ -28,7 +30,7 @@ public class Mission4 : MissionVariable
     /// </inheritdoc>
     public override bool AnswerIsCorrect(string answer)
     {
-        /* 119,5 - 77,4 */
+        /* 119,5 - 79,3 */
         int position = 0;
         bool canConvert;
 
@@ -71,6 +73,8 @@ public class Mission4 : MissionVariable
                 return false;
             }
 
+            Debug.Log(first_value);
+
             canConvert = float.TryParse(secondValue, System.Globalization.NumberStyles.Float, 
                     System.Globalization.NumberFormatInfo.InvariantInfo, out second_value);
 
@@ -80,10 +84,14 @@ public class Mission4 : MissionVariable
                 return false;
             }
 
+            Debug.Log(second_value);
+
             height = first_value - second_value;
+
+            Debug.Log(height);
         }
 
-        if (height == 42.1f)
+        if (Mathf.Approximately(height, 40.2f))
             return true;
         
         SetIndexTip(12);

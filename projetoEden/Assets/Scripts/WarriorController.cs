@@ -20,7 +20,7 @@ public class WarriorController : PlayerController
     /* Control Coins */
     /// <value> Gets the current value of coins </value>
     public int coins { get { return quantCoins; } } //exemplo de get reduzido
-    int quantCoins = 100;
+    int quantCoins = 0;
     public TMP_Text numCoins;
 
     public GameObject chickenShoot;
@@ -52,6 +52,7 @@ public class WarriorController : PlayerController
     public AudioClip attacked;
     public AudioClip darkAmbient;
     System.Random random = new System.Random();
+    bool flag = false;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -84,7 +85,8 @@ public class WarriorController : PlayerController
 
     public void ResetWarriorAttributes()
     {
-        currentLevel = MainMenu.lastLevel;
+        if (currentLevel != 3)
+            currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
         currentHealth = 100;
@@ -132,7 +134,10 @@ public class WarriorController : PlayerController
         if (txtWarriorHeight != null)
             txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
 
-        if ((CodingScreen.instance == null || !CodingScreen.instance.panel.activeSelf) && Input.GetKeyDown(KeyCode.X))
+        if ((CodingScreen.instance == null || !CodingScreen.instance.panel.activeSelf) 
+            && (EndMission.instance == null 
+            || (!EndMission.instance.panel.activeSelf && !EndMission.instance.panelGameWin.activeSelf)) 
+            && Input.GetKeyDown(KeyCode.X))
         {
             animator.SetTrigger("Attack");
             audioController.PlaySound(attackSongs[(int) random.Next(0, 3)]) ;
@@ -151,12 +156,12 @@ public class WarriorController : PlayerController
                     flame.GetComponent<FlameController>().Ignite();
             }
 
-            if (Input.GetKeyDown(KeyCode.Q) && UIController.instance.powers[2].activeSelf)
+            if (Input.GetKeyDown(KeyCode.Q) && UIController.instance.powers[3].activeSelf)
             {
                 ChangeHeight(transform.localScale.x*1.2f);
             }
 
-            if (Input.GetKeyDown(KeyCode.Z) && UIController.instance.powers[2].activeSelf)
+            if (Input.GetKeyDown(KeyCode.Z) && UIController.instance.powers[3].activeSelf)
             {
                 ChangeHeight(transform.localScale.x/1.2f);
             }

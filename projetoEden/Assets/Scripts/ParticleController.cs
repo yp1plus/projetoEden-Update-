@@ -22,16 +22,6 @@ public class ParticleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (PlayerController.AnimatorIsPlaying(animator))
-        {
-            if (!renderer.enabled)
-                renderer.enabled = true;
-        }
-        else
-        {
-            if (renderer.enabled)
-                renderer.enabled = false;
-        }*/
     }
 
     /// <summary>
@@ -55,6 +45,6 @@ public class ParticleController : MonoBehaviour
 
     public void Disable()
     {
-         renderer.enabled = false;
+        renderer.enabled = false;
     }
 }

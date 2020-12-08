@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2926795987893353077}
   - component: {fileID: 6108164337176565088}
   - component: {fileID: 4016056561765071354}
-  - component: {fileID: 8279817686370396295}
   - component: {fileID: 932654725256471313}
+  - component: {fileID: 4192083572292454226}
   m_Layer: 0
   m_Name: CuteEnemy
   m_TagString: Untagged
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_Sprite: {fileID: 6410744863254325599, guid: 514cc7f546d673e4f85cf90757594011,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,29 +122,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0017971651, y: 0.044603106}
   m_Size: {x: 0.5071869, y: 0.13100678}
   m_Direction: 1
---- !u!114 &8279817686370396295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414810831805552384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba71f5f48947d4242a3b33441fb4184c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  jumpForce: 7
-  maxHealth: 100
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  range: {x: 0, y: 0, z: 0}
-  damage: 0
-  hit: 0
-  changeTime: 0
 --- !u!50 &932654725256471313
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +143,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4192083572292454226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414810831805552384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba71f5f48947d4242a3b33441fb4184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  jumpForce: 7
+  maxHealth: 100
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  range: {x: 0, y: 0, z: 0}
+  facingRight: 0
+  damage: 50
+  hit: 50
+  hitFlame: 50
+  hitChicken: 10

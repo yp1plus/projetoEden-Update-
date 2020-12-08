@@ -23,6 +23,8 @@ TagManager:
   - Trigger4
   - Flower
   - Slug
+  - Infinity
+  - Enemies
   layers:
   - Default
   - TransparentFX

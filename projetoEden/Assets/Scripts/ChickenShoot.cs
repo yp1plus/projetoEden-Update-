@@ -66,6 +66,24 @@ public class ChickenShoot : MonoBehaviour
         WarriorController.instance.SubtractChicken();
     }
 
+    /// <summary>
+    /// Sent when another object enters a trigger collider attached to this
+    /// object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        EnemyController e = other.GetComponent<EnemyController>();
+
+        if (e != null)
+        {
+            e.ChangeHealth(-e.hitChicken);
+        }
+
+        Destroy(gameObject);
+        WarriorController.instance.SubtractChicken();
+    }
+
     public void DestroyGameObject()
     {
         Destroy(gameObject);

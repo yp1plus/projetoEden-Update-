@@ -280,7 +280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &588179964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -544,6 +544,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8baadfaa5491f684487b375daf74c21d, type: 3}
+--- !u!1001 &990348171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7473967402444561733, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform Rock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 865
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943909968945382362, guid: dfd074245d050fc4ba7dacb316f706d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dfd074245d050fc4ba7dacb316f706d9, type: 3}
 --- !u!1001 &1214634734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -914,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 5373621173838182517, guid: 9ce5e71eee32b1547b0d9c4c3534c91b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8499551842622115725, guid: 9ce5e71eee32b1547b0d9c4c3534c91b,
         type: 3}
@@ -1098,6 +1167,8 @@ MonoBehaviour:
   facingRight: 1
   damage: 30
   hit: 10
+  hitFlame: 0
+  hitChicken: 2
   audioScream: {fileID: 8300000, guid: 12a5916ac8baf7d41b84b8200f3c63ee, type: 3}
   portal: {fileID: 588179963}
 --- !u!1001 &8389225604136158948

@@ -16,6 +16,7 @@ public class Screen : MonoBehaviour
     public static List<string> genericTips {get; private set;}
 
     public GameObject panelGameOver;
+    public GameObject infiniteLoopTxt;
 
     [System.Serializable]
     public struct VariablesPhase
@@ -41,12 +42,20 @@ public class Screen : MonoBehaviour
     }
 
     [System.Serializable]
+    public struct CamerasPhase 
+    {
+        public TMP_Text [] camerasTypes;
+        public TMP_Text[] camerasValue;
+    }
+
+    [System.Serializable]
     public struct Components
     {
         public TMP_Text title;
         public TMP_Text description;
         public VariablesPhase variablesPhase;
         public StructurePhase structurePhase;
+        public CamerasPhase camerasPhase;
     }
 
     public Components components = new Components();
@@ -91,7 +100,7 @@ public class Screen : MonoBehaviour
 
             UpdateDropDown(components.variablesPhase.inputName, options);
 
-            if (level == 1) //inputType order don't change
+            if (level == 0) //inputType order don't change
             {
                 options = missionData.inputTypes[Languages.indexLanguage].options;
                 UpdateDropDown(components.variablesPhase.inputType, options);
@@ -181,17 +190,31 @@ public class Screen : MonoBehaviour
         components.variablesPhase.inputValue.transform.localPosition = new Vector3(45.9f, -117.4f, 0);
         components.variablesPhase.feedbackName.transform.localPosition = new Vector3(-116.229f, 0, 0);
         components.variablesPhase.feedbackValue.transform.localPosition = new Vector3(-105.1f, 0, 0);
+
+        components.structurePhase.statement2.transform.GetChild(0).GetComponent<TMP_Text>().text = "elif";
+        components.camerasPhase.camerasTypes[0].text = "CAMERA_A99";
+        components.camerasPhase.camerasTypes[1].text = "CAMERA_A98";
+        components.camerasPhase.camerasTypes[2].text = "CAMERA_A97";
+        components.camerasPhase.camerasValue[0].text = "\"A99\"";
+        components.camerasPhase.camerasValue[1].text = "\"A98\"";
+        components.camerasPhase.camerasValue[2].text = "\"A97\"";
     }
 
     void UpdateForCSharp()
     {
         MissionState.OverloadFromJson(missionData, "InfoCSharp");
+        components.camerasPhase.camerasTypes[0].text = "string CAMERA_A99";
+        components.camerasPhase.camerasTypes[1].text = "string CAMERA_A98";
+        components.camerasPhase.camerasTypes[2].text = "string CAMERA_A97";
     }
 
     void UpdateForJava()
     {
         MissionState.OverloadFromJson(missionData, "InfoJava");
         components.variablesPhase.constIdentifier.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "final";
+        components.camerasPhase.camerasTypes[0].text = "String CAMERA_A99";
+        components.camerasPhase.camerasTypes[1].text = "String CAMERA_A98";
+        components.camerasPhase.camerasTypes[2].text = "String CAMERA_A97";
     }
 
     public void ShowGameOver(bool state)
@@ -201,6 +224,8 @@ public class Screen : MonoBehaviour
             panelGameOver.SetActive(state);
             if (state)
                 WarriorController.instance.audioController.PlaySound(gameOverClip);
+            if (!state)
+                infiniteLoopTxt.GetComponent<TMP_Text>().enabled = state;
         }
     }
 }

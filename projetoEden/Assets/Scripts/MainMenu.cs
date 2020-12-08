@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-    public static int lastLevel = 3;
+    public static int lastLevel = 0;
     public static bool tutorialExecuted = false;
     public static bool isSubPhase = false;
     public static bool debug = false;
@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
                 isSubPhase = false;
                 WarriorController.isSubPhase = isSubPhase;
             }
-        }   
+        }
         
         SceneManager.UnloadSceneAsync(lastLevel + 2);
         SceneManager.LoadScene(lastLevel + 2, LoadSceneMode.Additive);
@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
         if (previousLevel == 0)
             return;
         
-        if (previousLevel == 9)
+        if (previousLevel >= 10)
             return;
         
         /* Sum 2 because there is the MainScene's index */
@@ -71,7 +71,6 @@ public class MainMenu : MonoBehaviour
     public static void GoToFinal()
     {
         SceneManager.LoadScene(12);
-        SceneManager.MoveGameObjectToScene(WarriorController.instance.gameObject, SceneManager.GetSceneByBuildIndex(12));
     }
 
     public static void SelectActiveScene(int i)

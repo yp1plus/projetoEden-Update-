@@ -21,6 +21,12 @@ public class CuteEnemy : EnemyController
 
     void FixedUpdate()
     {
-        Movement(rigidbody2D); 
+        Movement(rigidbody2D);
+
+        if (transform.localPosition.x == -16 || transform.localPosition.x == 40)
+        {
+            direction = -direction;
+            Flip();
+        }
     }
 }

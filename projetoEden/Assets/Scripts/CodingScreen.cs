@@ -143,13 +143,14 @@ public class CodingScreen : Screen
             IsCorrect((int) InputTypes.type);
         else
             IsWrong((int) InputTypes.type);
-
-        mission.SetIndexTip(index);
-
+        
         if(!mission.ConstIdentifierIsCorrect(_const == "const"))
         {
             mission.SetIndexTip(0);
         }
+        
+        if (index != 0)
+            mission.SetIndexTip(index);
     }
 
     /// <summary>
@@ -298,7 +299,7 @@ public class CodingScreen : Screen
 
         OpenCode(false);
 
-        if (WarriorController.level != 1)
+        if (WarriorController.level > 1 && WarriorController.level <= 4)
             UIController.instance.ShowNewInfo();
 
         missions[WarriorController.level].ExecuteCode();
@@ -321,7 +322,7 @@ public class CodingScreen : Screen
     {
         TipsController.instance.ResetTip();
         
-        for (int i = 0; i < (int) InputTypes.for2; i++)
+        for (int i = 0; i <= (int) InputTypes.for2; i++)
         {
             feedbackCorrect[i].gameObject.SetActive(false);
             feedbackIncorrect[i].gameObject.SetActive(false);

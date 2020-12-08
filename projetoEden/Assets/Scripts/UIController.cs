@@ -28,8 +28,8 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //CodingScreen.instance.OpenPanel(true);
-        //intro.SetActive(true);
+        CodingScreen.instance.OpenPanel(true);
+        intro.SetActive(true);
         txtInfoUI = MissionState.LoadUIFromJson();
     }
 

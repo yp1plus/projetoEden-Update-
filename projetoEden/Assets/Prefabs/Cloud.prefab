@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2648900393740982827}
   - component: {fileID: 845121167918492149}
   - component: {fileID: 4467245362566126059}
+  - component: {fileID: 656740869}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7028455180751484591, guid: 24c055541d634834188ded449e626e1a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,3 +157,24 @@ MonoBehaviour:
   facingRight: 1
   damage: 0
   hit: 0
+  hitFlame: 0
+  hitChicken: 0
+--- !u!95 &656740869
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429064654762348639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abcae8799ba3f8f4695e4a69712418cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

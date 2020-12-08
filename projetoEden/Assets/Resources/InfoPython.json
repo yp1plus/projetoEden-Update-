@@ -8,7 +8,7 @@
         {"options":[null,null,null,null,null]},
         {"options":["Condição", "(chamaAcesa == True):","(quantGalinhas >= 5 or codigo == '/'):","(quantGalinhas < 0 and codigo == '!'):","(alturaJogador == 0.00):","(quantGalinhas > 10):"]},
         {"options":["(correr()):","(ficar() or Correr()):","(not ficar() and not Correr()):","((ficar() and correr()) or ficar()):","((ficar() or correr()) or ficar()):"]},
-        {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i  in range (10, -1, 1)"]},
+        {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i  in range (10, -1, 1):"]},
         {"options":["Iteração", "i in range (7):","i in range (6):","i in range (4)", "i in range (9):", "i in range (6, 2, -1):"]}
     ],
     "options_for2":["Iteração", "j in range (13):", "j in range (11, 7, -1):", "j in range (12):", "j in range (15):", "j in range (12, 8, 1):"],

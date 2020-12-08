@@ -48,6 +48,12 @@ public class TipsController : MonoBehaviour
             fade.FadeIn();
         }
 
+        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
+        {
+            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
+            return;
+        }
+
         int indexTip = CodingScreen.instance.GetIndexTip();
 
         if (indexTip == -1)
@@ -89,12 +95,6 @@ public class TipsController : MonoBehaviour
                 CodingScreen.instance.RemoveTip();
             
             StartCoroutine(ShowMessage("Você não fez nenhuma tentativa ainda."));
-            return;
-        }
-
-        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
-        {
-            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
             return;
         }
         

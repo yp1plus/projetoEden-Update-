@@ -123,7 +123,7 @@ public class DragonController : EnemyController
             if (!AnimatorIsPlaying("Dragon_Attack", animator))
             {
                 animator.SetTrigger("Attacked");
-                ChangeHealth(-100);
+                ChangeHealth(-hitChicken);
             }
         }
     }

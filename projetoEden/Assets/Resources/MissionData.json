@@ -11,11 +11,11 @@
         "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar.",
         "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 7 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho."
     ],
-    "input":[{"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
-    {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
-    {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
-    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","SENHA"]},
-    {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
+    "input":[{"options":["nomeDaVariável", "meu-Nome","1Nome","NOME_JOGADOR","nome_jogador!","nome&sobrenome"]},
+    {"options":["nomeDaVariável", "2DGalinhas","qt|galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
+    {"options":["nomeDaVariável", "chamaAcesa","destruirChama()","chamaApagada","criarChama()","chama.acesa"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigo$ecreto","código","####","$ENHA"]},
+    {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
     {"options":[null,null,null,null,null]},
     {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
     {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},
@@ -23,10 +23,10 @@
     {"options":["Iteração","(int i = 0; i < 7; i++)","(int i = 0; i < 6; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 7; i++)", "(int i = 6; i >= 3; i--)"]}
     ],
     "options_for2":["Iteração","(int j = 0; j < 13; j++)", "(int j = 11; j >= 8; j--)", "(int j = 0; j < 12; j++)", "(float j = 0; j < 12; j++)", "(int j = 11; j <= 0; j++)"],
-    "inputTypes":[{"options":["tipoDaVariável", "char[8]", "int", "float", "char"]},
-    {"options":["tipoDaVariável", "string", "int", "float", "char", "bool"]},
+    "inputTypes":[{"options":["tipoDaVariável", "char *", "int", "float", "char"]},
+    {"options":["tipoDaVariável", "string", "int", "double", "char", "bool"]},
     {"options":[null, null, null, null, null, null]},
-    {"options":["tipoDaVariável", "String", "int", "float", "char", "boolean"]}
+    {"options":["tipoDaVariável", "String", "int", "double", "char", "boolean"]}
     ],
     "resultsStructures1":["oBichoPega();", "criarBloco();", null],
     "resultsStructures2":["oBichoCome();", null, "destruirBloco(i, j);"],
@@ -49,7 +49,7 @@
                 null],
             "tipsForNames":
                     ["Nomes de variável não podem começar com número",
-                    "Este nome é correto, mas é incompleto. O quê das galinhas está sendo armazenado?",
+                    "Nomes de variável não permitem caracteres especiais como |",
                     null,
                     null, 
                     "Nomes de variável não permitem caracteres especiais além do underline"
@@ -71,10 +71,10 @@
                 null],
             "tipsForNames":
                 [null,
-                "Não é recomendado que nomes de variável tenham verbos, isso é utilizado em funções",
+                "Nomes de variável não permitem parênteses",
                 null,
-                "Não é recomendado que nomes de variável tenham verbos, isso é utilizado em funções", 
-                "Nomes de variável não permitem caracteres especiais além do underline"
+                "Nomes de variável não permitem parênteses", 
+                "Nomes de variável não permitem caracteres especiais como ."
                 ],
              "tipsForValue":
                 ["Seu valor só deve conter um digíto numérico",
@@ -95,10 +95,10 @@
                 ],
             "tipsForNames":
                 [null,
-                "Não é recomendado nomear constantes como variáveis para evitar confusão",
-                "Não é recomendado nomear constantes como variáveis para evitar confusão",
+                "Nomes de variável não podem conter caracteres especiais como $",
+                "Nomes de variável não podem conter caracteres acentuados",
                 "Nomes de constante não permitem caracteres especiais além do underline", 
-                "O nome \"SENHA\" não representa bem o dado que quer guardar"
+                "Nomes de variável não podem conter caracteres especiais como $"
                 ],
              "tipsForValue":
                 ["O valor deve estar entre aspas simples, por ser caractere",
@@ -117,10 +117,10 @@
                  "Altura é um valor apenas numérico."
                 ],
             "tipsForNames":
-                ["Está correto, mas é incompleto. Altura do quê?",
-                "Não é um bom padrão para variáveis começar com letra maiúscula",
-                "Está correto, mas muito abreviado, não é claro",
-                "Não é um bom padrão para variáveis começar com letra maiúscula", 
+                ["Nomes de variável não podem conter caracteres especiais como .",
+                "Nomes de variável não podem conter caracteres especiais como travessão (-)",
+                null,
+                "Nomes de variável não podem conter caracteres especiais como chaves {}", 
                 null
                 ],
              "tipsForValue":

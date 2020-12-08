@@ -43,8 +43,8 @@ public class WarriorController : PlayerController
 
     const float POSITION_NEXT_TO_DRAGON = 827.3f;
 
-    public static bool isSubPhase = false;
-    int quantChickens = 0;
+    public static bool isSubPhase = MainMenu.isSubPhase;
+    public int quantChickens { get; private set; } = 0;
     public TMP_Text txtNumChickens;
     public TMP_Text txtFlameIsBurning;
     public TMP_Text txtWarriorHeight;
@@ -89,6 +89,7 @@ public class WarriorController : PlayerController
             currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
+        isSubPhase = MainMenu.isSubPhase;
         currentHealth = 100;
         ChangeHeight(facingRight ? 1: -1);
         ResetInvincibility();
@@ -134,16 +135,15 @@ public class WarriorController : PlayerController
         if (txtWarriorHeight != null)
             txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
 
-        if ((CodingScreen.instance == null || !CodingScreen.instance.panel.activeSelf) 
-            && (EndMission.instance == null 
-            || (!EndMission.instance.panel.activeSelf && !EndMission.instance.panelGameWin.activeSelf)) 
+        if ((CodingScreen.instance == null || (!CodingScreen.instance.panel.activeSelf && !CodingScreen.instance.panelGameOver.activeSelf))
+            && (EndMission.instance == null || (!EndMission.instance.panel.activeSelf && !EndMission.instance.panelGameWin.activeSelf))
             && Input.GetKeyDown(KeyCode.X))
         {
             animator.SetTrigger("Attack");
             audioController.PlaySound(attackSongs[(int) random.Next(0, 3)]) ;
         }
 
-        if (CodingScreen.instance != null && !CodingScreen.instance.panel.activeSelf)
+        if (CodingScreen.instance != null && !CodingScreen.instance.panel.activeSelf && !CodingScreen.instance.panelGameOver.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.C) && UIController.instance.powers[0].activeSelf)
             {
@@ -271,9 +271,9 @@ public class WarriorController : PlayerController
         ChickenShoot projectile = projectileObject.GetComponent<ChickenShoot>();
 
         if (transform.localScale.x > 0)
-            projectile.Launch(new Vector2(1, 0), 400);
+            projectile.Launch(new Vector2(1, 0), 800);
         else //never it's zero
-            projectile.Launch(new Vector2(-1, 0), 400);
+            projectile.Launch(new Vector2(-1, 0), 800);
         
         quantChickens++;
     }

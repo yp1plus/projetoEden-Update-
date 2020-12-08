@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Languages : MonoBehaviour
 {
-    static int index = 0;
+    static int index = 2;
     public static int indexLanguage {get {return index;}}
     public static bool isPython = index == (int) TypesLanguages.Python;
     public enum TypesLanguages {C, CSharp, Python, Java};

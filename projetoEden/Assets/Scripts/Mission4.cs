@@ -24,7 +24,7 @@ public class Mission4 : MissionVariable
     /// </inheritdoc>
     public override bool NameIsCorrect(int index)
     {
-        return  index == 5; //altura_jogador
+        return  index == 5 || index == 3; //altura_jogador || _alt_jog_
     }
 
     /// </inheritdoc>
@@ -73,8 +73,6 @@ public class Mission4 : MissionVariable
                 return false;
             }
 
-            Debug.Log(first_value);
-
             canConvert = float.TryParse(secondValue, System.Globalization.NumberStyles.Float, 
                     System.Globalization.NumberFormatInfo.InvariantInfo, out second_value);
 
@@ -84,11 +82,7 @@ public class Mission4 : MissionVariable
                 return false;
             }
 
-            Debug.Log(second_value);
-
             height = first_value - second_value;
-
-            Debug.Log(height);
         }
 
         if (Mathf.Approximately(height, 40.2f))

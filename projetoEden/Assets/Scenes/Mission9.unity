@@ -7826,12 +7826,12 @@ PrefabInstance:
     - target: {fileID: 4097861882279173226, guid: 3fe3ceed529b0aa4ca3ee297b1497a17,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7966372892436808199, guid: 3fe3ceed529b0aa4ca3ee297b1497a17,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7966372892436808199, guid: 3fe3ceed529b0aa4ca3ee297b1497a17,
         type: 3}

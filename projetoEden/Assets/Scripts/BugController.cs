@@ -5,8 +5,12 @@ using UnityEngine;
 public class BugController : EnemyController
 {
     private Rigidbody2D rigidbody2D;
+    Animator animator;
+    Renderer renderer;
+    Collider2D collider;
     bool isVisible;
     bool playerHit = false;
+    public GameObject enemies;
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -14,6 +18,9 @@ public class BugController : EnemyController
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        renderer = GetComponent<Renderer>();
+        collider = GetComponent<Collider2D>();
     }
     
     ///</inheritdoc>
@@ -32,9 +39,14 @@ public class BugController : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (isVisible && transform.position.x >= 632)
+        if (isVisible && transform.position.x < 632)
         {
             MovementWithoutCollision(rigidbody2D, 1);
+        }
+        else if (transform.position.x >= 632)
+        {
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+            animator.enabled = false;
         }
 
         if(!playerHit)
@@ -49,17 +61,12 @@ public class BugController : EnemyController
         speed = WarriorController.instance.speed - 3;
     }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
-
     public void MakeVisible()
     {
         isVisible = true;
-        //gameObject.SetActive(true);
-        gameObject.GetComponent<Renderer>().enabled = true;
-        gameObject.GetComponent<Collider2D>().enabled = true;
-        gameObject.GetComponent<Animator>().enabled = true;
+        renderer.enabled = true;
+        collider.enabled = true;
+        animator.enabled = true;
+        enemies.SetActive(true);
     }
 }

@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Mission8 : MissionStructure
 {
     const int tileHorizontalSize = 6;
     const int quantBlocks = 17;
-
     int currentIndex = 0;
+    GameObject enemies;
+
+    void Awake()
+    {
+        enemies = GameObject.FindGameObjectWithTag("Enemies");
+    }
 
     public override bool StatementIsCorrect(int index)
     {
@@ -29,8 +35,16 @@ public class Mission8 : MissionStructure
         else
         {
             StartCoroutine(InstatiateBlocks(quantBlocks));
-            Debug.Log("Overflow");
+            StartCoroutine(ShowGameOver());
         }
+    }
+
+    IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(3f);
+        CodingScreen.instance.ShowGameOver(true);
+        GameObject infiniteLoop = GameObject.FindGameObjectWithTag("Infinity");
+        infiniteLoop.GetComponent<TMP_Text>().enabled = true;
     }
 
     IEnumerator InstatiateBlocks(int quant)
@@ -52,8 +66,10 @@ public class Mission8 : MissionStructure
                yield break; //see later
             }
         
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
+
+        enemies.transform.GetChild(0).gameObject.SetActive(true);
 
         MainMenu.SelectActiveScene(1);
     }

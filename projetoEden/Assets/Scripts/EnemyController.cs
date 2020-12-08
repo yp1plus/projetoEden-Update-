@@ -12,7 +12,7 @@ public class EnemyController : PlayerController
     public int hit; //to attack enemy
     public int hitFlame;
     public int hitChicken;
-    bool isInCorner = false;
+    protected bool isInCorner = false;
 
     protected int direction = -1;
 
@@ -100,7 +100,10 @@ public class EnemyController : PlayerController
     public override void ChangeHealth(int amount)
     {
         base.ChangeHealth(amount);
-        DestroyPlayerDead();
+        if (!gameObject.CompareTag("Flower") && !gameObject.CompareTag("Slug"))
+            DestroyPlayerDead();
+        else
+            Destroy(gameObject);
     }
 
 

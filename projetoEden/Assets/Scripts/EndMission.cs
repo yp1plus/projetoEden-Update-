@@ -14,6 +14,8 @@ public class EndMission : MonoBehaviour
     ComputerController computerController;
     AudioController audioController;
     public AudioClip winSong;
+    public Sprite[] codes = new Sprite[4];
+    public Image content;
 
     void Awake()
     {
@@ -28,6 +30,7 @@ public class EndMission : MonoBehaviour
     {
         computerController = computer.GetComponent<ComputerController>();
         audioController = gameObject.AddComponent<AudioController>();
+        content.sprite = codes[Languages.indexLanguage];
     }
 
     public void CheckValue(string answer)

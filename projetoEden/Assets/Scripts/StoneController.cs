@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoneController : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
+    bool flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +17,14 @@ public class StoneController : MonoBehaviour
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         
-        if (player != null && !WarriorController.StoneDeactivated)
+        if (player != null && (WarriorController.StoneDeactivated || flag))
+        {
+            flag = true;
+        }
+        else if (player != null)
         {
             StartCoroutine(ChangeRigidBodyType());
-            //WarriorController.StoneDeactivated = true; //only executes once
-        } 
+        }
     }
 
     //Makes stone fall
@@ -28,6 +32,10 @@ public class StoneController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         if (!WarriorController.StoneDeactivated)
+        {
             rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            yield return new WaitForSeconds(3f);
+            Destroy(gameObject);
+        }
     }
 }

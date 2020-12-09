@@ -1,18 +1,17 @@
 {
-    "input":[
-        {"options":["nomeDaVariável", "meuNome","1Nome","NOME_JOGADOR","nome_jogador","nome&sobrenome"]},
-        {"options":["nomeDaVariável", "2DGalinhas","galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
-        {"options":["nomeDaVariável", "chamaAcesa","destruirChama","chamaApagada","criarChama","chama.acesa"]},
-        {"options":["nomeDaVariável", "CODIGO_SECRETO","codigoSecreto","codigo","####","_senha"]},
-        {"options":["nomeDaVariável", "altura","ALTURAJogador","_alt_jog_","AlturaJogador","altura_jogador"]},
-        {"options":[null,null,null,null,null]},
-        {"options":["Condição", "(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 10)"]},
-        {"options":["(Correr())","(Ficar() || Correr())","(!Ficar() && !Correr())","((Ficar() && Correr()) || Ficar())","((Ficar() || Correr()) || Ficar())"]},
-        {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(HouverRocha())","for(int i = 5; i <= 0; i--)", "while(HouverVacuo())", "for(int i = 10; i >= 0; i++)"]},
-        {"options":["Iteração", "(int i = 0; i < 7; i++)","(int i = 0; i < 6; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 7; i++)", "(int i = 6; i >= 3; i--)"]}
+    "input":[{"options":["nomeDaVariável", "meu-Nome","1Nome","NOME_JOGADOR","nome_jogador!","nome&sobrenome"]},
+    {"options":["nomeDaVariável", "2DGalinhas","qt|galinhas","quant_galinhas","quantGalinhas","g@linhas"]},
+    {"options":["nomeDaVariável", "chamaAcesa","destruirChama()","chamaApagada","criarChama()","chama.acesa"]},
+    {"options":["nomeDaVariável", "CODIGO_SECRETO","codigo$ecreto","código","####","$ENHA"]},
+    {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
+    {"options":[null,null,null,null,null]},
+    {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
+    {"options":["(Correr())","(Ficar() || Correr())","(!Ficar() && !Correr())","((Ficar() && Correr()) || Ficar())","((Ficar() || Correr()) || Ficar())"]},
+    {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(HouverRocha())","for(int i = 5; i <= 0; i--)", "while(HouverVacuo())", "for(int i = 10; i >= 0; i++)"]},
+    {"options":["Iteração","(int i = 0; i < 7; i++)","(int i = 0; i < 6; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 7; i++)", "(int i = 6; i >= 3; i--)"]}
     ],
-    "resultsStructures1":["OBichoPega();", "CriarBloco();"],
-    "resultsStructures2":["OBichoCome();", null, "DestruirBloco(i, j);"],
+    "resultsStructures1":["PararBloco();","OBichoPega();", "CriarBloco();", null],
+    "resultsStructures2":[null, "OBichoCome();", null, "DestruirBloco(i, j);"],
     "descriptionInfo":[
         "Tipo int: representa números inteiros até cerca de 2^31\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\nTipo float: representa números decimais até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nTipo string: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\nTipo bool: representa os valores true (verdadeiro) ou false (falso)",
         "==: representa igualdade, se algo é igual a outro\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n!: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",

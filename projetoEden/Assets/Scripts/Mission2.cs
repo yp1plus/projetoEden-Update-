@@ -58,7 +58,7 @@ public class Mission2 : MissionVariable
                 SetIndexTip(12);
                 break;
             case (int) Languages.TypesLanguages.Python:
-                if (answer != "True" || answer != "False")
+                if (answer != "True" && answer != "False")
                 {
                     SetIndexTip(13);
                     return false;
@@ -72,7 +72,7 @@ public class Mission2 : MissionVariable
                 SetIndexTip(15);
                 break;
             default:
-                if (answer != "true" || answer != "false")
+                if (answer != "true" && answer != "false")
                 {
                     SetIndexTip(14);
                     return false;

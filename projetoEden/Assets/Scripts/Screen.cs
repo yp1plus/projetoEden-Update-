@@ -45,7 +45,7 @@ public class Screen : MonoBehaviour
     public struct CamerasPhase 
     {
         public TMP_Text [] camerasTypes;
-        public TMP_Text[] camerasValue;
+        public TMP_InputField[] camerasValue;
     }
 
     [System.Serializable]
@@ -130,17 +130,19 @@ public class Screen : MonoBehaviour
         {
             variablesPhaseParent.SetActive(false);
             camerasPhaseParent.SetActive(true);
+            if (Languages.isPython())
+                components.variablesPhase.feedbackValue.transform.localPosition = new Vector3(0, 0, 0);
         } 
         else if (level >= 6) //change later
         {
             camerasPhaseParent.SetActive(false);
             structuresPhaseParent.SetActive(true);
         } 
-        if (level >= 7 && level <= 9) //change later
+        if (level >= 6 && level <= 9) //change later
         {
             bool mustActivate = level == 7 || level == 9;
-            components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures1[level - 7];
-            components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures2[level - 7];
+            components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures1[level - 6];
+            components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures2[level - 6];
 
             ActivateStructure2(mustActivate);
             components.structurePhase.statement1.SetActive(mustActivate);

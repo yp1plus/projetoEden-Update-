@@ -5,11 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public static Vector3 lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
+    public static Vector3 lastCheckPointPosition;
     public static int lastLevel = 0;
-    public static bool tutorialExecuted = false;
-    public static bool isSubPhase = false;
-    public static bool debug = false;
+    public static bool tutorialExecuted;
+    public static bool isSubPhase;
+    public static bool debug;
+
+    void Start()
+    {
+        lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
+        lastLevel = 0;
+        tutorialExecuted = false;
+        isSubPhase = false;
+        debug = false;
+    }
 
     public static void PlayGame()
     {

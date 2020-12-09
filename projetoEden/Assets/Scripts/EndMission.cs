@@ -37,12 +37,17 @@ public class EndMission : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            Debug.Log(answer);
             answer = answer.Trim(); //removes whitespaces on the right and on the left
             if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
                 answer = Mission.RemoveSemicolon(answer);
+            
+            if (answer == null)
+            {
+                IsWrong();
+                return;
+            }
+                
             answer = answer.Trim('\"'); //removes the single quotes
-            Debug.Log(answer);
             if (answer == "!987654321432120000;true?false?true?false?true?0.123456789123456789123456789!")
             {
                 IsCorrect();

@@ -27,13 +27,12 @@ public class AudioController : MonoBehaviour
     {
         if (clip != currentClip)
         {
-            audioSource.Stop();
             currentClip = clip;
             audioSource.PlayOneShot(currentClip);
         }
         else
         {
-            if(!audioSource.isPlaying)
+            if(!audioSource.isPlaying || audioSource.clip != clip)
                 audioSource.PlayOneShot(currentClip);
         }
     }

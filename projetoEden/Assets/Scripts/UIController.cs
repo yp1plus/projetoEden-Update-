@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
 
     public Info info = new Info();
     UIInfo txtInfoUI;
-    int index = 1;
+    int index;
 
     void Awake()
     {
@@ -31,6 +31,7 @@ public class UIController : MonoBehaviour
         CodingScreen.instance.OpenPanel(true);
         intro.SetActive(true);
         txtInfoUI = MissionState.LoadUIFromJson();
+        index = 1;
     }
 
     public void GoToTutorial()

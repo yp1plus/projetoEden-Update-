@@ -118,7 +118,10 @@ public class CodingScreen : Screen
         //Implements later verification wheter type it's correct
         if (isOn)
         {
-            constIdentifier.text = "const";
+            if (Languages.indexLanguage == (int) Languages.TypesLanguages.Java)
+                constIdentifier.text = "final";
+            else
+                constIdentifier.text = "const";
         }
         else
         {   
@@ -139,12 +142,12 @@ public class CodingScreen : Screen
 
         currentIndex = index;
 
-        if (mission.TypeIsCorrect(index, _const == "const"))
+        if (mission.TypeIsCorrect(index, _const == "const" || _const == "final"))
             IsCorrect((int) InputTypes.type);
         else
             IsWrong((int) InputTypes.type);
         
-        if(!mission.ConstIdentifierIsCorrect(_const == "const"))
+        if(!mission.ConstIdentifierIsCorrect(_const == "const" || _const == "final"))
         {
             mission.SetIndexTip(0);
         }
@@ -233,11 +236,11 @@ public class CodingScreen : Screen
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            string value = null;
+            string value = answer;
             MissionVariable mission = (MissionVariable) missions[WarriorController.level];
             bool couldRemove = true;
             
-            if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
+            if (!Languages.isPython())
                 value = Mission.RemoveSemicolon(answer);
 
             if (value == null) 
@@ -271,7 +274,7 @@ public class CodingScreen : Screen
     {
         if (WarriorController.level < 5)
         {
-            for (int i = Languages.isPython ? 1 : 0; i < 3; i++)
+            for (int i = Languages.isPython() ? 1 : 0; i < 3; i++)
             {
                 if (!feedbackCorrect[i].IsActive())
                 {

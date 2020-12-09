@@ -75,6 +75,7 @@ public class WarriorController : PlayerController
         if (numCoins != null)
             numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
+        isSubPhase = MainMenu.isSubPhase;
         canDeactivateStone = false;
     }
 
@@ -89,7 +90,6 @@ public class WarriorController : PlayerController
             currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
-        isSubPhase = MainMenu.isSubPhase;
         currentHealth = 100;
         ChangeHeight(facingRight ? 1: -1);
         ResetInvincibility();
@@ -296,7 +296,7 @@ public class WarriorController : PlayerController
     /// <param name = "scale"> A float, the scale value to change health. </param>
     public void ChangeHeight(float scale)
     {
-        if (Mathf.Abs(scale) == 1)
+        if (Mathf.Approximately(Mathf.Abs(scale), 1))
         {
             range = new Vector3(-3, 0.3f, 0);
             jumpForce = 7;
@@ -323,7 +323,7 @@ public class WarriorController : PlayerController
 
         transform.localScale = new Vector3(scale, Mathf.Abs(scale), 0);
 
-        height = (Mathf.Abs(scale) == 1) ? DEFAULT_HEIGHT : Mathf.Abs(scale) * 100;
+        height = (Mathf.Approximately(Mathf.Abs(scale), 1)) ? DEFAULT_HEIGHT : Mathf.Abs(scale) * 100;
 
         if (transform.position.x < -37f || transform.position.y > 16.6) //change later
         {

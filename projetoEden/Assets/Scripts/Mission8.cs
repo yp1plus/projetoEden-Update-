@@ -50,6 +50,7 @@ public class Mission8 : MissionStructure
     IEnumerator InstatiateBlocks(int quant)
     {
         GameObject block = GameObject.FindGameObjectWithTag("Block");
+        enemies = GameObject.FindGameObjectWithTag("Enemies");
         MainMenu.SelectActiveScene(9);
         //GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
 
@@ -69,7 +70,8 @@ public class Mission8 : MissionStructure
             yield return new WaitForSeconds(0.2f);
         }
 
-        enemies.transform.GetChild(0).gameObject.SetActive(true);
+        if (enemies != null)
+            enemies.transform.GetChild(0).gameObject.SetActive(true);
 
         MainMenu.SelectActiveScene(1);
     }

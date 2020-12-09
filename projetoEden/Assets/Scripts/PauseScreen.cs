@@ -10,6 +10,7 @@ public class PauseScreen : MonoBehaviour
     public GameObject commandsMenu;
     public GameObject infoPanel;
     public GameObject btReturn;
+    public GameObject backgroundInvisible;
     bool isPaused = false;
     bool flag = false;
 
@@ -43,6 +44,7 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = state ? 0 : 1;
         mainPanel.SetActive(state);
         mainMenu.SetActive(state);
+        backgroundInvisible.SetActive(state);
         isPaused = state;
         flag = false;
     }

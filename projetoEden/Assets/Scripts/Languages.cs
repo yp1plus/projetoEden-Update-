@@ -6,9 +6,13 @@ public class Languages : MonoBehaviour
 {
     static int index = 2;
     public static int indexLanguage {get {return index;}}
-    public static bool isPython = index == (int) TypesLanguages.Python;
     public enum TypesLanguages {C, CSharp, Python, Java};
     public List<OptionData> inputTypes = new List<OptionData>();
+
+    public static bool isPython()
+    {
+        return index == (int) TypesLanguages.Python;
+    }
 
     public void ClickC()
     {

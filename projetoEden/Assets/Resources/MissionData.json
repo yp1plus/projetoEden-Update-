@@ -28,8 +28,8 @@
     {"options":[null, null, null, null, null, null]},
     {"options":["tipoDaVariável", "String", "int", "double", "char", "boolean"]}
     ],
-    "resultsStructures1":["oBichoPega();", "criarBloco();", null],
-    "resultsStructures2":["oBichoCome();", null, "destruirBloco(i, j);"],
+    "resultsStructures1":["pararBloco();", "oBichoPega();", "criarBloco();", null],
+    "resultsStructures2":[null, "oBichoCome();", null, "destruirBloco(i, j);"],
     "genericTips":["Nessa linguagem, o valor precisa terminar com ponto e vírgula (;)"],
     "tips":[
         {   "tipsForTypes": null,
@@ -37,7 +37,7 @@
             "tipsForValue": 
                 ["Todo valor textual precisa estar entre aspas duplas",
                 "Você estourou o limite máximo de 7 caracteres",
-                "Exemplo: \"Maria\";"]
+                "Exemplo: \"Maria\""]
         },
         {
             "tipsForTypes": 

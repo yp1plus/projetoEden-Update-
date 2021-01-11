@@ -20,6 +20,7 @@ public class DynamicGround : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        offsetGround = rigidbody2D.position.x;
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class DynamicGround : MonoBehaviour
     {
         rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
 
-        if ((rigidbody2D.position.x <= -maxRange || rigidbody2D.position.x >= maxRange) && !changedDirection)
+        if ((rigidbody2D.position.x <= offsetGround - maxRange || rigidbody2D.position.x >= offsetGround + maxRange) && !changedDirection)
         {
             direction = -direction;
             changedDirection = true;
@@ -48,7 +49,6 @@ public class DynamicGround : MonoBehaviour
         if (player != null)
         {
             offset = player.GetPosition();
-            offsetGround = transform.position.x;
         }
     }
 
@@ -61,25 +61,8 @@ public class DynamicGround : MonoBehaviour
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
 
-        /*if (player != null)
-        {
-            if (player.move == 0)
-            {
-                if (direction > 0)
-                {
-                    player.SetPosition(offset.x + Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(offsetGround)));
-                }
-                else
-                {
-                    player.SetPosition(offset.x - Mathf.Abs(Mathf.Abs(Mathf.Abs(transform.position.x) - 10) - Mathf.Abs(offsetGround)));
-                }
-            }
-            else
-            {
-                offset = player.GetPosition();
-                offsetGround = transform.position.x;
-            }
-        }*/
+        if (player != null && player.move == 0)
+            player.SetPosition(transform.position.x);
     }
 
     //Avoids the case when the position it's larger than maximum range and when changes the direction remains larger

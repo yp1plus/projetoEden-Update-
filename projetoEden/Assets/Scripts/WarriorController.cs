@@ -362,4 +362,13 @@ public class WarriorController : PlayerController
     {
         transform.position = new Vector3(position, transform.position.y, transform.position.z);
     }
+
+    public Vector3 GetVelocity()
+    {
+        if (gameObject != null)
+            if (!Mathf.Approximately(rigidbody2D.velocity.x,0) && !Mathf.Approximately(rigidbody2D.velocity.y,0))
+                return rigidbody2D.velocity;
+        
+        return new Vector3(0,0,0);
+    }
 }

@@ -53,6 +53,7 @@ public class WarriorController : PlayerController
     public AudioClip darkAmbient;
     System.Random random = new System.Random();
     bool flag = false;
+    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, BUG = 8, LAST_OF_STRUCTURES = 10, FOURTH_WALL = 10, DRAGON = 11};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -91,7 +92,7 @@ public class WarriorController : PlayerController
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
         currentHealth = 100;
-        ChangeHeight(facingRight ? 1: -1);
+        ResetHeight();
         ResetInvincibility();
         if (!facingRight)
             Flip();
@@ -158,15 +159,15 @@ public class WarriorController : PlayerController
 
             if (Input.GetKeyDown(KeyCode.Q) && UIController.instance.powers[3].activeSelf)
             {
-                ChangeHeight(transform.localScale.x*1.2f);
+                ChangeHeight(true, 1);
             }
 
             if (Input.GetKeyDown(KeyCode.Z) && UIController.instance.powers[3].activeSelf)
             {
-                ChangeHeight(transform.localScale.x/1.2f);
+                ChangeHeight(false, 1);
             }
 
-            if (transform.position.x >= 809f && currentLevel < 10)
+            if (transform.position.x >= 809f && currentLevel < (int) PHASES.DRAGON)
                 GoToNextLevel();
         }
     }
@@ -212,7 +213,7 @@ public class WarriorController : PlayerController
     /// </summary>
     public void GoToNextLevel()
     {
-        if (currentLevel != 5 || isSubPhase) //The level 5 cointains one subphase
+        if (currentLevel != (int) PHASES.CAMERAS || isSubPhase) //The level 5 cointains one subphase
         {
             currentLevel++;
         }
@@ -221,7 +222,7 @@ public class WarriorController : PlayerController
             isSubPhase = true;
         }  
 
-        if (currentLevel == 10)
+        if (currentLevel == (int) PHASES.DRAGON)
             audioController.PlayMusic(darkAmbient);
     }
 
@@ -293,42 +294,56 @@ public class WarriorController : PlayerController
     /// <summary>
     /// Changes the warrior height and width in the same proportion.
     /// </summary>
-    /// <param name = "scale"> A float, the scale value to change health. </param>
-    public void ChangeHeight(float scale)
+    /// <param name = "isIncrement"> A bool, if wants increment or decrement. </param>
+    /// <param name = "times"> A unsigned int, the scale value to change health. </param>
+    public void ChangeHeight(bool isIncrement, uint times)
     {
+        float pow = Mathf.Pow(1.2f, times);
+        float scale = isIncrement ? transform.localScale.x * pow : transform.localScale.x / pow;
+
         if (Mathf.Approximately(Mathf.Abs(scale), 1))
         {
-            range = new Vector3(-3, 0.3f, 0);
-            jumpForce = 7;
-            speed = 10; 
+            ResetHeight();
+            return;
         } 
         else if (Mathf.Abs(transform.localScale.x) < Mathf.Abs(scale))
         {
-            range = new Vector3(range.x * 1.2f, range.y * 1.2f, 0);
-            speed = Mathf.Clamp(speed - 1f, 2, 20);
+            range = new Vector3(range.x * pow, range.y * pow, 0);
+            speed = Mathf.Clamp(speed - (1f * times), 2, 20);
             if (jumpForce >= 0 && jumpForce <= 7)
-                jumpForce = Mathf.Clamp(jumpForce - 1f, 0, 14);
+                jumpForce = Mathf.Clamp(jumpForce - (1f * times), 0, 17);
             else
-                jumpForce = Mathf.Clamp(jumpForce - 2f, 0, 14);
+                jumpForce = Mathf.Clamp(jumpForce - (2f * times), 0, 17);
         }
         else
         {
-            range = new Vector3(range.x / 1.2f, range.y / 1.2f, 0);
-            speed += 1f; 
+            range = new Vector3(range.x / pow, range.y / pow, 0);
+            speed = Mathf.Clamp(speed + (1f * times), 2, 20); 
             if (jumpForce >= 0 && jumpForce < 7)
-                jumpForce += 1f;
+                jumpForce = Mathf.Clamp(jumpForce + (1f * times), 0, 17);
             else
-                jumpForce += 2f;
-        } 
+                jumpForce = Mathf.Clamp(jumpForce + (2f * times), 0, 17);
+        }
 
         transform.localScale = new Vector3(scale, Mathf.Abs(scale), 0);
 
-        height = (Mathf.Approximately(Mathf.Abs(scale), 1)) ? DEFAULT_HEIGHT : Mathf.Abs(scale) * 100;
+        height = Mathf.Abs(scale) * 100;
 
-        if (transform.position.x < -37f || transform.position.y > 16.6) //change later
+        if (transform.position.x < -37f || transform.position.y > 16.6) //avoids go out of screen
         {
             ChangeHealth(-100);
         }
+    }
+
+    public void ResetHeight()
+    {
+        range = new Vector3(-3, 0.3f, 0);
+        jumpForce = 7;
+        speed = 10;
+
+        transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 0);
+
+        height = DEFAULT_HEIGHT;
     }
 
     public bool IsFinalBattle()

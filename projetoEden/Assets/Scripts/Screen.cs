@@ -61,29 +61,43 @@ public class Screen : MonoBehaviour
     public Components components = new Components();
 
     protected Fade fade;
-    public AudioClip gameOverClip;
+    public AudioClip gameOverClip; 
 
     public virtual void Awake()
+    {
+        Initialize();
+
+        typeFromMission0 = missionData.inputTypes[Languages.indexLanguage].options[(int) Mission.Types.STRING];
+        genericTips = missionData.genericTips;
+        
+        fade = gameObject.AddComponent<Fade>();
+    }
+
+    /* Charges data and sets up screen according the programming language */
+    void Initialize()
     {
         missionData = MissionState.LoadFromJson();
 
         switch(Languages.indexLanguage)
         {
             case (int) Languages.TypesLanguages.CSharp:
-                UpdateForCSharp();
+                MissionState.OverloadFromJson(missionData, "InfoCSharp");
                 break;
             case (int) Languages.TypesLanguages.Java:
-                UpdateForJava();
+                MissionState.OverloadFromJson(missionData, "InfoJava");
                 break;
             case (int) Languages.TypesLanguages.Python:
-                UpdateForPython();
+                MissionState.OverloadFromJson(missionData, "InfoPython");
+                SetUpScreenForPython();
                 break;
         }
 
-        typeFromMission0 = missionData.inputTypes[Languages.indexLanguage].options[(int) Mission.Types.STRING];
-        genericTips = missionData.genericTips;
-        
-        fade = gameObject.AddComponent<Fade>();
+        components.variablesPhase.constIdentifier.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = missionData.constIdentifier;
+
+        for(int i = 0; i < 3; i++)
+        {
+            components.camerasPhase.camerasTypes[i].text = missionData.namesCameras[i];
+        }
     }
 
     public void LoadData(int level)
@@ -93,12 +107,19 @@ public class Screen : MonoBehaviour
         List<string> options = missionData.input[level].options;
         tip = missionData.tips[level];
 
-        if (level <= 4)
+        if (level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES)
         {
             variablesPhaseParent.SetActive(true); //change later
-            ResetVariablesPhase();
 
-            UpdateDropDown(components.variablesPhase.inputName, options);
+            if (level != (int) WarriorController.PHASES.CLOUDS)
+            {
+                ResetVariablesPhase();
+                UpdateDropDown(components.variablesPhase.inputName, options);
+            }
+            else
+            {
+                BlockTypeAndNameInput();
+            }
 
             if (level == 0) //inputType order don't change
             {
@@ -106,13 +127,13 @@ public class Screen : MonoBehaviour
                 UpdateDropDown(components.variablesPhase.inputType, options);
             }
         }
-        else if (level >= 6)
+        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
         {
             UpdateDropDown(components.structurePhase.condition1, options);
 
-            if (level == 9)
+            if (level >= (int) WarriorController.PHASES.BUG && level <= (int) WarriorController.PHASES.FOURTH_WALL)
             {
-                UpdateDropDown(components.structurePhase.condition2, missionData.options_for2);
+                UpdateDropDown(components.structurePhase.condition2, missionData.optionsCondition2[level - (int) WarriorController.PHASES.BUG].options);
             }
         }
     }
@@ -126,34 +147,36 @@ public class Screen : MonoBehaviour
 
     public void UpdateScreen(int level)
     {
-        if (level == 5) 
+        if (level == (int) WarriorController.PHASES.CAMERAS) 
         {
             variablesPhaseParent.SetActive(false);
             camerasPhaseParent.SetActive(true);
             if (Languages.isPython())
                 components.variablesPhase.feedbackValue.transform.localPosition = new Vector3(0, 0, 0);
         } 
-        else if (level >= 6) //change later
+        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
         {
+            variablesPhaseParent.SetActive(false);
             camerasPhaseParent.SetActive(false);
             structuresPhaseParent.SetActive(true);
-        } 
-        if (level >= 6 && level <= 9) //change later
-        {
-            bool mustActivate = level == 7 || level == 9;
-            components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures1[level - 6];
-            components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text = missionData.resultsStructures2[level - 6];
+
+            bool mustActivate = level == (int) WarriorController.PHASES.BUG
+                || level == (int) WarriorController.PHASES.FOURTH_WALL;
+            components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text 
+                = missionData.resultsStructures1[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
+            components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text 
+                = missionData.resultsStructures2[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
 
             ActivateStructure2(mustActivate);
             components.structurePhase.statement1.SetActive(mustActivate);
 
-            if (level == 9)
-                UpdateForPhase9();
-        }
+            if (level == (int) WarriorController.PHASES.FOURTH_WALL)
+                SetUpScreenForFourthWallPhase();
+        } 
     }
 
     //Activates the condition 2 (nested for) and updates your position
-    void UpdateForPhase9()
+    void SetUpScreenForFourthWallPhase()
     {
         components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
         components.structurePhase.statement2.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
@@ -165,10 +188,27 @@ public class Screen : MonoBehaviour
         components.structurePhase.result2.transform.localPosition = new Vector3(-69.9f, -167.6f, 0);
     }
 
+    void BlockTypeAndNameInput()
+    {
+        Toggle toggle = components.variablesPhase.constIdentifier.GetComponentInChildren<Toggle>();
+        toggle.interactable = false;
+        TMP_Dropdown dropdown = components.variablesPhase.inputType.GetComponent<TMP_Dropdown>();
+        dropdown.interactable= false;
+        dropdown = components.variablesPhase.inputName.GetComponent<TMP_Dropdown>();
+        dropdown.interactable = false;
+        components.variablesPhase.inputValue.GetComponent<TMP_InputField>().text = "";
+    }
+
     void ResetVariablesPhase()
-    {  
-        components.variablesPhase.constIdentifier.GetComponentInChildren<Toggle>().isOn = false;
-        components.variablesPhase.inputType.GetComponent<TMP_Dropdown>().value = 0;
+    {   
+        Toggle toggle = components.variablesPhase.constIdentifier.GetComponentInChildren<Toggle>();
+        toggle.interactable = true;
+        toggle.isOn = false;
+        TMP_Dropdown dropdown = components.variablesPhase.inputType.GetComponent<TMP_Dropdown>();
+        dropdown.interactable = true;
+        dropdown.value = 0;
+        dropdown = components.variablesPhase.inputName.GetComponent<TMP_Dropdown>();
+        dropdown.interactable = true;
         components.variablesPhase.inputValue.GetComponent<TMP_InputField>().text = "";
     }
 
@@ -179,10 +219,8 @@ public class Screen : MonoBehaviour
         components.structurePhase.result2.SetActive(state);
     }
 
-    void UpdateForPython()
+    void SetUpScreenForPython()
     {
-        MissionState.OverloadFromJson(missionData, "InfoPython");
-
         /* Python doesn't require data type */
         components.variablesPhase.constIdentifier.SetActive(false);
         components.variablesPhase.inputType.SetActive(false);
@@ -194,29 +232,10 @@ public class Screen : MonoBehaviour
         components.variablesPhase.feedbackValue.transform.localPosition = new Vector3(-105.1f, 0, 0);
 
         components.structurePhase.statement2.transform.GetChild(0).GetComponent<TMP_Text>().text = "elif";
-        components.camerasPhase.camerasTypes[0].text = "CAMERA_A99";
-        components.camerasPhase.camerasTypes[1].text = "CAMERA_A98";
-        components.camerasPhase.camerasTypes[2].text = "CAMERA_A97";
+        
         components.camerasPhase.camerasValue[0].text = "\"A99\"";
         components.camerasPhase.camerasValue[1].text = "\"A98\"";
         components.camerasPhase.camerasValue[2].text = "\"A97\"";
-    }
-
-    void UpdateForCSharp()
-    {
-        MissionState.OverloadFromJson(missionData, "InfoCSharp");
-        components.camerasPhase.camerasTypes[0].text = "string CAMERA_A99";
-        components.camerasPhase.camerasTypes[1].text = "string CAMERA_A98";
-        components.camerasPhase.camerasTypes[2].text = "string CAMERA_A97";
-    }
-
-    void UpdateForJava()
-    {
-        MissionState.OverloadFromJson(missionData, "InfoJava");
-        components.variablesPhase.constIdentifier.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "final";
-        components.camerasPhase.camerasTypes[0].text = "String CAMERA_A99";
-        components.camerasPhase.camerasTypes[1].text = "String CAMERA_A98";
-        components.camerasPhase.camerasTypes[2].text = "String CAMERA_A97";
     }
 
     public void ShowGameOver(bool state)

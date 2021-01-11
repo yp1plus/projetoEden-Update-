@@ -33,6 +33,7 @@ public class TipsController : MonoBehaviour
         boxTip.SetActive(true);
         StartCoroutine(ShowMessage("Você só pode sair quando tudo estiver correto"));
     }
+    
 
     ///<summary> Shows a tip when press the button </summary>
     public void ShowTip()
@@ -48,12 +49,6 @@ public class TipsController : MonoBehaviour
             fade.FadeIn();
         }
 
-        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
-        {
-            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
-            return;
-        }
-
         int indexTip = CodingScreen.instance.GetIndexTip();
 
         if (indexTip == -1)
@@ -62,26 +57,58 @@ public class TipsController : MonoBehaviour
             return;
         }
 
+        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
+        {
+            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
+            return;
+        }
+
         string tip = null;
 
-        if (indexTip >= 0 && indexTip <= 5) //type
+        if (indexTip >= 0 && indexTip <= (int) CodingScreen.TipsReferenceIndexes.types) //type
         {
+            //Doesn't need this tip anymore
+            if (CodingScreen.instance.FeedbackCorrectIsActive((int) CodingScreen.InputTypes.type))
+            {
+                CodingScreen.instance.RemoveTip();
+                ShowTip();
+                return;
+            }
+
             if (Screen.tip.tipsForTypes.Count != 0)
                 tip = Screen.tip.tipsForTypes[indexTip];
         }
-        else if (indexTip <= 10) //name
+        else if (indexTip <= (int) CodingScreen.TipsReferenceIndexes.names) //name
         {
+            //Doesn't need this tip anymore
+            if (CodingScreen.instance.FeedbackCorrectIsActive((int) CodingScreen.InputTypes.name))
+            {
+                CodingScreen.instance.RemoveTip();
+                ShowTip();
+                return;
+            }
+
+            int typesFinalIndex = (int) CodingScreen.TipsReferenceIndexes.types;
             if (Screen.tip.tipsForNames.Count != 0)
-                tip = Screen.tip.tipsForNames[indexTip - 6];
+                tip = Screen.tip.tipsForNames[indexTip - (typesFinalIndex + 1)];
         }
         else //value
         {
-            if (indexTip == 22) //generic tip
+            //Doesn't need this tip anymore
+            if (CodingScreen.instance.FeedbackCorrectIsActive((int) CodingScreen.InputTypes.value))
+            {
+                CodingScreen.instance.RemoveTip();
+                ShowTip();
+                return;
+            }
+
+            int namesFinalIndex = (int) CodingScreen.TipsReferenceIndexes.names;
+            if (indexTip == (int) CodingScreen.TipsReferenceIndexes.generics) //generic tip
             {
                 tip = Screen.genericTips[0];
             }
-            else if (Screen.tip.tipsForValue.Count > (indexTip - 11))
-                    tip = Screen.tip.tipsForValue[indexTip - 11];
+            else if (Screen.tip.tipsForValue.Count > (indexTip - (namesFinalIndex + 1)))
+                    tip = Screen.tip.tipsForValue[indexTip - (namesFinalIndex + 1)];
         }
 
         if (tip != null && tip != "")
@@ -91,11 +118,13 @@ public class TipsController : MonoBehaviour
         }
         else
         {
+            //Ignores empty tip
             if (tip != null)
+            {
                 CodingScreen.instance.RemoveTip();
-            
-            StartCoroutine(ShowMessage("Você não fez nenhuma tentativa ainda."));
-            return;
+                ShowTip();
+                return;
+            }
         }
         
         textGenerator.ShowText(currentTip);

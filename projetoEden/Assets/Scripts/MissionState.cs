@@ -76,16 +76,19 @@ public class MissionData
     public List<string> description = new List<string>();
     /* Dropdown modificable of each mission */
     public List<OptionData> input = new List<OptionData>();
-    /* Refers to level 9 */
-    public List<string> options_for2 = new List<string>();
+    public string constIdentifier;
+    /* Refers to levels 7 and 9 */
+    public List<OptionData> optionsCondition2 = new List<OptionData>();
     /* Dropdown relative to data type input */
     public List<OptionData> inputTypes = new List<OptionData>();
     public List<string> resultsStructures1 = new List<string>();
     public List<string> resultsStructures2 = new List<string>();
     public List<Tip> tips = new List<Tip>();
     public List<string> genericTips = new List<string>();
+    /* Used on Pause Screen showing useful commands */
     public List<string> titleInfo = new List<string>();
     public List<string> descriptionInfo = new List<string>();
+    public List<string> namesCameras = new List<string>();
 }
 
 [System.Serializable]

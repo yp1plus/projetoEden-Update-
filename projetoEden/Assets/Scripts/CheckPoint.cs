@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class CheckPoint : MonoBehaviour
 {
     Animator animator;
+    CapsuleCollider2D capsuleCollider2D;
     bool activated = false;
 
     /// <summary>
@@ -18,7 +19,9 @@ public class CheckPoint : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController controller = other.GetComponent<WarriorController>();
@@ -30,6 +33,7 @@ public class CheckPoint : MonoBehaviour
             MainMenu.lastLevel = WarriorController.level;
             if (animator != null)
                 animator.SetTrigger("Activated");
+            capsuleCollider2D.enabled = false;
         }
     }
 }

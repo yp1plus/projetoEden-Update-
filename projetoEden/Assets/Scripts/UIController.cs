@@ -28,10 +28,13 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CodingScreen.instance.OpenPanel(true);
-        intro.SetActive(true);
+        if (!MainMenu.debug)
+        {
+            CodingScreen.instance.OpenPanel(true);
+            intro.SetActive(true);
+        }
         txtInfoUI = MissionState.LoadUIFromJson();
-        index = 1;
+        index = 4;
     }
 
     public void GoToTutorial()
@@ -42,16 +45,18 @@ public class UIController : MonoBehaviour
 
     public void ResetPower()
     {
-        if (WarriorController.level >= 0 && WarriorController.level < 2 || WarriorController.level == 3)
+        if (WarriorController.level >= 0 
+            && WarriorController.level < (int) WarriorController.PHASES.BATTLE - 1 
+            || WarriorController.level == (int) WarriorController.PHASES.CLOUDS - 1)
         {
-            powers[WarriorController.level].SetActive(false);
-            index = WarriorController.level + 1;
+            powers[Mathf.Clamp(WarriorController.level, 0, 3)].SetActive(false);
+            index = Mathf.Clamp(WarriorController.level + 1, 0, 4);
         }
     }
 
     public void ShowNewInfo()
     {
-        if (index < 5)
+        if (index <= 4)
         {
             HideInfo(false);
             info.title.text = txtInfoUI.title[index];

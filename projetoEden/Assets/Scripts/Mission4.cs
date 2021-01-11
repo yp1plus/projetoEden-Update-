@@ -5,14 +5,15 @@ using UnityEngine;
 public class Mission4 : MissionVariable
 {
     float height = 0;
+    public static string nameVariable;
 
     /// </inheritdoc>
     public override void ExecuteCode()
     {
-        GameObject warrior = GameObject.FindGameObjectWithTag("Player");
-        warrior.GetComponent<WarriorController>().ChangeHeight(1/(Mathf.Pow(1.2f, 5)));
-        warrior.GetComponent<WarriorController>().speed = 15;
-        warrior.GetComponent<WarriorController>().jumpForce = 17;
+        WarriorController warrior = GameObject.FindGameObjectWithTag("Player").GetComponent<WarriorController>();
+        warrior.ChangeHeight(false, 5);
+        //warrior.speed = 15;
+        //warrior.jumpForce = 17;
     }
 
     /// </inheritdoc>
@@ -24,6 +25,7 @@ public class Mission4 : MissionVariable
     /// </inheritdoc>
     public override bool NameIsCorrect(int index)
     {
+        nameVariable = Screen.missionData.input[4].options[index];
         return  index == 5 || index == 3; //altura_jogador || _alt_jog_
     }
 

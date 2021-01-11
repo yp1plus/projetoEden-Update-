@@ -23,6 +23,7 @@ public class CodingScreen : Screen
     int currentIndex = 0;
     Mission[] missions = new Mission[10];
     public enum InputTypes {type, name, value, for1, for2};
+    public enum TipsReferenceIndexes {consts = 0, types = 5, names = 10, generics = 22};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -118,10 +119,7 @@ public class CodingScreen : Screen
         //Implements later verification wheter type it's correct
         if (isOn)
         {
-            if (Languages.indexLanguage == (int) Languages.TypesLanguages.Java)
-                constIdentifier.text = "final";
-            else
-                constIdentifier.text = "const";
+            constIdentifier.text = missionData.constIdentifier;
         }
         else
         {   
@@ -138,18 +136,18 @@ public class CodingScreen : Screen
     public void CheckType(int index)
     {
         MissionVariable mission = (MissionVariable) missions[WarriorController.level];
-        string _const = constIdentifier.text;
+        bool  isConst = constIdentifier.text == missionData.constIdentifier;
 
         currentIndex = index;
 
-        if (mission.TypeIsCorrect(index, _const == "const" || _const == "final"))
+        if (mission.TypeIsCorrect(index, isConst))
             IsCorrect((int) InputTypes.type);
         else
             IsWrong((int) InputTypes.type);
         
-        if(!mission.ConstIdentifierIsCorrect(_const == "const" || _const == "final"))
+        if(!mission.ConstIdentifierIsCorrect(isConst))
         {
-            mission.SetIndexTip(0);
+            mission.SetIndexTip((int) TipsReferenceIndexes.consts);
         }
         
         if (index != 0)
@@ -170,7 +168,8 @@ public class CodingScreen : Screen
         else
             IsWrong((int) InputTypes.name);
         
-        mission.SetIndexTip(index + 5); //name comes after all types in list
+        if (index != 0)
+            mission.SetIndexTip(index + (int) TipsReferenceIndexes.types); //name comes after all types in list
     }
 
     /// <summary>
@@ -180,7 +179,7 @@ public class CodingScreen : Screen
     /// <remarks> Treats the expression, verifying sintaxe and removing semicolon. </remarks>
     public void CheckValue()
     {
-        Mission5 mission = (Mission5) missions[WarriorController.level];
+        Mission6 mission = (Mission6) missions[WarriorController.level];
 
         if (mission != null && mission.AnswerIsCorrect())
             IsCorrect((int) InputTypes.value);
@@ -198,14 +197,14 @@ public class CodingScreen : Screen
 
         if (mission != null && mission.StatementIsCorrect(index))
         {
-            if (WarriorController.level < 9)
+            if (WarriorController.level < 10)
                 IsCorrect((int) InputTypes.value);
             else
                 IsCorrect((int) InputTypes.for1);
         }    
         else
         {
-            if (WarriorController.level < 9)
+            if (WarriorController.level < 10)
                 IsWrong((int) InputTypes.value);
             else
                 IsWrong((int) InputTypes.for1);
@@ -213,16 +212,16 @@ public class CodingScreen : Screen
     }
 
     /// <summary>
-    /// Checks if a second statement it's correct especifically in mission 9.
+    /// Checks if a second statement it's correct especifically in mission 10.
     /// </summary>
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckStatement2(int index)
     {
-        Mission9 mission =  WarriorController.level == 9 ? (Mission9) missions[WarriorController.level] : null;
+        Mission10 mission =  WarriorController.level == 10 ? (Mission10) missions[WarriorController.level] : null;
 
         if (mission != null && mission.Statement2IsCorrect(index))
             IsCorrect((int) InputTypes.for2);
-        else if (WarriorController.level == 9)
+        else if (WarriorController.level == 10)
             IsWrong((int) InputTypes.for2);
     }
 
@@ -245,7 +244,7 @@ public class CodingScreen : Screen
 
             if (value == null) 
             {
-                mission.SetIndexTip(22); //a huge index to the end of list
+                mission.SetIndexTip((int) TipsReferenceIndexes.generics); //a huge index to the end of list
                 couldRemove = false;
                 value = answer;
             }
@@ -272,7 +271,7 @@ public class CodingScreen : Screen
     /// </summary>
     public void Exit()
     {
-        if (WarriorController.level < 5)
+        if (WarriorController.level < (int) WarriorController.PHASES.LAST_OF_VARIABLES)
         {
             for (int i = Languages.isPython() ? 1 : 0; i < 3; i++)
             {
@@ -283,15 +282,15 @@ public class CodingScreen : Screen
                 }
             }
         }
-        else if (WarriorController.level < 9)
+        else if (WarriorController.level < (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
         {
             if(!feedbackCorrect[(int) InputTypes.value].IsActive()) //just the third feedback needs to appear
             {
                 TipsController.instance.ShowMessageExitError();
                 return;
             } 
-        }
-        else if (WarriorController.level == 9)
+        } //CHANGE LATER
+        else if (WarriorController.level == (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
         {
             if(!feedbackCorrect[(int) InputTypes.for1].IsActive() || !feedbackCorrect[(int) InputTypes.for2].IsActive())
             {
@@ -302,7 +301,9 @@ public class CodingScreen : Screen
 
         OpenCode(false);
 
-        if (WarriorController.level > 1 && WarriorController.level <= 4)
+        if (WarriorController.level > (int) WarriorController.PHASES.CHICKENS
+            && WarriorController.level != (int) WarriorController.PHASES.BARRIER
+            && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES)
             UIController.instance.ShowNewInfo();
 
         missions[WarriorController.level].ExecuteCode();
@@ -330,6 +331,11 @@ public class CodingScreen : Screen
             feedbackCorrect[i].gameObject.SetActive(false);
             feedbackIncorrect[i].gameObject.SetActive(false);
         }
+    }
+
+    public bool FeedbackCorrectIsActive(int inputType)
+    {
+        return feedbackCorrect[inputType].gameObject.activeSelf;
     }
 
     // Actives the feedback correct and disables the feedback incorrect if necessary.

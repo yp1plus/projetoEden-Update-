@@ -161,20 +161,25 @@ public class Screen : MonoBehaviour
             structuresPhaseParent.SetActive(true);
 
             bool mustActivate = level == (int) WarriorController.PHASES.BUG
-                || level == (int) WarriorController.PHASES.FOURTH_WALL;
+                || level == (int) WarriorController.PHASES.FOURTH_WALL
+                || level == (int) WarriorController.PHASES.FLOATING_PLATFORM;
             bool isPhaseBladesBarrier = level == (int) WarriorController.PHASES.BLADES_BARRIER;
             components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text 
                 = missionData.resultsStructures1[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
             components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text 
                 = missionData.resultsStructures2[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
 
-            ActivateStructure2(mustActivate);
             components.structurePhase.statement1.SetActive(mustActivate || isPhaseBladesBarrier);
+            components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = 
+                missionData.statementsStructures1[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
+            ActivateStructure2(mustActivate);
+            components.structurePhase.statement2.transform.GetChild(0).GetComponent<TMP_Text>().text = 
+                missionData.statementsStructures2[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
 
-            if (isPhaseBladesBarrier)
-                components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
-                
-            if (level == (int) WarriorController.PHASES.FOURTH_WALL)
+            if (level == (int) WarriorController.PHASES.FLOATING_PLATFORM)
+                components.structurePhase.condition2.SetActive(false);
+      
+            else if (level == (int) WarriorController.PHASES.FOURTH_WALL)
                 SetUpScreenForFourthWallPhase();
         } 
     }
@@ -182,8 +187,6 @@ public class Screen : MonoBehaviour
     //Activates the condition 2 (nested for) and updates your position
     void SetUpScreenForFourthWallPhase()
     {
-        components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
-        components.structurePhase.statement2.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
         components.structurePhase.condition2.GetComponent<TMP_Dropdown>().interactable = true;
         components.structurePhase.condition2.transform.GetChild(1).gameObject.SetActive(true); //Shows Arrow
         components.structurePhase.result1.SetActive(false); //only needs one result, it's not if else 
@@ -246,6 +249,7 @@ public class Screen : MonoBehaviour
     {
         if (panelGameOver != null && panelGameOver.activeSelf != state)
         {
+            WarriorController.instance.DeactivateMovement(state);
             panelGameOver.SetActive(state);
             if (state)
                 WarriorController.instance.audioController.PlaySound(gameOverClip);

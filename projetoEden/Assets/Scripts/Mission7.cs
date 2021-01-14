@@ -11,9 +11,9 @@ public class Mission7 : MissionStructure
     // Update is called once per frame
     void Update()
     {
-        if (flame != null && WarriorController.level == 6)
+        if (flame != null && WarriorController.level == 7)
         {
-            if (flame.GetComponent<Renderer>().material.color.a > 0.05f) //It's not transparent
+            if (flame.GetComponent<FlameController>().isBurning)
             {
                 WarriorController.StoneDeactivated = true;
             }
@@ -23,9 +23,9 @@ public class Mission7 : MissionStructure
             }
         }
 
-        if (flag && WarriorController.level == 6)
+        if (flag && WarriorController.level == 7)
         {
-            if (WarriorController.instance.quantChickens >= 5)
+            if (WarriorController.quantChickens >= 5)
             {
                 WarriorController.StoneDeactivated = true;
             }

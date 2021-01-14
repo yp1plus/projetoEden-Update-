@@ -8,6 +8,7 @@
         "Agora essas nuvens enfurecidas superam seu peso e não te deixam avançar. Para conseguir continuar, você precisa ficar gigante o suficiente para esmagá-las. Altere o valor da variável anterior, aumentando em 7,43 vezes o valor anterior.",
         "Essas câmeras chatas podem colocar tudo a perder se te descobrirem. Você deve enganá-las trocando seus valores de forma que não enxerguem você. Tome cuidado!",
         "Você já deve ter percebido que os blocos caem assim que você pisa. Mas existem plataformas móveis que você precisa esperar. Escolha a melhor condição que permita que você espere pela plataforma sem o bloco cair. Não existe resposta errada, mas ela pode ser inútil.",
+        "A plataforma à frente prende qualquer um que ouse pisá-la. Escolha a melhor condição que lhe permita prosseguir sem amarras!",
         "Se ficar o bicho pega, se correr o bicho come! Vem vindo um bicho atrás de você e você precisa se preparar. Crie uma condição para se livrar do bicho. Se fizer errado, ele vai te pegar!",
         "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar.",
         "Você está perto do seu objetivo, mas encontrou uma barreira de lâminas. É preciso eliminá-las. Encontre uma forma de destruir todas de uma vez.",
@@ -20,7 +21,8 @@
     {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
     {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
     {"options":[null,null,null,null,null]},
-    {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
+    {"options":["Condição","(chamaAcesa)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
+    {"options":["Condição","(quantGalinhas == 0 && !chamaAcesa)","(alturaJogador > 50.0 && codigo == '!')","(tamanho(NOME_JOGADOR) != 7)","(alturaJogador < 0.00 || codigo != '!')","(tamanho(NOME_JOGADOR) <= 7)"]},
     {"options":["(correr())","(ficar() || correr())","(!ficar() && !correr())","((ficar() && correr()) || ficar())","((ficar() || correr()) || ficar())"]},
     {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(houverRocha())","for(int i = 5; i <= 0; i--)", "while(houverVacuo())", "for(int i = 10; i >= 0; i++)"]},
     {"options":["Iteração", "(int i = 0; i < 8; i++)", "(int i = 1; i < 8; i++)", "(int i = 1; i <= 8; i++)", "(int i = 0; i < 4; i++)", "(int i = 0; i > 4; i++)"]},
@@ -39,8 +41,10 @@
     {"options":[null, null, null, null, null, null]},
     {"options":["tipoDaVariável", "String", "int", "double", "char", "boolean"]}
     ],
-    "resultsStructures1":["pararBloco();", "oBichoPega();", "criarBloco();", "eliminarLamina()", null],
-    "resultsStructures2":[null, "oBichoCome();", null, null, "destruirBloco(i, j);"],
+    "statementsStructures1":["if", "if", "if", null, "for", "for"],
+    "statementsStructures2":[null, "else", "else if", null, null, "for"],
+    "resultsStructures1":["pararBloco();", "prenderObjeto();", "oBichoPega();", "criarBloco();", "eliminarLamina()", null],
+    "resultsStructures2":[null, "liberarObjeto();", "oBichoCome();", null, null, "destruirBloco(i, j);"],
     "genericTips":["Nessa linguagem, o valor precisa terminar com ponto e vírgula (;)"],
     "tips":[
         {   "tipsForTypes": null,
@@ -183,6 +187,19 @@
             "tipsForNames":
                 null,
              "tipsForValue":
+                ["Você deve negar a proposição para conseguir se libertar",
+                 "Se a altura for menor do que 50 é possível ficar livre",
+                 "Se o tamanho do seu nome for 7 caracteres, é possível ficar livre",
+                 "Existe uma condição que sempre te deixará livre no jogo",
+                 "Cuidado com condições que nunca podem ser negadas"
+                ]
+        },
+        {
+            "tipsForTypes": 
+                null,
+            "tipsForNames":
+                null,
+             "tipsForValue":
                 ["Se uma das ações for verdade, a outra será automaticamente falsa",
                  "Se uma das ações não acontece, a outra consequentemente acontece",
                  "Uma expressão do tipo E sempre retornará falso",
@@ -238,9 +255,9 @@
     ],
     "titleInfo":["Variáveis", "Condicionais", "Repetição"],
     "descriptionInfo":[
-        "Tipo int: representa números inteiros até cerca de 2^31\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\nTipo float: representa números decimais até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nTipo char[]: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\n",
-        "==: representa igualdade, se algo é igual a outro\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n!:nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
-        "while(condição): enquanto a condição for verdadeira, repete a ação\nfor(int i = valor_inicial; condição; incremento (++) ou decremento(--)): repete um número de vezes estabelecido determinado pela condição"
+        "Tipo int: representa números inteiros até cerca de 2^31. Também pode representar valor booleano, sendo 0 (falso) e 1 (verdadeiro)\n\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\n\nTipo float: representa números decimais. Deve-se utilizar ponto entre os números\n\nTipo char*: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\n",
+        "if: condição \"se\" é verdadeiro faça algo\n\nelse if: condição \"senão se\" que vem após um if que não foi executado e testa outra condição\n\nelse: condição \"senão\" que faz algo caso nenhuma das condições anteriores seja verdadeira\n\n==: representa igualdade, se algo é igual a outro\n\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n\n!: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n\n<: se um valor é menor do que o outro\n\n>: se um valor é maior do que o outro\n\n>=: se um valor é maior ou igual a outro\n\n<=: se um valor é menor ou igual a outro",
+        "while(condição): enquanto a condição for verdadeira, repete a ação\n\nfor(int i = valor_inicial; condição; incrementa 1 (++) ou decrementa 1 (--)): repete um número de vezes estabelecido determinado pela condição"
     ],
     "namesCameras":["char* CAMERA_A99", "char* CAMERA_A98", "char* CAMERA_A97"]
 }

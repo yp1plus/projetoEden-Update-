@@ -6,7 +6,8 @@
         {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
         {"options":["nomeDaVariável", "altura.","ALTURA-Jogador","_alt_jog_","Altura{Jogador}","altura_jogador"]},
         {"options":[null,null,null,null,null]},
-        {"options":["Condição", "(chamaAcesa == True):","(quantGalinhas >= 5 or codigo == '/'):","(quantGalinhas < 0 and codigo == '!'):","(alturaJogador == 0.00):","(quantGalinhas > 10):"]},
+        {"options":["Condição", "(chamaAcesa):","(quantGalinhas >= 5 or codigo == '/'):","(quantGalinhas < 0 and codigo == '!'):","(alturaJogador == 0.00):","(quantGalinhas > 10):"]},
+        {"options":["Condição","(quantGalinhas == 0 and !chamaAcesa):","(alturaJogador > 50.0 and codigo == '!'):","(tamanho(NOME_JOGADOR) != 7):","(alturaJogador < 0.00 or codigo != '!'):","(tamanho(NOME_JOGADOR) <= 7):"]},
         {"options":["(correr()):","(ficar() or correr()):","(not ficar() and not correr()):","((ficar() and correr()) or ficar()):","((ficar() or correr()) or ficar()):"]},
         {"options":["Iteração", "for i in range (6):","while(houver_rocha()):","for i in range (5, -1, -1):", "while(houver_vacuo()):", "for i in range (10, -1, 1):"]},
         {"options":["Iteração", "i in range (8):", "i in range (7):", "i in range (0, 8, 1):", "i in range(4):", "i in range(0, 4, -1):"]},
@@ -19,12 +20,13 @@
         {"options": null},
         {"options":["Iteração", "j in range (13):", "j in range (11, 7, -1):", "j in range (12):", "j in range (15):", "j in range (12, 8, 1):"]}
     ],
-    "resultsStructures1":["parar_bloco()","o_bicho_pega()", "criar_bloco()", "eliminar_lamina()",null],
-    "resultsStructures2":[null,"o_bicho_come()", null, null, "destruir_bloco(i, j)"],
+    "statementsStructures2":[null, "else:", "elif", null, null, "for"],
+    "resultsStructures1":["parar_bloco()","prender_objeto()","o_bicho_pega()", "criar_bloco()", "eliminar_lamina()",null],
+    "resultsStructures2":[null,"liberar_objeto()","o_bicho_come()", null, null, "destruir_bloco(i, j)"],
     "descriptionInfo":[
-        "Números inteiros: escreva números até cerca de 2^31\nCaractere: escreva entre aspas simples\nNúmero decimal: escreva até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nPalavras: escreva entre aspas duplas\nBooleano: escreva True pra verdadeiro ou False pra falso\n",
-        "==: representa igualdade, se algo é igual a outro\nand: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\nor: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\nnot: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
-        "while(condição): enquanto a condição for verdadeira, repete a ação\nfor i in range(valor): repete um número de vezes estabelecido por valor\nfor i in range(x, y, z): repete de x até y - z somando z em x"
+        "Números inteiros: escreva números até cerca de 2^31\n\nCaractere: escreva entre aspas simples\n\nNúmero decimal: Deve-se utilizar ponto entre os números\n\nPalavras: escreva entre aspas duplas\n\nBooleano: escreva True pra verdadeiro ou False pra falso\n",
+        "if: condição \"se\" é verdadeiro faça algo\nelif: condição \"senão se\" que vem após um if que não foi executado e testa outra condição\n\nelse: condição \"senão\" que faz algo caso nenhuma das condições anteriores seja verdadeira\n\n==: representa igualdade, se algo é igual a outro\n\nand: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n\nor: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n\nnot: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n\n<: se um valor é menor do que o outro\n\n>: se um valor é maior do que o outro\n\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
+        "while(condição): enquanto a condição for verdadeira, repete a ação\n\nfor i in range(valor): repete um número de vezes estabelecido por valor\nfor i in range(x, y, z): repete de x até y - z somando z em x"
     ],
     "namesCameras":["CAMERA_A99", "CAMERA_A98", "CAMERA_A97"]
 }

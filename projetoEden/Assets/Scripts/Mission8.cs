@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Mission8 : MissionStructure
 {
-    int currentIndex = 0;
-    GameObject flame;
-    bool flag = false;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    static int currentIndex = 0;
 
     public override bool StatementIsCorrect(int index)
     {
@@ -27,8 +19,32 @@ public class Mission8 : MissionStructure
         return false;
     }
 
+    public static bool Test()
+    {
+        if (WarriorController.level < 8)
+            return false;
+        
+        switch (currentIndex)
+        {
+            case 1:
+                GameObject flame = GameObject.FindGameObjectWithTag("Fire");
+                return flame.GetComponent<FlameController>().isBurning 
+                    || WarriorController.quantChickens > 0;
+            case 2:
+                return WarriorController.height < 50.0f;
+            case 3:
+                return WarriorController.name.Length == 7;
+            case 4:
+                return true;
+            case 5:
+                return false;
+            default:
+                return false;
+        }
+    }
+
     public override void ExecuteCode()
     {
-      
+        ;
     }
 }

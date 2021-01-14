@@ -39,13 +39,14 @@ public class WarriorController : PlayerController
 
     
     const float DEFAULT_HEIGHT = 119.5f;
-    float height = DEFAULT_HEIGHT;
+    public static float height {get; private set;} = DEFAULT_HEIGHT;
+    public static string name {get; private set;}
 
     const float POSITION_NEXT_TO_DRAGON = 934.9f;
     const float POSITION_OF_END_MISSION = 902.4f;
 
     public static bool isSubPhase = MainMenu.isSubPhase;
-    public int quantChickens { get; private set; } = 0;
+    public static int quantChickens { get; private set; } = 0;
     public TMP_Text txtNumChickens;
     public TMP_Text txtFlameIsBurning;
     public TMP_Text txtWarriorHeight;
@@ -54,7 +55,7 @@ public class WarriorController : PlayerController
     public AudioClip darkAmbient;
     System.Random random = new System.Random();
     bool flag = false;
-    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, BUG = 9, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13};
+    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, FLOATING_PLATFORM = 8, BUG = 9, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -78,7 +79,14 @@ public class WarriorController : PlayerController
             numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
         isSubPhase = MainMenu.isSubPhase;
-        canDeactivateStone = false;
+        canDeactivateStone = true;
+    }
+
+    public void SetName(string playerName)
+    {
+        TMP_Text nameTxt = GameObject.FindGameObjectWithTag("Name").GetComponent<TMP_Text>();
+        nameTxt.text = playerName;
+        name = playerName;
     }
 
     public void LoadFlame(GameObject flame)

@@ -39,13 +39,13 @@ public class FlameController : MonoBehaviour
     public void PutOut() 
     {
         fade.FadeOut();
-        isBurning = false;
         StartCoroutine(HideFlame());
     }
 
     IEnumerator HideFlame()
     {
         yield return new WaitForSeconds(1f);
+        isBurning = false;
         transform.position = new Vector3(transform.position.x, -27, transform.position.z);
     }
 

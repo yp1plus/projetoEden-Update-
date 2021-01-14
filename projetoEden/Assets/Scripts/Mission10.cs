@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -43,7 +43,7 @@ public class Mission10 : MissionStructure
     {
         yield return new WaitForSeconds(3f);
         CodingScreen.instance.ShowGameOver(true);
-        GameObject infiniteLoop = GameObject.FindGameObjectWithTag("Infinity");
+        GameObject infiniteLoop = GameObject.FindGameObjectWithTag("SupportingText");
         infiniteLoop.GetComponent<TMP_Text>().enabled = true;
     }
 

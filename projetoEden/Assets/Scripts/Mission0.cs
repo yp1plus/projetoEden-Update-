@@ -47,10 +47,10 @@ public class Mission0 : MissionVariable
 
         return true;
     }
+    
     public override void ExecuteCode()
     {
-        TMP_Text name = GameObject.FindGameObjectWithTag("Name").GetComponent<TMP_Text>();
-        name.text = playerName;
+        WarriorController.instance.SetName(playerName);
 
         /* click image just appears in the initial tutorial */
         GetComponent<InitialTutorial>().HideClick();

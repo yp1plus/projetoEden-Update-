@@ -81,6 +81,8 @@ public class MissionData
     public List<OptionData> optionsCondition2 = new List<OptionData>();
     /* Dropdown relative to data type input */
     public List<OptionData> inputTypes = new List<OptionData>();
+    public List<string> statementsStructures1 = new List<string>();
+     public List<string> statementsStructures2 = new List<string>();
     public List<string> resultsStructures1 = new List<string>();
     public List<string> resultsStructures2 = new List<string>();
     public List<Tip> tips = new List<Tip>();

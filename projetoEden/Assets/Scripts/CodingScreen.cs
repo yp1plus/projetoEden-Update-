@@ -219,7 +219,7 @@ public class CodingScreen : Screen
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckStatement2(int index)
     {
-        Mission12 mission = (Mission12) missions[WarriorController.level];
+        Mission12 mission = WarriorController.level == 12 ? (Mission12) missions[WarriorController.level] : null;
 
         if (mission != null && mission.Statement2IsCorrect(index))
             IsCorrect((int) InputTypes.for2);

@@ -204,11 +204,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue ball (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4710133918293613118, guid: 2f67e46d4864bf840b8dfd23fcb51de8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5564680697261189032, guid: 2f67e46d4864bf840b8dfd23fcb51de8,
         type: 3}
       propertyPath: m_RootOrder

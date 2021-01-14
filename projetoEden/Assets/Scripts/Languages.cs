@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Languages : MonoBehaviour
 {
-    static int index = 2;
+    static int index = 0;
     public static int indexLanguage {get {return index;}}
     public enum TypesLanguages {C, CSharp, Python, Java};
     public List<OptionData> inputTypes = new List<OptionData>();

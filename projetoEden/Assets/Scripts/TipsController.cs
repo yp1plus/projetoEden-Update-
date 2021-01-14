@@ -49,17 +49,17 @@ public class TipsController : MonoBehaviour
             fade.FadeIn();
         }
 
+        if (WarriorController.level != 0 && !WarriorController.instance.HaveCoinsEnough(valueTip))
+        {
+            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
+            return;
+        }
+
         int indexTip = CodingScreen.instance.GetIndexTip();
 
         if (indexTip == -1)
         {
             StartCoroutine(ShowMessage("Você não fez nenhuma tentativa ainda."));
-            return;
-        }
-
-        if (WarriorController.level != 0 && !WarriorController.instance.RemoveCoins(valueTip))
-        {
-            StartCoroutine(ShowMessage("Você não tem moedas suficientes ):"));
             return;
         }
 
@@ -95,7 +95,8 @@ public class TipsController : MonoBehaviour
         else //value
         {
             //Doesn't need this tip anymore
-            if (CodingScreen.instance.FeedbackCorrectIsActive((int) CodingScreen.InputTypes.value))
+            if (WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES
+                && CodingScreen.instance.FeedbackCorrectIsActive((int) CodingScreen.InputTypes.value))
             {
                 CodingScreen.instance.RemoveTip();
                 ShowTip();
@@ -127,6 +128,7 @@ public class TipsController : MonoBehaviour
             }
         }
         
+        WarriorController.instance.RemoveCoins(valueTip);
         textGenerator.ShowText(currentTip);
         valueTip += 2;
         if (txtValueTip != null)

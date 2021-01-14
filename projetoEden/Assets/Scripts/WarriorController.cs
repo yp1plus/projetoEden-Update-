@@ -41,7 +41,8 @@ public class WarriorController : PlayerController
     const float DEFAULT_HEIGHT = 119.5f;
     float height = DEFAULT_HEIGHT;
 
-    const float POSITION_NEXT_TO_DRAGON = 827.3f;
+    const float POSITION_NEXT_TO_DRAGON = 934.9f;
+    const float POSITION_OF_END_MISSION = 902.4f;
 
     public static bool isSubPhase = MainMenu.isSubPhase;
     public int quantChickens { get; private set; } = 0;
@@ -53,7 +54,7 @@ public class WarriorController : PlayerController
     public AudioClip darkAmbient;
     System.Random random = new System.Random();
     bool flag = false;
-    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, BUG = 8, LAST_OF_STRUCTURES = 10, FOURTH_WALL = 10, DRAGON = 11};
+    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, BUG = 9, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -167,7 +168,7 @@ public class WarriorController : PlayerController
                 ChangeHeight(false, 1);
             }
 
-            if (transform.position.x >= 809f && currentLevel < (int) PHASES.DRAGON)
+            if (transform.position.x >= POSITION_OF_END_MISSION && currentLevel < (int) PHASES.DRAGON)
                 GoToNextLevel();
         }
     }
@@ -233,6 +234,11 @@ public class WarriorController : PlayerController
     {
         quantCoins++;
     }
+
+    public bool HaveCoinsEnough(int quant)
+    {
+        return quantCoins - quant >= 0;
+    }
     
     /// <summary>
     /// Removes coins if there is enough amount of coins. 
@@ -241,7 +247,7 @@ public class WarriorController : PlayerController
     /// <returns> A bool, if there is coins enough </return>
     public bool RemoveCoins(int quant)
     {
-        if (quantCoins - quant >= 0)
+        if (HaveCoinsEnough(quant))
         {
             quantCoins -= quant;
             return true;

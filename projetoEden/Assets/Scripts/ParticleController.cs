@@ -9,8 +9,8 @@ public class ParticleController : MonoBehaviour
 
     bool isEnabled;
 
-    public const float firstPositionX = 755.5f;
-    public const float firstPositionY = -1.69f;
+    public const float firstPositionX = 859.52F;
+    public const float firstPositionY = -0.59f;
 
     // Start is called before the first frame update
     void Start()

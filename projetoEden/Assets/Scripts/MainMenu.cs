@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition;
-    public static int lastLevel = 3;
+    public static int lastLevel = 8;
     public static bool tutorialExecuted;
     public static bool isSubPhase;
     public static bool debug = true;
@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-        lastLevel = 3;
+        lastLevel = 8;
         tutorialExecuted = false;
         isSubPhase = false;
         debug = true;

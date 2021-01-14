@@ -25,6 +25,7 @@ TagManager:
   - Slug
   - Infinity
   - Enemies
+  - BladeBarrier
   layers:
   - Default
   - TransparentFX

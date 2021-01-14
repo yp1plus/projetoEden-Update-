@@ -21,7 +21,7 @@ public class CodingScreen : Screen
     public Image[] feedbackCorrect = new Image[5];
     public Image[] feedbackIncorrect = new Image[5];
     int currentIndex = 0;
-    Mission[] missions = new Mission[10];
+    Mission[] missions = new Mission[14];
     public enum InputTypes {type, name, value, for1, for2};
     public enum TipsReferenceIndexes {consts = 0, types = 5, names = 10, generics = 22};
 
@@ -50,6 +50,8 @@ public class CodingScreen : Screen
         missions[7] = gameObject.AddComponent<Mission7>();
         missions[8] = gameObject.AddComponent<Mission8>();
         missions[9] = gameObject.AddComponent<Mission9>();
+        missions[10] = gameObject.AddComponent<Mission10>();
+        missions[11] = gameObject.AddComponent<Mission11>();
     }
 
     public void OpenPanel(bool state)
@@ -193,18 +195,18 @@ public class CodingScreen : Screen
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckStatement(int index)
     {
-        MissionStructure mission =  (MissionStructure) missions[WarriorController.level];
+        MissionStructure mission = (MissionStructure) missions[WarriorController.level];
 
         if (mission != null && mission.StatementIsCorrect(index))
         {
-            if (WarriorController.level < 10)
+            if (WarriorController.level < (int) WarriorController.PHASES.FOURTH_WALL)
                 IsCorrect((int) InputTypes.value);
             else
                 IsCorrect((int) InputTypes.for1);
         }    
         else
         {
-            if (WarriorController.level < 10)
+            if (WarriorController.level < (int) WarriorController.PHASES.FOURTH_WALL)
                 IsWrong((int) InputTypes.value);
             else
                 IsWrong((int) InputTypes.for1);
@@ -217,11 +219,11 @@ public class CodingScreen : Screen
     /// <param name = "index"> The index of dropdown obtained dynamycally. </param>
     public void CheckStatement2(int index)
     {
-        Mission10 mission =  WarriorController.level == 10 ? (Mission10) missions[WarriorController.level] : null;
+        Mission12 mission = (Mission12) missions[WarriorController.level];
 
         if (mission != null && mission.Statement2IsCorrect(index))
             IsCorrect((int) InputTypes.for2);
-        else if (WarriorController.level == 10)
+        else if (WarriorController.level == (int) WarriorController.PHASES.FOURTH_WALL)
             IsWrong((int) InputTypes.for2);
     }
 

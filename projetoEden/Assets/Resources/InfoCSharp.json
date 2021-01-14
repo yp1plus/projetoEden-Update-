@@ -9,16 +9,18 @@
     {"options":["Condição","(chamaAcesa == true)","(quantGalinhas >= 5 || codigo == '/')","(quantGalinhas < 0 && codigo == '!')","(alturaJogador == 0.00)","(quantGalinhas > 30)"]},
     {"options":["(Correr())","(Ficar() || Correr())","(!Ficar() && !Correr())","((Ficar() && Correr()) || Ficar())","((Ficar() || Correr()) || Ficar())"]},
     {"options":["Iteração", "for(int i = 0; i < 6; i++)","while(HouverRocha())","for(int i = 5; i <= 0; i--)", "while(HouverVacuo())", "for(int i = 10; i >= 0; i++)"]},
+    {"options":["Iteração", "(int i = 0; i < 8; i++)", "(int i = 1; i < 8; i++)", "(int i = 1; i <= 8; i++)", "(int i = 0; i < 4; i++)", "(int i = 0; i > 4; i++)"]},
     {"options":["Iteração","(int i = 0; i < 7; i++)","(int i = 0; i < 6; i++)","(int i = 0; i < 4; i++)", "(int i = 0; i <= 7; i++)", "(int i = 6; i >= 3; i--)"]}
     ],
     "optionsCondition2":
     [
         {"options":["(Ficar())","(Ficar() && Correr())", "(!Ficar() || !Correr())", "((Ficar() && Correr()) && Ficar())", "((Ficar() || Correr()) && Ficar())"]},
         {"options": null},
+        {"options": null},
         {"options":["Iteração","(int j = 0; j < 13; j++)", "(int j = 11; j >= 8; j--)", "(int j = 0; j < 12; j++)", "(double j = 0; j < 12; j++)", "(int j = 11; j <= 0; j++)"]}
     ],   
-    "resultsStructures1":["PararBloco();","OBichoPega();", "CriarBloco();", null],
-    "resultsStructures2":[null, "OBichoCome();", null, "DestruirBloco(i, j);"],
+    "resultsStructures1":["PararBloco();","OBichoPega();", "CriarBloco();", "EliminarLamina()", null],
+    "resultsStructures2":[null, "OBichoCome();", null, null, "DestruirBloco(i, j);"],
     "descriptionInfo":[
         "Tipo int: representa números inteiros até cerca de 2^31\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\nTipo float: representa números decimais até cerca de 3.4028 * 10^38. Deve-se utilizar ponto entre os números\nTipo string: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\nTipo bool: representa os valores true (verdadeiro) ou false (falso)",
         "==: representa igualdade, se algo é igual a outro\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n!: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n<: se um valor é menor do que o outro\n>: se um valor é maior do que o outro\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",

@@ -162,14 +162,18 @@ public class Screen : MonoBehaviour
 
             bool mustActivate = level == (int) WarriorController.PHASES.BUG
                 || level == (int) WarriorController.PHASES.FOURTH_WALL;
+            bool isPhaseBladesBarrier = level == (int) WarriorController.PHASES.BLADES_BARRIER;
             components.structurePhase.result1.transform.GetChild(0).GetComponent<TMP_Text>().text 
                 = missionData.resultsStructures1[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
             components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text 
                 = missionData.resultsStructures2[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
 
             ActivateStructure2(mustActivate);
-            components.structurePhase.statement1.SetActive(mustActivate);
+            components.structurePhase.statement1.SetActive(mustActivate || isPhaseBladesBarrier);
 
+            if (isPhaseBladesBarrier)
+                components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = "for";
+                
             if (level == (int) WarriorController.PHASES.FOURTH_WALL)
                 SetUpScreenForFourthWallPhase();
         } 

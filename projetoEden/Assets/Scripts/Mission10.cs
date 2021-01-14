@@ -1,148 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Mission10 : MissionStructure
 {
-    Tilemap tilemap;
-    ParticleController particle;
+    const int tileHorizontalSize = 6;
+    const int quantBlocks = 17;
+    int currentIndex = 0;
+    GameObject enemies;
 
-    int currentIndexI = 0;
-
-    int currentIndexJ = 0;
-    const int heightWall = 7;
-
-    const int widthWall = 12;
-    const int sizeTile = 3;
-
-    const int firstPositionX = 754; 
-
-    const int firstPositionY = -1;
-
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
+    void Awake()
     {
-        //ExecuteCode();
+        enemies = GameObject.FindGameObjectWithTag("Enemies");
     }
+
     public override bool StatementIsCorrect(int index)
     {
-        currentIndexI = index;
-
+        currentIndex = index;
         if (index >= 1)
         {
             SetIndexTip(index + 10);
-        }
-
-        if (index != 0 && index != 4)
             return true;
-        
-        return false;
-    }
-
-    public bool Statement2IsCorrect(int index)
-    {
-        currentIndexJ = index;
-
-        if (index == 1)
-        {
-            SetIndexTip(14);
-        }
-
-        if (index > 1)
-        {
-            SetIndexTip(index + 15);
-        }
-
-        if (index == 2 || index == 3)
-            return true;
-        
-        return false;
-    }
-
-    public override void ExecuteCode()
-    {
-        int height = 0, width = 0;
-
-        switch(currentIndexI)
-        {
-            case 1:
-                height = heightWall;
-                break;
-            case 2:
-                height = heightWall - 1;
-                break;
-            case 3:
-                height = 4;
-                break;
-            case 5:
-                height = -4;
-                break;
-        }
-
-        switch(currentIndexJ)
-        {
-            case 2:
-                width = -4;
-                break;
-            case 3:
-                width = widthWall;
-                break;
-        }
-     
-        StartCoroutine(ExecuteAnimation(height, width));
-    }
-
-    IEnumerator ExecuteAnimation(int height, int width)
-    {
-        tilemap = GameObject.FindGameObjectWithTag("Wall").GetComponent<Tilemap>();
-        particle = GameObject.FindGameObjectWithTag("Particle").GetComponent<ParticleController>();
-        
-        int constSumI = 3, constSumJ = 3; //Equivalent to size tile
-
-        if (height < 0)
-        {
-            constSumI = -constSumI;
         }
             
-        if (width < 0)
+        return false;
+    }
+    public override void ExecuteCode()
+    {
+        if (currentIndex == 1)
+            StartCoroutine(InstatiateBlocks(6));
+        else if (currentIndex == 4)
+            StartCoroutine(InstatiateBlocks(quantBlocks));
+        else
         {
-            constSumJ = -constSumJ;
+            StartCoroutine(InstatiateBlocks(quantBlocks));
+            StartCoroutine(ShowGameOver());
         }
+    }
 
-        //O(14*13*9)
-        //Removes every tiles row, that is, the wall
-        for (int i = height < 0 ? (heightWall-1) * sizeTile : 0; height > 0 ? (i < height * sizeTile) : (i >= (heightWall - 4) * sizeTile); i += constSumI)
+    IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(3f);
+        CodingScreen.instance.ShowGameOver(true);
+        GameObject infiniteLoop = GameObject.FindGameObjectWithTag("Infinity");
+        infiniteLoop.GetComponent<TMP_Text>().enabled = true;
+    }
+
+    IEnumerator InstatiateBlocks(int quant)
+    {
+        GameObject block = GameObject.FindGameObjectWithTag("Block");
+        enemies = GameObject.FindGameObjectWithTag("Enemies");
+        MainMenu.SelectActiveScene(9);
+        //GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
+
+        float x = 0;
+
+        for (int i = 0; i < quant; i++)
         {
-            //Removes a tiles row
-            for (int j = width < 0 ? (widthWall-1) * sizeTile : 0; width > 0 ? (j < width * sizeTile) : (j >= (widthWall - 4) * sizeTile); j += constSumJ)
+            x += tileHorizontalSize;
+            //Instantiate(block, new Vector3(x, 0, 0), Quaternion.identity, gridParent.transform);
+            if (block != null)
             {
-                if (particle != null)
-                {
-                    particle.Move(new Vector3(j + ParticleController.firstPositionX, ParticleController.firstPositionY - i, 0));
-                    particle.AnimateParticle();
-                }
-                
-                yield return new WaitForSeconds(0.3f);
-                
-                //Removes a tile 3x3 from wall 
-                for (int k = 0; k < sizeTile; k++)
-                {
-                    for (int l = 0; l < sizeTile; l++)
-                    {
-                        if (tilemap != null)
-                            tilemap.SetTile(new Vector3Int(l + j + firstPositionX, firstPositionY - k - i, 0), null);
-                        else
-                            yield break;
-                    }
-                }
-            }   
+                Instantiate(block, new Vector3(x, 0, 0), Quaternion.identity);
+            } else {
+               yield break; //see later
+            }
+        
+            yield return new WaitForSeconds(0.2f);
         }
 
-        if (particle != null)
-            particle.Disable();
+        if (enemies != null)
+            enemies.transform.GetChild(0).gameObject.SetActive(true);
+
+        MainMenu.SelectActiveScene(1);
     }
 }

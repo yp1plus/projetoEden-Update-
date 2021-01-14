@@ -11,6 +11,7 @@ public class BugController : EnemyController
     bool isVisible;
     bool playerHit = false;
     public GameObject enemies;
+    const float POSITION_OF_THE_END = 664.8F;
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -39,11 +40,11 @@ public class BugController : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (isVisible && transform.position.x < 632)
+        if (isVisible && transform.position.x < POSITION_OF_THE_END)
         {
             MovementWithoutCollision(rigidbody2D, 1);
         }
-        else if (transform.position.x >= 632)
+        else if (transform.position.x >= POSITION_OF_THE_END)
         {
             rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
             animator.enabled = false;

@@ -24,7 +24,7 @@ public class DynamicGround : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
 
@@ -42,27 +42,14 @@ public class DynamicGround : MonoBehaviour
     /// collider (2D physics only).
     /// </summary>
     /// <param name="other">The Collision2D data associated with this collision.</param>
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        WarriorController player = other.gameObject.GetComponent<WarriorController>();
-
-        if (player != null)
-        {
-            offset = player.GetPosition();
-        }
-    }
-
-    /// <summary>
-    /// Sent when an incoming collider makes contact with this object's
-    /// collider (2D physics only).
-    /// </summary>
-    /// <param name="other">The Collision2D data associated with this collision.</param>
     void OnCollisionStay2D(Collision2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
 
         if (player != null && player.move == 0)
+        {
             player.SetPosition(transform.position.x);
+        }
     }
 
     //Avoids the case when the position it's larger than maximum range and when changes the direction remains larger

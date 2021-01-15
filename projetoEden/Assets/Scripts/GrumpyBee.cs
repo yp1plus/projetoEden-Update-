@@ -7,6 +7,7 @@ public class GrumpyBee : EnemyController
 {
     private Rigidbody2D rigidbody2D;
     private bool movementActivated = false;
+    public bool activated = true;
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -31,10 +32,16 @@ public class GrumpyBee : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (!movementActivated && WarriorController.level == 1 && GameObject.FindWithTag("Chicken") == null)
+        if (!movementActivated && activated && WarriorController.level == 1 && GameObject.FindWithTag("Chicken") == null)
         {
-            UIController.instance.ShowNewInfo();
+            if (GameObject.FindWithTag("GrumpyBee") != null)
+                UIController.instance.ShowNewInfo();
             movementActivated = true;
+        }
+
+        if (!activated && GameObject.FindWithTag("GrumpyBee") == null)
+        {
+            activated = true;
         }
 
         if (movementActivated && !UIController.instance.InfoIsActive())

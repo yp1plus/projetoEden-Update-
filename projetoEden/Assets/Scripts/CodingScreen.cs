@@ -304,9 +304,10 @@ public class CodingScreen : Screen
 
         OpenCode(false);
 
-        if (WarriorController.level > (int) WarriorController.PHASES.CHICKENS
+        if (WarriorController.level == (int) WarriorController.PHASES.FIRST_OF_VARIABLES
+            || (WarriorController.level > (int) WarriorController.PHASES.CHICKENS
             && WarriorController.level != (int) WarriorController.PHASES.BARRIER
-            && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES)
+            && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES))
             UIController.instance.ShowNewInfo();
 
         missions[WarriorController.level].ExecuteCode();

@@ -26,6 +26,7 @@ TagManager:
   - Enemies
   - BladeBarrier
   - SupportingText
+  - GrumpyBee
   layers:
   - Default
   - TransparentFX

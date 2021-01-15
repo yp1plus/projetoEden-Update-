@@ -72,7 +72,7 @@
              "tipsForValue":
                     ["Seu valor só deve conter números",
                      "Não faz sentido haver quantidade negativa de galinhas",
-                     "Você estorou a capacidade de armazenamento de um inteiro, cerca de 2³¹"
+                     "Você estourou a capacidade de armazenamento de um inteiro, cerca de 2³¹"
                     ]
         },
         {

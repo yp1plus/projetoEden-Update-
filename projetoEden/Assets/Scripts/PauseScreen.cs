@@ -13,6 +13,7 @@ public class PauseScreen : MonoBehaviour
     public GameObject backgroundInvisible;
     bool isPaused = false;
     bool flag = false;
+    bool showingControls = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class PauseScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             isPaused = !isPaused;
             flag = !flag;
@@ -59,9 +60,15 @@ public class PauseScreen : MonoBehaviour
 
     public void ShowInfo(int index)
     {
-        if (index < 0 || index > 2)
+        if (index < 0 || index > 3)
             return;
         
+        if (index < 3)
+            showingControls = false;
+        else
+            showingControls = true;
+
+        mainMenu.SetActive(false);
         commandsMenu.SetActive(false);
         infoPanel.SetActive(true);
         btReturn.SetActive(true);
@@ -72,9 +79,10 @@ public class PauseScreen : MonoBehaviour
 
     public void Return()
     {
-        if (commandsMenu.activeSelf)
+        if (commandsMenu.activeSelf || showingControls)
         {
             commandsMenu.SetActive(false);
+            infoPanel.SetActive(false);
             mainMenu.SetActive(true);
             btReturn.SetActive(false);
         }

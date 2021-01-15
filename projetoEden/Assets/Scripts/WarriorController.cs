@@ -55,7 +55,7 @@ public class WarriorController : PlayerController
     public AudioClip darkAmbient;
     System.Random random = new System.Random();
     bool flag = false;
-    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, FLOATING_PLATFORM = 8, BUG = 9, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13};
+    public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, FLOATING_PLATFORM = 8, BUG = 9, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13, END_MISSION = 14};
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -79,7 +79,7 @@ public class WarriorController : PlayerController
             numCoins.text = quantCoins.ToString();
         currentLevel = MainMenu.lastLevel;
         isSubPhase = MainMenu.isSubPhase;
-        canDeactivateStone = true;
+        canDeactivateStone = false;
     }
 
     public void SetName(string playerName)

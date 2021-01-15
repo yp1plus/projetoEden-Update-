@@ -20,14 +20,6 @@ public class Mission12 : MissionStructure
 
     const int firstPositionY = 0;
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-        //ExecuteCode();
-    }
     public override bool StatementIsCorrect(int index)
     {
         currentIndexI = index;
@@ -139,6 +131,7 @@ public class Mission12 : MissionStructure
                             yield break;
                     }
                 }
+
             }   
         }
 

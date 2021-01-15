@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 976030142}
   - component: {fileID: 976030145}
   - component: {fileID: 745906156}
-  - component: {fileID: 34945222}
+  - component: {fileID: 1303577659}
   m_Layer: 8
   m_Name: CheckPoint
   m_TagString: Ground
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a6ed0cff7e00e409e19317552e78f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &34945222
+--- !u!95 &1303577659
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

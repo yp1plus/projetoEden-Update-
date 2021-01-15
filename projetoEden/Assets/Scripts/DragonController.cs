@@ -104,6 +104,11 @@ public class DragonController : EnemyController
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
+        ;
+    }
+
+    protected override void OnTriggerStay2D(Collider2D other)
+    {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         FlameController controller = other.GetComponent<FlameController>();
         ChickenShoot e = other.gameObject.GetComponent<ChickenShoot>();

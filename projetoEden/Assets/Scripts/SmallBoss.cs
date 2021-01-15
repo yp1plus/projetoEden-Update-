@@ -115,7 +115,7 @@ public class SmallBoss : EnemyController
         }
         else
         {
-            if (AnimatorIsPlaying("SmallBoss_Attack1", animator) || AnimatorIsPlaying("SmallBoss_Attack1", animator))
+            if (AnimatorIsPlaying("SmallBoss_Attack1", animator) || AnimatorIsPlaying("SmallBoss_Attack2", animator))
             {
                 if (!invincible)
                     player.ChangeHealth(-damage/2);

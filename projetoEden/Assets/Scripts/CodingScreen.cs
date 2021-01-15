@@ -52,6 +52,7 @@ public class CodingScreen : Screen
         missions[9] = gameObject.AddComponent<Mission9>();
         missions[10] = gameObject.AddComponent<Mission10>();
         missions[11] = gameObject.AddComponent<Mission11>();
+        missions[12] = gameObject.AddComponent<Mission12>();
     }
 
     public void OpenPanel(bool state)

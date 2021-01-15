@@ -74,8 +74,9 @@ public class ChickenShoot : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyController e = other.GetComponent<EnemyController>();
+        SmallBoss sb = other.GetComponent<SmallBoss>();
 
-        if (e != null)
+        if (e != null && sb == null)
         {
             e.ChangeHealth(-e.hitChicken);
         }

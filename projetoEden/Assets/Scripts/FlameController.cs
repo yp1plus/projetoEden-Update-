@@ -21,16 +21,16 @@ public class FlameController : MonoBehaviour
         canBeBurnt = true;
     }
 
-    void Update() //change later
+    void Update()
     {
-        if (WarriorController.level > 2 && debug)
+        /*if (WarriorController.level > 2 && debug)
         {
             GameObject flame = GameObject.FindGameObjectWithTag("Fire");
             WarriorController.instance.LoadFlame(flame);
             canBeBurnt = false;
             PutOut(); 
             debug = false;
-        }
+        }*/
     }
 
     /// <summary>
@@ -53,7 +53,8 @@ public class FlameController : MonoBehaviour
     {
         if (WarriorController.instance.IsFinalBattle())
         {
-            transform.position = DragonController.instance.GetPosition();
+            if (DragonController.instance != null)
+                transform.position = DragonController.instance.GetPosition();
         }
         else
         {

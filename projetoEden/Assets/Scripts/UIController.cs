@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
             intro.SetActive(true);
         }
         txtInfoUI = MissionState.LoadUIFromJson();
-        index = 4;
+        index = 0;
     }
 
     public void GoToTutorial()

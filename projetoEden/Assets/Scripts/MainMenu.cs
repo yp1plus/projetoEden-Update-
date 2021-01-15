@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition;
-    public static int lastLevel = 7;
+    public static int lastLevel;
     public static bool tutorialExecuted;
     public static bool isSubPhase;
-    public static bool debug = true;
+    public static bool debug;
 
     void Start()
     {
         lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-        lastLevel = 7;
+        lastLevel = 0;
         tutorialExecuted = false;
         isSubPhase = false;
-        debug = true;
+        debug = false;
     }
 
     public static void PlayGame()
@@ -35,8 +35,8 @@ public class MainMenu : MonoBehaviour
     {
         if (lastLevel != WarriorController.level)
         {
-            lastLevel = Mathf.Clamp(WarriorController.level - 1, 0, 12);
-            if (WarriorController.level == 6)
+            lastLevel = Mathf.Clamp(WarriorController.level - 1, 0, 14);
+            if (WarriorController.level == (int) WarriorController.PHASES.CAMERAS)
             {
                 isSubPhase = false;
                 WarriorController.isSubPhase = isSubPhase;
@@ -79,7 +79,7 @@ public class MainMenu : MonoBehaviour
 
     public static void GoToFinal()
     {
-        SceneManager.LoadScene(12);
+        SceneManager.LoadScene((int) WarriorController.PHASES.END_MISSION + 1);
     }
 
     public static void SelectActiveScene(int i)

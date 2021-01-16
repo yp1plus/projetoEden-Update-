@@ -696,11 +696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 508043666711127980, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 76882f0670326914a81ec95b857ed92d, type: 2}
     - target: {fileID: 4511296646994421479, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
         type: 3}
       propertyPath: m_Name
@@ -710,21 +705,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7422641858440659923, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.584279
-      objectReference: {fileID: 0}
-    - target: {fileID: 7422641858440659923, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.584279
-      objectReference: {fileID: 0}
-    - target: {fileID: 7422641858440659923, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.584279
       objectReference: {fileID: 0}
     - target: {fileID: 7422641858440659923, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
         type: 3}
@@ -775,21 +755,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453778118383687139, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453778118383687139, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453778118383687139, guid: 50b6fd5d35986f04aaf0d92ad20462d4,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 647196829
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b6fd5d35986f04aaf0d92ad20462d4, type: 3}
@@ -865,11 +830,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy with Spear (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5239017427353435641, guid: 0cae2c491d293e44b80b25d25a7c6edb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cae2c491d293e44b80b25d25a7c6edb, type: 3}

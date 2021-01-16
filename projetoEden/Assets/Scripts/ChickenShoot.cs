@@ -47,26 +47,6 @@ public class ChickenShoot : MonoBehaviour
         transform.localScale = transformScale;
     }
 
-    /// <summary>
-    /// Sent when an incoming collider makes contact with this object's collider (2D physics only).
-    /// </summary>
-    /// <remarks> Decreases life of enemies in fifty units. </remarks>
-    /// <param name="other">The Collision2D data associated with this collision (only enemies).</param>
-    void OnCollisionEnter2D(Collision2D other)
-    {
-       DestroyGameObject();
-    }
-
-    /// <summary>
-    /// Sent when another object enters a trigger collider attached to this
-    /// object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        DestroyGameObject();
-    }
-
     public void DestroyGameObject()
     {
         Destroy(gameObject);

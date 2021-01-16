@@ -361,6 +361,9 @@ public class WarriorController : PlayerController
         transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 0);
 
         height = DEFAULT_HEIGHT;
+
+        if (currentLevel == (int) PHASES.BARRIER)
+            ChangeHeight(false, 5);
     }
 
     public bool IsFinalBattle()

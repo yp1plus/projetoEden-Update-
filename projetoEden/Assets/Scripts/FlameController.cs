@@ -23,14 +23,14 @@ public class FlameController : MonoBehaviour
 
     void Update()
     {
-        /*if (WarriorController.level > 2 && debug)
+        if (WarriorController.level > 2 && debug)
         {
             GameObject flame = GameObject.FindGameObjectWithTag("Fire");
             WarriorController.instance.LoadFlame(flame);
             canBeBurnt = false;
             PutOut(); 
             debug = false;
-        }*/
+        }
     }
 
     /// <summary>

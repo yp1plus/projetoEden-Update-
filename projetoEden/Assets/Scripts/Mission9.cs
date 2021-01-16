@@ -12,8 +12,12 @@ public class Mission9 : MissionStructure
     {
         if (WarriorController.instance.GetPosition().x >= 600 && bug == null)
         {
-            bug = GameObject.FindGameObjectWithTag("Bug").GetComponent<BugController>();
-            bug.MakeVisible();
+            GameObject obj = GameObject.FindGameObjectWithTag("Bug");
+            if (obj != null)
+            {
+                bug = obj.GetComponent<BugController>();
+                bug.MakeVisible();
+            } 
         }
     }
 

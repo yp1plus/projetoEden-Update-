@@ -102,22 +102,8 @@ public class DragonController : EnemyController
         ResetInvincibility();
     }
 
-    protected override void OnCollisionStay2D(Collision2D other)
-    {
-        ;
-    }
-
-    protected override void OnCollisionEnter2D(Collision2D other)
-    {
-        ;
-    }
 
     protected override void OnTriggerEnter2D(Collider2D other)
-    {
-        ;
-    }
-
-    protected override void OnTriggerStay2D(Collider2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         FlameController controller = other.GetComponent<FlameController>();
@@ -140,6 +126,22 @@ public class DragonController : EnemyController
                 animator.SetTrigger("Attacked");
                 ChangeHealth(-hitChicken);
             }
+        }
+    }
+
+    protected override void OnTriggerStay2D(Collider2D other)
+    {
+        WarriorController player = other.gameObject.GetComponent<WarriorController>();
+        FlameController controller = other.GetComponent<FlameController>();
+
+        if (player != null)
+        {
+            Attack(player);
+        }
+        else if (controller != null)
+        {
+            isBurning = true;
+            StartCoroutine(ResetIsBurning());
         }
     }
 

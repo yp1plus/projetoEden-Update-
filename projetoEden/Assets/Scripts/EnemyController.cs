@@ -33,6 +33,7 @@ public class EnemyController : PlayerController
         else if (c != null)
         {
             ChangeHealth(-hitChicken);
+            c.DestroyGameObject();
         }
         else if (other.gameObject.tag == "Corner") 
         {
@@ -58,6 +59,7 @@ public class EnemyController : PlayerController
         else if (c != null)
         {
             ChangeHealth(-hitChicken);
+            c.DestroyGameObject();
         }
         else if (controller != null)
         {

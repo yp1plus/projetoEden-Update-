@@ -43,7 +43,8 @@ public class MainMenu : MonoBehaviour
             }
         }
         
-        SceneManager.UnloadSceneAsync(lastLevel + 2);
+        if (SceneIsLoaded(lastLevel))
+            SceneManager.UnloadSceneAsync(lastLevel + 2);
         SceneManager.LoadScene(lastLevel + 2, LoadSceneMode.Additive);
         MainMenu.debug = false;
         WarriorController.instance.ResetWarriorAttributes();

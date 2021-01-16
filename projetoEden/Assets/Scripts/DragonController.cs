@@ -102,6 +102,16 @@ public class DragonController : EnemyController
         ResetInvincibility();
     }
 
+    protected override void OnCollisionStay2D(Collision2D other)
+    {
+        ;
+    }
+
+    protected override void OnCollisionEnter2D(Collision2D other)
+    {
+        ;
+    }
+
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         ;

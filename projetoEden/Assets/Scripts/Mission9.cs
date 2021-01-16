@@ -6,6 +6,16 @@ using UnityEngine;
 public class Mission9 : MissionStructure
 {
     int currentIndex = 0;
+    BugController bug;
+
+    void Update()
+    {
+        if (WarriorController.instance.GetPosition().x >= 600 && bug == null)
+        {
+            bug = GameObject.FindGameObjectWithTag("Bug").GetComponent<BugController>();
+            bug.MakeVisible();
+        }
+    }
 
     public override bool StatementIsCorrect(int index)
     {
@@ -25,7 +35,7 @@ public class Mission9 : MissionStructure
 
     public override void ExecuteCode()
     {
-        BugController bug = GameObject.FindGameObjectWithTag("Bug").GetComponent<BugController>();
+        bug = GameObject.FindGameObjectWithTag("Bug").GetComponent<BugController>();
 
         bug.MakeVisible();
 

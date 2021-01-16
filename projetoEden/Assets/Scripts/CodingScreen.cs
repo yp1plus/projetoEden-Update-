@@ -309,10 +309,9 @@ public class CodingScreen : Screen
             && WarriorController.level != (int) WarriorController.PHASES.BARRIER
             && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES))
             UIController.instance.ShowNewInfo();
-
-        missions[WarriorController.level].ExecuteCode();
-
+            
         MainMenu.StartScene(WarriorController.level);
+        missions[WarriorController.level].ExecuteCode();
     }
 
     public void StartTutorial()

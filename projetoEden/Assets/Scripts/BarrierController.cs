@@ -7,6 +7,7 @@ public class BarrierController : MonoBehaviour
     public GameObject[] barrier;
     public bool barrierActivated {get; private set;}
     bool phaseIsFinished = false;
+    bool trigger = false;
 
     public static BarrierController instance {get; private set;}
     
@@ -25,13 +26,24 @@ public class BarrierController : MonoBehaviour
     {
         WarriorController warrior = other.gameObject.GetComponent<WarriorController>();
         
-        if (warrior != null && !phaseIsFinished)
+        if (warrior != null && !phaseIsFinished && !trigger)
         {
+            trigger = true;
             barrierActivated = true;
             for (int i = 0; i < barrier.Length; i++)
             {
                 if (barrier!= null && barrier[i] != null)
                     barrier[i].SetActive(true);
+            }
+
+            if (WarriorController.level != (int) WarriorController.PHASES.BATTLE)
+            {
+                SmallBoss.instance.DecreaseHit();
+                GameObject[] blueEnemies = GameObject.FindGameObjectsWithTag("BlueEnemy");
+                for (int i = 0; i < blueEnemies.Length; i++)
+                {
+                    blueEnemies[i].GetComponent<BlueEnemy>().DecreaseHit();
+                }
             }
         }
     }

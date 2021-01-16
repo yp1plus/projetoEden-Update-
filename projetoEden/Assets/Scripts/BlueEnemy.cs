@@ -8,7 +8,7 @@ public class BlueEnemy : EnemyController
     Vector3 targetPosition;
     Animator animator;
     Vector3 previousPosition;
-    
+
     // Start is called before the first frame update
     void Start()
     {

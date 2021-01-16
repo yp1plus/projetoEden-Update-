@@ -11,6 +11,13 @@ public class SmallBoss : EnemyController
     float timeMaxAttack = 0.9f;
     float time = 0;
 
+    public static SmallBoss instance {get; private set;}
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +68,8 @@ public class SmallBoss : EnemyController
     void OnDestroy()
     {
         BarrierController.instance.ResetAttributes();
+        if (!MainMenu.SceneIsLoaded(3))
+            MainMenu.StartScene(3);
     }
 
     void AnimateAttack()

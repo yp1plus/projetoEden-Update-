@@ -11,7 +11,7 @@ public class BugController : EnemyController
     bool isVisible;
     bool playerHit = false;
     public GameObject enemies;
-    const float POSITION_OF_THE_END = 664.8F;
+    const float POSITION_OF_THE_END = 662.7F;
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.

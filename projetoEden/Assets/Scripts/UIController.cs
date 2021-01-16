@@ -58,6 +58,9 @@ public class UIController : MonoBehaviour
     {
         if (index <= 4)
         {
+            if (index != WarriorController.level)
+                index = Mathf.Clamp(WarriorController.level, 0, 4);
+
             HideInfo(false);
             info.title.text = txtInfoUI.title[index];
             info.description.text = txtInfoUI.description[index];

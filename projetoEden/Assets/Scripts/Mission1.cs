@@ -18,7 +18,7 @@ public class Mission1 : MissionVariable
         GameObject chicken = GameObject.FindGameObjectWithTag("Chicken");
         float x = 11.9F, y = -8F; //arbitrary values based on the scene
 
-        MainMenu.SelectActiveScene(2);
+        MainMenu.SelectActiveScene((int) WarriorController.PHASES.CHICKENS + 1);
 
         for (int i = 0; i < n; i++)
         {

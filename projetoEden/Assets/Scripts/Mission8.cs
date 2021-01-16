@@ -31,7 +31,7 @@ public class Mission8 : MissionStructure
                 return flame.GetComponent<FlameController>().isBurning 
                     || WarriorController.quantChickens > 0;
             case 2:
-                return WarriorController.height < 50.0f;
+                return WarriorController.height < 50.0f && UIController.instance.powers[2].activeSelf;
             case 3:
                 return WarriorController.name.Length == 7;
             case 4:

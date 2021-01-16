@@ -109,7 +109,7 @@ public class Screen : MonoBehaviour
 
         if (level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES)
         {
-            variablesPhaseParent.SetActive(true); //change later
+            variablesPhaseParent.SetActive(true);
 
             if (level != (int) WarriorController.PHASES.CLOUDS)
             {
@@ -169,7 +169,7 @@ public class Screen : MonoBehaviour
             components.structurePhase.result2.transform.GetChild(0).GetComponent<TMP_Text>().text 
                 = missionData.resultsStructures2[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
 
-            components.structurePhase.statement1.SetActive(mustActivate || isPhaseBladesBarrier);
+            components.structurePhase.statement1.SetActive(level != (int) WarriorController.PHASES.EMPTY_PATH);
             components.structurePhase.statement1.transform.GetChild(0).GetComponent<TMP_Text>().text = 
                 missionData.statementsStructures1[level - (int) WarriorController.PHASES.FIRST_OF_STRUCTURES];
             ActivateStructure2(mustActivate);

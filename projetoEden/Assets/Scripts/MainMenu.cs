@@ -57,11 +57,10 @@ public class MainMenu : MonoBehaviour
         if (previousLevel == (int) WarriorController.PHASES.FIRST_OF_VARIABLES)
             return;
         
-        if (previousLevel >= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
+        if (previousLevel > (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
             return;
         
-        /* Sum 2 because there is the MainScene's index */
-        if (SceneManager.sceneCount < previousLevel + 2)
+        if (!SceneIsLoaded(previousLevel))
         {                       
             SceneManager.LoadScene(previousLevel + 2, LoadSceneMode.Additive);
         }
@@ -70,6 +69,11 @@ public class MainMenu : MonoBehaviour
             SceneManager.UnloadSceneAsync(previousLevel + 2);
             SceneManager.LoadScene(previousLevel + 2, LoadSceneMode.Additive);
         }
+    }
+
+    public static bool SceneIsLoaded(int previousLevel)
+    {
+        return SceneManager.GetSceneByBuildIndex(previousLevel + 2).isLoaded;
     }
 
     public static void QuitGame()

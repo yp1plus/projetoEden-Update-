@@ -28,8 +28,7 @@ public class ChickenShoot : MonoBehaviour
         
         if (gameObject == null || gameObject.activeSelf)
         {
-            WarriorController.instance.SubtractChicken();
-            Destroy(gameObject);
+            DestroyGameObject();
         }
     }
 
@@ -55,15 +54,7 @@ public class ChickenShoot : MonoBehaviour
     /// <param name="other">The Collision2D data associated with this collision (only enemies).</param>
     void OnCollisionEnter2D(Collision2D other)
     {
-        EnemyController e = other.collider.GetComponent<EnemyController>();
-
-        if (e != null)
-        {
-            e.ChangeHealth(-e.hitChicken);
-        }
-
-        Destroy(gameObject);
-        WarriorController.instance.SubtractChicken();
+       DestroyGameObject();
     }
 
     /// <summary>
@@ -73,16 +64,7 @@ public class ChickenShoot : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyController e = other.GetComponent<EnemyController>();
-        SmallBoss sb = other.GetComponent<SmallBoss>();
-
-        if (e != null && sb == null)
-        {
-            e.ChangeHealth(-e.hitChicken);
-        }
-
-        Destroy(gameObject);
-        WarriorController.instance.SubtractChicken();
+        DestroyGameObject();
     }
 
     public void DestroyGameObject()

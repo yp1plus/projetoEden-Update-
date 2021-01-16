@@ -17,7 +17,7 @@ public class Mission11 : MissionStructure
             SetIndexTip(index + 10);
         }
 
-        if (index == 5)
+        if (index == 5 || index == 0)
             return false;
         
         return true;

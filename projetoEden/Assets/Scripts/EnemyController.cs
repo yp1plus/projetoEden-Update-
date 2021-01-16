@@ -24,11 +24,16 @@ public class EnemyController : PlayerController
     protected virtual void OnCollisionEnter2D(Collision2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
+        ChickenShoot c = other.gameObject.GetComponent<ChickenShoot>();
         
         if (player != null)
         {
             Attack(player);
-        } 
+        }
+        else if (c != null)
+        {
+            ChangeHealth(-hitChicken);
+        }
         else if (other.gameObject.tag == "Corner") 
         {
             isInCorner = true;
@@ -43,11 +48,16 @@ public class EnemyController : PlayerController
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
+        ChickenShoot c = other.gameObject.GetComponent<ChickenShoot>();
         FlameController controller = other.gameObject.GetComponent<FlameController>();
         
         if (player != null)
         {
             Attack(player);
+        }
+        else if (c != null)
+        {
+            ChangeHealth(-hitChicken);
         }
         else if (controller != null)
         {
@@ -87,7 +97,7 @@ public class EnemyController : PlayerController
     /// this object's collider (2D physics only).
     /// </summary>
     /// <param name="other">The Collision2D data associated with this collision.</param>
-    void OnCollisionStay2D(Collision2D other)
+    protected virtual void OnCollisionStay2D(Collision2D other)
     {
         WarriorController player = other.gameObject.GetComponent<WarriorController>();
         
@@ -133,5 +143,10 @@ public class EnemyController : PlayerController
     {
         if (rigidbody2D.bodyType != RigidbodyType2D.Static)
             rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
+    }
+
+    public void DecreaseHit()
+    {
+        hit -= hit/2;
     }
 }

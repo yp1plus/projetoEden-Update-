@@ -202,6 +202,6 @@ MonoBehaviour:
   range: {x: 0, y: 0, z: 0}
   facingRight: 0
   damage: 50
-  hit: 40
-  hitFlame: 10
-  hitChicken: 5
+  hit: 20
+  hitFlame: 5
+  hitChicken: 3

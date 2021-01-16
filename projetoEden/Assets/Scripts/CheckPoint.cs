@@ -28,6 +28,12 @@ public class CheckPoint : MonoBehaviour
 
         if (controller != null && !activated)
         {
+            if (controller.GetPosition().x >= 180 && WarriorController.level < (int) WarriorController.PHASES.BATTLE)
+               controller.GoToNextLevel();
+            else if (controller.GetPosition().x >= 518 && WarriorController.level < (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+                controller.GoToNextLevel();
+            if (!MainMenu.SceneIsLoaded(WarriorController.level))
+                MainMenu.StartScene(WarriorController.level);
             activated = true;
             MainMenu.lastCheckPointPosition = transform.position;
             MainMenu.lastLevel = WarriorController.level;

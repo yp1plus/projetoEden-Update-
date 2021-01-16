@@ -44,14 +44,16 @@ public class Mission10 : MissionStructure
         yield return new WaitForSeconds(3f);
         CodingScreen.instance.ShowGameOver(true);
         GameObject infiniteLoop = GameObject.FindGameObjectWithTag("SupportingText");
-        infiniteLoop.GetComponent<TMP_Text>().enabled = true;
+        TMP_Text txt = infiniteLoop.GetComponent<TMP_Text>();
+        txt.enabled = true;
+        txt.text = "O jogo travou por loop infinito";
     }
 
     IEnumerator InstatiateBlocks(int quant)
     {
         GameObject block = GameObject.FindGameObjectWithTag("Block");
         enemies = GameObject.FindGameObjectWithTag("Enemies");
-        MainMenu.SelectActiveScene(9);
+        MainMenu.SelectActiveScene((int) WarriorController.PHASES.EMPTY_PATH + 1);
         //GameObject gridParent = GameObject.FindGameObjectWithTag("Grid");    
 
         float x = 0;

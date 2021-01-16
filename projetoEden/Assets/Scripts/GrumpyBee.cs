@@ -32,13 +32,19 @@ public class GrumpyBee : EnemyController
     /// </summary>
     void FixedUpdate()
     {
-        if (!movementActivated && activated && WarriorController.level == 1 && GameObject.FindWithTag("Chicken") == null)
+        //Activate First Grumpy Bee slower
+        if (!movementActivated && activated && WarriorController.level <= (int) WarriorController.PHASES.CHICKENS && GameObject.FindWithTag("Chicken") == null)
         {
-            if (GameObject.FindWithTag("GrumpyBee") != null)
+            if (GameObject.FindWithTag("GrumpyBee") != null 
+                && WarriorController.level == (int) WarriorController.PHASES.CHICKENS)
                 UIController.instance.ShowNewInfo();
+            else if (WarriorController.level != (int) WarriorController.PHASES.CHICKENS)
+                WarriorController.instance.GoToNextLevel();
+            
             movementActivated = true;
         }
 
+        //Activate Second Grumpy Bee Faster
         if (!activated && GameObject.FindWithTag("GrumpyBee") == null)
         {
             activated = true;

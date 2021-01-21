@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseScreen : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = state ? 0 : 1;
         mainPanel.SetActive(state);
         mainMenu.SetActive(state);
+        infoPanel.SetActive(false);
+        commandsMenu.SetActive(false);
+        btReturn.SetActive(false);
         backgroundInvisible.SetActive(state);
         isPaused = state;
         flag = false;
@@ -55,6 +59,10 @@ public class PauseScreen : MonoBehaviour
         mainMenu.SetActive(false);
         infoPanel.SetActive(false);
         commandsMenu.SetActive(true);
+        if (WarriorController.level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+            commandsMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
+        if (WarriorController.level >= (int) WarriorController.PHASES.FIRST_OF_ITERATIVE)
+            commandsMenu.transform.GetChild(2).GetComponent<Button>().interactable = true;
         btReturn.SetActive(true);
     }
 
@@ -90,5 +98,11 @@ public class PauseScreen : MonoBehaviour
         {
             ShowCommands();
         }
+    }
+
+    public void RestartFromLastCheckpoint()
+    {
+        MainMenu.Reset();
+        ActivateMenu(false);
     }
 }

@@ -148,13 +148,13 @@ public class CodingScreen : Screen
         else
             IsWrong((int) InputTypes.type);
         
+        if (index != 0)
+            mission.SetIndexTip(index);
+        
         if(!mission.ConstIdentifierIsCorrect(isConst))
         {
             mission.SetIndexTip((int) TipsReferenceIndexes.consts);
         }
-        
-        if (index != 0)
-            mission.SetIndexTip(index);
     }
 
     /// <summary>
@@ -309,9 +309,12 @@ public class CodingScreen : Screen
             && WarriorController.level != (int) WarriorController.PHASES.BARRIER
             && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES))
             UIController.instance.ShowNewInfo();
-            
-        MainMenu.StartScene(WarriorController.level);
-        missions[WarriorController.level].ExecuteCode();
+        
+        if (WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
+        {
+            MainMenu.StartScene(WarriorController.level);
+            missions[WarriorController.level].ExecuteCode();
+        } 
     }
 
     public void StartTutorial()

@@ -24,9 +24,10 @@
     "resultsStructures1":["parar_bloco()","prender_objeto()","o_bicho_pega()", "criar_bloco()", "eliminar_lamina()",null],
     "resultsStructures2":[null,"liberar_objeto()","o_bicho_come()", null, null, "destruir_bloco(i, j)"],
     "descriptionInfo":[
-        "Números inteiros: escreva números até cerca de 2^31\n\nCaractere: escreva entre aspas simples\n\nNúmero decimal: Deve-se utilizar ponto entre os números\n\nPalavras: escreva entre aspas duplas\n\nBooleano: escreva True pra verdadeiro ou False pra falso\n",
+        "Todo nome deve ser composto apenas por letras, números e sublinhado ('_') e deve começar com uma letra\n\nNúmeros inteiros: escreva números até cerca de 2^31\n\nCaractere: escreva entre aspas simples\n\nNúmero decimal: Deve-se utilizar ponto entre os números\n\nPalavras: escreva entre aspas duplas\n\nBooleano: escreva True pra verdadeiro ou False pra falso\n",
         "if: condição \"se\" é verdadeiro faça algo\nelif: condição \"senão se\" que vem após um if que não foi executado e testa outra condição\n\nelse: condição \"senão\" que faz algo caso nenhuma das condições anteriores seja verdadeira\n\n==: representa igualdade, se algo é igual a outro\n\nand: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n\nor: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n\nnot: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n\n<: se um valor é menor do que o outro\n\n>: se um valor é maior do que o outro\n\n>=: se um valor é maior ou igual a outro\n<=: se um valor é menor ou igual a outro",
-        "while(condição): enquanto a condição for verdadeira, repete a ação\n\nfor i in range(valor): repete um número de vezes estabelecido por valor\nfor i in range(x, y, z): repete de x até y - z somando z em x"
+        "while(condição): enquanto a condição for verdadeira, repete a ação\n\nfor i in range(valor): repete um número de vezes estabelecido por valor\nfor i in range(x, y, z): repete de x até y - z somando z em x",
+        "X: Ataque com a espada\n\nC: Atirar galinhas, se disponível\n\nE: Acender Chama, se disponível\n\nQ: Aumentar Altura, se disponível\n\nZ: Diminuir Altura, se disponível"
     ],
     "namesCameras":["CAMERA_A99", "CAMERA_A98", "CAMERA_A97"]
 }

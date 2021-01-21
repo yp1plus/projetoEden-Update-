@@ -113,11 +113,14 @@ public class DragonController : EnemyController
         {
             Attack(player);
         }
-        else if (controller != null)
+
+        if (controller != null)
         {
             isBurning = true;
             StartCoroutine(ResetIsBurning());
-        } else if (e != null)
+        } 
+        
+        if (e != null)
         {
             e.DestroyGameObject();
 
@@ -138,7 +141,8 @@ public class DragonController : EnemyController
         {
             Attack(player);
         }
-        else if (controller != null)
+        
+        if (controller != null)
         {
             isBurning = true;
             StartCoroutine(ResetIsBurning());

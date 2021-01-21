@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Screen : MonoBehaviour
 {
+    public GameObject tipsComponent;
     public GameObject variablesPhaseParent;
     public GameObject camerasPhaseParent;
     public GameObject structuresPhaseParent;
@@ -104,9 +105,13 @@ public class Screen : MonoBehaviour
     {
         components.title.text = missionData.title[level];
         components.description.text = missionData.description[level];
-        List<string> options = missionData.input[level].options;
-        tip = missionData.tips[level];
-
+        List<string> options = null;
+        if (level <= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
+        {
+            options = missionData.input[level].options;
+            tip = missionData.tips[level];
+        }
+       
         if (level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES)
         {
             variablesPhaseParent.SetActive(true);
@@ -127,7 +132,7 @@ public class Screen : MonoBehaviour
                 UpdateDropDown(components.variablesPhase.inputType, options);
             }
         }
-        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES && level <= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
         {
             UpdateDropDown(components.structurePhase.condition1, options);
 
@@ -154,7 +159,7 @@ public class Screen : MonoBehaviour
             if (Languages.isPython())
                 components.variablesPhase.feedbackValue.transform.localPosition = new Vector3(0, 0, 0);
         } 
-        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+        else if (level >= (int) WarriorController.PHASES.FIRST_OF_STRUCTURES && level <= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
         {
             variablesPhaseParent.SetActive(false);
             camerasPhaseParent.SetActive(false);
@@ -181,7 +186,12 @@ public class Screen : MonoBehaviour
       
             else if (level == (int) WarriorController.PHASES.FOURTH_WALL)
                 SetUpScreenForFourthWallPhase();
-        } 
+        } else {
+            variablesPhaseParent.SetActive(false);
+            camerasPhaseParent.SetActive(false);
+            structuresPhaseParent.SetActive(false);
+            tipsComponent.SetActive(false);
+        }
     }
 
     //Activates the condition 2 (nested for) and updates your position

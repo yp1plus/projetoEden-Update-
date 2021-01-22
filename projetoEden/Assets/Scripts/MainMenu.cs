@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public static Vector3 lastCheckPointPosition;
-    public static int lastLevel = 13;
+    public static int lastLevel;
     public static bool tutorialExecuted;
     public static bool isSubPhase;
-    public static bool debug = true;
+    public static bool debug;
 
     void Start()
     {
         lastCheckPointPosition = new Vector3(-30.6f, 0.9f, 0);
-        lastLevel = 13;
+        lastLevel = 0;
         tutorialExecuted = false;
         isSubPhase = false;
-        debug = true;
+        debug = false;
     }
 
     public static void PlayGame()

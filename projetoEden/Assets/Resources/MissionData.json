@@ -1,5 +1,5 @@
 {
-    "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Upar Espada","IV: Diminuir Altura","V: Aumentar Altura","VI: Enganar Câmeras", "VII: Parar Blocos", "VIII: Ficar Livre", "IX: Correr do Bicho", "X: Construir Caminho", "XI: Eliminar Lâminas", "XII: Quebrar a 4ª Parede", "XIII: Sair da Ilha"],
+    "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Upar Espada","IV: Diminuir Altura","V: Aumentar Altura","VI: Enganar Câmeras", "VII: Parar Blocos", "VIII: Ficar Livre", "IX: Correr do Bicho", "X: Construir Caminho", "XI: Eliminar Lâminas", "XII: Quebrar a 4ª Parede"],
     "description":["Nesse mundo programável você terá o poder de controlar situações por meio de códigos. Comece criando um apelido que o acompanhará durante todo o jogo. Afinal, não poderia começar a sua jornada sem um nome à altura!",
         "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Confira novos comandos apertando ESC ou P e visitando a seção Variáveis.",
         "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la. Vá em frente!",
@@ -12,8 +12,7 @@
         "Se ficar o bicho pega, se correr o bicho come! Vem vindo um bicho atrás de você e você precisa se preparar. Crie uma condição para se livrar do bicho. Se fizer errado, ele vai te pegar!",
         "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar. Confira novos comandos apertando ESC ou P e visitando a seção Repetição.",
         "Você está perto do seu objetivo, mas encontrou uma barreira de lâminas. É preciso eliminá-las. Encontre uma forma de destruir todas de uma vez.",
-        "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 7 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho.",
-        "Chegou a hora mais temida de enfrentar o Boss do jogo que protege o portal da ilha para a Central de Controle. Um cospir fogo do dragão e você já era! O dragão é imune ao fogo, mas use a chama sempre que ele cospir fogo para bloqueá-lo. Você está munido e pronto pra batalha? Manda ver!"
+        "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 7 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho."
     ],
     "input":[{"options":["nomeDaVariável", "meu-Nome","1Nome","NOME_JOGADOR","nome_jogador!","nome&sobrenome"]},
     {"options":["nomeDaVariável", "2DGalinhas","qt|galinhas","quant_galinhas","quantGalinhas","g@linhas"]},

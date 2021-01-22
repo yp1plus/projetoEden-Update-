@@ -48,9 +48,13 @@ public abstract class Mission : MonoBehaviour
     {
         value = value.Trim(); //removes whitespaces
         
-        if (!value.EndsWith(";"))
+        if (!value.EndsWith(";") && !Languages.isPython())
         {
             return null;
+        }
+        else if (Languages.isPython() && !value.EndsWith(";"))
+        {
+            return value;
         }
         
         int position = value.LastIndexOf(";");

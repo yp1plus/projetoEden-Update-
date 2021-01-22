@@ -32,6 +32,16 @@ public class ChickenShoot : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        DestroyGameObject();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        DestroyGameObject();    
+    }
+
     /// <summary>
     /// Launch a chicken in a direction and with a specific force.
     /// </summary>

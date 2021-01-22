@@ -43,7 +43,6 @@ public class WarriorController : PlayerController
     public static string name {get; private set;}
 
     const float POSITION_NEXT_TO_DRAGON = 934.9f;
-    const float POSITION_OF_END_MISSION = 902.4f;
 
     public static bool isSubPhase = MainMenu.isSubPhase;
     public static int quantChickens { get; private set; } = 0;
@@ -176,11 +175,10 @@ public class WarriorController : PlayerController
                 ChangeHeight(false, 1);
             }
 
-            if (transform.position.x >= POSITION_OF_END_MISSION && currentLevel < (int) PHASES.DRAGON)
+            if (transform.position.x >= POSITION_NEXT_TO_DRAGON && currentLevel < (int) PHASES.DRAGON)
             {
                 currentLevel = (int) PHASES.DRAGON;
                 audioController.PlayMusic(darkAmbient);
-                CodingScreen.instance.OpenCode(true);
             }
         }
     }

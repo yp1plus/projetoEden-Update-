@@ -28,10 +28,17 @@ public class CheckPoint : MonoBehaviour
 
         if (controller != null && !activated)
         {
-            if (controller.GetPosition().x >= 180 && WarriorController.level < (int) WarriorController.PHASES.BATTLE)
-               controller.GoToNextLevel();
-            else if (controller.GetPosition().x >= 518 && WarriorController.level < (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+            if ((controller.GetPosition().x >= 180 && WarriorController.level < (int) WarriorController.PHASES.BATTLE)
+               || (controller.GetPosition().x >= 518 && WarriorController.level < (int) WarriorController.PHASES.FIRST_OF_STRUCTURES)
+               || (controller.GetPosition().x >= 560 && WarriorController.level < (int) WarriorController.PHASES.FLOATING_PLATFORM)
+               || (controller.GetPosition().x >= 891.8f && WarriorController.level < (int) WarriorController.PHASES.FOURTH_WALL))
+            {
                 controller.GoToNextLevel();
+            }
+            if (WarriorController.level == (int) WarriorController.PHASES.BLADES_BARRIER)
+                MainMenu.StartScene((int) WarriorController.PHASES.LAST_OF_STRUCTURES);
+            if (controller.GetPosition().x >= 891.8f)
+                UIController.instance.ShowNewInfo();
             if (!MainMenu.SceneIsLoaded(WarriorController.level))
                 MainMenu.StartScene(WarriorController.level);
             activated = true;

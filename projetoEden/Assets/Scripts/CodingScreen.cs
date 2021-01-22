@@ -241,9 +241,8 @@ public class CodingScreen : Screen
             string value = answer;
             MissionVariable mission = (MissionVariable) missions[WarriorController.level];
             bool couldRemove = true;
-            
-            if (!Languages.isPython())
-                value = Mission.RemoveSemicolon(answer);
+        
+            value = Mission.RemoveSemicolon(answer);
 
             if (value == null) 
             {

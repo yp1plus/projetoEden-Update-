@@ -1,11 +1,12 @@
 {
-    "title":["Partiu Batalhar", "Atire Galinhas", "Hora de Incendiar", "Hora de Atacar", "Cresça ou Diminua"],
+    "title":["Partiu Batalhar", "Atire Galinhas", "Hora de Incendiar", "Hora de Atacar", "Cresça ou Diminua", "Hora do Chefão"],
     "description":
             [
             "Colete bolas de magia para ativar a tela de codificação. \nAperte X para atacar com a espada. \nAperte ESC ou P para acessar a tela de instruções.",
             "Você ganhou o poder de atirar galinhas em seus inimigos. \nPara ativar, aperte a tecla C.",
             "Você ganhou o poder de ativar a chama em obstáculos e inimigos. \nPara ativar, aperte a tecla E.",
             "Você ganhou 50% a mais de força na sua espada permanentemente. \nAperte X para atacar.",
-            "Você ganhou o poder de mudar sua altura. Agora você pode esmagar inimigos e passar por barreiras. Aperte Q para crescer ou Z para diminuir."
+            "Você ganhou o poder de mudar sua altura. Agora você pode esmagar inimigos e passar por barreiras. Aperte Q para crescer ou Z para diminuir.",
+            "O chefão do jogo chegou. Ele protege o portal da ilha para a Central de Controle. Um cospir fogo do dragão e você já era! Ele é imune ao fogo, mas use a chama sempre que ele cospir fogo para bloqueá-lo. Você está munido e pronto pra batalha?"
             ]
 }

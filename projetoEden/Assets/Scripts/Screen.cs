@@ -186,11 +186,6 @@ public class Screen : MonoBehaviour
       
             else if (level == (int) WarriorController.PHASES.FOURTH_WALL)
                 SetUpScreenForFourthWallPhase();
-        } else {
-            variablesPhaseParent.SetActive(false);
-            camerasPhaseParent.SetActive(false);
-            structuresPhaseParent.SetActive(false);
-            tipsComponent.SetActive(false);
         }
     }
 
@@ -207,22 +202,24 @@ public class Screen : MonoBehaviour
 
     void BlockTypeAndNameInput()
     {
-        Toggle toggle = components.variablesPhase.constIdentifier.GetComponentInChildren<Toggle>();
-        toggle.interactable = false;
-        TMP_Dropdown dropdown = components.variablesPhase.inputType.GetComponent<TMP_Dropdown>();
-        dropdown.interactable= false;
-        dropdown = components.variablesPhase.inputName.GetComponent<TMP_Dropdown>();
+        components.variablesPhase.constIdentifier.SetActive(false);
+        components.variablesPhase.inputType.SetActive(false);
+        TMP_Dropdown dropdown = components.variablesPhase.inputName.GetComponent<TMP_Dropdown>();
         dropdown.interactable = false;
         components.variablesPhase.inputValue.GetComponent<TMP_InputField>().text = "";
     }
 
     void ResetVariablesPhase()
-    {   
+    {  
+        if (!Languages.isPython())
+        {
+            components.variablesPhase.constIdentifier.SetActive(true); 
+            components.variablesPhase.inputType.SetActive(true);
+        }
+        
         Toggle toggle = components.variablesPhase.constIdentifier.GetComponentInChildren<Toggle>();
-        toggle.interactable = true;
         toggle.isOn = false;
         TMP_Dropdown dropdown = components.variablesPhase.inputType.GetComponent<TMP_Dropdown>();
-        dropdown.interactable = true;
         dropdown.value = 0;
         dropdown = components.variablesPhase.inputName.GetComponent<TMP_Dropdown>();
         dropdown.interactable = true;

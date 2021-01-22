@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class UIController : MonoBehaviour
     public struct Info{
         public GameObject parent;
         public TMP_Text title;
-        public TMP_Text description;
+        public GameObject description;
+        public GameObject congratulations;
+        public Button confirmation;
     }
 
     public Info info = new Info();
@@ -34,7 +37,7 @@ public class UIController : MonoBehaviour
             intro.SetActive(true);
         }
         txtInfoUI = MissionState.LoadUIFromJson();
-        index = 0;
+        index = 5;
     }
 
     public void GoToTutorial()
@@ -56,15 +59,31 @@ public class UIController : MonoBehaviour
 
     public void ShowNewInfo()
     {
-        if (index <= 4)
+        if (index <= 5)
         {
-            if (index != WarriorController.level)
+            if (index != WarriorController.level && WarriorController.level <= (int) WarriorController.PHASES.CLOUDS)
                 index = Mathf.Clamp(WarriorController.level, 0, 4);
-
+            
+            if (index == 5)
+            {
+                info.congratulations.SetActive(false);
+                //Increases description height maintaining the same reference position
+                RectTransform rt = info.description.GetComponent<RectTransform>();
+                Vector2 sizeDelta = rt.sizeDelta;
+                sizeDelta.y = 206.98f;
+                rt.sizeDelta = sizeDelta;
+                rt.anchoredPosition = new Vector3(0, -71.887f, 0);
+                TMP_Text txtButton = info.confirmation.GetComponentInChildren<TMP_Text>(); 
+                if (txtButton != null)
+                    txtButton.text = "Vamos nessa!";
+            }
+                        
             HideInfo(false);
             info.title.text = txtInfoUI.title[index];
-            info.description.text = txtInfoUI.description[index];
-            if (index > 0)
+            TMP_Text description = info.description.GetComponent<TMP_Text>();
+            if (description != null)
+                description.text = txtInfoUI.description[index];
+            if (index > 0 && index <= 4)
                 powers[index - 1].SetActive(true);
             index++;
         }

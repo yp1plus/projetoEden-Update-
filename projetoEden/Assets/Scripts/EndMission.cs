@@ -38,8 +38,7 @@ public class EndMission : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
         {
             answer = answer.Trim(); //removes whitespaces on the right and on the left
-            if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
-                answer = Mission.RemoveSemicolon(answer);
+            answer = Mission.RemoveSemicolon(answer);
             
             if (answer == null)
             {

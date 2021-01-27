@@ -76,6 +76,14 @@ public class CodingScreen : Screen
         WarriorController.instance.DeactivateMovement(state);
     }
 
+    public void ForceClosePanel()
+    {
+        panel.gameObject.SetActive(false);
+        codingScreen.SetActive(false);
+        UIController.instance.DeactivateInfo(true);
+        WarriorController.instance.DeactivateMovement(false);
+    }
+
     /// <summary>
     /// Enables the Canvas of the panel which contains the coding screen.
     /// </summary>

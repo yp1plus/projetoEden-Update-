@@ -36,6 +36,7 @@ public class WarriorController : PlayerController
     public static WarriorController instance { get; private set; }
 
     public GameObject flame;
+    FlameController flameController; 
 
     
     const float DEFAULT_HEIGHT = 119.5f;
@@ -91,6 +92,8 @@ public class WarriorController : PlayerController
     public void LoadFlame(GameObject flame)
     {
         this.flame = flame;
+        if (flame != null)
+            flameController = flame.GetComponent<FlameController>();
     }
 
     public void ResetWarriorAttributes()
@@ -139,8 +142,8 @@ public class WarriorController : PlayerController
             numCoins.text = quantCoins.ToString();
         if (txtNumChickens != null)
             txtNumChickens.text = quantChickens.ToString();
-        if (flame != null)
-            txtFlameIsBurning.text = flame.GetComponent<FlameController>().isBurning.ToString().ToLower();
+        if (flameController != null)
+            SetFlameUI();
         if (txtWarriorHeight != null)
             txtWarriorHeight.text = height.ToString("F1").Replace(',','.');
 
@@ -181,6 +184,27 @@ public class WarriorController : PlayerController
                 audioController.PlayMusic(darkAmbient);
             }
         }
+    }
+
+    void SetFlameUI()
+    {
+        string value = null;
+
+        switch(Languages.indexLanguage)
+        {
+            case (int) Languages.TypesLanguages.C:
+                value = flameController.isBurning ? "1" : "0";
+                break;
+            case (int) Languages.TypesLanguages.CSharp:
+            case (int) Languages.TypesLanguages.Java:
+                value = flameController.isBurning.ToString().ToLower();
+                break;
+            case (int) Languages.TypesLanguages.Python:
+                value = flameController.isBurning.ToString();
+                break;
+        }
+        
+        txtFlameIsBurning.text = value;
     }
 
     /// <inheritdoc/>

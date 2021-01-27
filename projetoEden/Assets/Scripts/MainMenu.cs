@@ -33,6 +33,7 @@ public class MainMenu : MonoBehaviour
 
     public static void Reset()
     {
+        CodingScreen.instance.ForceClosePanel();
         if (lastLevel != WarriorController.level)
         {
             lastLevel = Mathf.Clamp(WarriorController.level - 1, 0, 12);

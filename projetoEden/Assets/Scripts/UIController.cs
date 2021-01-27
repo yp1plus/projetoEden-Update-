@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
 
     public Info info = new Info();
     UIInfo txtInfoUI;
-    int index;
+    int index = 5;
 
     void Awake()
     {
@@ -92,6 +92,11 @@ public class UIController : MonoBehaviour
     public void HideInfo(bool state)
     {
         CodingScreen.instance.OpenPanel(!state);
+        info.parent.SetActive(!state);
+    }
+
+    public void DeactivateInfo(bool state)
+    {
         info.parent.SetActive(!state);
     }
 

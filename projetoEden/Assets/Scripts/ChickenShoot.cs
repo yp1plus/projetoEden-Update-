@@ -11,6 +11,7 @@ public class ChickenShoot : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
     Renderer renderer;
+    public AudioClip audio;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -55,6 +56,7 @@ public class ChickenShoot : MonoBehaviour
         Vector3 transformScale = transform.localScale;
         transformScale.x *= direction.x;
         transform.localScale = transformScale;
+        CodingScreen.instance.audioController.PlaySound(audio);
     }
 
     public void DestroyGameObject()

@@ -9,6 +9,7 @@ public class FlameController : MonoBehaviour
 
     public static bool canBeBurnt;
     public bool isBurning {get; private set;} = true; 
+    public AudioClip audio;
 
     // Awake is called when the script instance is being loaded.
     void Awake()
@@ -69,6 +70,7 @@ public class FlameController : MonoBehaviour
         fade.FadeIn();
         isBurning = true;
         Invoke("PutOut", 2);
+        WarriorController.instance.audioController.PlaySound(audio);
     }
 
     void OnTriggerEnter2D(Collider2D other)

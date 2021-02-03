@@ -14,12 +14,12 @@ public class InitialTutorial : TipsController
     {
         boxTip.SetActive(true);
         EnableScreen(true);
-        textGenerator.ShowText("Esta é sua tela de codificação!");
+        textGenerator.ShowText("Esta é sua tela de codificação! Aqui você desenvolverá linhas de código");
         StartCoroutine(ShowBackground());
 
         if (Languages.indexLanguage != (int) Languages.TypesLanguages.Python)
         {
-            textGenerator.ShowText("Marque como constante, já que seu apelido não mudará", 4);
+            textGenerator.ShowText("Marque como constante, já que seu apelido não mudará", 6);
             StartCoroutine(GoToType());
         }
 
@@ -76,7 +76,7 @@ public class InitialTutorial : TipsController
         textGenerator.ShowText("Parabéns! Por último, hora de escrever o seu apelido");
         textGenerator.ShowText("Lembre-se que ele só pode ter 7 caracteres", 4);
         textGenerator.ShowText("Para avaliar seu comando, aperte ENTER após escrever", 8);
-        textGenerator.ShowText("Se precisar de ajuda, recorra às dicas", 12);
+        textGenerator.ShowText("Se precisar de ajuda, recorra às dicas. Elas são gratuitas neste tutorial", 12);
 
         yield return new WaitForSeconds(14);
         background.transform.SetSiblingIndex(currentIndex - 2);

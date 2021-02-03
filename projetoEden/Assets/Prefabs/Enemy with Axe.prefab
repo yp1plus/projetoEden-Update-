@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.015667588, y: -0.027417183}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77, y: 0.72}
+  m_Size: {x: 0.6446635, y: 0.66516566}
   m_EdgeRadius: 0
 --- !u!50 &2349149091132145758
 Rigidbody2D:
@@ -175,6 +175,6 @@ MonoBehaviour:
   range: {x: 0, y: 0, z: 0}
   facingRight: 1
   damage: 10
-  hit: 35
-  hitFlame: 5
-  hitChicken: 3
+  hit: 50
+  hitFlame: 10
+  hitChicken: 6

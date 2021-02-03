@@ -8,6 +8,7 @@ public class BarrierController : MonoBehaviour
     public bool barrierActivated {get; private set;}
     bool phaseIsFinished = false;
     bool trigger = false;
+    public AudioClip battleSong;
 
     public static BarrierController instance {get; private set;}
     
@@ -28,6 +29,8 @@ public class BarrierController : MonoBehaviour
         
         if (warrior != null && !phaseIsFinished && !trigger)
         {
+            UIController.instance.ShowNewInfo(5);
+            WarriorController.instance.audioController.PlayMusic(battleSong);
             trigger = true;
             barrierActivated = true;
             for (int i = 0; i < barrier.Length; i++)

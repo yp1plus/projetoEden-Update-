@@ -21,7 +21,6 @@ public class UIController : MonoBehaviour
 
     public Info info = new Info();
     UIInfo txtInfoUI;
-    int index = 5;
 
     void Awake()
     {
@@ -37,7 +36,6 @@ public class UIController : MonoBehaviour
             intro.SetActive(true);
         }
         txtInfoUI = MissionState.LoadUIFromJson();
-        index = 5;
     }
 
     public void GoToTutorial()
@@ -53,22 +51,36 @@ public class UIController : MonoBehaviour
             || WarriorController.level == (int) WarriorController.PHASES.CLOUDS - 1)
         {
             powers[Mathf.Clamp(WarriorController.level, 0, 3)].SetActive(false);
-            index = Mathf.Clamp(WarriorController.level + 1, 0, 4);
         }
     }
 
-    public void ShowNewInfo()
+    public void ShowNewInfo(int index)
     {
-        if (index <= 5)
+        if (index <= 7)
         {
-            if (index != WarriorController.level && WarriorController.level <= (int) WarriorController.PHASES.CLOUDS)
+            RectTransform rt = info.description.GetComponent<RectTransform>();
+
+            if (index == WarriorController.level && WarriorController.level <= (int) WarriorController.PHASES.CLOUDS)
+            {
+                info.congratulations.SetActive(true);
                 index = Mathf.Clamp(WarriorController.level, 0, 4);
-            
-            if (index == 5)
+                Vector2 sizeDelta = rt.sizeDelta;
+                sizeDelta.y = 156.7323f;
+                rt.sizeDelta = sizeDelta;
+                rt.anchoredPosition = new Vector3(-1.4859f * Mathf.Pow(10, -7), -97, 0);
+            }
+            else if (index == 5 || index == 6)
+            {
+                info.congratulations.SetActive(false);
+                Vector2 sizeDelta = rt.sizeDelta;
+                sizeDelta.y = 206.98f;
+                rt.sizeDelta = sizeDelta;
+                rt.anchoredPosition = new Vector3(0, -80f, 0);
+            }
+            else if (index == 7)
             {
                 info.congratulations.SetActive(false);
                 //Increases description height maintaining the same reference position
-                RectTransform rt = info.description.GetComponent<RectTransform>();
                 Vector2 sizeDelta = rt.sizeDelta;
                 sizeDelta.y = 206.98f;
                 rt.sizeDelta = sizeDelta;
@@ -84,8 +96,7 @@ public class UIController : MonoBehaviour
             if (description != null)
                 description.text = txtInfoUI.description[index];
             if (index > 0 && index <= 4)
-                powers[index - 1].SetActive(true);
-            index++;
+                powers[index - 1].SetActive(true);     
         }
     }
 

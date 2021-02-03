@@ -24,6 +24,7 @@ public class CodingScreen : Screen
     Mission[] missions = new Mission[14];
     public enum InputTypes {type, name, value, for1, for2};
     public enum TipsReferenceIndexes {consts = 0, types = 5, names = 10, generics = 22};
+    public AudioController audioController;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -53,6 +54,7 @@ public class CodingScreen : Screen
         missions[10] = gameObject.AddComponent<Mission10>();
         missions[11] = gameObject.AddComponent<Mission11>();
         missions[12] = gameObject.AddComponent<Mission12>();
+        audioController = gameObject.AddComponent<AudioController>();
     }
 
     public void OpenPanel(bool state)
@@ -315,7 +317,7 @@ public class CodingScreen : Screen
             || (WarriorController.level > (int) WarriorController.PHASES.CHICKENS
             && WarriorController.level != (int) WarriorController.PHASES.BARRIER
             && WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_VARIABLES))
-            UIController.instance.ShowNewInfo();
+            UIController.instance.ShowNewInfo(WarriorController.level);
         
         if (WarriorController.level <= (int) WarriorController.PHASES.LAST_OF_STRUCTURES)
         {

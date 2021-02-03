@@ -27,6 +27,12 @@ public class PauseScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (CodingScreen.instance.components.variablesPhase.inputValue.GetComponent<TMP_InputField>().isFocused)
+                    return;
+            }
+            
             isPaused = !isPaused;
             flag = !flag;
         }

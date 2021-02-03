@@ -5,9 +5,12 @@ using UnityEngine;
 public class BlueEnemy : EnemyController
 {
     Rigidbody2D rigidbody2D;
+    Collider2D collider;
     Vector3 targetPosition;
+    SpriteRenderer renderer;
     Animator animator;
     Vector3 previousPosition;
+    public GameObject otherEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +18,24 @@ public class BlueEnemy : EnemyController
         base.Start();
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
+        renderer = GetComponent<SpriteRenderer>();
         previousPosition = transform.position;
+    }
+
+    void OnDestroy()
+    {
+        if (otherEnemy != null)
+        {
+            otherEnemy.GetComponent<SpriteRenderer>().enabled = true;
+            otherEnemy.GetComponent<Collider2D>().enabled = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BarrierController.instance.barrierActivated)
+        if (BarrierController.instance.barrierActivated && renderer.enabled && !UIController.instance.InfoIsActive())
         {
             targetPosition = (WarriorController.instance.GetPosition() - transform.position).normalized;
 

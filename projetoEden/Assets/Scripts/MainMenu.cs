@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public static bool tutorialExecuted;
     public static bool isSubPhase;
     public static bool debug;
+    public static int quantCoins;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class MainMenu : MonoBehaviour
         tutorialExecuted = false;
         isSubPhase = false;
         debug = false;
+        quantCoins = 0;
     }
 
     public static void PlayGame()

@@ -53,6 +53,7 @@ public class WarriorController : PlayerController
     public AudioClip[] attackSongs = new AudioClip[4];
     public AudioClip attacked;
     public AudioClip darkAmbient;
+    public AudioClip [] heightIncrease = new AudioClip[2];
     System.Random random = new System.Random();
     bool flag = false;
     public enum PHASES {FIRST_OF_VARIABLES = 0, CHICKENS = 1, FLAME = 2, BATTLE = 3, BARRIER = 4, CLOUDS = 5, LAST_OF_VARIABLES = 5, CAMERAS = 6, FIRST_OF_STRUCTURES = 7, FLOATING_PLATFORM = 8, BUG = 9, FIRST_OF_ITERATIVE = 10, EMPTY_PATH = 10, BLADES_BARRIER = 11, LAST_OF_STRUCTURES = 12, FOURTH_WALL = 12, DRAGON = 13, END_MISSION = 14};
@@ -102,6 +103,7 @@ public class WarriorController : PlayerController
             currentLevel = MainMenu.lastLevel;
         canDeactivateStone = false;
         transform.position = MainMenu.lastCheckPointPosition;
+        quantCoins = MainMenu.quantCoins;
         currentHealth = 100;
         ResetHeight();
         ResetInvincibility();
@@ -219,7 +221,11 @@ public class WarriorController : PlayerController
         //DestroyPlayerDead();
 
         if (UIHealthBar.instance != null)
-            UIHealthBar.instance.SetValue(health);
+            if (amount == 100)
+                UIHealthBar.instance.ResetBar();
+            else 
+                UIHealthBar.instance.SetValue(health);
+            
         
         if (health == 0)
             if (CodingScreen.instance != null)
@@ -256,9 +262,6 @@ public class WarriorController : PlayerController
         {
             isSubPhase = true;
         }  
-
-        if (currentLevel == (int) PHASES.DRAGON)
-            audioController.PlayMusic(darkAmbient);
     }
 
     /// <summary>
@@ -340,6 +343,11 @@ public class WarriorController : PlayerController
     {
         float pow = Mathf.Pow(1.2f, times);
         float scale = isIncrement ? transform.localScale.x * pow : transform.localScale.x / pow;
+
+        if (isIncrement)
+            audioController.PlaySound(heightIncrease[0]);
+        else
+            audioController.PlaySound(heightIncrease[1]);
 
         if (Mathf.Approximately(Mathf.Abs(scale), 1))
         {

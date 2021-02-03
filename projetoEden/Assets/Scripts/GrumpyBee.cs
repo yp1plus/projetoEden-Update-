@@ -37,7 +37,7 @@ public class GrumpyBee : EnemyController
         {
             if (GameObject.FindWithTag("GrumpyBee") != null 
                 && WarriorController.level == (int) WarriorController.PHASES.CHICKENS)
-                UIController.instance.ShowNewInfo();
+                UIController.instance.ShowNewInfo(WarriorController.level);
             else if (WarriorController.level != (int) WarriorController.PHASES.CHICKENS)
                 WarriorController.instance.GoToNextLevel();
             

@@ -1,12 +1,14 @@
 {
-    "title":["Partiu Batalhar", "Atire Galinhas", "Hora de Incendiar", "Hora de Atacar", "Cresça ou Diminua", "Hora do Chefão"],
+    "title":["Hora de Jogar", "Atire Galinhas", "Hora de Incendiar", "Hora de Atacar", "Cresça ou Diminua", "Partiu Batalhar", "Hora de Pular", "Hora do Chefão"],
     "description":
             [
-            "Colete bolas de magia para ativar a tela de codificação. \nAperte X para atacar com a espada. \nAperte ESC ou P para acessar a tela de instruções.",
+            "Colete bolas de magia para ativar a tela de codificação e diamantes verdes para ganhar vida. \nTecle X para atacar com a espada. \nTecle ESC ou P para pausar.",
             "Você ganhou o poder de atirar galinhas em seus inimigos. \nPara ativar, aperte a tecla C.",
             "Você ganhou o poder de ativar a chama em obstáculos e inimigos. \nPara ativar, aperte a tecla E.",
             "Você ganhou 50% a mais de força na sua espada permanentemente. \nAperte X para atacar.",
             "Você ganhou o poder de mudar sua altura. Agora você pode esmagar inimigos e passar por barreiras. Aperte Q para crescer ou Z para diminuir.",
-            "O chefão do jogo chegou. Ele protege o portal da ilha para a Central de Controle. Um cospir fogo do dragão e você já era! Ele é imune ao fogo, mas use a chama sempre que ele cospir fogo para bloqueá-lo. Você está munido e pronto pra batalha?"
+            "Nesta fase, a espada dá mais dano do que os poderes. Você é imune enquanto ataca e o inimigo também é imune enquanto \"pisca\". Você tem um diamante verde à disposição. Só bora!",
+            "Quanto menor a sua altura mais alto você é capaz de pular e mais rápido você é capaz de andar. Diminua sua altura para pular até a plataforma.",
+            "O chefão do jogo chegou. Ele protege o portal da ilha para a Central de Controle. Um cospir fogo do dragão e você já era! Ele é imune ao fogo, mas use a chama para bloquear seu ataque. Gigante você dá mais dano com a espada."
             ]
 }

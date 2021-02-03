@@ -10,6 +10,7 @@ public class SmallBoss : EnemyController
     Vector3 previousPosition;
     float timeMaxAttack = 0.9f;
     float time = 0;
+    public AudioClip mainSoundtrack;
 
     public static SmallBoss instance {get; private set;}
 
@@ -30,7 +31,7 @@ public class SmallBoss : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("BlueEnemy") == null)
+        if (GameObject.FindGameObjectWithTag("BlueEnemy") == null && !UIController.instance.InfoIsActive())
         {
             targetPosition = (WarriorController.instance.GetPosition() - transform.position).normalized;
 
@@ -70,6 +71,7 @@ public class SmallBoss : EnemyController
         BarrierController.instance.ResetAttributes();
         if (!MainMenu.SceneIsLoaded(3))
             MainMenu.StartScene(3);
+        WarriorController.instance.audioController.PlayMusic(mainSoundtrack);
     }
 
     void AnimateAttack()
@@ -131,7 +133,8 @@ public class SmallBoss : EnemyController
             }
             else
             {
-                ChangeHealth(-hit);
+                if (!player.invincible)
+                    ChangeHealth(-hit);
             }
         } 
     }

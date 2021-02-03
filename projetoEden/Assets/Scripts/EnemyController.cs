@@ -29,13 +29,11 @@ public class EnemyController : PlayerController
         if (player != null)
         {
             Attack(player);
-        }
-        else if (c != null)
+        } else if (c != null)
         {
             ChangeHealth(-hitChicken);
             c.DestroyGameObject();
-        }
-        else if (other.gameObject.tag == "Corner") 
+        } else if (other.gameObject.tag == "Corner") 
         {
             isInCorner = true;
         }
@@ -90,7 +88,8 @@ public class EnemyController : PlayerController
         }
         else
         {
-            ChangeHealth(-hit);
+            if (!player.invincible)
+                ChangeHealth(-hit);
         } 
     }
 

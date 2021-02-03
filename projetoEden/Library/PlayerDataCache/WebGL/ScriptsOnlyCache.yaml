@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - EndMission
     - EnemyController
     - FlameController
+    - GreenGem
     - GrumpyBee
     - InitialTutorial
     - Languages
@@ -227,8 +228,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
     - Class: 61
@@ -295,8 +294,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2804}
     - Class: 114
       Script: {instanceID: 2848}
-    - Class: 114
-      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 2916}
     - Class: 114
@@ -382,6 +379,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -390,6 +389,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1488}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3512}
     - Class: 114
@@ -427,6 +428,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -438,7 +441,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1684}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3512}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -476,6 +483,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -484,6 +493,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1488}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3512}
     - Class: 115
@@ -509,7 +520,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 74
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -522,7 +537,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2208}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3512}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -601,6 +620,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -612,7 +633,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1488}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3512}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -636,9 +661,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 74
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -649,9 +678,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2676}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3854}
     - Class: 114
       Script: {instanceID: 3878}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -677,9 +710,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 70
       Script: {instanceID: 0}
     - Class: 74
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -690,7 +727,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1684}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3512}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -720,6 +761,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -728,6 +771,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 2716}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3512}
     - Class: 115
@@ -761,6 +806,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -773,6 +820,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1934}
     - Class: 114
       Script: {instanceID: 1998}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3512}
     - Class: 115
@@ -808,12 +857,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3228}
     - Class: 114
@@ -847,6 +900,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -855,6 +910,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 2484}
+    - Class: 114
+      Script: {instanceID: 2856}
     - Class: 114
       Script: {instanceID: 3512}
     - Class: 115
@@ -888,6 +945,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -897,9 +956,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1488}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 3214}
     - Class: 114
       Script: {instanceID: 3512}
+    - Class: 114
+      Script: {instanceID: 187190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -984,7 +1047,7 @@ ScriptsOnlyBuild:
     className: InitialTutorial
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3e2a54c6da896f28653a05c30725046f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FlameController
@@ -1446,7 +1509,7 @@ ScriptsOnlyBuild:
     className: CinemachinePostProcessing
   - hash:
       serializedVersion: 2
-      Hash: 095e27175b290eb4844d0cac80df0d91
+      Hash: bf3e7b683a2a042081990d64e8a1c27c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CodingScreen
@@ -1464,7 +1527,7 @@ ScriptsOnlyBuild:
     className: PauseScreen
   - hash:
       serializedVersion: 2
-      Hash: 01dcd675959de1a123ed45eb93b2963b
+      Hash: 92bf3e5b90054c09e69ffbea7a97bc11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BarrierController
@@ -1776,7 +1839,7 @@ ScriptsOnlyBuild:
     className: AudioController
   - hash:
       serializedVersion: 2
-      Hash: 92ea3a76ecc210c061703a59ec593feb
+      Hash: 00157cf39560174983cacfc2236e619f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WarriorController
@@ -1788,7 +1851,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3e2a54c6da896f28653a05c30725046f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChickenShoot
@@ -1848,7 +1911,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 2afbad0611117475f1d21ad7d816f02c
+      Hash: b4c9fab99f3b41cfadd3f26ed3ddb737
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BlueEnemy
@@ -1866,7 +1929,7 @@ ScriptsOnlyBuild:
     className: Mission3
   - hash:
       serializedVersion: 2
-      Hash: 2afbad0611117475f1d21ad7d816f02c
+      Hash: 07e0a5ad419a2dd62f66eb405e39a30b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SmallBoss
@@ -1990,6 +2053,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Mission5
+  - hash:
+      serializedVersion: 2
+      Hash: e8565efb283f358a6685935463171ae7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GreenGem
   platform: 20
   scenePathNames:
   - Assets/Scenes/StartGame.unity
@@ -2008,4 +2077,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Mission12.unity
   - Assets/Scenes/Mission13.unity
   - Assets/Scenes/EndMission.unity
-  playerPath: D:/Documents/BUILD 3.0
+  playerPath: D:/Documents/build 5.0

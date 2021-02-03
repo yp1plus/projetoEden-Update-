@@ -28,12 +28,19 @@ public class AudioController : MonoBehaviour
         if (clip != currentClip)
         {
             currentClip = clip;
+            if (audioSource.clip == null)
+                audioSource.clip = clip;
             audioSource.PlayOneShot(currentClip);
         }
         else
         {
             if(!audioSource.isPlaying || audioSource.clip != clip)
+            {
+                if (audioSource.clip == null)
+                    audioSource.clip = clip;
                 audioSource.PlayOneShot(currentClip);
+            }
+                
         }
     }
 

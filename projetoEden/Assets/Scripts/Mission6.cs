@@ -86,6 +86,7 @@ public class Mission6 : Mission
                     return false;
         }
 
+        SetIndexTip(16);
         SetIndexTip(15);
         SetIndexTip(14);
         SetIndexTip(13);

@@ -1,16 +1,16 @@
 {
     "title":["Entendendo o Jogo", "I: Destruir Inimigos","II: Apagar Chama","III: Upar Espada","IV: Diminuir Altura","V: Aumentar Altura","VI: Enganar Câmeras", "VII: Parar Blocos", "VIII: Ficar Livre", "IX: Correr do Bicho", "X: Construir Caminho", "XI: Eliminar Lâminas", "XII: Quebrar a 4ª Parede"],
     "description":["Nesse mundo programável você terá o poder de controlar situações por meio de códigos. Comece criando um apelido que o acompanhará durante todo o jogo. Afinal, não poderia começar a sua jornada sem um nome à altura!",
-        "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Confira novos comandos apertando ESC ou P e visitando a seção Variáveis.",
+        "Olha essa quantidade de galinhas voadoras! Vai ser bem difícil matar todas elas no corpo a corpo. São 30 galinhas no total, mas você pode modificar essa quantidade, gravada numa variável, da forma que preferir. Legal, né? Antes, confira o guia da fase apertando ESC ou P e visitando a seção Variáveis.",
         "Essa chama foi colocada de propósito, impossível um humano passar por ela. Mas você pode utilizar um comando para apagá-la. Vá em frente!",
         "É hora do easter egg! Descubra o código secreto de um caractere para upar sua espada em 50% para sempre. Para tanto, o código nunca mais deve mudar. Ele é baseado num ditado conhecido: \"Aquele que deixa tudo para trás, ouve o clamor de seu povo e reage, é grande.\" ",
-        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 79,3 cm.",
-        "Agora essas nuvens enfurecidas superam seu peso e não te deixam avançar. Para conseguir continuar, você precisa ficar gigante o suficiente para esmagá-las. Altere o valor da variável anterior, aumentando em 7,43 vezes o valor anterior.",
+        "Essa barreira praticamente transparente foi eficientemente feita para impedir passagens indevidas. O jeito é modificar a si mesmo, diminuindo a sua própria altura. Você sabe que mede 119,5 cm, e que a parte de você que coincide com a barreira mede 79,3 cm. Você pode utilizar operações aritméticas na caixa de texto.",
+        "Agora essas nuvens enfurecidas superam seu peso e não te deixam avançar. Para conseguir continuar, você precisa ficar gigante o suficiente para esmagá-las. Altere o valor da variável anterior, aumentando em 7,43 vezes o valor anterior. Você pode utilizar operações aritméticas na caixa de texto.",
         "Essas câmeras chatas podem colocar tudo a perder se te descobrirem. Você deve enganá-las trocando seus valores de forma que não enxerguem você. Tome cuidado!",
-        "Você já deve ter percebido que os blocos caem assim que você pisa. Mas existem plataformas móveis que você precisa esperar. Escolha a melhor condição que permita que você espere pela plataforma sem o bloco cair. Confira novos comandos apertando ESC ou P e visitando a seção Condicionais.",
+        "Você já deve ter percebido que os blocos caem assim que você pisa. Mas existem plataformas móveis que você precisa esperar. Escolha a melhor condição que permita que você espere pela plataforma sem o bloco cair. Antes, confira um novo guia de fase apertando ESC ou P e visitando a seção Condicionais.",
         "A plataforma à frente prende qualquer um que ouse pisá-la. Escolha a melhor condição que lhe permita prosseguir sem amarras!",
         "Se ficar o bicho pega, se correr o bicho come! Vem vindo um bicho atrás de você e você precisa se preparar. Crie uma condição para se livrar do bicho. Se fizer errado, ele vai te pegar!",
-        "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar. Confira novos comandos apertando ESC ou P e visitando a seção Repetição.",
+        "Existe um abismo entre você e a sua missão que não sabe onde termina. Você já chegou até aqui, consegue passar por ele criando rochas. Decida a melhor forma de criá-las para continuar. Antes, confira um novo guia de fase apertando ESC ou P e visitando a seção Repetição.",
         "Você está perto do seu objetivo, mas encontrou uma barreira de lâminas. É preciso eliminá-las. Encontre uma forma de destruir todas de uma vez.",
         "Bem que o teatro falava da 4ª parede. Há uma parede escondendo a passagem, que pode ser muito tortuosa. Não é bom arriscar. A parede possui 7 ladrilhos de altura e 12 de largura. Quebre cada ladrinho da 4ª parede para mostrar o caminho."
     ],
@@ -119,7 +119,7 @@
                 ["O valor deve estar entre aspas simples, por ser caractere",
                  "Não deve haver mais de um caractere",
                  "Cada frase representa uma parte do nome do caractere",
-                 "O símbolo é composto de uma reta e de um ponto"
+                 "O símbolo é composto por uma reta vertical e por um ponto"
                 ]
         },
         {
@@ -164,8 +164,9 @@
                 ["Os valores não podem ser diferentes de A99, A98 e A97",
                  "Não se deve retirar as aspas duplas, pois o valor é textual",
                  "Você pode pôr o mesmo nome em mais de uma câmera",
-                 "Para uma câmera não te ver troque por outra mais distante",
-                 "A99 e A98 não podem te ver, então só resta A97"
+                 "Se o nome original da câmera estiver em outra, ela ainda estará ativada",
+                 "Na primeira etapa, A99 e A98 não podem te ver, então só resta A97",
+                 "Na segunda etapa, A97 não pode te ver, então restam as outras duas"
                 ]
         },
         {
@@ -258,7 +259,7 @@
         "Todos os valores nessa linguagem terminam com ponto e vírgula (';')\n\nTodo nome deve ser composto apenas por letras, números e sublinhado ('_') e não deve começar com número\n\nconst: quando marcado, indica que é uma constante, isto é, o valor da variável não mudará mais\n\nTipo int: representa números inteiros até cerca de 2^31. Também pode representar valor booleano, sendo 0 (falso) e 1 (verdadeiro)\n\nTipo char: representa um caractere de acordo com a tabela ASCII entre aspas simples\n\nTipo float: representa números decimais. Deve-se utilizar ponto entre os números\n\nTipo char*: representa um conjunto de caracteres (palavra). Escreve-se entre aspas duplas\n",
         "if: condição \"se\" é verdadeiro faça algo\n\nelse if: condição \"senão se\" que vem após um if que não foi executado e testa outra condição\n\nelse: condição \"senão\" que faz algo caso nenhuma das condições anteriores seja verdadeira\n\n==: representa igualdade, se algo é igual a outro\n\n&&: representa a condição E, só retorna verdadeiro se as duas proposições são verdadeiras\n\n||: representa a condição OU, basta que uma proposição seja verdadeira para retornar verdadeiro\n\n!: nega a proposição, se é verdadeira torna-se falsa e vice-versa.\n\n<: se um valor é menor do que o outro\n\n>: se um valor é maior do que o outro\n\n>=: se um valor é maior ou igual a outro\n\n<=: se um valor é menor ou igual a outro",
         "while(condição): enquanto a condição for verdadeira, repete a ação\n\nfor(int i = valor_inicial; condição; incrementa 1 (++) ou decrementa 1 (--) em i): repete i vezes até que a condição seja satisfeita",
-        "X: Ataque com a espada\n\nC: Atirar galinhas, se disponível\n\nE: Acender Chama, se disponível\n\nQ: Aumentar Altura, se disponível\n\nZ: Diminuir Altura, se disponível"
+        "Setas ou WASD: Movimentação\n\nX: Ataque com a espada\n\nC: Atirar galinhas, se disponível\n\nE: Acender Chama, se disponível\n\nQ: Aumentar Altura, se disponível\n\nZ: Diminuir Altura, se disponível"
     ],
     "namesCameras":["char* CAMERA_A99", "char* CAMERA_A98", "char* CAMERA_A97"]
 }

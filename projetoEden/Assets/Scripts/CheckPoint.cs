@@ -37,13 +37,16 @@ public class CheckPoint : MonoBehaviour
             }
             if (WarriorController.level == (int) WarriorController.PHASES.BLADES_BARRIER)
                 MainMenu.StartScene((int) WarriorController.PHASES.LAST_OF_STRUCTURES);
-            if (controller.GetPosition().x >= 891.8f)
-                UIController.instance.ShowNewInfo();
+            if (controller.GetPosition().x >= 518 && WarriorController.level < (int) WarriorController.PHASES.FLOATING_PLATFORM)
+                UIController.instance.ShowNewInfo(6);
+            else if (controller.GetPosition().x >= 891.8f)
+                UIController.instance.ShowNewInfo(7);
             if (!MainMenu.SceneIsLoaded(WarriorController.level))
                 MainMenu.StartScene(WarriorController.level);
             activated = true;
             MainMenu.lastCheckPointPosition = transform.position;
             MainMenu.lastLevel = WarriorController.level;
+            MainMenu.quantCoins = controller.coins;
             if (animator != null)
                 animator.SetTrigger("Activated");
             capsuleCollider2D.enabled = false;
